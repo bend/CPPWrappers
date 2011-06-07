@@ -31,7 +31,7 @@ void* Thread2(void* t){
 
 
 int main(){
-	char* name ="test_sem";
+	char name[] ="test_sem";
 	sem = new Semaphore(name,1);
 	Thread tr1;
 
