@@ -1,0 +1,5 @@
+*.o
+tag
+tags
+*.swp
+*.swo
