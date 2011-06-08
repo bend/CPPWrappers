@@ -1,5 +1,5 @@
-#include "Semaphore.h"
 #include "Thread.h"
+#include "Semaphore.h"
 #include <iostream>
 using namespace std;
 

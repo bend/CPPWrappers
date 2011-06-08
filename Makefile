@@ -1,24 +1,26 @@
-CFLAGS+= -Wall
+CFLAGS+= -Wall -pedantic -Werror
 LDFLAGS+=
-EXEC=test
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
+LIB=libthread.so
 CC=g++
-all: $(EXEC)
+SHAREFLAG+=-fPIC
 
-$(EXEC): $(OBJECTS)
-	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+lib: $(LIB)
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
-	
+$(LIB):
+	@echo "Building objects file";
+	@for f in $(SOURCES:.cpp=) ; \
+		do \
+		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) ;\
+		done
+	@echo "Building library";
+		@$(CC) -shared $(OBJECTS) -o $(LIB)
+	@echo "Done!"
 .PHONY: clean mrproper
-
 clean:
 	@rm $(OBJECTS)
 
 mrproper:
-	@rm $(EXEC)
+	@rm $(LIB)
 
-install:
-	@cp $(EXEC) /bin
