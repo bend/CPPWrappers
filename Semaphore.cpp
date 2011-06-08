@@ -32,6 +32,10 @@ int Semaphore::post(){
 	return sem_post(sem);
 }
 
+int Semaphore::tryWait(){
+	return sem_trywait(sem);
+}
+
 void Semaphore::close(){
 	sem_close(sem);
 	sem_unlink(name);

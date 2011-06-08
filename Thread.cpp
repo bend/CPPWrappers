@@ -27,14 +27,27 @@ int Thread::start(void *(*function)(void *)){
 	return 0;
 }
 
-
 void *Thread::join(Thread *thread){
 	void *ret;
 	pthread_join(thread->getThread(),&ret);
 	return ret;
 }
 
-
 pthread_t Thread::getThread(){
 	return this->pthread;
+}
+
+int Thread::detach(){
+	return pthread_detach(this->pthread);
+}
+
+int Thread::equals(Thread* t){
+	return pthread_equal(this->pthread, t->getThread());
+}
+
+void Thread::exit(void* value_ptr){
+	pthread_exit(value_ptr);
+}
+int Thread::cancel(){
+	return pthread_cancel(this->pthread);
 }

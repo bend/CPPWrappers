@@ -7,7 +7,7 @@ Semaphore *sem;
 
 void* Thread1(void* t){
 	int i=0;
-	while(i<10){
+	while(i<4){
 		sem->wait();
 		cout<<"Thread 2 got lock"<<endl;
 		sleep(1);
@@ -19,7 +19,7 @@ void* Thread1(void* t){
 
 void* Thread2(void* t){
 	int i=0;
-	while(i<10){
+	while(i<4){
 		sem->wait();
 		cout<<"Thread 1 got lock"<<endl;
 		sleep(1);
@@ -40,5 +40,6 @@ int main(){
 	tr1->start(Thread2);
 	tr1->join(tr2);
 	tr1->join(tr1);
+	sem->close();
 	return 1;
 }

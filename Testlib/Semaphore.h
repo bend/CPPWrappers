@@ -23,6 +23,7 @@ class Semaphore{
 		Semaphore(char* name, unsigned int val);
 		int wait();
 		int post();
+		int tryWait();
 		void close();
 	private:
 		sem_t *sem;
