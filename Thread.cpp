@@ -21,18 +21,20 @@
 #include <iostream>
 using namespace std;
 
-pthread_t Thread::start(void *(*function)(void *))
-{
-  pthread_t pthread;
-  if (pthread_create( &pthread, NULL,function,(void *)(this)))
-    cerr<<"Thread::start could not start thread"<<endl;
-  return pthread;
+int Thread::start(void *(*function)(void *)){
+	if (pthread_create( &(this->pthread), NULL,function,(void *)(this)))
+		cerr<<"Thread::start could not start thread"<<endl;
+	return 0;
 }
 
 
-void *Thread::join(pthread_t pthread)
-{
-  void *ret;
-  pthread_join( pthread,&ret);
-  return ret;
+void *Thread::join(Thread *thread){
+	void *ret;
+	pthread_join(thread->getThread(),&ret);
+	return ret;
+}
+
+
+pthread_t Thread::getThread(){
+	return this->pthread;
 }

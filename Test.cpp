@@ -33,11 +33,12 @@ void* Thread2(void* t){
 int main(){
 	char name[] ="test_sem";
 	sem = new Semaphore(name,1);
-	Thread tr1;
+	Thread *tr1 = new Thread();
+	Thread *tr2 = new Thread();
 
-	pthread_t t1 = tr1.start(Thread1);
-	pthread_t t2 = tr1.start(Thread2);
-	tr1.join(t1);
-	tr1.join(t2);
+	tr1->start(Thread1);
+	tr1->start(Thread2);
+	tr1->join(tr2);
+	tr1->join(tr1);
 	return 1;
 }
