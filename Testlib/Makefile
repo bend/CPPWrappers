@@ -11,7 +11,7 @@ SHAREFLAG+=-fPIC
 tests:
 	$(CC) $(SHAREFLAG) -c ../Semaphore.cpp
 	$(CC) $(SHAREFLAG) -c ../Thread.cpp
-	$(CC) -shared Thread.o Semaphore.o -o $(LIB)
+	$(CC) -shared Thread.o Semaphore.o  -o $(LIB)
 	$(CC) Test.cpp -o $(EXEC) $(LIB)
 
 

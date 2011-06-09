@@ -18,7 +18,7 @@
 
 #include "Semaphore.h"
 
-Semaphore::Semaphore(char* name, unsigned int val){
+Semaphore::Semaphore(char name[], unsigned int val){
 	sem_unlink(name);
 	this->name = name;
 	this->sem = sem_open(name, O_CREAT|O_EXCL, 0666, val);

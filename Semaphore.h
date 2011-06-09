@@ -20,7 +20,7 @@
 class Semaphore{
 
 	public:
-		Semaphore(char* name, unsigned int val);
+		Semaphore(char name[], unsigned int val);
 		int wait();
 		int post();
 		int tryWait();
