@@ -1,4 +1,4 @@
-CFLAGS+= -Wall -pedantic -Werror -I../Include -g
+CFLAGS+= -Wall -pedantic -Werror -I../Include 
 LDFLAGS+= 
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
