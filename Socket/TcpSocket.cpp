@@ -17,6 +17,11 @@ TcpSocket::TcpSocket(){
 	m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
 }
 
+TcpSocket::TcpSocket(int socketfd):
+	m_socketfd(socketfd)
+{
+}
+
 int TcpSocket::connect(string host, unsigned short port){
 	m_portNo = (int)port;
 	if (m_socketfd < 0) 

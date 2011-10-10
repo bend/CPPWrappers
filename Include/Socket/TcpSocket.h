@@ -31,6 +31,8 @@ public:
 	 */
 	TcpSocket();
 
+	TcpSocket(int socketfd);
+
 	/**
 	 * @brief connects to the host on port
 	 * @param host : the host

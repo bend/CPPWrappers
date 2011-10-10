@@ -10,44 +10,55 @@
  *     @author  Ben D. (BD), dbapps2@gmail.com
  *
  */
-
+#ifndef ERRORS_H__
+#define ERRORS_H__
 /**
  * Success
  */
-static int SOSUCC = 1;
+const int SOSUCC = 1;
 
 /**
  * Could not open Socket 
  */
-static int SOCOPEN = -1;
+const int SOCOPEN = -1;
 
 /**
  * Host not found
  */
-static int SONHOST = -2;
+const int SONHOST = -2;
 
 /**
  * Could not connect
  */
-static int SOCONN = -3;
+const int SOCONN = -3;
 
 /**
  * Could not close the connection
  */
-static int SOCLO  = -4;
+const int SOCLO  = -4;
 
 /**
  * Could not write to socket
  */
-static int SOEWRITE = -5;
+const int SOEWRITE = -5;
 
 /**
  * Could not read from socket
  */
-static int SOEREAD = -6;
+const int SOEREAD = -6;
 
 /**
  * Could not allocate mem
  */
-static int SOEMEM = -7;
+const int SOEMEM = -7;
 
+/**
+ * Could not bind socket
+ */
+const int SOEBIND = -8;
+
+/**
+ * Could not listen on socket
+ */
+const int SOELIST = -9;
+#endif

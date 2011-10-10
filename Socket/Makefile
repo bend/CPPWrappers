@@ -1,4 +1,4 @@
-CFLAGS+= -Wall -pedantic -Werror -I../Include
+CFLAGS+= -Wall -pedantic -Werror -I../Include -g
 LDFLAGS+= 
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
@@ -6,7 +6,7 @@ LIB=libsocketcpp.dylib
 CC=g++
 SHAREFLAG+=-fPIC
 INSTALL_INCLUDE=/usr/include
-INSTALL_SUBDIR=Thread
+INSTALL_SUBDIR=Socket
 INSTALL_LIB=/usr/lib
 lib: $(LIB)
 
