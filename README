@@ -1,7 +1,0 @@
-A C++ wrapper for the pthread library
-
-You can build the library with
-make lib
-This will create libthread.so.
-To use it you need to copy it with the header files in your project path
-See the testing folder for examples
