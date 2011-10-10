@@ -16,7 +16,6 @@ debug: CFLAGS+=-g -DDEBUG
 debug: $(LIB)
 
 $(LIB):
-	@echo $(CFLAGS)
 	@for f in $(SOURCES:.cpp=) ; \
 		do \
 		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) ;\
