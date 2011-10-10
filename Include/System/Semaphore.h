@@ -3,7 +3,7 @@
  *
  *       Filename:  Semaphore.h
  *
- *    Description:  A C++ Semaphore Wrapper 
+ *    Description:  A C++ Semaphore Wrapper
  *
  *        Version:  1.0
  *        Created:  07.06.2011 21:12:05
@@ -17,17 +17,17 @@
  */
 #include <iostream>
 #include <semaphore.h>
-class Semaphore{
+class Semaphore {
 
-	public:
-		Semaphore(char name[], unsigned int val);
-		int wait();
-		int post();
-		int tryWait();
-		void close();
-	private:
-		sem_t *sem;
-		char* name;
+public:
+    Semaphore(char name[], unsigned int val);
+    int wait();
+    int post();
+    int tryWait();
+    void close();
+private:
+    sem_t *sem;
+    char* name;
 
 
 };
