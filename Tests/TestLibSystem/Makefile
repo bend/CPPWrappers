@@ -17,5 +17,4 @@ clean:
 
 mrproper:
 	@rm $(EXEC)
-	@rm $(LIB)
 

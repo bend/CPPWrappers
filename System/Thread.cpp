@@ -21,11 +21,15 @@
 #include <iostream>
 using namespace std;
 
-int Thread::start(void * (*function)(void *)) {
-    if (pthread_create( &(this->pthread), NULL, function, (void *)(this)))
+int Thread::start() {
+    if (pthread_create( &m_thread, 0, &Thread::go, this))
         cerr << "Thread::start could not start thread" << endl;
-
     return 0;
+}
+
+void* Thread::go(void* obj){
+	reinterpret_cast<Thread *>(obj)->run();
+	return NULL;
 }
 
 void *Thread::join(Thread *thread) {
@@ -35,20 +39,22 @@ void *Thread::join(Thread *thread) {
 }
 
 pthread_t Thread::getThread() {
-    return this->pthread;
+    return m_thread;
 }
 
 int Thread::detach() {
-    return pthread_detach(this->pthread);
+    return pthread_detach(m_thread);
 }
 
 int Thread::equals(Thread* t) {
-    return pthread_equal(this->pthread, t->getThread());
+    return pthread_equal(m_thread, t->getThread());
 }
 
 void Thread::exit(void* value_ptr) {
     pthread_exit(value_ptr);
 }
+
 int Thread::cancel() {
-    return pthread_cancel(this->pthread);
+    return pthread_cancel(m_thread);
 }
+

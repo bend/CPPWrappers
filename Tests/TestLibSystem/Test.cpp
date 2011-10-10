@@ -3,46 +3,52 @@
 #include <iostream>
 using namespace std;
 
-Semaphore *sem;
+class Test: public Thread{
+	public:
+		Test(Semaphore *sem):m_sem(sem){
 
-void* Thread1(void* t) {
-    int i = 0;
+		}
 
-    while(i < 4) {
-        sem->wait();
-        cout << "Thread 2 got lock" << endl;
-        sleep(1);
-        sem->post();
-        i++;
-    }
+		void run(){
+			while(1){
+				m_sem->wait();
+				cout<<"Thread 1"<<endl;
+				m_sem->post();
+			}
+		}
 
-    return NULL;
-}
-
-void* Thread2(void* t) {
-    int i = 0;
-
-    while(i < 4) {
-        sem->wait();
-        cout << "Thread 1 got lock" << endl;
-        sleep(1);
-        sem->post();
-        i++;
-    }
-
-    return 0;
-}
+	private:
+		Semaphore *m_sem;
 
 
+};
+
+class Test2: public Thread{
+	public:
+		Test2(Semaphore *sem):m_sem(sem){
+
+		}
+
+		void run(){
+			while(1){
+				m_sem->wait();
+				cout<<"Thread 2"<<endl;
+				sleep(1);
+				m_sem->post();
+			}
+		}
+
+	private:
+		Semaphore *m_sem;
+
+};
 int main() {
-    char name[] = "test_sem";
-    sem = new Semaphore(name, 1);
-    Thread *tr1 = new Thread();
-    Thread *tr2 = new Thread();
-    tr1->start(Thread1);
-    tr1->start(Thread2);
-    tr1->join(tr2);
-    tr1->join(tr1);
-    sem->close();
-    return 1;
-}
+	char name[] = "test_sem";
+	Semaphore *sem = new Semaphore(name, 1);
+	Test test(sem);
+	Test2 test2(sem);
+	test2.start();
+	test.start();
+	test.join(&test2);
+
+}	

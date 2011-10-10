@@ -24,16 +24,17 @@
 
 class Thread {
 public:
-    int start(void * (*function)(void *));
+    int start();
     void *join(Thread *thread);
     int detach();
     int equals(Thread* t);
     void exit(void* value_ptr);
     int cancel();
     pthread_t getThread();
-
+	static void* go(void* obj);
+	virtual void run() = 0;
 private:
-    pthread_t pthread;
+    pthread_t m_thread;
 
 };
 
