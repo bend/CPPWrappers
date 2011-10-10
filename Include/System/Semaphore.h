@@ -17,6 +17,8 @@
  */
 #include <iostream>
 #include <semaphore.h>
+#include <fcntl.h>
+
 class Semaphore {
 
 public:
