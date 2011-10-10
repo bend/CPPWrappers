@@ -1,5 +1,5 @@
 CFLAGS+= -Wall -pedantic -Werror -I../Include 
-LDFLAGS+= 
+LDFLAGS+= -lpthread
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 LIB=libsocketcpp.dylib
@@ -21,7 +21,7 @@ $(LIB):
 		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) ;\
 		done
 	@echo "Building library";
-		@$(CC) -shared $(OBJECTS) -o $(LIB)
+		@$(CC) -shared $(OBJECTS) -o $(LIB) $(LDFLAGS)
 	@echo "Done!"
 install:
 	@echo "Copying headers to $(INSTALL_INCLUDE)"
