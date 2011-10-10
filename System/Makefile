@@ -8,7 +8,12 @@ SHAREFLAG+=-fPIC
 INSTALL_INCLUDE=/usr/include
 INSTALL_LIB=/usr/lib
 INSTALL_SUBDIR=System
-lib: $(LIB)
+
+release: $(LIB)
+
+debug: CFLAGS+=-g -DDEBUG
+debug: $(LIB)
+
 
 $(LIB):
 	@echo "Building objects file";

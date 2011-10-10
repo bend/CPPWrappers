@@ -8,10 +8,15 @@ SHAREFLAG+=-fPIC
 INSTALL_INCLUDE=/usr/include
 INSTALL_SUBDIR=Socket
 INSTALL_LIB=/usr/lib
-lib: $(LIB)
+
+
+release: $(LIB)
+
+debug: CFLAGS+=-g -DDEBUG
+debug: $(LIB)
 
 $(LIB):
-	@echo "Building objects file";
+	@echo $(CFLAGS)
 	@for f in $(SOURCES:.cpp=) ; \
 		do \
 		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) ;\
