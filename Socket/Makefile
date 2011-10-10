@@ -2,10 +2,11 @@ CFLAGS+= -Wall -pedantic -Werror -I../Include
 LDFLAGS+= 
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
-LIB=libsystemcpp.dylib
+LIB=libsocketcpp.dylib
 CC=g++
 SHAREFLAG+=-fPIC
 INSTALL_INCLUDE=/usr/include
+INSTALL_SUBDIR=Thread
 INSTALL_LIB=/usr/lib
 lib: $(LIB)
 
@@ -20,13 +21,13 @@ $(LIB):
 	@echo "Done!"
 install:
 	@echo "Copying headers to $(INSTALL_INCLUDE)"
-	@cp -r ../Include/System $(INSTALL_INCLUDE)
-	@echo "Copying libsystem.so to $(INSTALL_LIB)"
+	@cp -r ../Include/$(INSTALL_SUBDIR) $(INSTALL_INCLUDE)
+	@echo "Copying $(LIB) to $(INSTALL_LIB)"
 	@cp -r $(LIB) $(INSTALL_LIB)/$(LIB)
 	@echo "Done!"
 uninstall:
 	@echo "Removing headers from $(INSTALL_INCLUDE)"
-	@rm -rf $(INSTALL_INCLUDE)/System
+	@rm -rf $(INSTALL_INCLUDE)/$(INSTALL_SUBDIR)
 	@echo "Removing library from $(INSTALL_LIB)"
 	@rm -rf $(INSTALL_LIB)/$(LIB)
 .PHONY: clean mrproper
