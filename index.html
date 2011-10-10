@@ -3,7 +3,7 @@
 <head>
   <meta charset='utf-8'>
 
-  <title>bend/CPPThread @ GitHub</title>
+  <title>bend/CPPWrappers @ GitHub</title>
 
   <style type="text/css">
     body {
@@ -31,28 +31,33 @@
 </head>
 
 <body>
-  <a href="http://github.com/bend/CPPThread"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <a href="http://github.com/bend/CPPWrappers"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
   <div id="container">
 
     <div class="download">
-      <a href="http://github.com/bend/CPPThread/zipball/master">
+      <a href="http://github.com/bend/CPPWrappers/zipball/master">
         <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/bend/CPPThread/tarball/master">
+      <a href="http://github.com/bend/CPPWrappers/tarball/master">
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="http://github.com/bend/CPPThread">CPPThread</a>
+    <h1><a href="http://github.com/bend/CPPWrappers">CPPThread</a>
       <span class="small">by <a href="http://github.com/bend">bend</a></span></h1>
 
     <div class="description">
-      A C++ wrapper for the pthread library
+      C++ wrappers for the pthread, socket and semaphore library
     </div>
 
-    <h2>Install</h2>
-<p>make lib
-Copy the libthread.so with the header files in you project dir.<br/>
-See the Testlib folder for more info</p><br/>
+	<h2>Overview</h2>
+		This library is a C++ wrapper for BSD sockets, pthread and semaphore. I've test it on MacOS, but it should be working on Linux Therer are 2 Libraries:
+		<l>System, that contains the Thread class and Semaphore class</l>
+		<l>Socket, that contains the TcpSocket and TcpServer class</l>
+	<h2>Install</h2>
+		To compile and install the library go to the folder System or Socket and type make sudo make install You need to do this for both folders
+	<h2>Examples</h2>
+		Small examples are located in the Tests folder. Basicaly the libraries are easy to use, notice that for the Thread class you need to subclass it and override the run() method
+
 <h2>Authors</h2>
 <p>Ben (dbapps2@gmail.com)<br/><br/>      </p>
 <h2>Contact</h2>
