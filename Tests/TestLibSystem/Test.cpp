@@ -49,6 +49,7 @@ int main() {
 	Test2 test2(sem);
 	test2.start();
 	test.start();
-	test.join(&test2);
+	test.join();
+	test2.join();
 
 }	

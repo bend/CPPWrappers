@@ -1,19 +1,10 @@
-/*
- * =====================================================================================
+/**
  *
- *       Filename:  Thread.cpp
+ *       	@file  Thread.h
  *
- *    Description:  A C++ Thread Wrapper for the pthread lib
+ *    		@brief  A C++ Thread Wrapper for the pthread lib
+ *         @author  Ben D. (BD), dbapps2@gmail.com
  *
- *        Version:  1.0
- *        Created:  07.06.2011 21:09:48
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Ben D. (BD), dbapps2@gmail.com
- *        Company:  dbapps
- *
- * =====================================================================================
  */
 
 #include <System/Thread.h>
@@ -22,8 +13,11 @@
 using namespace std;
 
 int Thread::start() {
-    if (pthread_create( &m_thread, 0, &Thread::go, this))
+    if (pthread_create( &m_thread, 0, &Thread::go, this)){
         cerr << "Thread::start could not start thread" << endl;
+		return -1;
+	}	
+	
     return 0;
 }
 
@@ -32,9 +26,9 @@ void* Thread::go(void* obj){
 	return NULL;
 }
 
-void *Thread::join(Thread *thread) {
+void *Thread::join() {
     void *ret;
-    pthread_join(thread->getThread(), &ret);
+    pthread_join(m_thread, &ret);
     return ret;
 }
 
