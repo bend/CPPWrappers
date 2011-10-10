@@ -13,16 +13,15 @@
 
 #include <Socket/TcpSocket.h>
 
-int main(){
-	TcpSocket s;
-	s.connect("localhost", 2000);
-	string r="";
-	int res;
-	s.receiveInt(res);
-	cout<<"Received "<<res<<endl;
-	string resStr;
-	s.receiveString(resStr);
-	cout<<"Received string "<<resStr<<endl;
-
+int main() {
+    TcpSocket s;
+    s.connect("localhost", 2000);
+    string r = "";
+    int res;
+    s.receiveInt(res);
+    cout << "Received " << res << endl;
+    string resStr;
+    s.receiveString(resStr);
+    cout << "Received string " << resStr << endl;
 }
 

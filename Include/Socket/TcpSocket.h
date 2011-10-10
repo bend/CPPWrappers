@@ -26,71 +26,71 @@ using namespace std;
 
 class TcpSocket {
 public:
-	/**
-	 * @brief default constructor
-	 */
-	TcpSocket();
+    /**
+     * @brief default constructor
+     */
+    TcpSocket();
 
-	TcpSocket(int socketfd);
+    TcpSocket(int socketfd);
 
-	/**
-	 * @brief connects to the host on port
-	 * @param host : the host
-	 * @param the port 
-	 * @return SOSUCC if succeded 
-	 * 		   SOCOPEN if socket could not be opened
-	 * 		   SONHOST if host not found 
-	 * 		   SOCONN if could not connect to host
-	 * 		   
-	 */
-	int connect(string host, unsigned short port);
+    /**
+     * @brief connects to the host on port
+     * @param host : the host
+     * @param the port
+     * @return SOSUCC if succeded
+     * 		   SOCOPEN if socket could not be opened
+     * 		   SONHOST if host not found
+     * 		   SOCONN if could not connect to host
+     *
+     */
+    int connect(string host, unsigned short port);
 
-	/**
-	 * @brief disconnects from the host
-	 * @return code
-	 */
-	int disconnect();
-	
-	/**
-	 * @brief sends a string over the net 
-	 */
-	int sendString(string &str);
-	
-	/**
-	 * @brief sends an int over the net 
-	 */
-	int sendInt(int &i);
+    /**
+     * @brief disconnects from the host
+     * @return code
+     */
+    int disconnect();
 
-	/**
-	 * @brief sends a short over the net
-	 */
-	int sendShort(short &i);
-	
-	/**
-	 * @brief sends a char over the net 
-	 */
-	int sendChar(char &c);
+    /**
+     * @brief sends a string over the net
+     */
+    int sendString(string &str);
 
-	/**
-	 * @brief sends a char array over the net
-	 */
-	int sendCharArray(char* c);
+    /**
+     * @brief sends an int over the net
+     */
+    int sendInt(int &i);
 
-	int receiveString(string &str);
+    /**
+     * @brief sends a short over the net
+     */
+    int sendShort(short &i);
 
-	int receiveInt(int &i);
+    /**
+     * @brief sends a char over the net
+     */
+    int sendChar(char &c);
 
-	int receiveShort(short& s);
+    /**
+     * @brief sends a char array over the net
+     */
+    int sendCharArray(char* c);
 
-	int receiveChar(char &c);
+    int receiveString(string &str);
 
-	int receiveCharArray(char **c);
+    int receiveInt(int &i);
+
+    int receiveShort(short& s);
+
+    int receiveChar(char &c);
+
+    int receiveCharArray(char **c);
 
 private:
-	int m_socketfd;
-	int m_portNo;
-	struct sockaddr_in m_servAddr;
-	struct hostent *m_server;
+    int m_socketfd;
+    int m_portNo;
+    struct sockaddr_in m_servAddr;
+    struct hostent *m_server;
 
 };
 

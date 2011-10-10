@@ -15,41 +15,41 @@
 #define TCP_SERVER_H__
 #include <Socket/TcpSocket.h>
 
-class TcpServer{
+class TcpServer {
 public:
-	/**
-	 * @brief constructor
-	 */
-	TcpServer(int maxWaitingCon = 5);
+    /**
+     * @brief constructor
+     */
+    TcpServer(int maxWaitingCon = 5);
 
 
-	/**
-	 * @brief listen for incomming connection 
-	 */
-	int listen(int port);
-	
-	/**
-	 * accepts a connection and returns the socket
-	 * of the newly connected client
-	 */
-	TcpSocket* accept();
-	
-	/*
-	 * Closes the server
-	 */
-	int close();
+    /**
+     * @brief listen for incomming connection
+     */
+    int listen(int port);
+
+    /**
+     * accepts a connection and returns the socket
+     * of the newly connected client
+     */
+    TcpSocket* accept();
+
+    /*
+     * Closes the server
+     */
+    int close();
 
 private:
-	/* methods */
-	int bind(int port);
-	
-	/* variables */
-	int m_socketfd;
-	int m_portNo;
-	int m_maxWaitCon;
-	struct sockaddr_in m_servAddr;
-	struct sockaddr_in m_cliAddr;
-	struct hostent *m_server;
+    /* methods */
+    int bind(int port);
+
+    /* variables */
+    int m_socketfd;
+    int m_portNo;
+    int m_maxWaitCon;
+    struct sockaddr_in m_servAddr;
+    struct sockaddr_in m_cliAddr;
+    struct hostent *m_server;
 };
 
 #endif

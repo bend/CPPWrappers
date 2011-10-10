@@ -13,17 +13,17 @@
 using namespace std;
 
 int Thread::start() {
-    if (pthread_create( &m_thread, 0, &Thread::go, this)){
+    if (pthread_create( &m_thread, 0, &Thread::go, this)) {
         cerr << "Thread::start could not start thread" << endl;
-		return -1;
-	}	
-	
+        return -1;
+    }
+
     return 0;
 }
 
-void* Thread::go(void* obj){
-	reinterpret_cast<Thread *>(obj)->run();
-	return NULL;
+void* Thread::go(void* obj) {
+    reinterpret_cast<Thread *>(obj)->run();
+    return NULL;
 }
 
 void *Thread::join() {

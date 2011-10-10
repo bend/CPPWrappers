@@ -2,7 +2,7 @@
  *
  *       @file  Errors.h
  *
- *      @brief  Defines errors 
+ *      @brief  Defines errors
  *
  *    @version  1.0
  *       @date  10/10/2011 15:40:54
@@ -18,7 +18,7 @@
 const int SOSUCC = 1;
 
 /**
- * Could not open Socket 
+ * Could not open Socket
  */
 const int SOCOPEN = -1;
 
