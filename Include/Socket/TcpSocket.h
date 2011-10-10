@@ -18,6 +18,9 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include <iostream>
 using namespace std;
