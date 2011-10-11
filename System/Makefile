@@ -1,5 +1,5 @@
 CFLAGS+= -Wall -pedantic -Werror -I../Include
-LDFLAGS+= -lpthread
+LDFLAGS+=
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 LIB=libsystemcpp.so
