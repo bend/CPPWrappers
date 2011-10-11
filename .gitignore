@@ -6,3 +6,5 @@ tags
 test
 *.so
 *.dylib*
+client
+server

@@ -117,7 +117,8 @@ int TcpSocket::receiveString(string &str) {
     if(receiveInt(s) < 0)
         return SOEREAD;
 
-    buffer = (char*)malloc(sizeof(char) * s);
+  //   buffer = (char*)malloc(sizeof(char) * s);
+  	buffer = new char[s];
 
     if(buffer == NULL)
         return SOEMEM;
@@ -129,7 +130,7 @@ int TcpSocket::receiveString(string &str) {
         return SOEREAD;
 
     str.assign(buffer, s);
-    delete buffer;
+    delete[] buffer;
     return SOSUCC;
 }
 
