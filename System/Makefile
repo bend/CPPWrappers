@@ -1,8 +1,8 @@
 CFLAGS+= -Wall -pedantic -Werror -I../Include
-LDFLAGS+= 
+LDFLAGS+= -lpthread
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
-LIB=libsystemcpp.dylib
+LIB=libsystemcpp.so
 CC=g++
 SHAREFLAG+=-fPIC
 INSTALL_INCLUDE=/usr/include
@@ -19,10 +19,10 @@ $(LIB):
 	@echo "Building objects file";
 	@for f in $(SOURCES:.cpp=) ; \
 		do \
-		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) ;\
+		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) $(LDFLAGS) ;\
 		done
 	@echo "Building library";
-		@$(CC) -shared $(OBJECTS) -o $(LIB)
+		@$(CC) -shared $(OBJECTS) -o $(LIB) $(CFLAGS) $(LDFLAGS)
 	@echo "Done!"
 install:
 	@echo "Copying headers to $(INSTALL_INCLUDE)"

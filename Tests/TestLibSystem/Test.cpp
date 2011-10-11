@@ -12,7 +12,9 @@ public:
         while(1) {
             m_sem->wait();
             cout << "Thread 1" << endl;
+			sleep(5);
             m_sem->post();
+			sleep(1);
         }
     }
 
@@ -33,6 +35,7 @@ public:
             cout << "Thread 2" << endl;
             sleep(1);
             m_sem->post();
+			sleep(1);
         }
     }
 
