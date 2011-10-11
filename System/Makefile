@@ -2,7 +2,7 @@ CFLAGS+= -Wall -pedantic -Werror -I../Include
 LDFLAGS+=
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
-LIB=libsystemcpp.so
+LIB=libsystemcpp.dylib
 CC=g++
 SHAREFLAG+=-fPIC
 INSTALL_INCLUDE=/usr/include

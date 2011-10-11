@@ -18,17 +18,25 @@ Mutex::Mutex(){
 }
 
 int Mutex::lock(){
-	return 1;
+	if(pthread_mutex_lock(m_mutex) < 0)
+		return -1;
+	return 0;
 }
 
 int Mutex::unlock(){
-	return 1;
+	if(pthread_mutex_unlock(m_mutex) < 0)
+		return -1;
+	return 0;
 }
 
 int Mutex::tryLock(){
-	return 1;
+	if(pthread_mutex_trylock(m_mutex) < 0)
+		return -1;
+	return 0;
 }
 
 int Mutex::destroy(){
-	return 1;
+	if(pthread_mutex_destroy(m_mutex)< 0)
+		return -1;
+	return 0;
 }
