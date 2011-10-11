@@ -13,15 +13,26 @@
 
 #include <Socket/TcpServer.h>
 #include <Socket/TcpSocket.h>
+#include <stdio.h>
 int main() {
-    TcpServer *server =  new TcpServer;
-    server->listen(2000);
-    TcpSocket* s = server->accept();
+    TcpServer server;
+    if(server.listen(2000)== SOEBIND){
+		perror("");
+		return -1;
+	}
+		
+    TcpSocket* s = server.accept();
+	if(s == NULL){
+		cout<<"Error: cannot accept conection"<<endl;
+		return -1;
+	}
     cout << "Connected client" << endl;
     int i = 4;
     i++;
-    string r = "gello ";
-    s->sendInt(i);
-    s->sendString(r);
+    s->sendInt(10);
+    s->sendString("hello");
+	s->disconnect();
+	delete s;
+	server.close();
     return 1;
 }

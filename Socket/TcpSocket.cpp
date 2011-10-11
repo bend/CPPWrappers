@@ -52,7 +52,7 @@ int TcpSocket::disconnect() {
     return SOSUCC;
 }
 
-int TcpSocket::sendString(string &str) {
+int TcpSocket::sendString(const string &str) {
     /* Send the string size */
     int s = (int) strlen(str.c_str());
 
@@ -68,7 +68,7 @@ int TcpSocket::sendString(string &str) {
     return SOSUCC;
 }
 
-int TcpSocket::sendInt(int &i) {
+int TcpSocket::sendInt(const int &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
@@ -77,7 +77,7 @@ int TcpSocket::sendInt(int &i) {
     return SOSUCC;
 }
 
-int TcpSocket::sendShort(short &i) {
+int TcpSocket::sendShort(const short &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
@@ -86,7 +86,7 @@ int TcpSocket::sendShort(short &i) {
     return SOSUCC;
 }
 
-int TcpSocket::sendChar(char &c) {
+int TcpSocket::sendChar(const char &c) {
     int r = send(m_socketfd, &c, sizeof(c), 0);
 
     if(r < 0)
@@ -95,7 +95,7 @@ int TcpSocket::sendChar(char &c) {
     return SOSUCC;
 }
 
-int TcpSocket::sendCharArray(char* c) {
+int TcpSocket::sendCharArray(const char* c) {
     /* Send the string size */
     int s = (int) strlen(c);
 
@@ -117,7 +117,6 @@ int TcpSocket::receiveString(string &str) {
     if(receiveInt(s) < 0)
         return SOEREAD;
 
-  //   buffer = (char*)malloc(sizeof(char) * s);
   	buffer = new char[s];
 
     if(buffer == NULL)

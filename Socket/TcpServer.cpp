@@ -39,7 +39,7 @@ int TcpServer::listen(int port) {
     if (bind(port) < 0)
         return SOEBIND;
 
-    if(::listen(m_socketfd, m_maxWaitCon) < 1)
+    if(::listen(m_socketfd, m_maxWaitCon) < 0)
         return SOELIST;
 
     return SOSUCC;
@@ -60,6 +60,5 @@ TcpSocket* TcpServer::accept() {
 int TcpServer::close() {
     if(::close(m_socketfd) < 0)
         return SOCLO;
-
     return SOSUCC;
 }

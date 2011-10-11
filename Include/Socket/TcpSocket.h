@@ -57,27 +57,27 @@ public:
     /**
      * @brief sends a string over the net
      */
-    int sendString(string &str);
+    int sendString(const string &str);
 
     /**
      * @brief sends an int over the net
      */
-    int sendInt(int &i);
+    int sendInt(const int &i);
 
     /**
      * @brief sends a short over the net
      */
-    int sendShort(short &i);
+    int sendShort(const short &i);
 
     /**
      * @brief sends a char over the net
      */
-    int sendChar(char &c);
+    int sendChar(const char &c);
 
     /**
      * @brief sends a char array over the net
      */
-    int sendCharArray(char* c);
+    int sendCharArray(const char* c);
 
     int receiveString(string &str);
 
