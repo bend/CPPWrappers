@@ -22,7 +22,7 @@ $(LIB):
 		$(CC) $(SHAREFLAG) -c $$f.cpp $(CFLAGS) $(LDFLAGS) ;\
 		done
 	@echo "Building library";
-		@$(CC) -shared $(OBJECTS) -o $(LIB) $(CFLAGS) $(LDFLAGS)
+		@$(CC) -shared $(OBJECTS) -o $(LIB) $(LDFLAGS)
 	@echo "Done!"
 install:
 	@echo "Copying headers to $(INSTALL_INCLUDE)"
