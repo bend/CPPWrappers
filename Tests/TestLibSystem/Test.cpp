@@ -3,58 +3,54 @@
 #include <iostream>
 using namespace std;
 
-class Test: public Thread {
+class Producer: public Thread {
 public:
-    Test(Semaphore *sem, Semaphore *mutex): m_sem(sem), m_mutex(mutex) {
+	Producer(Semaphore *can_produce, Semaphore *can_consume): m_canConsume(can_consume), m_canProduce(can_produce) {
     }
 
     void run() {
         while(1) {
-			m_mutex->wait();
-            m_sem->wait();
-			m_mutex->post();
-            cout << "Thread 1" << endl;
-            m_sem->post();
+			m_canProduce->wait();
+			cout<<"Producing item"<<endl;
+			m_canConsume->post();
         }
     }
 
 private:
-    Semaphore *m_sem;
-	Semaphore *m_mutex;
+	Semaphore *m_canConsume;
+    Semaphore *m_canProduce;
 
 
 };
 
-class Test2: public Thread {
+class Consumer: public Thread {
 public:
-    Test2(Semaphore *sem, Semaphore *mutex): m_sem(sem), m_mutex(mutex) {
+	Consumer(Semaphore *can_produce, Semaphore *can_consume): m_canConsume(can_consume), m_canProduce(can_produce){ 
     }
 
     void run() {
         while(1) {
-			m_mutex->wait();
-            m_sem->wait();
-			m_mutex->post();
-            cout << "Thread 2" << endl;
-            sleep(1);
-            m_sem->post();
+			m_canConsume->wait();
+			cout<<"Consuming item"<<endl;
+			sleep(2);
+			m_canProduce->post();
         }
     }
 
 private:
-    Semaphore *m_sem;
-	Semaphore *m_mutex;
+	Semaphore *m_canConsume;
+    Semaphore *m_canProduce;
 
 };
 int main() {
-    char name[] = "test_sem";
-    char name2[] = "test_mutex";
-    Semaphore *sem = new Semaphore(name, 1);
-    Semaphore *mutex = new Semaphore(name2, 1);
-    Test test(sem, mutex);
-    Test2 test2(sem, mutex);
-    test2.start();
-    test.start();
-    test.join();
-    test2.join();
+    char name[] = "/can_produce";
+    char name2[] = "/can_consume";
+    Semaphore *canProduce = new Semaphore(name, 10);
+    Semaphore *canConsume = new Semaphore(name2, 0);
+    Producer p(canProduce, canConsume);
+    Consumer c(canProduce, canConsume);
+    p.start();
+    c.start();
+    p.join();
+	c.join();
 }
