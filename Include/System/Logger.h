@@ -14,8 +14,24 @@
 #ifndef LOGGER_H__
 #define LOGGER_H__
 
+#include <iostream>
+#include <sstream>
+
+#include <sys/time.h>
+
+using namespace std;
 class Logger{
+public:
 	Logger();
+	virtual ~Logger();
+	ostringstream& log();
+    ostringstream os;
+
+
+
+private:
+	string getTimeDate();
+
 
 
 };
