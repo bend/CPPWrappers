@@ -31,7 +31,7 @@ int main() {
     i++;
     s->sendInt(10);
     s->sendString("hello");
-	s->disconnect();
+	s->close();
 	delete s;
 	server.close();
     return 1;

@@ -49,12 +49,6 @@ public:
     int connect(string host, unsigned short port);
 
     /**
-     * @brief disconnects from the host
-     * @return code
-     */
-    int disconnect();
-
-    /**
      * @brief sends a string over the net
      */
     int sendString(const string &str);
@@ -88,6 +82,12 @@ public:
     int receiveChar(char &c);
 
     int receiveCharArray(char **c);
+    
+	/**
+     * @brief disconnects from the host
+     * @return code
+     */
+    int close();
 
 private:
     int m_socketfd;

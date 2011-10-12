@@ -45,7 +45,7 @@ int TcpSocket::connect(string host, unsigned short port) {
     return SOSUCC;
 }
 
-int TcpSocket::disconnect() {
+int TcpSocket::close() {
     if(::close(m_socketfd) < 0)
         return SOCLO;
 
