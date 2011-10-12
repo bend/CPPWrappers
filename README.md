@@ -6,7 +6,7 @@ This library is a C++ wrapper for BSD sockets, pthread and semaphore.
 I've test it on MacOS, but it should be working on Linux
 Therer are 2 Libraries:
 
-- System, that contains the Thread class and Semaphore class
+- System, that contains the Thread class, Semaphore class and Mutex class
 - Socket, that contains the TcpSocket and TcpServer class
 
 ### Install
@@ -19,3 +19,6 @@ You need to do this for both folders
 ### Examples
 
 Small examples are located in the Tests folder. Basicaly the libraries are easy to use, notice that for the Thread class you need to subclass it and override the run() method
+
+### TODO
+Add an error logger, Udp sockets, http requests ...
