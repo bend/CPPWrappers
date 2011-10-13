@@ -8,3 +8,4 @@ test
 *.dylib*
 client
 server
+build
