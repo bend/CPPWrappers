@@ -13,5 +13,8 @@
 #include <System/Logger.h>
 
 int main(){
-Logger().log()<<"Hello";
+	Logger l("log.txt");
+	for(int i =0; i<5; i++){
+		l.log("INFO",0)<<"Hello";
+	}
 }

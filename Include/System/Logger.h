@@ -16,22 +16,19 @@
 
 #include <iostream>
 #include <sstream>
+#include <fstream>
 
-#include <sys/time.h>
-
+#include <System/Time.h>
 using namespace std;
 class Logger{
 public:
-	Logger();
+	Logger(string name);
 	virtual ~Logger();
-	ostringstream& log();
-    ostringstream os;
-
-
+	ofstream& log(string type, int indent=0);
+	ofstream m_out;
 
 private:
 	string getTimeDate();
-
 
 
 };

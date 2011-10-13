@@ -13,32 +13,27 @@
 
 #include<System/Logger.h>
 
-Logger::Logger(){
-}
-std::ostringstream& Logger::log()
-{
-	os << "- " << getTimeDate()<< "-\t";
-	return os;
+Logger::Logger(string path){
+	m_out.open(path.c_str(), ofstream::app | ofstream::out);
 }
 
-string Logger::getTimeDate()
-{
-    char buffer[11];
-    time_t t;
-    time(&t);
-    tm r = {0};
-    strftime(buffer, sizeof(buffer), "%X", localtime_r(&t, &r));
-    struct timeval tv;
-    gettimeofday(&tv, 0);
-    char result[100] = {0};
-    std::sprintf(result, "%s.%03ld", buffer, (long)tv.tv_usec / 1000); 
-    return result;
+std::ofstream& Logger::log(string type, int indent){
+	int i = 0;
+	while(i<indent){
+		m_out<<"\t";
+		i++;
+	}
+	m_out <<endl<<"[ "<< type <<" ] " <<"[ ON " << getTimeDate()<< " ]\t";
+	return m_out;
+}
+
+string Logger::getTimeDate(){
+	return Time::getTimeDate("dd/MM/YYYY - HH:mm:SS");
 }
 
 Logger::~Logger(){
-    os << std::endl;
-    fprintf(stdout, "%s", os.str().c_str());
-    fflush(stdout);
+	m_out<<endl;
+	m_out.flush();
+	m_out.close();
 }
-
 

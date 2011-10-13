@@ -37,10 +37,14 @@ string Time::getTimeDate(string format){
 	while(i < format.length()){
 		switch(format[i]){
 			case 'd': /* day */
+				if(tm->tm_mday < 10)
+					result.append("0");
 				result.append(Types::toString(tm->tm_mday));
 				i+=2;
 				break;
 			case 'M': /* Month */
+				if(tm->tm_mon < 9)
+					result.append("0");
 				result.append(Types::toString(tm->tm_mon+1));
 				i+=2;
 				break;
@@ -49,14 +53,20 @@ string Time::getTimeDate(string format){
 				i+=4;
 				break;
 			case 'H': /* Hour */
+				if(tm->tm_hour < 10)
+					result.append("0");
 				result.append(Types::toString(tm->tm_hour));
 				i+=2;
 				break;
 			case 'm': /* Minutes */
+				if(tm->tm_min < 10)
+					result.append("0");
 				result.append(Types::toString(tm->tm_min));
 				i+=2;
 				break;
 			case 'S': /* Seconds */ 
+				if(tm->tm_sec < 10)
+					result.append("0");
 				result.append(Types::toString(tm->tm_sec));
 				i+=2;
 				break;
