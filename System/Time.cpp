@@ -37,36 +37,35 @@ string Time::getTimeDate(string format){
 	while(i < format.length()){
 		switch(format[i]){
 			case 'd': /* day */
-				result.append(""+tm->tm_mday);
+				result.append(Types::toString(tm->tm_mday));
 				i+=2;
+				break;
 			case 'M': /* Month */
-				result.append(""+(tm->tm_mon+1));
+				result.append(Types::toString(tm->tm_mon+1));
 				i+=2;
 				break;
 			case 'Y': /* year */
-				result.append(""+(tm->tm_year+1900));
+				result.append(Types::toString((tm->tm_year+1900)));
 				i+=4;
 				break;
 			case 'H': /* Hour */
-				result.append(""+tm->tm_year);
+				result.append(Types::toString(tm->tm_hour));
 				i+=2;
 				break;
 			case 'm': /* Minutes */
-				result.append(""+tm->tm_min);
+				result.append(Types::toString(tm->tm_min));
 				i+=2;
 				break;
 			case 'S': /* Seconds */ 
-				result.append(""+tm->tm_sec);
+				result.append(Types::toString(tm->tm_sec));
 				i+=2;
 				break;
 			default:
-				result.append(format[i]);
+				result.append(Types::toString(format[i]));
 				i+=1;
 				break;
-
 		}
 	}
 	return result;
-	
-
 }
+
