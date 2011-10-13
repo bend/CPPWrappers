@@ -1,0 +1,37 @@
+cmake_minimum_required(VERSION 2.8)
+
+PROJECT(LIBSYSTEMCPP)
+SET(LIB_NAME socketcpp)
+
+INCLUDE_DIRECTORIES(
+	../Include
+)
+
+FILE(GLOB SOURCES  *.cpp)
+
+FILE(GLOB HEADERS ../Include/Socket/*.h)
+
+ADD_LIBRARY(
+	${LIB_NAME} 
+	SHARED
+	${SOURCES}
+)
+
+SET(INSTALL_PATH /usr)
+#Installation of the headers
+SET(headers_install_path ${INSTALL_PATH}/include/Socket)
+INSTALL(
+	FILES
+	${HEADERS}
+	DESTINATION ${headers_install_path}
+	PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
+
+#Installation of the library
+SET(lib_install_path ${INSTALL_PATH}/lib)
+INSTALL(
+	FILES
+	${PROJECT_BINARY_DIR}/libsocketcpp.dylib
+	DESTINATION ${lib_install_path}
+	PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
