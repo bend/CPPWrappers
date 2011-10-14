@@ -1,0 +1,56 @@
+.TH "Time" 3 "Fri Oct 14 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Time \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Time\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static long \fBgetTimeMilliseconds\fP ()"
+.br
+.RI "\fIreturns the system time in milliseconds \fP"
+.ti -1c
+.RI "static string \fBgetTimeDate\fP ()"
+.br
+.RI "\fIreturns the time and date formatted (i'\&.e Wed Oct 12 19:43:44 2011) \fP"
+.ti -1c
+.RI "static string \fBgetTimeDate\fP (string format)"
+.br
+.RI "\fIreturns the time and date formatted by the format string \fP"
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "string Time::getTimeDate ()\fC [static]\fP"
+.PP
+returns the time and date formatted (i'\&.e Wed Oct 12 19:43:44 2011) \fBReturns:\fP
+.RS 4
+the string containing the formated date 
+.RE
+.PP
+
+.SS "string Time::getTimeDate (stringformat)\fC [static]\fP"
+.PP
+returns the time and date formatted by the format string \fBParameters:\fP
+.RS 4
+\fIformat,:\fP the format (eg dd/MM/YYYY - HH:mm::SS)'\&. You can use all formats you want the only restriction is to use dd for the day MM for the month YYYY for the year HH for the hour mm for the minutes SS for the seconds 
+.RE
+.PP
+
+.SS "long Time::getTimeMilliseconds ()\fC [static]\fP"
+.PP
+returns the system time in milliseconds \fBReturns:\fP
+.RS 4
+a long containing the time 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CPPWrappers from the source code'\&.

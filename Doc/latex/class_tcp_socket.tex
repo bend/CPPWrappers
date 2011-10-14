@@ -1,0 +1,223 @@
+\hypertarget{class_tcp_socket}{
+\section{\-Tcp\-Socket \-Class \-Reference}
+\label{class_tcp_socket}\index{\-Tcp\-Socket@{\-Tcp\-Socket}}
+}
+
+
+{\ttfamily \#include $<$\-Tcp\-Socket.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tcp_socket_a132aa72af141d611f8bad96ba585a79f}{\-Tcp\-Socket} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{class_tcp_socket_ae303978c6f57069679951e0dc5180e34}{\-Tcp\-Socket} (int socketfd)
+\item 
+int \hyperlink{class_tcp_socket_a5800497a4550bf231c82dce401764e89}{connect} (string host, unsigned short port)
+\begin{DoxyCompactList}\small\item\em connects to the host on port \end{DoxyCompactList}\item 
+int \hyperlink{class_tcp_socket_a987977e736ea8f151edab45e717629b9}{send\-String} (const string \&str)
+\begin{DoxyCompactList}\small\item\em sends a string over the net \end{DoxyCompactList}\item 
+int \hyperlink{class_tcp_socket_a48a136b315210e63947481b46cf5309e}{send\-Int} (const int \&i)
+\begin{DoxyCompactList}\small\item\em sends an int over the net \end{DoxyCompactList}\item 
+int \hyperlink{class_tcp_socket_aab4a5fae43ae9fd2ad6b3980f1233b04}{send\-Short} (const short \&i)
+\begin{DoxyCompactList}\small\item\em sends a short over the net \end{DoxyCompactList}\item 
+int \hyperlink{class_tcp_socket_ab05cf4824cbb683d9232ccc65c29e0af}{send\-Char} (const char \&c)
+\begin{DoxyCompactList}\small\item\em sends a char over the net \end{DoxyCompactList}\item 
+int \hyperlink{class_tcp_socket_a50388da66f21876e87818b0e04023cb8}{send\-Char\-Array} (const char $\ast$c)
+\begin{DoxyCompactList}\small\item\em sends a char array over the net \end{DoxyCompactList}\item 
+int \hyperlink{class_tcp_socket_a217845d67a0f8893df89e0985cee84c8}{receive\-String} (string \&str)
+\item 
+int \hyperlink{class_tcp_socket_a80cedcd95ff145435ca866f77809451a}{receive\-Int} (int \&i)
+\item 
+int \hyperlink{class_tcp_socket_aa736617b9858cf79f12e8acfb6e44a2c}{receive\-Short} (short \&s)
+\item 
+int \hyperlink{class_tcp_socket_ada65f0193e099c180716f6a1600d928d}{receive\-Char} (char \&c)
+\item 
+int \hyperlink{class_tcp_socket_a02fd7d5277ed2479154acba86df0b4a9}{receive\-Char\-Array} (char $\ast$$\ast$c)
+\item 
+int \hyperlink{class_tcp_socket_add6cc3a1ebaab1d66b63867765fc30dc}{close} ()
+\begin{DoxyCompactList}\small\item\em disconnects from the host \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_tcp_socket_a132aa72af141d611f8bad96ba585a79f}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!\-Tcp\-Socket@{\-Tcp\-Socket}}
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{\-Tcp\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}\-Tcp\-Socket\-::\-Tcp\-Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a132aa72af141d611f8bad96ba585a79f}
+
+
+default constructor 
+
+\hypertarget{class_tcp_socket_ae303978c6f57069679951e0dc5180e34}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!\-Tcp\-Socket@{\-Tcp\-Socket}}
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{\-Tcp\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}\-Tcp\-Socket\-::\-Tcp\-Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{socketfd}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_ae303978c6f57069679951e0dc5180e34}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_tcp_socket_add6cc3a1ebaab1d66b63867765fc30dc}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!close@{close}}
+\index{close@{close}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_add6cc3a1ebaab1d66b63867765fc30dc}
+
+
+disconnects from the host 
+
+\begin{DoxyReturn}{\-Returns}
+code 
+\end{DoxyReturn}
+\hypertarget{class_tcp_socket_a5800497a4550bf231c82dce401764e89}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!connect@{connect}}
+\index{connect@{connect}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::connect (
+\begin{DoxyParamCaption}
+\item[{string}]{host, }
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a5800497a4550bf231c82dce401764e89}
+
+
+connects to the host on port 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em host} & \-: the host \\
+\hline
+{\em the} & port \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-S\-O\-S\-U\-C\-C if succeded \-S\-O\-C\-O\-P\-E\-N if socket could not be opened \-S\-O\-N\-H\-O\-S\-T if host not found \-S\-O\-C\-O\-N\-N if could not connect to host 
+\end{DoxyReturn}
+\hypertarget{class_tcp_socket_ada65f0193e099c180716f6a1600d928d}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!receive\-Char@{receive\-Char}}
+\index{receive\-Char@{receive\-Char}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{receive\-Char}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::receive\-Char (
+\begin{DoxyParamCaption}
+\item[{char \&}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_ada65f0193e099c180716f6a1600d928d}
+\hypertarget{class_tcp_socket_a02fd7d5277ed2479154acba86df0b4a9}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!receive\-Char\-Array@{receive\-Char\-Array}}
+\index{receive\-Char\-Array@{receive\-Char\-Array}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{receive\-Char\-Array}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::receive\-Char\-Array (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a02fd7d5277ed2479154acba86df0b4a9}
+\hypertarget{class_tcp_socket_a80cedcd95ff145435ca866f77809451a}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!receive\-Int@{receive\-Int}}
+\index{receive\-Int@{receive\-Int}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{receive\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::receive\-Int (
+\begin{DoxyParamCaption}
+\item[{int \&}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a80cedcd95ff145435ca866f77809451a}
+\hypertarget{class_tcp_socket_aa736617b9858cf79f12e8acfb6e44a2c}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!receive\-Short@{receive\-Short}}
+\index{receive\-Short@{receive\-Short}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{receive\-Short}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::receive\-Short (
+\begin{DoxyParamCaption}
+\item[{short \&}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_aa736617b9858cf79f12e8acfb6e44a2c}
+\hypertarget{class_tcp_socket_a217845d67a0f8893df89e0985cee84c8}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!receive\-String@{receive\-String}}
+\index{receive\-String@{receive\-String}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{receive\-String}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::receive\-String (
+\begin{DoxyParamCaption}
+\item[{string \&}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a217845d67a0f8893df89e0985cee84c8}
+\hypertarget{class_tcp_socket_ab05cf4824cbb683d9232ccc65c29e0af}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!send\-Char@{send\-Char}}
+\index{send\-Char@{send\-Char}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{send\-Char}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::send\-Char (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_ab05cf4824cbb683d9232ccc65c29e0af}
+
+
+sends a char over the net 
+
+\hypertarget{class_tcp_socket_a50388da66f21876e87818b0e04023cb8}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!send\-Char\-Array@{send\-Char\-Array}}
+\index{send\-Char\-Array@{send\-Char\-Array}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{send\-Char\-Array}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::send\-Char\-Array (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a50388da66f21876e87818b0e04023cb8}
+
+
+sends a char array over the net 
+
+\hypertarget{class_tcp_socket_a48a136b315210e63947481b46cf5309e}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!send\-Int@{send\-Int}}
+\index{send\-Int@{send\-Int}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{send\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::send\-Int (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a48a136b315210e63947481b46cf5309e}
+
+
+sends an int over the net 
+
+\hypertarget{class_tcp_socket_aab4a5fae43ae9fd2ad6b3980f1233b04}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!send\-Short@{send\-Short}}
+\index{send\-Short@{send\-Short}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{send\-Short}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::send\-Short (
+\begin{DoxyParamCaption}
+\item[{const short \&}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_aab4a5fae43ae9fd2ad6b3980f1233b04}
+
+
+sends a short over the net 
+
+\hypertarget{class_tcp_socket_a987977e736ea8f151edab45e717629b9}{
+\index{\-Tcp\-Socket@{\-Tcp\-Socket}!send\-String@{send\-String}}
+\index{send\-String@{send\-String}!TcpSocket@{\-Tcp\-Socket}}
+\subsubsection[{send\-String}]{\setlength{\rightskip}{0pt plus 5cm}int \-Tcp\-Socket\-::send\-String (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}}
+\label{class_tcp_socket_a987977e736ea8f151edab45e717629b9}
+
+
+sends a string over the net 
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Include/\-Socket/\hyperlink{_tcp_socket_8h}{\-Tcp\-Socket.\-h}\item 
+\-Socket/\hyperlink{_tcp_socket_8cpp}{\-Tcp\-Socket.\-cpp}\end{DoxyCompactItemize}

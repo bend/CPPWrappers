@@ -1,0 +1,94 @@
+.TH "Thread" 3 "Fri Oct 14 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Thread \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Thread\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBstart\fP ()"
+.br
+.RI "\fIstarts the thread and executes the run method \fP"
+.ti -1c
+.RI "void * \fBjoin\fP ()"
+.br
+.RI "\fICauses the calling thread to wait for the termination of the specified thread'\&. \fP"
+.ti -1c
+.RI "int \fBdetach\fP ()"
+.br
+.RI "\fIUsed to indicate to the implementation that storage for the thread can be reclaimed when the thread terminates'\&. \fP"
+.ti -1c
+.RI "int \fBequals\fP (\fBThread\fP *t)"
+.br
+.RI "\fItests if the 2 threads are the same \fP"
+.ti -1c
+.RI "void \fBexit\fP (void *value_ptr)"
+.br
+.RI "\fIThe exit method terminates the calling thread'\&. \fP"
+.ti -1c
+.RI "int \fBcancel\fP ()"
+.br
+.RI "\fIThe \fBcancel()\fP method requests that thread be canceled'\&. \fP"
+.ti -1c
+.RI "pthread_t \fBgetThread\fP ()"
+.br
+.RI "\fIreturns the pthread \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBrun\fP ()=0"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "int Thread::cancel ()"
+.PP
+The \fBcancel()\fP method requests that thread be canceled'\&. The target thread's cancelability state and type determines when the cancellation takes effect'\&. When the cancellation is acted on, the cancellation cleanup handlers for thread are called'\&. When the last cancellation cleanup handler returns, the thread-specific data destructor functions will be called for thread'\&. When the last destructor function returns, thread will be terminated'\&.a 
+.SS "int Thread::detach ()"
+.PP
+Used to indicate to the implementation that storage for the thread can be reclaimed when the thread terminates'\&. If thread has not terminated, \fBdetach()\fP will not cause it to terminate 
+.PP
+\fBReturns:\fP
+.RS 4
+0 if success and a value < 0 if failure 
+.RE
+.PP
+
+.SS "int Thread::equals (\fBThread\fP *t)"
+.PP
+tests if the 2 threads are the same \fBReturns:\fP
+.RS 4
+true is equals, false otherwise 
+.RE
+.PP
+
+.SS "void Thread::exit (void *value_ptr)"
+.PP
+The exit method terminates the calling thread'\&. 
+.SS "pthread_t Thread::getThread ()"
+.PP
+returns the pthread 
+.SS "void * Thread::join ()"
+.PP
+Causes the calling thread to wait for the termination of the specified thread'\&. 
+.SS "virtual void Thread::run ()\fC [protected, pure virtual]\fP"
+.SS "int Thread::start ()"
+.PP
+starts the thread and executes the run method \fBReturns:\fP
+.RS 4
+0 if success, -1 otherwise 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CPPWrappers from the source code'\&.
