@@ -108,10 +108,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutex.html#a593423d868daf926c7b0d63a833ae29a">Mutex</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a593423d868daf926c7b0d63a833ae29a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutex.html#ab779f47fd979c9645703b2110ad48a6b">lock</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">locks the mutex.  <a href="#ab779f47fd979c9645703b2110ad48a6b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutex.html#ae259095f6fdebcc45fc85c6f4d52da5a">tryLock</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The trylock() method locks mutex.  <a href="#ae259095f6fdebcc45fc85c6f4d52da5a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee">unlock</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If the current thread holds the lock on mutex, then the <a class="el" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee" title="If the current thread holds the lock on mutex, then the unlock() function unlocks mutex...">unlock()</a> function unlocks mutex.  <a href="#a73ffa1b2f7fef95563bdb83fed8e57ee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutex.html#a28466fe885b8458cdf152a81214d2398">destroy</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_mutex.html#a28466fe885b8458cdf152a81214d2398" title="The destroy() method frees the resources allocated for mutex.">destroy()</a> method frees the resources allocated for mutex.  <a href="#a28466fe885b8458cdf152a81214d2398"></a><br/></td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a593423d868daf926c7b0d63a833ae29a"></a><!-- doxytag: member="Mutex::Mutex" ref="a593423d868daf926c7b0d63a833ae29a" args="()" -->
@@ -127,6 +132,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Constructor. </p>
 
 </div>
 </div>
@@ -145,6 +152,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>The <a class="el" href="class_mutex.html#a28466fe885b8458cdf152a81214d2398" title="The destroy() method frees the resources allocated for mutex.">destroy()</a> method frees the resources allocated for mutex. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If successful, <a class="el" href="class_mutex.html#a28466fe885b8458cdf152a81214d2398" title="The destroy() method frees the resources allocated for mutex.">destroy()</a> will return zero. Otherwise, an error number will be returned to indicate the error. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ab779f47fd979c9645703b2110ad48a6b"></a><!-- doxytag: member="Mutex::lock" ref="ab779f47fd979c9645703b2110ad48a6b" args="()" -->
@@ -160,6 +170,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>locks the mutex. </p>
+<p>If the mutex is already locked, the calling thread will block until the mutex becomes available. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If successful, <a class="el" href="class_mutex.html#ab779f47fd979c9645703b2110ad48a6b" title="locks the mutex.">lock()</a> will return zero. Otherwise, an error number will be returned to indicate the error. </dd></dl>
 
 </div>
 </div>
@@ -177,6 +191,10 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>The trylock() method locks mutex. </p>
+<p>If the mutex is already locked, trylock() will not block waiting for the mutex, but will return an error condition </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If successful, trylock() will return zero. Otherwise, an error number will be returned to indicate the error. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a73ffa1b2f7fef95563bdb83fed8e57ee"></a><!-- doxytag: member="Mutex::unlock" ref="a73ffa1b2f7fef95563bdb83fed8e57ee" args="()" -->
@@ -192,6 +210,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>If the current thread holds the lock on mutex, then the <a class="el" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee" title="If the current thread holds the lock on mutex, then the unlock() function unlocks mutex...">unlock()</a> function unlocks mutex. </p>
+<p>Calling <a class="el" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee" title="If the current thread holds the lock on mutex, then the unlock() function unlocks mutex...">unlock()</a> with a mutex that the calling thread does not hold will result in undefined behavior. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If successful, <a class="el" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee" title="If the current thread holds the lock on mutex, then the unlock() function unlocks mutex...">unlock()</a> will return zero. Otherwise, an error number will be returned to indicate the error. </dd></dl>
 
 </div>
 </div>
@@ -219,7 +241,7 @@ Public Member Functions</h2></td></tr>
 </div>
 
 
-    <li class="footer">Generated on Fri Oct 14 2011 14:56:13 for CPPWrappers by
+    <li class="footer">Generated on Sun Oct 16 2011 01:50:09 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

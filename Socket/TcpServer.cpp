@@ -22,7 +22,7 @@ int TcpServer::bind(int port) {
     m_portNo = (int) port;
 
     if(m_socketfd < 0)
-        return SOCOPEN;
+        return SocketErrors::SOCOPEN;
 
     bzero((char *) &m_servAddr, sizeof(m_servAddr));
     m_servAddr.sin_family = AF_INET;
@@ -30,19 +30,19 @@ int TcpServer::bind(int port) {
     m_servAddr.sin_port = htons(m_portNo);
 
     if (::bind(m_socketfd, (struct sockaddr *) &m_servAddr, sizeof(m_servAddr)) < 0)
-        return SOEBIND;
+        return SocketErrors::SOEBIND;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpServer::listen(int port) {
     if (bind(port) < 0)
-        return SOEBIND;
+        return SocketErrors::SOEBIND;
 
     if(::listen(m_socketfd, m_maxWaitCon) < 0)
-        return SOELIST;
+        return SocketErrors::SOELIST;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 TcpSocket* TcpServer::accept() {
@@ -59,6 +59,6 @@ TcpSocket* TcpServer::accept() {
 
 int TcpServer::close() {
     if(::close(m_socketfd) < 0)
-        return SOCLO;
-    return SOSUCC;
+        return SocketErrors::SOCLO;
+    return SocketErrors::SOSUCC;
 }

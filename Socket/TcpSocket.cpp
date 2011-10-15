@@ -25,12 +25,12 @@ int TcpSocket::connect(string host, unsigned short port) {
     m_portNo = (int)port;
 
     if (m_socketfd < 0)
-        return SOCOPEN;
+        return SocketErrors::SOCOPEN;
 
     m_server = gethostbyname(host.c_str());
 
     if (m_server == NULL) {
-        return SONHOST;
+        return SocketErrors::SONHOST;
     }
 
     bzero((char *) &m_servAddr, sizeof(m_servAddr));
@@ -40,16 +40,16 @@ int TcpSocket::connect(string host, unsigned short port) {
 
     /* Connect to the host */
     if (::connect(m_socketfd, (struct sockaddr *) &m_servAddr, sizeof(m_servAddr)) < 0)
-        return SOCONN;
+        return SocketErrors::SOCONN;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::close() {
     if(::close(m_socketfd) < 0)
-        return SOCLO;
+        return SocketErrors::SOCLO;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::sendString(const string &str) {
@@ -57,42 +57,42 @@ int TcpSocket::sendString(const string &str) {
     int s = (int) strlen(str.c_str());
 
     if(sendInt(s) < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
     /* Send the string */
     int r = send(m_socketfd, str.c_str(), s, 0);
 
     if(r < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::sendInt(const int &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::sendShort(const short &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::sendChar(const char &c) {
     int r = send(m_socketfd, &c, sizeof(c), 0);
 
     if(r < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::sendCharArray(const char* c) {
@@ -100,14 +100,14 @@ int TcpSocket::sendCharArray(const char* c) {
     int s = (int) strlen(c);
 
     if(sendInt(s) < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
     int r = send(m_socketfd, c, s, 0);
 
     if(r < 0)
-        return SOEWRITE;
+        return SocketErrors::SOEWRITE;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::receiveString(string &str) {
@@ -115,67 +115,67 @@ int TcpSocket::receiveString(string &str) {
     int s = 0;
 
     if(receiveInt(s) < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
   	buffer = new char[s];
 
     if(buffer == NULL)
-        return SOEMEM;
+        return SocketErrors::SOEMEM;
 
     bzero(buffer, s);
     int n = read(m_socketfd, buffer, s);
 
     if(n < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
     str.assign(buffer, s);
     delete[] buffer;
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::receiveInt(int &i) {
     int n = read(m_socketfd, &i, sizeof(int));
 
     if(n < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::receiveShort(short& s) {
     int n = read(m_socketfd, &s, sizeof(short));
 
     if(n < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::receiveChar(char &c) {
     int n = read(m_socketfd, &c, sizeof(char));
 
     if(n < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }
 
 int TcpSocket::receiveCharArray(char **c) {
     int s = 0;
 
     if(receiveInt(s) < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
     *c = (char*)malloc(sizeof(char) * s);
 
     if((*c) == NULL)
-        return SOEMEM;
+        return SocketErrors::SOEMEM;
 
     bzero(*c, s);
     int n = read(m_socketfd, *c, s);
 
     if(n < 0)
-        return SOEREAD;
+        return SocketErrors::SOEREAD;
 
-    return SOSUCC;
+    return SocketErrors::SOSUCC;
 }

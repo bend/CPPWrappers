@@ -1,4 +1,4 @@
-.TH "TcpServer" 3 "Fri Oct 14 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.TH "TcpServer" 3 "Sun Oct 16 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,16 +31,36 @@ TcpServer \-
 .PP 
 .SS "TcpServer::TcpServer (intmaxWaitingCon = \fC5\fP)"
 .PP
-constructor 
+constructor \fBParameters:\fP
+.RS 4
+\fImaxWaitingCon\fP the number of queued connection that the server can handle, if this number is reached, the server will refuse connections 
+.RE
+.PP
+
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBTcpSocket\fP * TcpServer::accept ()"
 .PP
-accepts a connection and returns the socket of the newly connected client 
+accepts a connection and returns the socket of the newly connected client \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
 .SS "int TcpServer::close ()"
 .SS "int TcpServer::listen (intport)"
 .PP
-listen for incomming connection 
+listen for incomming connection \fBParameters:\fP
+.RS 4
+\fIport\fP the port on which the server will listen for inconming connections 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
 
 .SH "Author"
 .PP 

@@ -14,9 +14,10 @@
 #include <Socket/TcpServer.h>
 #include <Socket/TcpSocket.h>
 #include <stdio.h>
+#include <Socket/SocketErrors.h>
 int main() {
     TcpServer server;
-    if(server.listen(2000)== SOEBIND){
+    if(server.listen(2000)== SocketErrors::SOEBIND){
 		perror("");
 		return -1;
 	}

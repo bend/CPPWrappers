@@ -22,8 +22,18 @@
 using namespace std;
 class Logger{
 public:
+	/**
+	 * @brief Constructor
+	 * @param name the path to the log file.
+	 * If the file does not exist, it will be created, otherwise, it will be openned in append mode
+	 */
 	Logger(string name);
 	virtual ~Logger();
+	/**
+	 * @brief Log the stream input
+	 * @param type: the Type of data to log (i.e. DEBUG, ERROR, ...)
+	 * @param indent the indent level
+	 */
 	ofstream& log(string type, int indent=0);
 	ofstream m_out;
 

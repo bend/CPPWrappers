@@ -34,6 +34,11 @@ int \hyperlink{class_tcp_server_a0f336f8567ae59bd6674d2def0dacba7}{close} ()
 constructor 
 
 
+\begin{DoxyParams}{\-Parameters}
+{\em max\-Waiting\-Con} & the number of queued connection that the server can handle, if this number is reached, the server will refuse connections \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{\-Member \-Function \-Documentation}
 \hypertarget{class_tcp_server_a5d7576df5b15290692c60a96bac15aa6}{
@@ -49,6 +54,9 @@ constructor
 
 accepts a connection and returns the socket of the newly connected client 
 
+\begin{DoxyReturn}{\-Returns}
+0 if successful 
+\end{DoxyReturn}
 \hypertarget{class_tcp_server_a0f336f8567ae59bd6674d2def0dacba7}{
 \index{\-Tcp\-Server@{\-Tcp\-Server}!close@{close}}
 \index{close@{close}!TcpServer@{\-Tcp\-Server}}
@@ -71,6 +79,14 @@ accepts a connection and returns the socket of the newly connected client
 
 listen for incomming connection 
 
+
+\begin{DoxyParams}{\-Parameters}
+{\em port} & the port on which the server will listen for inconming connections \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+0 if successful 
+\end{DoxyReturn}
 
 
 \-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

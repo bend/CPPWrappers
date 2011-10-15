@@ -10,15 +10,15 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_mutex_a593423d868daf926c7b0d63a833ae29a}{\-Mutex} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
 int \hyperlink{class_mutex_ab779f47fd979c9645703b2110ad48a6b}{lock} ()
-\item 
+\begin{DoxyCompactList}\small\item\em locks the mutex. \end{DoxyCompactList}\item 
 int \hyperlink{class_mutex_ae259095f6fdebcc45fc85c6f4d52da5a}{try\-Lock} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \-The trylock() method locks mutex. \end{DoxyCompactList}\item 
 int \hyperlink{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}{unlock} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \-If the current thread holds the lock on mutex, then the \hyperlink{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}{unlock()} function unlocks mutex. \end{DoxyCompactList}\item 
 int \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \-The \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy()} method frees the resources allocated for mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Constructor \& \-Destructor \-Documentation}
@@ -33,6 +33,10 @@ int \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy} ()
 \label{class_mutex_a593423d868daf926c7b0d63a833ae29a}
 
 
+\-Constructor. 
+
+
+
 \subsection{\-Member \-Function \-Documentation}
 \hypertarget{class_mutex_a28466fe885b8458cdf152a81214d2398}{
 \index{\-Mutex@{\-Mutex}!destroy@{destroy}}
@@ -43,6 +47,13 @@ int \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy} ()
 \end{DoxyParamCaption}
 )}}
 \label{class_mutex_a28466fe885b8458cdf152a81214d2398}
+
+
+\-The \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy()} method frees the resources allocated for mutex. 
+
+\begin{DoxyReturn}{\-Returns}
+\-If successful, \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy()} will return zero. \-Otherwise, an error number will be returned to indicate the error. 
+\end{DoxyReturn}
 \hypertarget{class_mutex_ab779f47fd979c9645703b2110ad48a6b}{
 \index{\-Mutex@{\-Mutex}!lock@{lock}}
 \index{lock@{lock}!Mutex@{\-Mutex}}
@@ -52,6 +63,13 @@ int \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy} ()
 \end{DoxyParamCaption}
 )}}
 \label{class_mutex_ab779f47fd979c9645703b2110ad48a6b}
+
+
+locks the mutex. 
+
+\-If the mutex is already locked, the calling thread will block until the mutex becomes available. \begin{DoxyReturn}{\-Returns}
+\-If successful, \hyperlink{class_mutex_ab779f47fd979c9645703b2110ad48a6b}{lock()} will return zero. \-Otherwise, an error number will be returned to indicate the error. 
+\end{DoxyReturn}
 \hypertarget{class_mutex_ae259095f6fdebcc45fc85c6f4d52da5a}{
 \index{\-Mutex@{\-Mutex}!try\-Lock@{try\-Lock}}
 \index{try\-Lock@{try\-Lock}!Mutex@{\-Mutex}}
@@ -61,6 +79,13 @@ int \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy} ()
 \end{DoxyParamCaption}
 )}}
 \label{class_mutex_ae259095f6fdebcc45fc85c6f4d52da5a}
+
+
+\-The trylock() method locks mutex. 
+
+\-If the mutex is already locked, trylock() will not block waiting for the mutex, but will return an error condition \begin{DoxyReturn}{\-Returns}
+\-If successful, trylock() will return zero. \-Otherwise, an error number will be returned to indicate the error. 
+\end{DoxyReturn}
 \hypertarget{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}{
 \index{\-Mutex@{\-Mutex}!unlock@{unlock}}
 \index{unlock@{unlock}!Mutex@{\-Mutex}}
@@ -70,6 +95,13 @@ int \hyperlink{class_mutex_a28466fe885b8458cdf152a81214d2398}{destroy} ()
 \end{DoxyParamCaption}
 )}}
 \label{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}
+
+
+\-If the current thread holds the lock on mutex, then the \hyperlink{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}{unlock()} function unlocks mutex. 
+
+\-Calling \hyperlink{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}{unlock()} with a mutex that the calling thread does not hold will result in undefined behavior. \begin{DoxyReturn}{\-Returns}
+\-If successful, \hyperlink{class_mutex_a73ffa1b2f7fef95563bdb83fed8e57ee}{unlock()} will return zero. \-Otherwise, an error number will be returned to indicate the error. 
+\end{DoxyReturn}
 
 
 \-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

@@ -5,6 +5,7 @@ var NAVTREE =
       [ "Logger", "class_logger.html", null ],
       [ "Mutex", "class_mutex.html", null ],
       [ "Semaphore", "class_semaphore.html", null ],
+      [ "SocketErrors", "class_socket_errors.html", null ],
       [ "TcpServer", "class_tcp_server.html", null ],
       [ "TcpSocket", "class_tcp_socket.html", null ],
       [ "Thread", "class_thread.html", null ],
@@ -14,7 +15,7 @@ var NAVTREE =
     [ "Class Index", "classes.html", null ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
-      [ "Include/Socket/Errors.h", "_errors_8h.html", null ],
+      [ "Include/Socket/SocketErrors.h", "_socket_errors_8h.html", null ],
       [ "Include/Socket/TcpServer.h", "_tcp_server_8h.html", null ],
       [ "Include/Socket/TcpSocket.h", "_tcp_socket_8h.html", null ],
       [ "Include/System/Logger.h", "_logger_8h.html", null ],
@@ -39,8 +40,7 @@ var NAVTREE =
       ] ],
       [ "Socket", "dir_8b9b8c7106f6280fe3a32311b68b19fb.html", null ],
       [ "System", "dir_5b25e7294e083e37fc0840e783eb0df7.html", null ]
-    ] ],
-    [ "File Members", "globals.html", null ]
+    ] ]
   ] ]
 ];
 

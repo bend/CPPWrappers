@@ -132,6 +132,12 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>constructor </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxWaitingCon</td><td>the number of queued connection that the server can handle, if this number is reached, the server will refuse connections </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -151,6 +157,7 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>accepts a connection and returns the socket of the newly connected client </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 if successful </dd></dl>
 
 </div>
 </div>
@@ -186,6 +193,13 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>listen for incomming connection </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>the port on which the server will listen for inconming connections </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 if successful </dd></dl>
 
 </div>
 </div>
@@ -213,7 +227,7 @@ Public Member Functions</h2></td></tr>
 </div>
 
 
-    <li class="footer">Generated on Fri Oct 14 2011 14:56:13 for CPPWrappers by
+    <li class="footer">Generated on Sun Oct 16 2011 01:50:09 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

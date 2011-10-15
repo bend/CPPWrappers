@@ -1,61 +1,24 @@
-.TH "Include/Socket/Errors.h" 3 "Fri Oct 14 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.TH "Include/Socket/Errors.h" 3 "Sun Oct 16 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 Include/Socket/Errors.h \- 
 .PP
-Defines errors'\&.  
+Defines socket errors'\&.  
 
 .SH SYNOPSIS
 .br
 .PP
-.SS "Variables"
+.SS "Classes"
 
 .in +1c
 .ti -1c
-.RI "const int \fBSOSUCC\fP = 1"
+.RI "class \fBSocketError\fP"
 .br
-.RI "\fISuccess'\&. \fP"
-.ti -1c
-.RI "const int \fBSOCOPEN\fP = -1"
-.br
-.RI "\fICould not open Socket'\&. \fP"
-.ti -1c
-.RI "const int \fBSONHOST\fP = -2"
-.br
-.RI "\fIHost not found'\&. \fP"
-.ti -1c
-.RI "const int \fBSOCONN\fP = -3"
-.br
-.RI "\fICould not connect'\&. \fP"
-.ti -1c
-.RI "const int \fBSOCLO\fP = -4"
-.br
-.RI "\fICould not close the connection'\&. \fP"
-.ti -1c
-.RI "const int \fBSOEWRITE\fP = -5"
-.br
-.RI "\fICould not write to socket'\&. \fP"
-.ti -1c
-.RI "const int \fBSOEREAD\fP = -6"
-.br
-.RI "\fICould not read from socket'\&. \fP"
-.ti -1c
-.RI "const int \fBSOEMEM\fP = -7"
-.br
-.RI "\fICould not allocate mem'\&. \fP"
-.ti -1c
-.RI "const int \fBSOEBIND\fP = -8"
-.br
-.RI "\fICould not bind socket'\&. \fP"
-.ti -1c
-.RI "const int \fBSOELIST\fP = -9"
-.br
-.RI "\fICould not listen on socket'\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Defines errors'\&. 
+Defines socket errors'\&. 
 
 \fBVersion:\fP
 .RS 4
@@ -73,38 +36,6 @@ Ben D'\&. (BD), dbapps2@gmail.com
 .RE
 .PP
 
-.SH "Variable Documentation"
-.PP 
-.SS "const int \fBSOCLO\fP = -4"
-.PP
-Could not close the connection'\&. 
-.SS "const int \fBSOCONN\fP = -3"
-.PP
-Could not connect'\&. 
-.SS "const int \fBSOCOPEN\fP = -1"
-.PP
-Could not open Socket'\&. 
-.SS "const int \fBSOEBIND\fP = -8"
-.PP
-Could not bind socket'\&. 
-.SS "const int \fBSOELIST\fP = -9"
-.PP
-Could not listen on socket'\&. 
-.SS "const int \fBSOEMEM\fP = -7"
-.PP
-Could not allocate mem'\&. 
-.SS "const int \fBSOEREAD\fP = -6"
-.PP
-Could not read from socket'\&. 
-.SS "const int \fBSOEWRITE\fP = -5"
-.PP
-Could not write to socket'\&. 
-.SS "const int \fBSONHOST\fP = -2"
-.PP
-Host not found'\&. 
-.SS "const int \fBSOSUCC\fP = 1"
-.PP
-Success'\&. 
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for CPPWrappers from the source code'\&.
