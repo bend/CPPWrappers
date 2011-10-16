@@ -1,0 +1,144 @@
+.TH "TcpSocket" 3 "Sun Oct 16 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TcpSocket \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TcpSocket\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTcpSocket\fP ()"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBTcpSocket\fP (int socketfd)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (string host, unsigned short port)"
+.br
+.RI "\fIconnects to the host on port \fP"
+.ti -1c
+.RI "int \fBsendString\fP (const string &str)"
+.br
+.RI "\fIsends a string over the net \fP"
+.ti -1c
+.RI "int \fBsendInt\fP (const int &i)"
+.br
+.RI "\fIsends an int over the net \fP"
+.ti -1c
+.RI "int \fBsendShort\fP (const short &i)"
+.br
+.RI "\fIsends a short over the net \fP"
+.ti -1c
+.RI "int \fBsendChar\fP (const char &c)"
+.br
+.RI "\fIsends a char over the net \fP"
+.ti -1c
+.RI "int \fBsendCharArray\fP (const char *c)"
+.br
+.RI "\fIsends a char array over the net \fP"
+.ti -1c
+.RI "int \fBreceiveString\fP (string &str)"
+.br
+.ti -1c
+.RI "int \fBreceiveInt\fP (int &i)"
+.br
+.ti -1c
+.RI "int \fBreceiveShort\fP (short &s)"
+.br
+.ti -1c
+.RI "int \fBreceiveChar\fP (char &c)"
+.br
+.ti -1c
+.RI "int \fBreceiveCharArray\fP (char **c)"
+.br
+.ti -1c
+.RI "int \fBclose\fP ()"
+.br
+.RI "\fIdisconnects from the host \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TcpSocket::TcpSocket ()"
+.PP
+default constructor 
+.SS "TcpSocket::TcpSocket (intsocketfd)"
+.SH "Member Function Documentation"
+.PP 
+.SS "int TcpSocket::close ()"
+.PP
+disconnects from the host \fBReturns:\fP
+.RS 4
+code 
+.RE
+.PP
+
+.SS "int TcpSocket::connect (stringhost, unsigned shortport)"
+.PP
+connects to the host on port \fBParameters:\fP
+.RS 4
+\fIhost\fP : the host 
+.br
+\fIthe\fP port 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SOSUCC if succeded SOCOPEN if socket could not be opened SONHOST if host not found SOCONN if could not connect to host 
+.RE
+.PP
+
+.SS "int TcpSocket::receiveChar (char &c)"
+.SS "int TcpSocket::receiveCharArray (char **c)"
+.SS "int TcpSocket::receiveInt (int &i)"
+.SS "int TcpSocket::receiveShort (short &s)"
+.SS "int TcpSocket::receiveString (string &str)"
+.SS "int TcpSocket::sendChar (const char &c)"
+.PP
+sends a char over the net \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+.SS "int TcpSocket::sendCharArray (const char *c)"
+.PP
+sends a char array over the net \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+.SS "int TcpSocket::sendInt (const int &i)"
+.PP
+sends an int over the net \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+.SS "int TcpSocket::sendShort (const short &i)"
+.PP
+sends a short over the net \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+.SS "int TcpSocket::sendString (const string &str)"
+.PP
+sends a string over the net \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CPPWrappers from the source code'\&.

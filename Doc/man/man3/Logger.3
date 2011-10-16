@@ -1,0 +1,62 @@
+.TH "Logger" 3 "Sun Oct 16 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Logger \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Logger\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLogger\fP (string name)"
+.br
+.RI "\fIConstructor'\&. \fP"
+.ti -1c
+.RI "virtual \fB~Logger\fP ()"
+.br
+.ti -1c
+.RI "ofstream & \fBlog\fP (string type, int indent=0)"
+.br
+.RI "\fILog the stream input'\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ofstream \fBm_out\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Logger::Logger (stringname)"
+.PP
+Constructor'\&. \fBParameters:\fP
+.RS 4
+\fIname\fP the path to the log file'\&. If the file does not exist, it will be created, otherwise, it will be openned in append mode 
+.RE
+.PP
+
+.SS "Logger::~Logger ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "std::ofstream & Logger::log (stringtype, intindent = \fC0\fP)"
+.PP
+Log the stream input'\&. \fBParameters:\fP
+.RS 4
+\fItype,:\fP the Type of data to log (i'\&.e'\&. DEBUG, ERROR, '\&.'\&.'\&.) 
+.br
+\fIindent\fP the indent level 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "ofstream \fBLogger::m_out\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CPPWrappers from the source code'\&.

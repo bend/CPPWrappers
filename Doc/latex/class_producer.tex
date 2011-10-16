@@ -1,0 +1,220 @@
+\hypertarget{class_producer}{
+\section{\-Producer \-Class \-Reference}
+\label{class_producer}\index{\-Producer@{\-Producer}}
+}
+\-Inheritance diagram for \-Producer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_producer}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_producer_ad9a471f3b6c17d1076d44ba54d7cea61}{\-Producer} (\hyperlink{class_mutex}{\-Mutex} $\ast$m)
+\item 
+void \hyperlink{class_producer_a8394daacf1d547b80a28c2116a7b5faf}{run} ()
+\item 
+\hyperlink{class_producer_a78a85dfe4230cf0be07411c3d18003d9}{\-Producer} (\hyperlink{class_semaphore}{\-Semaphore} $\ast$can\-\_\-produce, \hyperlink{class_semaphore}{\-Semaphore} $\ast$can\-\_\-consume)
+\item 
+void \hyperlink{class_producer_a8394daacf1d547b80a28c2116a7b5faf}{run} ()
+\item 
+\hyperlink{class_producer_a255de4cb71fc4aed9e853e81f881c5ff}{\-Producer} (int i, \hyperlink{class_mutex}{\-Mutex} $\ast$m)
+\item 
+void \hyperlink{class_producer_a8394daacf1d547b80a28c2116a7b5faf}{run} ()
+\item 
+int \hyperlink{class_thread_a7d563f3201d081af8cc24ea552c6a4e4}{start} ()
+\begin{DoxyCompactList}\small\item\em starts the thread and executes the run method \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_a9fc97f64df2c041f08f01e8ade638046}{join} ()
+\begin{DoxyCompactList}\small\item\em \-Causes the calling thread to wait for the termination of the specified thread. \end{DoxyCompactList}\item 
+int \hyperlink{class_thread_a2a08036a4598cfc554114fee9d0e8485}{detach} ()
+\begin{DoxyCompactList}\small\item\em \-Used to indicate to the implementation that storage for the thread can be reclaimed when the thread terminates. \end{DoxyCompactList}\item 
+int \hyperlink{class_thread_af10ab7827d62665de0ebc5afbfcf1109}{equals} (\hyperlink{class_thread}{\-Thread} $\ast$t)
+\begin{DoxyCompactList}\small\item\em tests if the 2 threads are the same \end{DoxyCompactList}\item 
+void \hyperlink{class_thread_a64bc90df36e89fc85705cb6c35c9a81a}{exit} (void $\ast$value\-\_\-ptr)
+\begin{DoxyCompactList}\small\item\em \-The exit method terminates the calling thread. \end{DoxyCompactList}\item 
+int \hyperlink{class_thread_ae2c546a555661d19d7e06d7e1d44b6e6}{cancel} ()
+\begin{DoxyCompactList}\small\item\em \-The \hyperlink{class_thread_ae2c546a555661d19d7e06d7e1d44b6e6}{cancel()} method requests that thread be canceled. \end{DoxyCompactList}\item 
+pthread\-\_\-t \hyperlink{class_thread_aba840d6f1720be0c074b5a0d229d95f3}{get\-Thread} ()
+\begin{DoxyCompactList}\small\item\em returns the pthread \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_producer_ad9a471f3b6c17d1076d44ba54d7cea61}{
+\index{\-Producer@{\-Producer}!\-Producer@{\-Producer}}
+\index{\-Producer@{\-Producer}!Producer@{\-Producer}}
+\subsubsection[{\-Producer}]{\setlength{\rightskip}{0pt plus 5cm}\-Producer\-::\-Producer (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Mutex} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_producer_ad9a471f3b6c17d1076d44ba54d7cea61}
+\hypertarget{class_producer_a78a85dfe4230cf0be07411c3d18003d9}{
+\index{\-Producer@{\-Producer}!\-Producer@{\-Producer}}
+\index{\-Producer@{\-Producer}!Producer@{\-Producer}}
+\subsubsection[{\-Producer}]{\setlength{\rightskip}{0pt plus 5cm}\-Producer\-::\-Producer (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Semaphore} $\ast$}]{can\-\_\-produce, }
+\item[{{\bf \-Semaphore} $\ast$}]{can\-\_\-consume}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_producer_a78a85dfe4230cf0be07411c3d18003d9}
+\hypertarget{class_producer_a255de4cb71fc4aed9e853e81f881c5ff}{
+\index{\-Producer@{\-Producer}!\-Producer@{\-Producer}}
+\index{\-Producer@{\-Producer}!Producer@{\-Producer}}
+\subsubsection[{\-Producer}]{\setlength{\rightskip}{0pt plus 5cm}\-Producer\-::\-Producer (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{{\bf \-Mutex} $\ast$}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_producer_a255de4cb71fc4aed9e853e81f881c5ff}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_thread_ae2c546a555661d19d7e06d7e1d44b6e6}{
+\index{\-Producer@{\-Producer}!cancel@{cancel}}
+\index{cancel@{cancel}!Producer@{\-Producer}}
+\subsubsection[{cancel}]{\setlength{\rightskip}{0pt plus 5cm}int \-Thread\-::cancel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_ae2c546a555661d19d7e06d7e1d44b6e6}
+
+
+\-The \hyperlink{class_thread_ae2c546a555661d19d7e06d7e1d44b6e6}{cancel()} method requests that thread be canceled. 
+
+\-The target thread's cancelability state and type determines when the cancellation takes effect. \-When the cancellation is acted on, the cancellation cleanup handlers for thread are called. \-When the last cancellation cleanup handler returns, the thread-\/specific data destructor functions will be called for thread. \-When the last destructor function returns, thread will be terminated.\-a \hypertarget{class_thread_a2a08036a4598cfc554114fee9d0e8485}{
+\index{\-Producer@{\-Producer}!detach@{detach}}
+\index{detach@{detach}!Producer@{\-Producer}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}int \-Thread\-::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_a2a08036a4598cfc554114fee9d0e8485}
+
+
+\-Used to indicate to the implementation that storage for the thread can be reclaimed when the thread terminates. 
+
+\-If thread has not terminated, \hyperlink{class_thread_a2a08036a4598cfc554114fee9d0e8485}{detach()} will not cause it to terminate \begin{DoxyReturn}{\-Returns}
+0 if success and a value $<$ 0 if failure 
+\end{DoxyReturn}
+\hypertarget{class_thread_af10ab7827d62665de0ebc5afbfcf1109}{
+\index{\-Producer@{\-Producer}!equals@{equals}}
+\index{equals@{equals}!Producer@{\-Producer}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}int \-Thread\-::equals (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Thread} $\ast$}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_af10ab7827d62665de0ebc5afbfcf1109}
+
+
+tests if the 2 threads are the same 
+
+\begin{DoxyReturn}{\-Returns}
+true is equals, false otherwise 
+\end{DoxyReturn}
+\hypertarget{class_thread_a64bc90df36e89fc85705cb6c35c9a81a}{
+\index{\-Producer@{\-Producer}!exit@{exit}}
+\index{exit@{exit}!Producer@{\-Producer}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}void \-Thread\-::exit (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{value\-\_\-ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_a64bc90df36e89fc85705cb6c35c9a81a}
+
+
+\-The exit method terminates the calling thread. 
+
+\hypertarget{class_thread_aba840d6f1720be0c074b5a0d229d95f3}{
+\index{\-Producer@{\-Producer}!get\-Thread@{get\-Thread}}
+\index{get\-Thread@{get\-Thread}!Producer@{\-Producer}}
+\subsubsection[{get\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-t \-Thread\-::get\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_aba840d6f1720be0c074b5a0d229d95f3}
+
+
+returns the pthread 
+
+\hypertarget{class_thread_a9fc97f64df2c041f08f01e8ade638046}{
+\index{\-Producer@{\-Producer}!join@{join}}
+\index{join@{join}!Producer@{\-Producer}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ \-Thread\-::join (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_a9fc97f64df2c041f08f01e8ade638046}
+
+
+\-Causes the calling thread to wait for the termination of the specified thread. 
+
+\hypertarget{class_producer_a8394daacf1d547b80a28c2116a7b5faf}{
+\index{\-Producer@{\-Producer}!run@{run}}
+\index{run@{run}!Producer@{\-Producer}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void \-Producer\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_producer_a8394daacf1d547b80a28c2116a7b5faf}
+
+
+\-Implements \hyperlink{class_thread_aae90dfabab3e1776cf01a26e7ee3a620}{\-Thread}.
+
+\hypertarget{class_producer_a8394daacf1d547b80a28c2116a7b5faf}{
+\index{\-Producer@{\-Producer}!run@{run}}
+\index{run@{run}!Producer@{\-Producer}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void \-Producer\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_producer_a8394daacf1d547b80a28c2116a7b5faf}
+
+
+\-Implements \hyperlink{class_thread_aae90dfabab3e1776cf01a26e7ee3a620}{\-Thread}.
+
+\hypertarget{class_producer_a8394daacf1d547b80a28c2116a7b5faf}{
+\index{\-Producer@{\-Producer}!run@{run}}
+\index{run@{run}!Producer@{\-Producer}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void \-Producer\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_producer_a8394daacf1d547b80a28c2116a7b5faf}
+
+
+\-Implements \hyperlink{class_thread_aae90dfabab3e1776cf01a26e7ee3a620}{\-Thread}.
+
+\hypertarget{class_thread_a7d563f3201d081af8cc24ea552c6a4e4}{
+\index{\-Producer@{\-Producer}!start@{start}}
+\index{start@{start}!Producer@{\-Producer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}int \-Thread\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{class_thread_a7d563f3201d081af8cc24ea552c6a4e4}
+
+
+starts the thread and executes the run method 
+
+\begin{DoxyReturn}{\-Returns}
+0 if success, -\/1 otherwise 
+\end{DoxyReturn}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Tests/\-System/\-Test\-Mutexes/\hyperlink{_test_mutexes_2_test_8cpp}{\-Test.\-cpp}\item 
+\-Tests/\-System/\-Test\-Semaphores/\hyperlink{_test_semaphores_2_test_8cpp}{\-Test.\-cpp}\item 
+\-Tests/\-System/\-Test\-Threads/\hyperlink{_test_threads_2_test_8cpp}{\-Test.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+.TH "TcpServer" 3 "Sun Oct 16 2011" "Version 0.3" "CPPWrappers" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TcpServer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TcpServer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTcpServer\fP (int maxWaitingCon=5)"
+.br
+.RI "\fIconstructor \fP"
+.ti -1c
+.RI "int \fBlisten\fP (int port)"
+.br
+.RI "\fIlisten for incomming connection \fP"
+.ti -1c
+.RI "\fBTcpSocket\fP * \fBaccept\fP ()"
+.br
+.RI "\fIaccepts a connection and returns the socket of the newly connected client \fP"
+.ti -1c
+.RI "int \fBclose\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TcpServer::TcpServer (intmaxWaitingCon = \fC5\fP)"
+.PP
+constructor \fBParameters:\fP
+.RS 4
+\fImaxWaitingCon\fP the number of queued connection that the server can handle, if this number is reached, the server will refuse connections 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTcpSocket\fP * TcpServer::accept ()"
+.PP
+accepts a connection and returns the socket of the newly connected client \fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+.SS "int TcpServer::close ()"
+.SS "int TcpServer::listen (intport)"
+.PP
+listen for incomming connection \fBParameters:\fP
+.RS 4
+\fIport\fP the port on which the server will listen for inconming connections 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if successful 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CPPWrappers from the source code'\&.
