@@ -9,6 +9,7 @@ Therer are 2 Libraries:
 - System, that contains the Thread class, Semaphore class and Mutex class
 - Socket, that contains the TcpSocket and TcpServer class
 
+Online documentation can be found [here](http://bend.github.com/CPPWrappers/Doc/html/index.html) 
 ### Install
 
 #### Dependencies
