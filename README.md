@@ -21,16 +21,16 @@ You can either install the 2 libraries or install them one by one. Each library 
 
 - To install the 2 libraries at once, go to the project directory and create a build direcory and type:
  
-	cd build
-  	cmake ../
-  	sudo make && make install
+		cd build
+  		cmake ../
+  		sudo make && make install
 
 
 - To install one of the 2 libraries go the the library folder (System or Socket) create a build directory and type:
 	
-	cd build
-  	cmake ../
-  	sudo make && make install
+		cd build
+  		cmake ../
+  		sudo make && make install
 
 ### Examples
 
