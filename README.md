@@ -18,6 +18,7 @@ You need cmake in order to compile and install the libraries
 #### Install instructions
 
 You can either install the 2 libraries or install them one by one. Each library is independant and does not require the other one to run
+
 - To install the 2 libraries at once, go to the project directory and create a build direcory and type:
  
 	cd build
