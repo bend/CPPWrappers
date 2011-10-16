@@ -11,7 +11,7 @@
  *
  */
 
-#include <Socket/TcpSocket.h>
+#include <Net/TcpSocket.h>
 
 int main() {
     TcpSocket s;

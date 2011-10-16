@@ -11,10 +11,10 @@
  *
  */
 
-#include <Socket/TcpServer.h>
-#include <Socket/TcpSocket.h>
+#include <Net/TcpServer.h>
+#include <Net/TcpSocket.h>
 #include <stdio.h>
-#include <Socket/SocketErrors.h>
+#include <Net/SocketErrors.h>
 int main() {
     TcpServer server;
     if(server.listen(2000)== SocketErrors::SOEBIND){
