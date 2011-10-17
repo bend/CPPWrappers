@@ -27,11 +27,17 @@ int File::open(){
 }
 
 bool File::exists(){
-
+	FILE* file;
+	if(file = fopen(m_path.c_str(), "r")){
+		fclose(file);
+		return true;
+	}
+	fclose(file);
+	return false;
 }
 
 int File::remove(){
-	return ::remove(m_path);
+	return ::remove(m_path.c_str());
 }
 
 int File::close(){
@@ -39,21 +45,66 @@ int File::close(){
 }
 
 long File::getSize(){
-
+	struct stat file_status;
+	if (stat(m_path.c_str(), &file_status) < 0) {
+		return -1;
+	}
+	return file_status.st_size;	
 }
 
-int File::getMode(){
-
+FileMode* File::getMode(){
+	struct stat file_status;
+	if (stat(m_path.c_str(), &file_status) < 0) {
+		return new FileMode(-1);
+	}
+	return new FileMode(file_status.st_mode);
 }
 
 
-string* File::getList(){
-
+vector<string> File::getList(){
+	vector<string> vect;
+	DIR *dir = opendir(m_path.c_str());
+	struct dirent *ent;
+	if (dir == NULL)
+		return vect;
+	while ((ent = readdir (dir)) != NULL) {
+		string t;
+		t = string(ent->d_name);
+		vect.push_back(t);	
+	}
+	return vect;
 }
 
 string File::getAbsolutePath(){
-	
+	char thePath[256];
+	string res;
+	getcwd(thePath, 255);
+	res = string(thePath);
+	res.append("/");
+	res.append(m_path);
+	return res;
 }
 
 string File::getName(){
+
+}
+
+bool File::isFile(){
+
+}
+
+bool File::isDirectory(){
+
+}
+
+int File::mkdir(){
+
+}
+
+int File::renameTo(string name){
+
+}
+
+int File::copyTo(string name){
+
 }
