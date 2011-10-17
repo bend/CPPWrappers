@@ -1,4 +1,4 @@
-CFLAGS+= -Wall -pedantic -Werror -lsystemcpp
+CFLAGS+= -Wall -pedantic -Werror -lfscpp
 LDFLAGS+=
 EXEC=test
 SOURCES=$(wildcard *.cpp)
@@ -8,7 +8,7 @@ SHAREFLAG+=-fPIC
 
 
 tests:
-	$(CC) Test.cpp $(CFLAGS) -o $(EXEC)
+	$(CC) $(SOURCES) $(CFLAGS) -o $(EXEC)
 
 
 .PHONY: clean mrproper

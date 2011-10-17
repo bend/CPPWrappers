@@ -21,22 +21,22 @@ class FileTypes{
 		/**
 		 * @brief Open file in read mode 
 		 */
-		static const string READ = "r";
+		static const string READ ;
 
 		/**
 		 * @brief Open file in write mode 
 		 */
-		static const string WRITE ="w";
+		static const string WRITE;
 
 		/**
 		 * @brief Open the file in read write mode 
 		 */
-		static const string READWRITE = "rw";
+		static const string READWRITE ;
 
 		/**
 		 * @brief Open the file in read write append mode 
 		 */
-		static const string APPEND = "a+";
+		static const string APPEND ;
 };
 
 #endif

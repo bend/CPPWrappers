@@ -23,6 +23,8 @@
 using namespace std;
 
 #include <Fs/FileMode.h>
+#include <Fs/Path.h>
+
 class File{
 	
 	public:
@@ -33,7 +35,8 @@ class File{
 		 * @param mode the mode 
 		 * @see FileTypes
 		 */
-		File(string path, string mode);
+		File(Path& p, string mode);
+
 		
 		/**
 		 * @brief Opens the file in the defined mode
@@ -65,18 +68,8 @@ class File{
 		 * 	an empty vector can menan that either there is no files in the directory or either that an error occured 
 		 */
 		vector<string> getList();
-		
-		/**
-		 * @brief get the absolute path of the file
-		 * @return the absolute path of the file
-		 */
-		string getAbsolutePath();
-		
-		/**
-		 * @brief gets the file name of the file
-		 * @return the name 
-		 */
-		string getName();
+
+		Path getPath();
 		
 		/**
 		 * @brief get the file size
@@ -114,7 +107,7 @@ class File{
 
 	private:
 		FILE* f;
-		string m_path;
+		Path m_path;
 		string m_mode;
 
 

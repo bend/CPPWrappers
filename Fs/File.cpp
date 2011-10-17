@@ -14,13 +14,15 @@
 #include <Fs/File.h>
 
 
-File::File(string path, string mode):
-	m_path(path), 
-	m_mode(mode){
+
+File::File(Path& p, string mode):
+	m_path(p), 
+	m_mode(mode)
+{
 }
 
 int File::open(){
-	f = fopen(m_path.c_str(), m_mode.c_str());
+	f = fopen(m_path, m_mode.c_str());
 	if(f == NULL)
 		return -1;
 	return 0;
@@ -28,7 +30,7 @@ int File::open(){
 
 bool File::exists(){
 	FILE* file;
-	if(file = fopen(m_path.c_str(), "r")){
+	if(file = fopen(m_path, "r")){
 		fclose(file);
 		return true;
 	}
@@ -37,7 +39,7 @@ bool File::exists(){
 }
 
 int File::remove(){
-	return ::remove(m_path.c_str());
+	return ::remove(m_path);
 }
 
 int File::close(){
@@ -46,7 +48,7 @@ int File::close(){
 
 long File::getSize(){
 	struct stat file_status;
-	if (stat(m_path.c_str(), &file_status) < 0) {
+	if (stat(m_path, &file_status) < 0) {
 		return -1;
 	}
 	return file_status.st_size;	
@@ -54,16 +56,15 @@ long File::getSize(){
 
 FileMode* File::getMode(){
 	struct stat file_status;
-	if (stat(m_path.c_str(), &file_status) < 0) {
+	if (stat(m_path, &file_status) < 0) {
 		return new FileMode(-1);
 	}
 	return new FileMode(file_status.st_mode);
 }
 
-
 vector<string> File::getList(){
 	vector<string> vect;
-	DIR *dir = opendir(m_path.c_str());
+	DIR *dir = opendir(m_path);
 	struct dirent *ent;
 	if (dir == NULL)
 		return vect;
@@ -75,18 +76,8 @@ vector<string> File::getList(){
 	return vect;
 }
 
-string File::getAbsolutePath(){
-	char thePath[256];
-	string res;
-	getcwd(thePath, 255);
-	res = string(thePath);
-	res.append("/");
-	res.append(m_path);
-	return res;
-}
-
-string File::getName(){
-
+Path File::getPath(){
+	return m_path;
 }
 
 bool File::isFile(){
