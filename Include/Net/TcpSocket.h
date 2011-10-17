@@ -25,7 +25,7 @@
 #include <iostream>
 using namespace std;
 
-#include <Socket/SocketErrors.h>
+#include <Net/SocketErrors.h>
 
 class TcpSocket {
 public:

@@ -14,8 +14,8 @@
 #ifndef TCP_SERVER_H__
 #define TCP_SERVER_H__
 
-#include <Socket/TcpSocket.h>
-#include <Socket/SocketErrors.h>
+#include <Net/TcpSocket.h>
+#include <Net/SocketErrors.h>
 
 class TcpServer {
 public:
