@@ -37,6 +37,18 @@ public:
      * @brief Open the file in read write append mode
      */
     static const string APPEND ;
+	
+	/**
+	 * @brief End of file marker
+	 */
+	static const int ENDOFFILE;
+
+	static const int SEEK_FBEGIN;
+
+	static const int SEEK_FEND;
+
+	static const int SEEK_CURRENT;
+
 };
 
 #endif

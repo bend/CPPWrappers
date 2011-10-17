@@ -19,3 +19,11 @@ const string FileTypes::WRITE = "w";
 const string FileTypes::READWRITE = "rw";
 
 const string FileTypes::APPEND = "a+";
+
+const int FileTypes::ENDOFFILE = -2;
+
+const int FileTypes::SEEK_FBEGIN = 0;
+
+const int FileTypes::SEEK_FEND = 2;
+
+const int FileTypes::SEEK_CURRENT= 1;

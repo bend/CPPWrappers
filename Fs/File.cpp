@@ -15,15 +15,15 @@
 
 
 
-File::File(Path& p, string mode):
-    m_path(p),
-    m_mode(mode) {
+File::File(Path& p):
+    m_path(p)
+{
 }
 
-int File::open() {
-    f = fopen(m_path, m_mode.c_str());
+int File::open(const string& mode) {
+    m_f = fopen(m_path, mode.c_str());
 
-    if(f == NULL)
+    if(m_f == NULL)
         return -1;
 
     return 0;
@@ -46,7 +46,7 @@ int File::remove() {
 }
 
 int File::close() {
-    return fclose(f);
+    return fclose(m_f);
 }
 
 long File::getSize() {
@@ -91,16 +91,87 @@ Path File::getPath() {
 }
 
 bool File::isFile() {
+	struct stat file_status;
+	if (stat(m_path, &file_status) < 0) {
+		return false;
+	}
+	if (file_status.st_mode & S_IFREG) {
+		return true;
+	}
+	return false;
 }
 
 bool File::isDirectory() {
+	struct stat file_status;
+	if (stat(m_path, &file_status) < 0) {
+		return false;
+	}
+	if (file_status.st_mode & S_IFDIR) {
+		return true;
+	}
+	return false;
 }
 
 int File::mkdir() {
+	return ::mkdir(m_path, 0755);
 }
 
-int File::renameTo(string name) {
+int setMode(FileMode& mode){
+
 }
 
-int File::copyTo(string name) {
+int File::renameTo(File & f) {
+	if(f.exists() || !this->exists())
+		return -1;
+
+	return rename( m_path , f.getPath());
+
+}
+
+int File::seek(int offset, int origin){
+	return fseek(m_f, offset, origin);
+}
+
+int File::copyTo(File &to) {
+	char ch;
+	this->close();
+	this->open(FileTypes::READ);
+	to.close();
+	to.open(FileTypes::WRITE);
+	while(!this->eof()) {
+		ch = this->readc();
+		if(ch == -1)
+			return 0;
+		if(!to.eof()) 
+			to.writec(ch);
+	}
+
+	if(this->close()<0) {
+		return -1;
+	}
+
+	if(to.close()<0) {
+		return -1;
+	}
+	return 0;
+}
+
+int File::readc(){
+	char c =fgetc(m_f);
+	if(ferror(m_f)) {
+		return FileTypes::ENDOFFILE;
+	}
+	return c;
+}
+
+int File::writec(char c){
+	fputc(c, m_f);
+	if(ferror(m_f)) {
+		return FileTypes::ENDOFFILE;
+	}
+	return 0;
+}
+
+bool File::eof(){
+	return feof(m_f);
 }

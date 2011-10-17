@@ -16,11 +16,22 @@
 using namespace std;
 int main() {
     Path p("../../Tests/Fs/test.txt");
-    File f(p, FileTypes::READ);
-    f.open();
+    File f(p);
+    f.open(FileTypes::READ);
     cout << "Size          :" << f.getSize() << endl;
     cout << "Absolute Path :" << p.getAbsolutePath() << endl;
     cout << "Name          :" << p.getName() << endl;
     cout << "Parent        :" << p.getParent() << endl;
+	cout << "isDir ?       :"<<f.isDirectory()<<endl;
+	cout << "isFile?       :"<<f.isFile()<<endl;
+	cout << "exists ?      :"<<f.exists()<<endl;
+	Path n("test_renamed.txt");
+	File newOne(n);
+	cout << "exists ?      :"<<newOne.exists()<<endl;
+	cout<< "rename: "<<f.renameTo(newOne)<<endl;
+	cout<< "rename: "<<newOne.renameTo(f)<<endl;
+	cout<< "copy "<<f.copyTo(newOne)<<endl;
+	cout<< "remove "<<newOne.remove()<<endl;
+
 }
 
