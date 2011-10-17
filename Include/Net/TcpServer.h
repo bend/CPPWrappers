@@ -21,28 +21,28 @@ class TcpServer {
 public:
     /**
      * @brief constructor
-	 * @param maxWaitingCon the number of queued connection that the server can handle, if this number is reached, the server will refuse connections
+     * @param maxWaitingCon the number of queued connection that the server can handle, if this number is reached, the server will refuse connections
      */
     TcpServer(int maxWaitingCon = 5);
 
 
     /**
      * @brief listen for incomming connection
-	 * @param port the port on which the server will listen for inconming connections
-	 * @return 0 if successful
+     * @param port the port on which the server will listen for inconming connections
+     * @return 0 if successful
      */
     int listen(int port);
 
     /**
      * @brief accepts a connection and returns the socket
      * of the newly connected client
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     TcpSocket* accept();
 
     /*
      * @brief the server
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     int close();
 

@@ -50,31 +50,31 @@ public:
 
     /**
      * @brief sends a string over the net
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     int sendString(const string &str);
 
     /**
      * @brief sends an int over the net
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     int sendInt(const int &i);
 
     /**
      * @brief sends a short over the net
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     int sendShort(const short &i);
 
     /**
      * @brief sends a char over the net
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     int sendChar(const char &c);
 
     /**
      * @brief sends a char array over the net
-	 * @return 0 if successful
+     * @return 0 if successful
      */
     int sendCharArray(const char* c);
 
@@ -87,8 +87,8 @@ public:
     int receiveChar(char &c);
 
     int receiveCharArray(char **c);
-    
-	/**
+
+    /**
      * @brief disconnects from the host
      * @return code
      */

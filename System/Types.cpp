@@ -14,15 +14,15 @@
 #include <System/Types.h>
 
 
-string Types::toString(int i){
-	stringstream oss;
-	oss << i;
-	return oss.str();
+string Types::toString(int i) {
+    stringstream oss;
+    oss << i;
+    return oss.str();
 }
 
-string Types::toString(char c){
-	stringstream oss;
-	oss << c;
-	return oss.str();
+string Types::toString(char c) {
+    stringstream oss;
+    oss << c;
+    return oss.str();
 }
 

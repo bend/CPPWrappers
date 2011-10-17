@@ -5,19 +5,19 @@ using namespace std;
 
 class Producer: public Thread {
 public:
-	Producer(Semaphore *can_produce, Semaphore *can_consume): m_canConsume(can_consume), m_canProduce(can_produce) {
+    Producer(Semaphore *can_produce, Semaphore *can_consume): m_canConsume(can_consume), m_canProduce(can_produce) {
     }
 
     void run() {
         while(1) {
-			m_canProduce->wait();
-			cout<<"Producing item"<<endl;
-			m_canConsume->post();
+            m_canProduce->wait();
+            cout << "Producing item" << endl;
+            m_canConsume->post();
         }
     }
 
 private:
-	Semaphore *m_canConsume;
+    Semaphore *m_canConsume;
     Semaphore *m_canProduce;
 
 
@@ -25,20 +25,20 @@ private:
 
 class Consumer: public Thread {
 public:
-	Consumer(Semaphore *can_produce, Semaphore *can_consume): m_canConsume(can_consume), m_canProduce(can_produce){ 
+    Consumer(Semaphore *can_produce, Semaphore *can_consume): m_canConsume(can_consume), m_canProduce(can_produce) {
     }
 
     void run() {
         while(1) {
-			m_canConsume->wait();
-			cout<<"Consuming item"<<endl;
-			sleep(2);
-			m_canProduce->post();
+            m_canConsume->wait();
+            cout << "Consuming item" << endl;
+            sleep(2);
+            m_canProduce->post();
         }
     }
 
 private:
-	Semaphore *m_canConsume;
+    Semaphore *m_canConsume;
     Semaphore *m_canProduce;
 
 };
@@ -52,5 +52,5 @@ int main() {
     p.start();
     c.start();
     p.join();
-	c.join();
+    c.join();
 }

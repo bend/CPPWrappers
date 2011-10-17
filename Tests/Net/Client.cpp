@@ -23,6 +23,6 @@ int main() {
     string resStr;
     s.receiveString(resStr);
     cout << "Received string " << resStr << endl;
-	s.close();
+    s.close();
 }
 

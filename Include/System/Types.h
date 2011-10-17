@@ -17,19 +17,19 @@
 #include <sstream>
 using namespace std;
 
-class Types{
-	public:
-		/**
-		 * @brief Converts an int to a string 
-		 * @return the int converted to string
-		 */
-		static string toString(int);
+class Types {
+public:
+    /**
+     * @brief Converts an int to a string
+     * @return the int converted to string
+     */
+    static string toString(int);
 
-		/**
-		 * @brief Converts a char to a String
-		 * @return the converted to string
-		 */
-		static string toString(char);
+    /**
+     * @brief Converts a char to a String
+     * @return the converted to string
+     */
+    static string toString(char);
 };
 
 #endif

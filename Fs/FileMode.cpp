@@ -14,13 +14,9 @@
 #include <Fs/FileMode.h>
 
 FileMode::FileMode(int mode):
-	m_mode(mode)
-{
-	
+    m_mode(mode) {
 }
 
 FileMode::FileMode(string path):
-	m_path(path)
-{
-	
+    m_path(path) {
 }

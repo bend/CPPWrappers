@@ -2,7 +2,7 @@
  *
  *       @file  Path.h
  *
- *      @brief  
+ *      @brief
  *
  *    @version  1.0
  *       @date  10/17/2011 17:23:15
@@ -15,31 +15,31 @@
 #define PATH_H__
 #include <iostream>
 using namespace std;
-class Path{
-	public:
-		Path(string path);
+class Path {
+public:
+    Path(string path);
 
-		/**
-		 * @brief get the absolute path of the file
-		 * @return the absolute path of the file
-		 */
-		Path getAbsolutePath();
+    /**
+     * @brief get the absolute path of the file
+     * @return the absolute path of the file
+     */
+    Path getAbsolutePath();
 
-		
-		/**
-		 * @brief gets the file name of the file
-		 * @return the name 
-		 */
-		string getName();
 
-		Path getParent();
+    /**
+     * @brief gets the file name of the file
+     * @return the name
+     */
+    string getName();
 
-		string toString();
+    Path getParent();
 
-		operator const char*();
+    string toString();
 
-	private:
-		string m_path;
+    operator const char*();
+
+private:
+    string m_path;
 };
 
 #endif

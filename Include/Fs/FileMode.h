@@ -16,19 +16,19 @@
 #include <iostream>
 using namespace std;
 
-class FileMode{
-	public:
-		FileMode(int mode);
+class FileMode {
+public:
+    FileMode(int mode);
 
-		FileMode(string path);
+    FileMode(string path);
 
-		int getMode();
+    int getMode();
 
-		string getStringMode();
+    string getStringMode();
 
-	private:
-		int m_mode;
-		string m_path;
+private:
+    int m_mode;
+    string m_path;
 
 };
 

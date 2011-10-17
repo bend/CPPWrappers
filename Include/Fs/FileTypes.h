@@ -2,7 +2,7 @@
  *
  *       @file  FileTypes.h
  *
- *      @brief  
+ *      @brief
  *
  *    @version  1.0
  *       @date  10/16/2011 23:44:23
@@ -16,27 +16,27 @@
 #include <iostream>
 using namespace std;
 
-class FileTypes{
-	public:
-		/**
-		 * @brief Open file in read mode 
-		 */
-		static const string READ ;
+class FileTypes {
+public:
+    /**
+     * @brief Open file in read mode
+     */
+    static const string READ ;
 
-		/**
-		 * @brief Open file in write mode 
-		 */
-		static const string WRITE;
+    /**
+     * @brief Open file in write mode
+     */
+    static const string WRITE;
 
-		/**
-		 * @brief Open the file in read write mode 
-		 */
-		static const string READWRITE ;
+    /**
+     * @brief Open the file in read write mode
+     */
+    static const string READWRITE ;
 
-		/**
-		 * @brief Open the file in read write append mode 
-		 */
-		static const string APPEND ;
+    /**
+     * @brief Open the file in read write append mode
+     */
+    static const string APPEND ;
 };
 
 #endif

@@ -2,7 +2,7 @@
  *
  *       @file  Test.cpp
  *
- *      @brief  
+ *      @brief
  *
  *    @version  1.0
  *       @date  10/12/2011 19:04:44
@@ -14,13 +14,13 @@
 #include <iostream>
 #include <Fs/FileTypes.h>
 using namespace std;
-int main(){
-	Path p("../../Tests/Fs/test.txt");
-	File f(p, FileTypes::READ);
-	f.open();
-	cout<<f.getSize()<<endl;
-	cout<<p.getAbsolutePath()<<endl;
-	cout<<p.getName()<<endl;
-	cout<<p.getParent()<<endl;
+int main() {
+    Path p("../../Tests/Fs/test.txt");
+    File f(p, FileTypes::READ);
+    f.open();
+    cout << "Size          :" << f.getSize() << endl;
+    cout << "Absolute Path :" << p.getAbsolutePath() << endl;
+    cout << "Name          :" << p.getName() << endl;
+    cout << "Parent        :" << p.getParent() << endl;
 }
 

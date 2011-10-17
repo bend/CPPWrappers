@@ -117,7 +117,7 @@ int TcpSocket::receiveString(string &str) {
     if(receiveInt(s) < 0)
         return SocketErrors::SOEREAD;
 
-  	buffer = new char[s];
+    buffer = new char[s];
 
     if(buffer == NULL)
         return SocketErrors::SOEMEM;

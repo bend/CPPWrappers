@@ -60,5 +60,6 @@ TcpSocket* TcpServer::accept() {
 int TcpServer::close() {
     if(::close(m_socketfd) < 0)
         return SocketErrors::SOCLO;
+
     return SocketErrors::SOSUCC;
 }
