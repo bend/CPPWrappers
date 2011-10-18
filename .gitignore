@@ -11,3 +11,4 @@ server
 build
 log.txt
 html
+.DS_Store
