@@ -18,18 +18,29 @@ using namespace std;
 #include <Fs/FileTypes.h>
 class FileMode {
 public:
-
+	/**
+	 * @brief Constructor
+	 * @param mode the mode in int format (ex: 0744)
+	 */
     FileMode(int mode);
-
-    FileMode(string path);
-
+	
+	/**
+	 * @brief get the mode of the file in int format
+	 * @return the mode
+	 * @see FileTypes for modes declaration
+	 */
     int getMode();
-
+	
+	/**
+	 * @brief allows the (char*) cast of the object
+	 */
     operator int();
-
+	
+	/**
+	 * @brief converts the mode to string representation (ex: 0755 -> rwxr-xr-x)
+	 * @return the string representation of the mode or empty string if error occurs 
+	 */
     string getStringMode();
-
-
 
 private:
     int m_mode;

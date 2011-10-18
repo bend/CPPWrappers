@@ -17,10 +17,6 @@ FileMode::FileMode(int mode):
     m_mode(mode) {
 }
 
-FileMode::FileMode(string path):
-    m_path(path) {
-}
-
 FileMode::operator int() {
     return m_mode;
 }
