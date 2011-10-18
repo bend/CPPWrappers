@@ -59,14 +59,14 @@ long File::getSize() {
     return file_status.st_size;
 }
 
-FileMode* File::getMode() {
+FileMode File::getMode() {
     struct stat file_status;
 
     if (stat(m_path, &file_status) < 0) {
-        return new FileMode(-1);
+        return FileMode(-1);
     }
 
-    return new FileMode(file_status.st_mode);
+    return FileMode(file_status.st_mode);
 }
 
 vector<string> File::getList() {
@@ -80,7 +80,8 @@ vector<string> File::getList() {
     while ((ent = readdir (dir)) != NULL) {
         string t;
         t = string(ent->d_name);
-        vect.push_back(t);
+		if(t != "." && t != "..")
+			vect.push_back(t);
     }
 
     return vect;
@@ -116,8 +117,8 @@ int File::mkdir() {
 	return ::mkdir(m_path, 0755);
 }
 
-int setMode(FileMode& mode){
-
+int File::setMode(FileMode& mode){
+	return chmod(m_path,mode);
 }
 
 int File::renameTo(File & f) {

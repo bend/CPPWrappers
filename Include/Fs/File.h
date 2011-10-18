@@ -86,7 +86,7 @@ public:
      * @brief returns the mode of the file
      * @return an int corresponfing to the mode
      */
-    FileMode* getMode();
+    FileMode getMode();
 
     /**
      * @brief tells if the File is a file

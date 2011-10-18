@@ -32,6 +32,15 @@ int main() {
 	cout<< "rename: "<<newOne.renameTo(f)<<endl;
 	cout<< "copy "<<f.copyTo(newOne)<<endl;
 	cout<< "remove "<<newOne.remove()<<endl;
+	Path p3("/");
+	File f3(p3);
+	vector<string> paths = f3.getList();
+	for(unsigned int i =0; i<paths.size(); ++i)
+		cout<<paths[i]<<endl;
+	FileMode m(FileTypes::RWXU|FileTypes::RWXG);
+	f.setMode(m);
+	cout<<f.getMode()<<endl;
+
 
 }
 

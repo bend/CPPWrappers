@@ -48,7 +48,83 @@ public:
 	static const int SEEK_FEND;
 
 	static const int SEEK_CURRENT;
+	
+	/*
+	 * @brief  RWX mask for owner
+	 */
+	static const int RWXU;
+	
+	/**
+	 * @brief R for owner 
+	 */
+	static const int RU;
+
+	/**
+	 * @brief  W for owner 
+	 */
+	static const int WU;    
+
+	/** 
+	 * @brief X for owner 
+	 */
+	static const int XU;
+
+	/**
+	 * @brief  RWX mask for group 
+	 */
+	static const int RWXG;
+
+	/**
+	 * @brief  R for group
+	 */
+	static const int RG;    
+
+	/**
+	 * @brief W for group
+	 */
+	static const int WG;    
+
+	/**
+	 * @brief X for group 
+	 */
+	static const int XG;    
+
+	/**
+	 * @brief  RWX mask for other
+	 */
+	static const int RWXO;    
+
+	/**
+	 * @brief  R for other
+	 */
+	static const int RO;   
+
+	/**
+	 * @brief  W for other
+	 */
+	static const int WO;    
+
+	/**
+	 * @brief  X for other 
+	 */
+	static const int XO;    
+
+	/**
+	 * @brief  set user id on execution
+	 */
+	static const int SUID;    
+
+	/**
+	 * @brief  set group id on execution
+	 */
+	static const int SGID;    
+
+	/**
+	 * @brief  save swapped text even after use
+	 */
+	static const int SVTX;    
 
 };
+
 
 #endif

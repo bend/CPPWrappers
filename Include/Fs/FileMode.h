@@ -24,7 +24,11 @@ public:
 
     int getMode();
 
+	operator int();
+
     string getStringMode();
+
+
 
 private:
     int m_mode;

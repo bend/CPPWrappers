@@ -20,3 +20,11 @@ FileMode::FileMode(int mode):
 FileMode::FileMode(string path):
     m_path(path) {
 }
+
+FileMode::operator int(){
+	return m_mode;
+}
+
+int FileMode::getMode(){
+	return m_mode;
+}
