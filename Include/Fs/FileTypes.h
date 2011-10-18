@@ -37,92 +37,92 @@ public:
      * @brief Open the file in read write append mode
      */
     static const string APPEND ;
-	
-	/**
-	 * @brief End of file marker
-	 */
-	static const int ENDOFFILE;
 
-	static const int SEEK_FBEGIN;
+    /**
+     * @brief End of file marker
+     */
+    static const int ENDOFFILE;
 
-	static const int SEEK_FEND;
+    static const int SEEK_FBEGIN;
 
-	static const int SEEK_CURRENT;
-	
-	/*
-	 * @brief  RWX mask for owner
-	 */
-	static const int RWXU;
-	
-	/**
-	 * @brief R for owner 
-	 */
-	static const int RU;
+    static const int SEEK_FEND;
 
-	/**
-	 * @brief  W for owner 
-	 */
-	static const int WU;    
+    static const int SEEK_CURRENT;
 
-	/** 
-	 * @brief X for owner 
-	 */
-	static const int XU;
+    /*
+     * @brief  RWX mask for owner
+     */
+    static const int RWXU;
 
-	/**
-	 * @brief  RWX mask for group 
-	 */
-	static const int RWXG;
+    /**
+     * @brief R for owner
+     */
+    static const int RU;
 
-	/**
-	 * @brief  R for group
-	 */
-	static const int RG;    
+    /**
+     * @brief  W for owner
+     */
+    static const int WU;
 
-	/**
-	 * @brief W for group
-	 */
-	static const int WG;    
+    /**
+     * @brief X for owner
+     */
+    static const int XU;
 
-	/**
-	 * @brief X for group 
-	 */
-	static const int XG;    
+    /**
+     * @brief  RWX mask for group
+     */
+    static const int RWXG;
 
-	/**
-	 * @brief  RWX mask for other
-	 */
-	static const int RWXO;    
+    /**
+     * @brief  R for group
+     */
+    static const int RG;
 
-	/**
-	 * @brief  R for other
-	 */
-	static const int RO;   
+    /**
+     * @brief W for group
+     */
+    static const int WG;
 
-	/**
-	 * @brief  W for other
-	 */
-	static const int WO;    
+    /**
+     * @brief X for group
+     */
+    static const int XG;
 
-	/**
-	 * @brief  X for other 
-	 */
-	static const int XO;    
+    /**
+     * @brief  RWX mask for other
+     */
+    static const int RWXO;
 
-	/**
-	 * @brief  set user id on execution
-	 */
-	static const int SUID;    
+    /**
+     * @brief  R for other
+     */
+    static const int RO;
 
-	/**
-	 * @brief  set group id on execution
-	 */
-	static const int SGID;    
+    /**
+     * @brief  W for other
+     */
+    static const int WO;
 
-	/**
-	 * @brief  save swapped text even after use
-	 */
-	static const int SVTX;    
+    /**
+     * @brief  X for other
+     */
+    static const int XO;
+
+    /**
+     * @brief  set user id on execution
+     */
+    static const int SUID;
+
+    /**
+     * @brief  set group id on execution
+     */
+    static const int SGID;
+
+    /**
+     * @brief  save swapped text even after use
+     */
+    static const int SVTX;
 
 };
 

@@ -15,16 +15,17 @@
 #define FILE_MODE_H__
 #include <iostream>
 using namespace std;
-
+#include <Fs/FileTypes.h>
 class FileMode {
 public:
+
     FileMode(int mode);
 
     FileMode(string path);
 
     int getMode();
 
-	operator int();
+    operator int();
 
     string getStringMode();
 

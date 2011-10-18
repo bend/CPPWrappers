@@ -22,25 +22,26 @@ int main() {
     cout << "Absolute Path :" << p.getAbsolutePath() << endl;
     cout << "Name          :" << p.getName() << endl;
     cout << "Parent        :" << p.getParent() << endl;
-	cout << "isDir ?       :"<<f.isDirectory()<<endl;
-	cout << "isFile?       :"<<f.isFile()<<endl;
-	cout << "exists ?      :"<<f.exists()<<endl;
-	Path n("test_renamed.txt");
-	File newOne(n);
-	cout << "exists ?      :"<<newOne.exists()<<endl;
-	cout<< "rename: "<<f.renameTo(newOne)<<endl;
-	cout<< "rename: "<<newOne.renameTo(f)<<endl;
-	cout<< "copy "<<f.copyTo(newOne)<<endl;
-	cout<< "remove "<<newOne.remove()<<endl;
-	Path p3("/");
-	File f3(p3);
-	vector<string> paths = f3.getList();
-	for(unsigned int i =0; i<paths.size(); ++i)
-		cout<<paths[i]<<endl;
-	FileMode m(FileTypes::RWXU|FileTypes::RWXG);
-	f.setMode(m);
-	cout<<f.getMode()<<endl;
+    cout << "isDir ?       :" << f.isDirectory() << endl;
+    cout << "isFile?       :" << f.isFile() << endl;
+    cout << "exists ?      :" << f.exists() << endl;
+    Path n("test_renamed.txt");
+    File newOne(n);
+    cout << "exists ?      :" << newOne.exists() << endl;
+    cout << "rename: " << f.renameTo(newOne) << endl;
+    cout << "rename: " << newOne.renameTo(f) << endl;
+    cout << "copy " << f.copyTo(newOne) << endl;
+    cout << "remove " << newOne.remove() << endl;
+    Path p3("/");
+    File f3(p3);
+    vector<string> paths = f3.getList();
 
+    for(unsigned int i = 0; i < paths.size(); ++i)
+        cout << paths[i] << endl;
 
+    FileMode m(FileTypes::RWXU | FileTypes::RWXG);
+    f.setMode(m);
+    cout << f.getMode() << endl;
+    cout << f.getMode().getStringMode() << endl;
 }
 

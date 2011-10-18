@@ -69,11 +69,11 @@ public:
      * 	an empty vector can menan that either there is no files in the directory or either that an error occured
      */
     vector<string> getList();
-	
-	/**
-	 * @brief return the Path object
-	 * @return the Path object
-	 */
+
+    /**
+     * @brief return the Path object
+     * @return the Path object
+     */
     Path getPath();
 
     /**
@@ -104,53 +104,53 @@ public:
      * @brief creates a directory with the current path with 0755 default mode
      * @return 0 is success, -1 otherwise
      */
-    int mkdir();
-	
-	/**
-	 * @brief sets the file mode
-	 * @param mode the mode
-	 * @returns 0 is success, -1 otherwise
-	 */
-	int setMode(FileMode &mode);
-	
-	/**
-	 * @brief renames the file(move) to the target file. The target file must be non existent
-	 * @param name the target File
-	 * @return 0 if success, -1 otherwise
-	 */
+    int mkdir(FileMode m  = 0);
+
+    /**
+     * @brief sets the file mode
+     * @param mode the mode
+     * @returns 0 is success, -1 otherwise
+     */
+    int setMode(FileMode &mode);
+
+    /**
+     * @brief renames the file(move) to the target file. The target file must be non existent
+     * @param name the target File
+     * @return 0 if success, -1 otherwise
+     */
     int renameTo(File &name);
-	
-	/**
-	 * @brief seeks the file from origin of offset size
-	 * @return 0 is success, -1 otherwise
-	 */
-	int seek(int offset, int origin);
-	
-	/**
-	 * @brief Copies the file contents to another file. The target file will be overwritten if non empty 
-	 * @param to the target file 
-	 * @return 0 if success, -1 otherwise
-	 */
+
+    /**
+     * @brief seeks the file from origin of offset size
+     * @return 0 is success, -1 otherwise
+     */
+    int seek(int offset, int origin);
+
+    /**
+     * @brief Copies the file contents to another file. The target file will be overwritten if non empty
+     * @param to the target file
+     * @return 0 if success, -1 otherwise
+     */
     int copyTo(File &to);
-	
-	/**
-	 * @brief reads the next char from the file 
-	 * @return the next char converted to int or FileTypes::ENDOFFILE
-	 * @see FileTypes::ENDOFFILE
-	 */
-	int readc();
-	
-	/**
-	 * @brief writes a char to the file
-	 * @return 0 is SUCCESS, -1 otherwise
-	 */
-	int writec(char c);
-	
-	/**
-	 * @brief checks is the EOF is reached
-	 * @return true if EOF, false otherwise
-	 */
-	bool eof();
+
+    /**
+     * @brief reads the next char from the file
+     * @return the next char converted to int or FileTypes::ENDOFFILE
+     * @see FileTypes::ENDOFFILE
+     */
+    int readc();
+
+    /**
+     * @brief writes a char to the file
+     * @return 0 is SUCCESS, -1 otherwise
+     */
+    int writec(char c);
+
+    /**
+     * @brief checks is the EOF is reached
+     * @return true if EOF, false otherwise
+     */
+    bool eof();
 
 private:
     FILE* m_f;

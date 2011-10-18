@@ -16,8 +16,7 @@
 
 
 File::File(Path& p):
-    m_path(p)
-{
+    m_path(p) {
 }
 
 int File::open(const string& mode) {
@@ -80,8 +79,9 @@ vector<string> File::getList() {
     while ((ent = readdir (dir)) != NULL) {
         string t;
         t = string(ent->d_name);
-		if(t != "." && t != "..")
-			vect.push_back(t);
+
+        if(t != "." && t != "..")
+            vect.push_back(t);
     }
 
     return vect;
@@ -92,87 +92,103 @@ Path File::getPath() {
 }
 
 bool File::isFile() {
-	struct stat file_status;
-	if (stat(m_path, &file_status) < 0) {
-		return false;
-	}
-	if (file_status.st_mode & S_IFREG) {
-		return true;
-	}
-	return false;
+    struct stat file_status;
+
+    if (stat(m_path, &file_status) < 0) {
+        return false;
+    }
+
+    if (file_status.st_mode & S_IFREG) {
+        return true;
+    }
+
+    return false;
 }
 
 bool File::isDirectory() {
-	struct stat file_status;
-	if (stat(m_path, &file_status) < 0) {
-		return false;
-	}
-	if (file_status.st_mode & S_IFDIR) {
-		return true;
-	}
-	return false;
+    struct stat file_status;
+
+    if (stat(m_path, &file_status) < 0) {
+        return false;
+    }
+
+    if (file_status.st_mode & S_IFDIR) {
+        return true;
+    }
+
+    return false;
 }
 
-int File::mkdir() {
-	return ::mkdir(m_path, 0755);
+int File::mkdir(FileMode m) {
+    if(m == 0)
+        return ::mkdir(m_path, 0755);
+    else
+        return ::mkdir(m_path, m);
 }
 
-int File::setMode(FileMode& mode){
-	return chmod(m_path,mode);
+int File::setMode(FileMode& mode) {
+    return chmod(m_path, mode);
 }
 
 int File::renameTo(File & f) {
-	if(f.exists() || !this->exists())
-		return -1;
+    if(f.exists() || !this->exists())
+        return -1;
 
-	return rename( m_path , f.getPath());
-
+    return rename( m_path , f.getPath());
 }
 
-int File::seek(int offset, int origin){
-	return fseek(m_f, offset, origin);
+int File::seek(int offset, int origin) {
+    return fseek(m_f, offset, origin);
 }
 
 int File::copyTo(File &to) {
-	char ch;
-	this->close();
-	this->open(FileTypes::READ);
-	to.close();
-	to.open(FileTypes::WRITE);
-	while(!this->eof()) {
-		ch = this->readc();
-		if(ch == -1)
-			return 0;
-		if(!to.eof()) 
-			to.writec(ch);
-	}
+    char ch;
+    this->close();
+    this->open(FileTypes::READ);
+    to.close();
+    to.open(FileTypes::WRITE);
 
-	if(this->close()<0) {
-		return -1;
-	}
+    while(!this->eof()) {
+        ch = this->readc();
 
-	if(to.close()<0) {
-		return -1;
-	}
-	return 0;
+        if(ch == -1)
+            return 0;
+
+        if(!to.eof())
+            to.writec(ch);
+    }
+
+    if(this->close() < 0) {
+        return -1;
+    }
+
+    if(to.close() < 0) {
+        return -1;
+    }
+
+    return 0;
 }
 
-int File::readc(){
-	char c =fgetc(m_f);
-	if(ferror(m_f)) {
-		return FileTypes::ENDOFFILE;
-	}
-	return c;
+int File::readc() {
+    char c = fgetc(m_f);
+
+    if(ferror(m_f)) {
+        return FileTypes::ENDOFFILE;
+    }
+
+    return c;
 }
 
-int File::writec(char c){
-	fputc(c, m_f);
-	if(ferror(m_f)) {
-		return FileTypes::ENDOFFILE;
-	}
-	return 0;
+int File::writec(char c) {
+    fputc(c, m_f);
+
+    if(ferror(m_f)) {
+        return FileTypes::ENDOFFILE;
+    }
+
+    return 0;
 }
 
-bool File::eof(){
-	return feof(m_f);
+bool File::eof() {
+    return feof(m_f);
 }
