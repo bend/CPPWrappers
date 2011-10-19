@@ -31,22 +31,22 @@ public:
      * @return the name
      */
     string getName();
-	
-	/**
-	 * @brief gets the parent directory
-	 * @return a Path object containing the parent path. If not parent ('/') the same path is returned
-	 */
+
+    /**
+     * @brief gets the parent directory
+     * @return a Path object containing the parent path. If not parent ('/') the same path is returned
+     */
     Path getParent();
-	
-	/**
-	 * @brief gets the path in string format
-	 * @return the string containing the path
-	 */
+
+    /**
+     * @brief gets the path in string format
+     * @return the string containing the path
+     */
     string toString();
-	
-	/**
-	 * @brief allows (char*) cast
-	 */
+
+    /**
+     * @brief allows (char*) cast
+     */
     operator const char*();
 
 private:

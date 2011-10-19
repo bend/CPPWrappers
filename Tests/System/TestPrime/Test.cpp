@@ -12,11 +12,21 @@
  */
 #include <System/Prime.h>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-	//cout<<Prime::isPrime( 18014398241046527)<<endl;
-	long i;
-	while(++i<1000000000000)
-		cout<<"Is prime : "<<i<<" : "<<Prime::isPrime(i)<<endl;
+ 	 //   cout<<Prime::isPrime(18014398241046527)<<endl;
+	 Prime p(100);
+	 p.genPrimes();
+
+	 cout<<"BiggestPrime : "<<p.getBiggestPrime()<<endl;
+	 cout<<"Is prime ?: "<<Prime::isPrime(p.getBiggestPrime())<<endl;
+	 vector<long> v = p.getPrimes();
+
+	 unsigned int i =0;
+	 while(i<v.size()){
+		 cout<<v[i]<<endl;
+		 ++i;
+	 }
 }

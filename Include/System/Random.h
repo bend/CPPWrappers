@@ -17,54 +17,54 @@
 #include <stdlib.h>
 using namespace std;
 #include <System/Time.h>
-class Random{
-	public:
-		/**
-		 * @brief Multiply with carry algorithm variable
-		 */
-		static const int MULT_CARRY;
-		
-		/**
-		 * @brief Blum Blum Shub  algorithm variable 
-		 */
-		static const int BLUM_BLUM;
+class Random {
+public:
+    /**
+     * @brief Multiply with carry algorithm variable
+     */
+    static const int MULT_CARRY;
 
-		/**
-		 * @brief default unix random gen
-		 */
-		static const int UNIX;
+    /**
+     * @brief Blum Blum Shub  algorithm variable
+     */
+    static const int BLUM_BLUM;
 
-		Random(const int& algo=0);
+    /**
+     * @brief default unix random gen
+     */
+    static const int UNIX;
 
-		int init();
+    Random(const int& algo = 0);
 
-		int random();
+    int init();
 
-		int random(int min, int max);
+    int random();
 
-	private:
-			
-		int initDefault();
-		
-		int defaultRand();		
+    int random(int min, int max);
 
-		int initMultiplyWithCarry();
+private:
 
-		int multiplyWithCarryRand();
+    int initDefault();
 
-		int  initBlumBlum();
+    int defaultRand();
 
-		int blumBlumRand();
+    int initMultiplyWithCarry();
 
-		int m_algo;
+    int multiplyWithCarryRand();
 
-		/* multiply with carry vars to init */
-		int m_q[4096];
-		int m_c;
-	
-		/* blum blum */
-		int xn;
-		int m;
+    int  initBlumBlum();
+
+    int blumBlumRand();
+
+    int m_algo;
+
+    /* multiply with carry vars to init */
+    int m_q[4096];
+    int m_c;
+
+    /* blum blum */
+    int xn;
+    int m;
 
 };
 

@@ -15,40 +15,47 @@
 #include <set>
 using namespace std;
 int main() {
+    Random r;
+    r.init();
+    int i = 0;
+    vector<int> v;
+    srand(time(NULL));
 
-	Random r;
-	r.init();
-	int i = 0;
-	vector<int> v;
-	srand(time(NULL));
-	while(i<10000){
-		cout<<r.random(0,100)<<endl;
-		v.push_back(r.random(0,100));
-		i++;
-	}
+    while(i < 10000) {
+        cout << r.random(0, 100) << endl;
+        v.push_back(r.random(0, 100));
+        i++;
+    }
 
-	i = 0;
-	cout<<"Size : "<<v.size()<<endl;
-	while(i<100){
-		unsigned int j =0;
-		int count = 0;
-		while(j<v.size()){
-			if(v[j] == i)
-				count++;
-			j++;
-		}
-		cout <<"Count of "<<i<<" : "<<count<<endl;
-		i++;
-	}
-	Random r2;
-	r2.init();
-	i = 0;
-	int randomN=0;
-	int  sum = 0;
-	while(i<100){
-		randomN = r2.random(0,100);
-		sum+=randomN;
-		i++;
-	}
-	cout<<"AVG = "<<sum/100.0<<endl;
+    i = 0;
+    cout << "Size : " << v.size() << endl;
+
+    while(i < 100) {
+        unsigned int j = 0;
+        int count = 0;
+
+        while(j < v.size()) {
+            if(v[j] == i)
+                count++;
+
+            j++;
+        }
+
+        cout << "Count of " << i << " : " << count << endl;
+        i++;
+    }
+
+    Random r2;
+    r2.init();
+    i = 0;
+    int randomN = 0;
+    int  sum = 0;
+
+    while(i < 100) {
+        randomN = r2.random(0, 100);
+        sum += randomN;
+        i++;
+    }
+
+    cout << "AVG = " << sum / 100.0 << endl;
 }

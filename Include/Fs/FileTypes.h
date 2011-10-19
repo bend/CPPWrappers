@@ -42,20 +42,20 @@ public:
      * @brief End of file marker
      */
     static const int ENDOFFILE;
-	
-	/**
-	 * @brief seek from the begining of the file
-	 */
+
+    /**
+     * @brief seek from the begining of the file
+     */
     static const int SEEK_FBEGIN;
 
-	/**
-	 * @brief seek from the end of the file
-	 */
+    /**
+     * @brief seek from the end of the file
+     */
     static const int SEEK_FEND;
-	
-	/**
-	 * @brief seek from the current position
-	 */
+
+    /**
+     * @brief seek from the current position
+     */
     static const int SEEK_CURRENT;
 
     /*

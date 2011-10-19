@@ -14,7 +14,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-	cout << "Time ms " << Time::getTimeMilliseconds() << endl;
+    cout << "Time ms " << Time::getTimeMilliseconds() << endl;
     cout << "Time date : " << Time::getTimeDate();
     cout << "Time date : " << Time::getTimeDate("dd/MM/YYYY - HH:mm::SS") << endl;
     cout << "Time date : " << Time::getTimeDate("dd - MM - YYYY @ HH_mm_SS") << endl;
