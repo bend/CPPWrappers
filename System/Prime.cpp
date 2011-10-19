@@ -16,43 +16,48 @@ const int Prime::ERATOSTHENE_SIEVE = 0;
 const int Prime::ATKIN_SIEVE = 1;
 
 Prime::Prime(unsigned long limit, const int& type):
-	m_limit(limit),
-	m_type(type){
+    m_limit(limit),
+    m_type(type) {
 }
 
-int Prime::genPrimes(){
-	switch(m_type){
-		case ERATOSTHENE_SIEVE:
-			m_sieve = new EratostheneSieve(m_limit);
-			break;
-		case ATKIN_SIEVE:
-			m_sieve = new AtkinSieve(m_limit);
-			break;
-		default:
-			return -1;
-	}
+int Prime::genPrimes() {
+    switch(m_type) {
+    case ERATOSTHENE_SIEVE:
+        m_sieve = new EratostheneSieve(m_limit);
+        break;
 
-	m_sieve->genPrimes();
-	return 0;
+    case ATKIN_SIEVE:
+        m_sieve = new AtkinSieve(m_limit);
+        break;
+
+    default:
+        return -1;
+    }
+
+    m_sieve->genPrimes();
+    return 0;
 }
 
 
-long Prime::getBiggestPrime(){
-	if(m_sieve != NULL)
-		return m_sieve->getBiggestPrime();
-	return -1;
+long Prime::getBiggestPrime() {
+    if(m_sieve != NULL)
+        return m_sieve->getBiggestPrime();
+
+    return -1;
 }
 
-vector<long> Prime::getPrimes(){
-	if(m_sieve != NULL)
-		return m_sieve->getPrimes();
-	return vector<long>();
+vector<long> Prime::getPrimes() {
+    if(m_sieve != NULL)
+        return m_sieve->getPrimes();
+
+    return vector<long>();
 }
 
-long Prime::getNumberOfPrimes(){
-	if(m_sieve != NULL)
-		return m_sieve->getNumberOfPrimes();
-	return -1;
+long Prime::getNumberOfPrimes() {
+    if(m_sieve != NULL)
+        return m_sieve->getNumberOfPrimes();
+
+    return -1;
 }
 
 bool Prime::isPrime(long num) {

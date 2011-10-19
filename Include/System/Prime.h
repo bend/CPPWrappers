@@ -21,25 +21,25 @@ using namespace std;
 
 class Prime {
 public:
-	static const int ERATOSTHENE_SIEVE;
-	static const int ATKIN_SIEVE;
-	
-	Prime(unsigned long limit, const int& type=0);
+    static const int ERATOSTHENE_SIEVE;
+    static const int ATKIN_SIEVE;
 
-	int genPrimes();
+    Prime(unsigned long limit, const int& type = 0);
 
-	long getBiggestPrime();
+    int genPrimes();
 
-	vector<long> getPrimes();
+    long getBiggestPrime();
 
-	long getNumberOfPrimes();
+    vector<long> getPrimes();
+
+    long getNumberOfPrimes();
 
     static bool isPrime(long num);
 
 private:
-	PrimeSieve *m_sieve;
-	unsigned long m_limit;
-	int m_type;
+    PrimeSieve *m_sieve;
+    unsigned long m_limit;
+    int m_type;
 
 
 };
