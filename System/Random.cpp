@@ -40,7 +40,7 @@ int Random::init() {
     }
 }
 
-int Random::random() {
+unsigned long Random::random() {
     switch(m_algo) {
     case MULT_CARRY:
         return multiplyWithCarryRand();
@@ -59,8 +59,8 @@ int Random::random() {
     }
 }
 
-int Random::random(int min, int max) {
-    int rand;
+unsigned long Random::random(int min, int max) {
+    unsigned long rand;
 
     switch(m_algo) {
     case MULT_CARRY:
@@ -87,7 +87,7 @@ int Random::initDefault() {
     srand ( time(NULL) );
 }
 
-int Random::defaultRand() {
+unsigned long Random::defaultRand() {
     return rand();
 }
 
@@ -103,7 +103,7 @@ int Random::initMultiplyWithCarry() {
         m_q[i] = m_q[i - 3] ^ m_q[i - 2] ^ 0x9e3779b9 ^ i;
 }
 
-int Random::multiplyWithCarryRand() {
+unsigned long Random::multiplyWithCarryRand() {
     long t, a = 18782LL;
     static int i = 4095;
     int x, r = 0xfffffffe;
@@ -122,10 +122,25 @@ int Random::multiplyWithCarryRand() {
     else return (m_q[i] = r - x);
 }
 
-
 int Random::initBlumBlum() {
+    long p, q;
+    Prime pr(Time::getTimeMilliseconds() % 100000000);
+    pr.genPrimes();
+    p = pr.getBiggestPrime();
+    Prime pr2((Time::getTimeMilliseconds() % 100000000) / ((Time::getTimeMilliseconds() % 20) + 1));
+    pr2.genPrimes();
+    q = pr2.getBiggestPrime();
+    xn = Time::getTimeMilliseconds();
+    m = p * q;
 }
 
-int Random::blumBlumRand() {
+unsigned long Random::blumBlumRand() {
+    xn = (xn * xn) % m;
+
+    if(xn < 0) {
+        return -xn;
+    }
+
+    return xn;
 }
 

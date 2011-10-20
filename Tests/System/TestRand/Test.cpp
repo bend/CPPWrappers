@@ -15,14 +15,13 @@
 #include <set>
 using namespace std;
 int main() {
-    Random r;
+    Random r(1);
     r.init();
     int i = 0;
     vector<int> v;
     srand(time(NULL));
 
     while(i < 10000) {
-        cout << r.random(0, 100) << endl;
         v.push_back(r.random(0, 100));
         i++;
     }
@@ -45,11 +44,11 @@ int main() {
         i++;
     }
 
-    Random r2;
+    Random r2(1);
     r2.init();
     i = 0;
-    int randomN = 0;
-    int  sum = 0;
+    long randomN = 0;
+    long sum = 0;
 
     while(i < 100) {
         randomN = r2.random(0, 100);

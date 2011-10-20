@@ -17,6 +17,7 @@
 #include <stdlib.h>
 using namespace std;
 #include <System/Time.h>
+#include <System/Prime.h>
 class Random {
 public:
     /**
@@ -38,23 +39,23 @@ public:
 
     int init();
 
-    int random();
+    unsigned long random();
 
-    int random(int min, int max);
+    unsigned long random(int min, int max);
 
 private:
 
     int initDefault();
 
-    int defaultRand();
+    unsigned long defaultRand();
 
     int initMultiplyWithCarry();
 
-    int multiplyWithCarryRand();
+    unsigned long multiplyWithCarryRand();
 
     int  initBlumBlum();
 
-    int blumBlumRand();
+    unsigned long blumBlumRand();
 
     int m_algo;
 
@@ -63,8 +64,8 @@ private:
     int m_c;
 
     /* blum blum */
-    int xn;
-    int m;
+    long xn;
+    long m;
 
 };
 

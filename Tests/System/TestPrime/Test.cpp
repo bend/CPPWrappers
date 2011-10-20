@@ -16,7 +16,6 @@
 using namespace std;
 
 int main() {
-    //   cout<<Prime::isPrime(18014398241046527)<<endl;
     Prime p(100);
     p.genPrimes();
     cout << "BiggestPrime : " << p.getBiggestPrime() << endl;
