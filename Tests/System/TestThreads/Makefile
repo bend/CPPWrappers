@@ -1,4 +1,4 @@
-CFLAGS+= -Wall -pedantic -Werror -lsystemcpp
+CFLAGS+= -Wall -pedantic -Werror -lcppwrappers
 LDFLAGS+=
 EXEC=test
 SOURCES=$(wildcard *.cpp)
