@@ -34,6 +34,9 @@ int BufferedOutput::write(string str){
 }
 
 int BufferedOutput::write(int i){
+	string str = Types::toString(i);
+	const char* s =  str.c_str();
+	return this->appendInBuffer(s,str.length());
 }
 
 int BufferedOutput::write(char c){
@@ -43,26 +46,35 @@ int BufferedOutput::write(char c){
 }
 
 int BufferedOutput::write(float f){
-	
+	string str = Types::toString(f);
+	const char* s =  str.c_str();
+	return this->appendInBuffer(s,str.length());
 }
 
 int BufferedOutput::write(long l){
-
+	string str = Types::toString(l);
+	const char* s =  str.c_str();
+	return this->appendInBuffer(s,str.length());
 }
 
 int BufferedOutput::write(short s){
-
+	string str = Types::toString(s);
+	const char* ch =  str.c_str();
+	return this->appendInBuffer(ch,str.length());
 }
 
 int BufferedOutput::flush(){
-	cout<<"flushing"<<endl;
 	int i = 0;
 	while(i<m_buffLen && i<m_lastIndex){
 		m_file.writec(m_buffer[i]);
-		cout<<"m_buffer["<<i<<"]"<<m_buffer[i]<<endl;
 		i++;
 	}
 	m_lastIndex = 0;
+}
+
+int BufferedOutput::close(){
+	flush();
+	m_file.close();
 }
 
 int BufferedOutput::appendInBuffer(const char* s,int l){
@@ -70,7 +82,6 @@ int BufferedOutput::appendInBuffer(const char* s,int l){
 	while(i<l){
 		while(m_lastIndex<m_buffLen && i<l){
 			m_buffer[m_lastIndex] = s[i];
-			cout<<"added s["<<i<<"]"<<s[i]<<endl;
 			++i;
 			m_lastIndex++;
 		}

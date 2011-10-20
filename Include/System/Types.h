@@ -30,6 +30,8 @@ public:
      * @return the converted to string
      */
     static string toString(char);
+    static string toString(long);
+    static string toString(float);
 };
 
 #endif

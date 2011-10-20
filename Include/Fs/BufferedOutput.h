@@ -14,6 +14,7 @@
 #ifndef BUFFERED_OUTPUT_H__
 #define BUFFERED_OUTPUT_H__
 #include <Fs/File.h>
+#include <System/Types.h>
 class BufferedOutput{
 
 	public:

@@ -51,5 +51,17 @@ int main() {
 	BufferedOutput b(out, FileTypes::WRITE,10);
 	b.write(theS);
 	b.write('a');
+	b.write(123);
+	long l = 123123123123L;
+	b.write(l);
+	b.write('\n');
+	short s = 123;
+	b.write(s);
+	b.write('\n');
+	float flo = 123.321f;
+	b.write(flo);
+	b.write('\n');
+	b.flush();
+	b.close();
 }
 

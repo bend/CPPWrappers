@@ -20,6 +20,18 @@ string Types::toString(int i) {
     return oss.str();
 }
 
+string Types::toString(long i) {
+    stringstream oss;
+    oss << i;
+    return oss.str();
+}
+
+string Types::toString(float i) {
+    stringstream oss;
+    oss << i;
+    return oss.str();
+}
+
 string Types::toString(char c) {
     stringstream oss;
     oss << c;
