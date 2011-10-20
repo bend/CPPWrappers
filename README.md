@@ -1,18 +1,22 @@
-## A C++ wrapper for the thread, semaphore and socket library
+## A C++ wrapper for the thread, semaphore and socket library etc..
 
 ### Overview 
 
 This library is a C++ wrapper for BSD sockets, pthread and semaphore.
 I've test it on MacOS, but it should be working on Linux
-There are 2 Libraries:
+There are 3 Libraries:
 
 #### System
 
-contains the Thread class, Semaphore class and Mutex class
+contains the Thread class, Semaphore class and Mutex class, Time class, PRNG class and Prime number generator class
 
 ####Socket
 
 contains the TcpSocket and TcpServer class
+
+####Fs
+
+contains methods for using the file system 
 
 ### Documentation 
 
@@ -35,7 +39,7 @@ You can either install the 2 libraries or install them one by one. Each library 
   		sudo make && make install
 
 
-- To install one of the 2 libraries go the the library folder (System or Socket) create a build directory and type:
+- To install one of the 2 libraries go the the library folder (System, Socket or Fs) create a build directory and type:
 	
 		cd build
   		cmake ../
@@ -46,4 +50,4 @@ You can either install the 2 libraries or install them one by one. Each library 
 Small examples are located in the Tests folder. Basicaly the libraries are easy to use, notice that for the Thread class you need to subclass it and override the run() method
 
 ### TODO
-Add  Udp sockets, http requests ..., File System operation ...
+Add  Udp sockets, http requests ..., 
