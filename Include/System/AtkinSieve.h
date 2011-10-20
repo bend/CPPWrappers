@@ -2,7 +2,7 @@
  *
  *       @file  AtkinSieve.h
  *
- *      @brief
+ *      @brief Atkin sieve prime generation class
  *
  *    @version  1.0
  *       @date  10/19/2011 23:21:59
@@ -17,16 +17,16 @@
 
 class AtkinSieve: public PrimeSieve {
 public :
-
-    AtkinSieve(unsigned long n);
-
+	/**
+	 * @brief Constructor for the Atkin sieve
+	 * @param limit the maximum length of the prime number that you need
+	 */
+    AtkinSieve(unsigned long limit);
+	
+	/**
+	 * @brief generates all the primes between 2 and limit using the Atkin sieve
+	 */
     void genPrimes();
-
-
-
-
-
-
 };
 
 #endif
