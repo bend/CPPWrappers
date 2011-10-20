@@ -13,6 +13,7 @@
 #include <Fs/File.h>
 #include <Fs/FileTypes.h>
 #include <Fs/BufferedOutput.h>
+#include <Fs/BufferedInput.h>
 #include <iostream>
 using namespace std;
 int main() {
@@ -63,5 +64,24 @@ int main() {
 	b.write('\n');
 	b.flush();
 	b.close();
+
+	BufferedInput in(out);
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+
+	BufferedInput in2(out);
+	
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+
+	cout <<"here "<<endl;
 }
 

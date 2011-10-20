@@ -13,18 +13,24 @@
 
 #ifndef BUFFERED_INPUT_H__
 #define BUFFERED_INPUT_H__
-
+#include <Fs/File.h>
+#include <Fs/FileTypes.h>
 class BufferedInput{
 	public:
 		BufferedInput(File &f);
 
-		readLine();
+		~BufferedInput();
 
-		readWord();
+		string readLine();
 
-		read(int nb);
+		string readWord();
+
+		string read(int nb);
 		
-		close();
+		int close();
+	
+	private:
+		File m_file;
 
 };
 

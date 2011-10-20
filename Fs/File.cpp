@@ -176,7 +176,7 @@ int File::readc() {
         return FileTypes::ENDOFFILE;
     }
 
-    return c;
+	return c;
 }
 
 int File::writec(char c) {
