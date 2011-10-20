@@ -1,0 +1,3 @@
+/Users/benoitdaccache/Documents/Programation/C++/CPPWrappers/build/Fs/CMakeFiles/fscpp.dir
+/Users/benoitdaccache/Documents/Programation/C++/CPPWrappers/build/Net/CMakeFiles/netcpp.dir
+/Users/benoitdaccache/Documents/Programation/C++/CPPWrappers/build/System/CMakeFiles/systemcpp.dir

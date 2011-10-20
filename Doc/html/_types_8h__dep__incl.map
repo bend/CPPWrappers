@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_time_8h.html" title="get the system time" alt="" coords="219,83,385,111"/>
+<area shape="rect" id="node15" href="$_types_8cpp.html" title="Types class." alt="" coords="411,83,549,111"/>
+<area shape="rect" id="node5" href="$_logger_8h.html" title="Include/System/Logger.h" alt="" coords="5,161,184,189"/>
+<area shape="rect" id="node9" href="$_random_8h.html" title="Random number generator class." alt="" coords="209,161,396,189"/>
+<area shape="rect" id="node13" href="$_time_8cpp.html" title="Get the system time." alt="" coords="421,161,552,189"/>
+<area shape="rect" id="node7" href="$_logger_8cpp.html" title="System/Logger.cpp" alt="" coords="22,238,167,266"/>
+<area shape="rect" id="node11" href="$_random_8cpp.html" title="Random number generator class." alt="" coords="226,238,379,266"/>
+</map>

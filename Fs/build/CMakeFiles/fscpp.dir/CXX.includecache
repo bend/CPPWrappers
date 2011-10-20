@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../Include/Fs/File.h
+stdio.h
+-
+sys/stat.h
+-
+dirent.h
+-
+iostream
+-
+vector
+-
+Fs/FileMode.h
+-
+Fs/Path.h
+-
+Fs/FileTypes.h
+-
+
+../../Include/Fs/FileMode.h
+iostream
+-
+Fs/FileTypes.h
+-
+
+../../Include/Fs/FileTypes.h
+iostream
+-
+
+../../Include/Fs/Path.h
+iostream
+-
+
+/Users/benoitdaccache/Documents/Programation/C++/CPPWrappers/Fs/File.cpp
+Fs/File.h
+-
+

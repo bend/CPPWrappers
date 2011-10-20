@@ -1,0 +1,4 @@
+/usr/local/lib/libnetcpp.dylib
+/usr/local/include/Net/SocketErrors.h
+/usr/local/include/Net/TcpServer.h
+/usr/local/include/Net/TcpSocket.h

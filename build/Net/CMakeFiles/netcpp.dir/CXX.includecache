@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Net/../Include/Net/SocketErrors.h
+
+../Net/../Include/Net/TcpServer.h
+Net/TcpSocket.h
+-
+Net/SocketErrors.h
+-
+
+../Net/../Include/Net/TcpSocket.h
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+netdb.h
+-
+unistd.h
+-
+string.h
+-
+stdlib.h
+-
+iostream
+-
+Net/SocketErrors.h
+-
+
+/Users/benoitdaccache/Documents/Programation/C++/CPPWrappers/Net/TcpServer.cpp
+Net/TcpServer.h
+-
+
+/Users/benoitdaccache/Documents/Programation/C++/CPPWrappers/Net/TcpSocket.cpp
+Net/TcpSocket.h
+-
+

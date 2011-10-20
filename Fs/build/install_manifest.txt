@@ -1,0 +1,5 @@
+/usr/local/lib/libfscpp.dylib
+/usr/local/include/Fs/File.h
+/usr/local/include/Fs/FileMode.h
+/usr/local/include/Fs/FileTypes.h
+/usr/local/include/Fs/Path.h
