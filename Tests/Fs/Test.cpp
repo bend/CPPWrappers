@@ -64,15 +64,6 @@ int main() {
 	b.write('\n');
 	b.flush();
 	b.close();
-
-	BufferedInput in(out);
-	cout<<"read : "<<in.readLine()<<endl;
-	cout<<"read : "<<in.readLine()<<endl;
-	cout<<"read : "<<in.readLine()<<endl;
-	cout<<"read : "<<in.readLine()<<endl;
-	cout<<"read : "<<in.readLine()<<endl;
-	cout<<"read : "<<in.readLine()<<endl;
-
 	BufferedInput in2(out);
 	
 	cout<<"read word : "<<in2.readWord()<<endl;
@@ -81,7 +72,36 @@ int main() {
 	cout<<"read word : "<<in2.readWord()<<endl;
 	cout<<"read word : "<<in2.readWord()<<endl;
 	cout<<"read word : "<<in2.readWord()<<endl;
-
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	cout<<"read word : "<<in2.readWord()<<endl;
+	in2.close();
+	
+	BufferedInput in(out);
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	cout<<"read : "<<in.readLine()<<endl;
+	in.close();
+	
+	Path pp("Test.cpp");
+	File ff(pp);
+	BufferedInput bb(ff);
+	cout<<"read : "<<bb.readLine()<<endl;
 	cout <<"here "<<endl;
+	return 0;
 }
 

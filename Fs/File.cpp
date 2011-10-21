@@ -16,14 +16,18 @@
 
 
 File::File(Path& p):
-    m_path(p) {
+    m_path(p),
+	m_openned(false){
 }
 
 int File::open(const string& mode) {
     m_f = fopen(m_path, mode.c_str());
 
-    if(m_f == NULL)
-        return -1;
+    if(m_f == NULL){
+        m_openned = false;
+		return -1;
+	}
+	m_openned = true;
 
     return 0;
 }
@@ -45,7 +49,11 @@ int File::remove() {
 }
 
 int File::close() {
-    return fclose(m_f);
+	if(isOpenned()){
+		m_openned = false;
+		return fclose(m_f);
+	}
+	return 0;
 }
 
 long File::getSize() {
@@ -119,6 +127,10 @@ bool File::isDirectory() {
     return false;
 }
 
+bool File::isOpenned(){
+	return m_openned;
+}
+
 int File::mkdir(FileMode m) {
     if(m == 0)
         return ::mkdir(m_path, 0755);
@@ -170,6 +182,8 @@ int File::copyTo(File &to) {
 }
 
 int File::readc() {
+	if(!isOpenned())
+		return FileTypes::ENDOFFILE;
     char c = fgetc(m_f);
 
     if(ferror(m_f)) {
@@ -180,6 +194,8 @@ int File::readc() {
 }
 
 int File::writec(char c) {
+	if(!isOpenned())
+		return -1;
     fputc(c, m_f);
 
     if(ferror(m_f)) {
@@ -190,5 +206,7 @@ int File::writec(char c) {
 }
 
 bool File::eof() {
+	if(!isOpenned())
+		return true;
     return feof(m_f);
 }

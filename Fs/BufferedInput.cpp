@@ -23,6 +23,8 @@ BufferedInput::~BufferedInput(){
 }
 
 string BufferedInput::readLine(){
+	if(!m_file.isOpenned())
+		return "";
 	string result = "";
 	int i = 0;
 	char c;
@@ -39,6 +41,8 @@ string BufferedInput::readLine(){
 }
 
 string BufferedInput::readWord(){
+	if(!m_file.isOpenned())
+		return "";
 	string result = "";
 	int i = 0;
 	char c;

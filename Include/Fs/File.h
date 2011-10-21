@@ -100,6 +100,8 @@ public:
      */
     bool isDirectory();
 
+	bool isOpenned();
+
     /**
      * @brief creates a directory with the current path with 0755 default mode
      * @return 0 is success, -1 otherwise
@@ -156,6 +158,7 @@ private:
     FILE* m_f;
     Path m_path;
     string m_mode;
+	bool m_openned;
 };
 
 #endif
