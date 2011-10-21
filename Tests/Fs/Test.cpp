@@ -105,6 +105,7 @@ int main() {
 	cout<<bb.eof()<<endl;
 	cout<<"read : "<<bb.readLine()<<endl;
 	cout <<"here "<<endl;
+
 	return 0;
 }
 
