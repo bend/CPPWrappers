@@ -14,23 +14,23 @@
 #include <Net/TcpSocket.h>
 
 TcpSocket::TcpSocket() {
-    m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
+	m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
 }
 
-TcpSocket::TcpSocket(int socketfd):
-    m_socketfd(socketfd) {
+TcpSocket::TcpSocket(int socketfd):AbstractSocket(socketfd) {
 }
 
-int TcpSocket::connect(string host, unsigned short port) {
-    m_portNo = (int)port;
 
-    if (m_socketfd < 0)
-        return SocketErrors::SOCOPEN;
+AbstractSocket::Status TcpSocket::connect(string host, unsigned short port) {
+	m_portNo = (int)port;
+
+	if (m_socketfd < 0)
+        return EOPEN;
 
     m_server = gethostbyname(host.c_str());
 
     if (m_server == NULL) {
-        return SocketErrors::SONHOST;
+        return EHOST;
     }
 
     bzero((char *) &m_servAddr, sizeof(m_servAddr));
@@ -40,142 +40,136 @@ int TcpSocket::connect(string host, unsigned short port) {
 
     /* Connect to the host */
     if (::connect(m_socketfd, (struct sockaddr *) &m_servAddr, sizeof(m_servAddr)) < 0)
-        return SocketErrors::SOCONN;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::close() {
-    if(::close(m_socketfd) < 0)
-        return SocketErrors::SOCLO;
 
-    return SocketErrors::SOSUCC;
-}
-
-int TcpSocket::sendString(const string &str) {
+AbstractSocket::Status TcpSocket::sendString(const string &str) {
     /* Send the string size */
     int s = (int) strlen(str.c_str());
 
     if(sendInt(s) < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
     /* Send the string */
     int r = send(m_socketfd, str.c_str(), s, 0);
 
     if(r < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::sendInt(const int &i) {
+AbstractSocket::Status TcpSocket::sendInt(const int &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::sendShort(const short &i) {
+AbstractSocket::Status TcpSocket::sendShort(const short &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::sendChar(const char &c) {
+AbstractSocket::Status TcpSocket::sendChar(const char &c) {
     int r = send(m_socketfd, &c, sizeof(c), 0);
 
     if(r < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::sendCharArray(const char* c) {
+AbstractSocket::Status TcpSocket::sendCharArray(const char* c) {
     /* Send the string size */
     int s = (int) strlen(c);
 
     if(sendInt(s) < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
     int r = send(m_socketfd, c, s, 0);
 
     if(r < 0)
-        return SocketErrors::SOEWRITE;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+	return Done;
 }
 
-int TcpSocket::receiveString(string &str) {
+AbstractSocket::Status TcpSocket::receiveString(string &str) {
     char* buffer;
     int s = 0;
 
     if(receiveInt(s) < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
     buffer = new char[s];
 
     if(buffer == NULL)
-        return SocketErrors::SOEMEM;
+        return EMEM;
 
     bzero(buffer, s);
     int n = read(m_socketfd, buffer, s);
 
     if(n < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
     str.assign(buffer, s);
     delete[] buffer;
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::receiveInt(int &i) {
+AbstractSocket::Status TcpSocket::receiveInt(int &i) {
     int n = read(m_socketfd, &i, sizeof(int));
 
     if(n < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::receiveShort(short& s) {
+AbstractSocket::Status TcpSocket::receiveShort(short& s) {
     int n = read(m_socketfd, &s, sizeof(short));
 
     if(n < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::receiveChar(char &c) {
+AbstractSocket::Status TcpSocket::receiveChar(char &c) {
     int n = read(m_socketfd, &c, sizeof(char));
 
     if(n < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpSocket::receiveCharArray(char **c) {
+AbstractSocket::Status TcpSocket::receiveCharArray(char **c) {
     int s = 0;
 
     if(receiveInt(s) < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
     *c = (char*)malloc(sizeof(char) * s);
 
     if((*c) == NULL)
-        return SocketErrors::SOEMEM;
+        return EMEM;
 
     bzero(*c, s);
     int n = read(m_socketfd, *c, s);
 
     if(n < 0)
-        return SocketErrors::SOEREAD;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }

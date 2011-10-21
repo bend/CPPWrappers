@@ -14,20 +14,9 @@
 #ifndef TCP_SOCKET_H__
 #define TCP_SOCKET_H__
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netdb.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
+#include <Net/AbstractSocket.h>
 
-#include <iostream>
-using namespace std;
-
-#include <Net/SocketErrors.h>
-
-class TcpSocket {
+class TcpSocket:public AbstractSocket {
 public:
     /**
      * @brief default constructor
@@ -35,7 +24,7 @@ public:
     TcpSocket();
 
     TcpSocket(int socketfd);
-
+	
     /**
      * @brief connects to the host on port
      * @param host : the host
@@ -46,56 +35,49 @@ public:
      * 		   SOCONN if could not connect to host
      *
      */
-    int connect(string host, unsigned short port);
+	AbstractSocket::Status connect(string host, unsigned short port);
 
     /**
      * @brief sends a string over the net
      * @return 0 if successful
      */
-    int sendString(const string &str);
+	AbstractSocket::Status sendString(const string &str);
 
     /**
      * @brief sends an int over the net
      * @return 0 if successful
      */
-    int sendInt(const int &i);
+	AbstractSocket::Status sendInt(const int &i);
 
     /**
      * @brief sends a short over the net
      * @return 0 if successful
      */
-    int sendShort(const short &i);
+	AbstractSocket::Status sendShort(const short &i);
 
     /**
      * @brief sends a char over the net
      * @return 0 if successful
      */
-    int sendChar(const char &c);
+	AbstractSocket::Status sendChar(const char &c);
 
     /**
      * @brief sends a char array over the net
      * @return 0 if successful
      */
-    int sendCharArray(const char* c);
+	AbstractSocket::Status sendCharArray(const char* c);
 
-    int receiveString(string &str);
+    AbstractSocket::Status receiveString(string &str);
 
-    int receiveInt(int &i);
+    AbstractSocket::Status receiveInt(int &i);
 
-    int receiveShort(short& s);
+    AbstractSocket::Status receiveShort(short& s);
 
-    int receiveChar(char &c);
+    AbstractSocket::Status receiveChar(char &c);
 
-    int receiveCharArray(char **c);
-
-    /**
-     * @brief disconnects from the host
-     * @return code
-     */
-    int close();
+    AbstractSocket::Status receiveCharArray(char **c);
 
 private:
-    int m_socketfd;
     int m_portNo;
     struct sockaddr_in m_servAddr;
     struct hostent *m_server;

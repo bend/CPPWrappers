@@ -15,9 +15,8 @@
 #define TCP_SERVER_H__
 
 #include <Net/TcpSocket.h>
-#include <Net/SocketErrors.h>
 
-class TcpServer {
+class TcpServer:public AbstractSocket {
 public:
     /**
      * @brief constructor
@@ -31,7 +30,7 @@ public:
      * @param port the port on which the server will listen for inconming connections
      * @return 0 if successful
      */
-    int listen(int port);
+	AbstractSocket::Status listen(int port);
 
     /**
      * @brief accepts a connection and returns the socket
@@ -40,15 +39,10 @@ public:
      */
     TcpSocket* accept();
 
-    /*
-     * @brief the server
-     * @return 0 if successful
-     */
-    int close();
 
 private:
     /* methods */
-    int bind(int port);
+	AbstractSocket::Status bind(int port);
 
     /* variables */
     int m_socketfd;

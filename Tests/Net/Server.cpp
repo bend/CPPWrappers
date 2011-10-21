@@ -14,12 +14,11 @@
 #include <Net/TcpServer.h>
 #include <Net/TcpSocket.h>
 #include <stdio.h>
-#include <Net/SocketErrors.h>
 int main() {
     TcpServer server;
 
-    if(server.listen(2000) == SocketErrors::SOEBIND) {
-        perror("");
+    if(server.listen(2000) != AbstractSocket::Done) {
+        perror("Error :");
         return -1;
     }
 
@@ -33,7 +32,9 @@ int main() {
     cout << "Connected client" << endl;
     int i = 4;
     i++;
+	cout<<s->getLocalPort()<<endl;
     s->sendInt(10);
+	sleep(2);
     s->sendString("hello");
     s->close();
     delete s;

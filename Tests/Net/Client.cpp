@@ -18,6 +18,8 @@ int main() {
     s.connect("localhost", 2000);
     string r = "";
     int res;
+	cout<<s.getLocalPort()<<endl;
+	sleep(1);
     s.receiveInt(res);
     cout << "Received " << res << endl;
     string resStr;

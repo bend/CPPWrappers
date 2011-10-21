@@ -18,11 +18,11 @@ TcpServer::TcpServer(int maxWaitingCon):
     m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
 }
 
-int TcpServer::bind(int port) {
+AbstractSocket::Status TcpServer::bind(int port) {
     m_portNo = (int) port;
 
     if(m_socketfd < 0)
-        return SocketErrors::SOCOPEN;
+        return EOPEN;
 
     bzero((char *) &m_servAddr, sizeof(m_servAddr));
     m_servAddr.sin_family = AF_INET;
@@ -30,19 +30,19 @@ int TcpServer::bind(int port) {
     m_servAddr.sin_port = htons(m_portNo);
 
     if (::bind(m_socketfd, (struct sockaddr *) &m_servAddr, sizeof(m_servAddr)) < 0)
-        return SocketErrors::SOEBIND;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
-int TcpServer::listen(int port) {
-    if (bind(port) < 0)
-        return SocketErrors::SOEBIND;
+AbstractSocket::Status TcpServer::listen(int port) {
+    if (bind(port) != Done)
+        return getSocketStatus();
 
     if(::listen(m_socketfd, m_maxWaitCon) < 0)
-        return SocketErrors::SOELIST;
+        return getSocketStatus();
 
-    return SocketErrors::SOSUCC;
+    return Done;
 }
 
 TcpSocket* TcpServer::accept() {
@@ -57,9 +57,3 @@ TcpSocket* TcpServer::accept() {
     return new TcpSocket(newSockfd);
 }
 
-int TcpServer::close() {
-    if(::close(m_socketfd) < 0)
-        return SocketErrors::SOCLO;
-
-    return SocketErrors::SOSUCC;
-}
