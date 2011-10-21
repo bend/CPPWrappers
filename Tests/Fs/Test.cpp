@@ -97,7 +97,7 @@ int main() {
 	cout<<"read : "<<in.readLine()<<endl;
 	in.close();
 	
-	Path pp("Test.cpp");
+	Path pp("aze");
 	File ff(pp);
 	BufferedInput bb(ff);
 	cout<<"read : "<<bb.readLine()<<endl;
