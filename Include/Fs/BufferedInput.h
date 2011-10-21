@@ -26,6 +26,8 @@ class BufferedInput{
 		string readWord();
 
 		string read(int nb);
+
+		bool eof();
 		
 		int close();
 	

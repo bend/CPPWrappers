@@ -90,7 +90,9 @@ int main() {
 	cout<<"read : "<<in.readLine()<<endl;
 	cout<<"read : "<<in.readLine()<<endl;
 	cout<<"read : "<<in.readLine()<<endl;
+	cout <<in.eof()<<endl;
 	cout<<"read : "<<in.readLine()<<endl;
+	cout <<in.eof()<<endl;
 	cout<<"read : "<<in.readLine()<<endl;
 	cout<<"read : "<<in.readLine()<<endl;
 	cout<<"read : "<<in.readLine()<<endl;
@@ -100,6 +102,7 @@ int main() {
 	Path pp("aze");
 	File ff(pp);
 	BufferedInput bb(ff);
+	cout<<bb.eof()<<endl;
 	cout<<"read : "<<bb.readLine()<<endl;
 	cout <<"here "<<endl;
 	return 0;

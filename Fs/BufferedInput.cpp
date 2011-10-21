@@ -65,3 +65,7 @@ string BufferedInput::read(int nb){
 int BufferedInput::close(){
 	m_file.close();
 }
+
+bool BufferedInput::eof(){
+	return m_file.eof();
+}
