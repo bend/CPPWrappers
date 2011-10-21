@@ -17,18 +17,18 @@
 
 File::File(Path& p):
     m_path(p),
-	m_openned(false){
+    m_openned(false) {
 }
 
 int File::open(const string& mode) {
     m_f = fopen(m_path, mode.c_str());
 
-    if(m_f == NULL){
+    if(m_f == NULL) {
         m_openned = false;
-		return -1;
-	}
-	m_openned = true;
+        return -1;
+    }
 
+    m_openned = true;
     return 0;
 }
 
@@ -49,11 +49,12 @@ int File::remove() {
 }
 
 int File::close() {
-	if(isOpenned()){
-		m_openned = false;
-		return fclose(m_f);
-	}
-	return 0;
+    if(isOpenned()) {
+        m_openned = false;
+        return fclose(m_f);
+    }
+
+    return 0;
 }
 
 long File::getSize() {
@@ -127,8 +128,8 @@ bool File::isDirectory() {
     return false;
 }
 
-bool File::isOpenned(){
-	return m_openned;
+bool File::isOpenned() {
+    return m_openned;
 }
 
 int File::mkdir(FileMode m) {
@@ -182,20 +183,22 @@ int File::copyTo(File &to) {
 }
 
 int File::readc() {
-	if(!isOpenned())
-		return FileTypes::ENDOFFILE;
+    if(!isOpenned())
+        return FileTypes::ENDOFFILE;
+
     char c = fgetc(m_f);
 
     if(ferror(m_f)) {
         return FileTypes::ENDOFFILE;
     }
 
-	return c;
+    return c;
 }
 
 int File::writec(char c) {
-	if(!isOpenned())
-		return -1;
+    if(!isOpenned())
+        return -1;
+
     fputc(c, m_f);
 
     if(ferror(m_f)) {
@@ -206,7 +209,8 @@ int File::writec(char c) {
 }
 
 bool File::eof() {
-	if(!isOpenned())
-		return true;
+    if(!isOpenned())
+        return true;
+
     return feof(m_f);
 }

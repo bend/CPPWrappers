@@ -17,15 +17,15 @@
 
 class AtkinSieve: public PrimeSieve {
 public :
-	/**
-	 * @brief Constructor for the Atkin sieve
-	 * @param limit the maximum length of the prime number that you need
-	 */
+    /**
+     * @brief Constructor for the Atkin sieve
+     * @param limit the maximum length of the prime number that you need
+     */
     AtkinSieve(unsigned long limit);
-	
-	/**
-	 * @brief generates all the primes between 2 and limit using the Atkin sieve
-	 */
+
+    /**
+     * @brief generates all the primes between 2 and limit using the Atkin sieve
+     */
     void genPrimes();
 };
 

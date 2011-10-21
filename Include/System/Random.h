@@ -34,34 +34,34 @@ public:
      * @brief default unix random gen
      */
     static const int UNIX;
-	
-	/**
-	 * @brief Constructor of the class$
-	 * @param algo The algorithm to use to generate the random numbers. Default is Multiply with carry algorithm
-	 * @see MULT_CARRY
-	 * @see BLUM_BLUM
-	 * @see UNIX
-	 */
+
+    /**
+     * @brief Constructor of the class$
+     * @param algo The algorithm to use to generate the random numbers. Default is Multiply with carry algorithm
+     * @see MULT_CARRY
+     * @see BLUM_BLUM
+     * @see UNIX
+     */
     Random(const int& algo = 0);
-	
-	/**
-	 * @brief Initializes the value of the PRG choosen
-	 * @return 0 if success, -1 otherwise
-	 */
+
+    /**
+     * @brief Initializes the value of the PRG choosen
+     * @return 0 if success, -1 otherwise
+     */
     int init();
-	
-	/**
-	 * @brief generates the next random number using the choosen algorithm
-	 * @return the generated number
-	 */
+
+    /**
+     * @brief generates the next random number using the choosen algorithm
+     * @return the generated number
+     */
     unsigned long random();
-	
-	/**
-	 * @brief Generated the next random number using the choosen algorithm. The genrated number will be in the [min,max] interal.
-	 * @param min the lower bound of the interval
-	 * @param max the upper bound of the interval
-	 * @return the generated number
-	 */
+
+    /**
+     * @brief Generated the next random number using the choosen algorithm. The genrated number will be in the [min,max] interal.
+     * @param min the lower bound of the interval
+     * @param max the upper bound of the interval
+     * @return the generated number
+     */
     unsigned long random(int min, int max);
 
 private:

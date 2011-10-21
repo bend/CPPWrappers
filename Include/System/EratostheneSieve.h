@@ -18,15 +18,15 @@
 class EratostheneSieve: public PrimeSieve {
 public :
 
-	/**
-	 * @brief Eratosthene Sieve constructor
-	 * @param limit the max length of the prime you need
-	 */
+    /**
+     * @brief Eratosthene Sieve constructor
+     * @param limit the max length of the prime you need
+     */
     EratostheneSieve(unsigned long limit);
-	
-	/**
-	 * @brief Generates all the primes between 0 and limit
-	 */
+
+    /**
+     * @brief Generates all the primes between 0 and limit
+     */
     void genPrimes();
 
 };
