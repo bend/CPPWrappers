@@ -13,25 +13,22 @@
 
 #include <System/Random.h>
 
-const int Random::MULT_CARRY = 0;
-const int Random::BLUM_BLUM = 1;
-const int Random::UNIX = 2;
 
-Random::Random(const int& algo):
+Random::Random(RandomType algo):
     m_algo(algo) {
 }
 
 int Random::init() {
     switch (m_algo) {
-    case MULT_CARRY:
+    case MultiplyWCarry:
         return initMultiplyWithCarry();
         break;
 
-    case BLUM_BLUM:
+    case BlumBlumShub:
         return initBlumBlum();
         break;
 
-    case UNIX:
+    case Unix:
         return initDefault();
         break;
 
@@ -42,15 +39,15 @@ int Random::init() {
 
 unsigned long Random::random() {
     switch(m_algo) {
-    case MULT_CARRY:
+    case MultiplyWCarry:
         return multiplyWithCarryRand();
         break;
 
-    case BLUM_BLUM:
+    case BlumBlumShub:
         return blumBlumRand();
         break;
 
-    case UNIX:
+    case Unix:
         return defaultRand();
         break;
 
@@ -63,15 +60,15 @@ unsigned long Random::random(int min, int max) {
     unsigned long rand;
 
     switch(m_algo) {
-    case MULT_CARRY:
+    case MultiplyWCarry:
         rand = multiplyWithCarryRand();
         break;
 
-    case BLUM_BLUM:
+	case BlumBlumShub:
         rand = blumBlumRand();
         break;
 
-    case UNIX:
+    case Unix:
         rand = defaultRand();
         break;
 

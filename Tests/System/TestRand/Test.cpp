@@ -15,7 +15,7 @@
 #include <set>
 using namespace std;
 int main() {
-    Random r(1);
+    Random r(Random::BlumBlumShub);
     r.init();
     int i = 0;
     vector<int> v;
@@ -44,7 +44,7 @@ int main() {
         i++;
     }
 
-    Random r2(1);
+    Random r2(Random::BlumBlumShub);
     r2.init();
     i = 0;
     long randomN = 0;

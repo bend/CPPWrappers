@@ -1,19 +1,13 @@
 /*
- * =====================================================================================
  *
- *       Filename:  Semaphore.cpp
+ *       	@file  Semaphore.cpp
  *
- *    Description:  A C++ Semaphore Wrapper
+ *    	   @brief  A C++ Semaphore Wrapper
  *
- *        Version:  1.0
- *        Created:  07.06.2011 21:09:48
- *       Revision:  none
- *       Compiler:  gcc
+ *       @version  1.0
+ *        @date  07.06.2011 21:09:48
+ *        @author  Ben D. (BD), dbapps2@gmail.com
  *
- *         Author:  Ben D. (BD), dbapps2@gmail.com
- *        Company:  dbapps
- *
- * =====================================================================================
  */
 
 #include <System/Semaphore.h>
