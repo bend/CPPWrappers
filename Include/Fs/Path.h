@@ -25,7 +25,6 @@ public:
      */
     Path getAbsolutePath();
 
-
     /**
      * @brief gets the file name of the file
      * @return the name

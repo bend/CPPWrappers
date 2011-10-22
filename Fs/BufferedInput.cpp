@@ -98,7 +98,7 @@ string BufferedInput::read(int nb) {
     return result;
 }
 
-int BufferedInput::close() {
+void BufferedInput::close() {
     m_file.close();
 	m_status = Done;
 }
