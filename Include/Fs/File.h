@@ -32,21 +32,21 @@ public:
 
     /**
      * @brief File class constructor. The file is not openned here, to open it you need to call the open() method
-     * @param path the path to the file
-     * @param mode the mode
+     * @param p the path to the file
      * @see FileTypes
      */
     File(Path& p);
 
-
     /**
      * @brief Opens the file in the defined mode
+	 * @param mode the open mode 
      * @return 0 if success , -1 otherwise
      */
     int open(const string& mode);
 
     /**
      * @brief Tells whether the file exists or not
+	 * @see FileTypes
      * @return true if exists false otherwise
      */
     bool exists();

@@ -48,9 +48,9 @@ public:
     /**
      * @brief Constructor
      * @param byte1 the first byte of the ip address (xxx.xxx.xxx.xxx)
-     * 	      byte2 the second byte
-     * 	      byte3 the third byte
-     * 	      byte4 the fourth byte
+     * @param byte2 the second byte
+     * @param byte3 the third byte
+     * @param byte4 the fourth byte
      */
     IpAddress(const  uint8 &byte1, const uint8 &byte2, const uint8 &byte3, const uint8 &byte4);
 
@@ -61,13 +61,13 @@ public:
     IpAddress(uint32 addr);
 
     /**
-     * get the string representation of the ip
+     * @brief get the string representation of the ip
      * @return the string representation
      */
     string toString();
 
-    /**
-     * @param gets the integer representation of the ip
+    /** 
+     * @brief gets the integer representation of the ip
      * @return the integer reprensentation
      */
     uint32 toInt();

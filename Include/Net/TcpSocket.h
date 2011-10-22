@@ -28,8 +28,8 @@ public:
 
     /**
      * @brief connects to the host on port
-     * @param host : the host
-     * @param the port
+     * @param host the host
+     * @param port the port
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
@@ -37,7 +37,7 @@ public:
 
     /**
      * @brief connects the host
-     * @param host a Host object containing the host and port
+     * @param h a Host object containing the host and port
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
