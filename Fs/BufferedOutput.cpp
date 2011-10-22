@@ -30,7 +30,7 @@ BufferedOutput::~BufferedOutput() {
     m_file.close();
 }
 
-int BufferedOutput::write(string str) {
+int BufferedOutput::write(const string &str) {
     if(!m_file.isOpenned())
         return -1;
 
@@ -38,7 +38,14 @@ int BufferedOutput::write(string str) {
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(int i) {
+int BufferedOutput::write(const char* str) {
+    if(!m_file.isOpenned())
+        return -1;
+	int size = strlen(str);
+    return this->appendInBuffer(str, size);
+}
+
+int BufferedOutput::write(const int &i) {
     if(!m_file.isOpenned())
         return -1;
 
@@ -47,7 +54,7 @@ int BufferedOutput::write(int i) {
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(char c) {
+int BufferedOutput::write(const char &c) {
     if(!m_file.isOpenned())
         return -1;
 
@@ -56,7 +63,7 @@ int BufferedOutput::write(char c) {
     return this->appendInBuffer(temp, 1);
 }
 
-int BufferedOutput::write(float f) {
+int BufferedOutput::write(const float &f) {
     if(!m_file.isOpenned())
         return -1;
 
@@ -65,7 +72,7 @@ int BufferedOutput::write(float f) {
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(long l) {
+int BufferedOutput::write(const long &l) {
     if(!m_file.isOpenned())
         return -1;
 
@@ -74,7 +81,7 @@ int BufferedOutput::write(long l) {
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(short s) {
+int BufferedOutput::write(const short &s) {
     if(!m_file.isOpenned())
         return -1;
 
@@ -100,6 +107,34 @@ int BufferedOutput::flush() {
 int BufferedOutput::close() {
     flush();
     return m_file.close();
+}
+
+int BufferedOutput::operator <<(const char &s){
+	return write(s);
+}
+
+int BufferedOutput::operator <<(const short &s){
+	return write(s);
+}
+
+int BufferedOutput::operator <<(const int &s){
+	return write(s);
+}
+
+int BufferedOutput::operator <<(const long &s){
+	return write(s);
+}
+
+int BufferedOutput::operator <<(const float &s){
+	return write(s);
+}
+
+int BufferedOutput::operator <<(const string &s){
+	return write(s);
+}
+
+int BufferedOutput::operator <<(const char *s){
+	return write(s);
 }
 
 int BufferedOutput::appendInBuffer(const char* s, int l) {

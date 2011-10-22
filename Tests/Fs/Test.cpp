@@ -54,6 +54,10 @@ int main() {
     b.write(123);
     long l = 123123123123L;
     b.write(l);
+	b<<666;
+	b<<"this is another string";
+	float fff = 0.123;
+	b<<fff<<endl;
     b.write('\n');
     short s = 123;
     b.write(s);

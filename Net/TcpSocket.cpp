@@ -21,7 +21,7 @@ TcpSocket::TcpSocket(int socketfd): AbstractSocket(socketfd) {
 }
 
 
-AbstractSocket::Status TcpSocket::connect(string host, unsigned short port) {
+AbstractSocket::Status TcpSocket::connect(string host, uint8 port) {
     m_portNo = (int)port;
 
     if (m_socketfd < 0)
@@ -70,7 +70,7 @@ AbstractSocket::Status TcpSocket::sendString(const string &str) {
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendInt(const int &i) {
+AbstractSocket::Status TcpSocket::sendInt(const int32 &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
@@ -79,7 +79,7 @@ AbstractSocket::Status TcpSocket::sendInt(const int &i) {
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendShort(const short &i) {
+AbstractSocket::Status TcpSocket::sendShort(const int8 &i) {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if(r < 0)
@@ -135,7 +135,7 @@ AbstractSocket::Status TcpSocket::receiveString(string &str) {
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveInt(int &i) {
+AbstractSocket::Status TcpSocket::receiveInt(int32 &i) {
     int n = read(m_socketfd, &i, sizeof(int));
 
     if(n < 0)
@@ -144,7 +144,7 @@ AbstractSocket::Status TcpSocket::receiveInt(int &i) {
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveShort(short& s) {
+AbstractSocket::Status TcpSocket::receiveShort(int8 &s) {
     int n = read(m_socketfd, &s, sizeof(short));
 
     if(n < 0)

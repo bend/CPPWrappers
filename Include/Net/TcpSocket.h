@@ -33,7 +33,7 @@ public:
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
-    AbstractSocket::Status connect(string host, unsigned short port);
+    AbstractSocket::Status connect(string host, uint8 port);
 
     /**
      * @brief connects the host
@@ -55,14 +55,14 @@ public:
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
-    AbstractSocket::Status sendInt(const int &i);
+    AbstractSocket::Status sendInt(const int32 &i);
 
     /**
      * @brief sends a short over the net
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
-    AbstractSocket::Status sendShort(const short &i);
+    AbstractSocket::Status sendShort(const int8 &i);
 
     /**
      * @brief sends a char over the net
@@ -92,7 +92,7 @@ public:
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
-    AbstractSocket::Status receiveInt(int &i);
+    AbstractSocket::Status receiveInt(int32 &i);
 
     /**
      * @brief reads a short on the socket
@@ -100,7 +100,7 @@ public:
      * @return AbstractSocket::Status
      * @see AbstractSocket::Status
      */
-    AbstractSocket::Status receiveShort(short& s);
+    AbstractSocket::Status receiveShort(int8 &s);
 
     /**
      * @brief reads a char on the socket

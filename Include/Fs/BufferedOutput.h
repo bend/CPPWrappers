@@ -15,6 +15,9 @@
 #define BUFFERED_OUTPUT_H__
 #include <Fs/File.h>
 #include <System/TypeCast.h>
+
+#include <string.h>
+
 class BufferedOutput {
 
 public:
@@ -37,42 +40,49 @@ public:
      * @param str the string to write
      * @return 0 is success, -1 otherwise
      */
-    int write(string str);
+    int write(const string &str);
+
+    /**
+     * @brief writes the char* to the buffer. When the buffer is full, the write function will flush it
+     * @param s the string to write
+     * @return 0 is success, -1 otherwise
+     */
+	int write(const char *s);
 
     /**
      * @brief writes the int to the buffer. The int will be converted to string before being written.  When the buffer is full, the write function will flush it
      * @param i the int to write
      * @return 0 is success, -1 otherwise
      */
-    int write(int i);
+    int write(const int &i);
 
     /**
      * @brief writes the char to the buffer. When the buffer is full, the write function will flush it
      * @param c the char to write
      * @return 0 is success, -1 otherwise
      */
-    int write(char c);
+    int write(const char &c);
 
     /**
      * @brief writes the float to the buffer. The float will be converted to string before being written. When the buffer is full, the write function will flush it
      * @param f the float to write
      * @return 0 is success, -1 otherwise
      */
-    int write(float f);
+    int write(const float &f);
 
     /**
      * @brief writes the string to the buffer. The long will be converted to string before being written. When the buffer is full, the write function will flush it
      * @param l the long to write
      * @return 0 is success, -1 otherwise
      */
-    int write(long l);
+    int write(const long &l);
 
     /**
      * @brief writes the string to the buffer. The short will be converted to string before being written. When the buffer is full, the write function will flush it
      * @param s the short to write
      * @return 0 is success, -1 otherwise
      */
-    int write(short s);
+    int write(const short &s);
 
     /**
      * @brief flushes the buffer and writes it contents to the file
@@ -85,6 +95,48 @@ public:
      * @return 0 if success, -1 otherwise
      */
     int close();
+	
+	/**
+	 * @brief writes the char 
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const char &s);
+	
+	/**
+	 * @brief writes the short
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const short &s);
+	
+	/**
+	 * @brief writes the int
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const int &s);
+	
+	/**
+	 * @brief writes the long
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const long &s);
+	
+	/**
+	 * @brief writes the float
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const float &s);
+
+	/**
+	 * @brief writes the string
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const string &s);
+	
+	/**
+	 * @brief writes the char*
+	 * @return 0 is success, -1 otherwise
+	 */
+	int operator <<(const char *s);
 
 private:
 

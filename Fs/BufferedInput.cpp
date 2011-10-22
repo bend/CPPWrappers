@@ -99,3 +99,5 @@ int BufferedInput::close() {
 bool BufferedInput::eof() {
     return m_file.eof();
 }
+
+
