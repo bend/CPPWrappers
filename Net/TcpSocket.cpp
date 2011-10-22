@@ -13,15 +13,18 @@
 
 #include <Net/TcpSocket.h>
 
-TcpSocket::TcpSocket() {
+TcpSocket::TcpSocket()
+{
     m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
 }
 
-TcpSocket::TcpSocket(int socketfd): AbstractSocket(socketfd) {
+TcpSocket::TcpSocket(int socketfd): AbstractSocket(socketfd)
+{
 }
 
 
-AbstractSocket::Status TcpSocket::connect(string host, uint8 port) {
+AbstractSocket::Status TcpSocket::connect(string host, uint8 port)
+{
     m_portNo = (int)port;
 
     if (m_socketfd < 0)
@@ -29,105 +32,113 @@ AbstractSocket::Status TcpSocket::connect(string host, uint8 port) {
 
     m_server = gethostbyname(host.c_str());
 
-    if (m_server == NULL) {
+    if (m_server == NULL)
+    {
         return EHOST;
     }
 
-    bzero((char *) &m_servAddr, sizeof(m_servAddr));
+    bzero((char*) &m_servAddr, sizeof(m_servAddr));
     m_servAddr.sin_family = AF_INET;
-    bcopy((char *)m_server->h_addr, (char *)&m_servAddr.sin_addr.s_addr, m_server->h_length);
+    bcopy((char*)m_server->h_addr, (char*)&m_servAddr.sin_addr.s_addr, m_server->h_length);
     m_servAddr.sin_port = htons(m_portNo);
 
     /* Connect to the host */
-    if (::connect(m_socketfd, (struct sockaddr *) &m_servAddr, sizeof(m_servAddr)) < 0)
+    if (::connect(m_socketfd, (struct sockaddr*) &m_servAddr, sizeof(m_servAddr)) < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::connect(Host& h) {
+AbstractSocket::Status TcpSocket::connect(Host& h)
+{
     sockaddr_in s = h.getHost();
 
-    if (::connect(m_socketfd, (struct sockaddr *) &s, sizeof(s)) < 0)
+    if (::connect(m_socketfd, (struct sockaddr*) &s, sizeof(s)) < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendString(const string &str) {
+AbstractSocket::Status TcpSocket::sendString(const string& str)
+{
     /* Send the string size */
     int s = (int) strlen(str.c_str());
 
-    if(sendInt(s) < 0)
+    if (sendInt(s) < 0)
         return getSocketStatus();
 
     /* Send the string */
     int r = send(m_socketfd, str.c_str(), s, 0);
 
-    if(r < 0)
+    if (r < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendInt(const int32 &i) {
+AbstractSocket::Status TcpSocket::sendInt(const int32& i)
+{
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
-    if(r < 0)
+    if (r < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendShort(const int8 &i) {
+AbstractSocket::Status TcpSocket::sendShort(const int8& i)
+{
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
-    if(r < 0)
+    if (r < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendChar(const char &c) {
+AbstractSocket::Status TcpSocket::sendChar(const char& c)
+{
     int r = send(m_socketfd, &c, sizeof(c), 0);
 
-    if(r < 0)
+    if (r < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendCharArray(const char* c) {
+AbstractSocket::Status TcpSocket::sendCharArray(const char* c)
+{
     /* Send the string size */
     int s = (int) strlen(c);
 
-    if(sendInt(s) < 0)
+    if (sendInt(s) < 0)
         return getSocketStatus();
 
     int r = send(m_socketfd, c, s, 0);
 
-    if(r < 0)
+    if (r < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveString(string &str) {
+AbstractSocket::Status TcpSocket::receiveString(string& str)
+{
     char* buffer;
     int s = 0;
 
-    if(receiveInt(s) < 0)
+    if (receiveInt(s) < 0)
         return getSocketStatus();
 
     buffer = new char[s];
 
-    if(buffer == NULL)
+    if (buffer == NULL)
         return EMEM;
 
     bzero(buffer, s);
     int n = read(m_socketfd, buffer, s);
 
-    if(n < 0)
+    if (n < 0)
         return getSocketStatus();
 
     str.assign(buffer, s);
@@ -135,48 +146,52 @@ AbstractSocket::Status TcpSocket::receiveString(string &str) {
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveInt(int32 &i) {
+AbstractSocket::Status TcpSocket::receiveInt(int32& i)
+{
     int n = read(m_socketfd, &i, sizeof(int));
 
-    if(n < 0)
+    if (n < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveShort(int8 &s) {
+AbstractSocket::Status TcpSocket::receiveShort(int8& s)
+{
     int n = read(m_socketfd, &s, sizeof(short));
 
-    if(n < 0)
+    if (n < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveChar(char &c) {
+AbstractSocket::Status TcpSocket::receiveChar(char& c)
+{
     int n = read(m_socketfd, &c, sizeof(char));
 
-    if(n < 0)
+    if (n < 0)
         return getSocketStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveCharArray(char **c) {
+AbstractSocket::Status TcpSocket::receiveCharArray(char** c)
+{
     int s = 0;
 
-    if(receiveInt(s) < 0)
+    if (receiveInt(s) < 0)
         return getSocketStatus();
 
     *c = (char*)malloc(sizeof(char) * s);
 
-    if((*c) == NULL)
+    if ((*c) == NULL)
         return EMEM;
 
     bzero(*c, s);
     int n = read(m_socketfd, *c, s);
 
-    if(n < 0)
+    if (n < 0)
         return getSocketStatus();
 
     return Done;

@@ -16,7 +16,8 @@
 #include <Fs/BufferedInput.h>
 #include <iostream>
 using namespace std;
-int main() {
+int main()
+{
     Path p("../../Tests/Fs/test.txt");
     File f(p);
     f.open(FileTypes::READ);
@@ -38,7 +39,7 @@ int main() {
     File f3(p3);
     vector<string> paths = f3.getList();
 
-    for(unsigned int i = 0; i < paths.size(); ++i)
+    for (unsigned int i = 0; i < paths.size(); ++i)
         cout << paths[i] << endl;
 
     FileMode m(FileTypes::RWXU | FileTypes::RWXG);

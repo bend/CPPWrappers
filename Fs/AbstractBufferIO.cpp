@@ -13,25 +13,28 @@
 
 #include <Fs/AbstractBufferIO.h>
 
-AbstractBufferIO::Status AbstractBufferIO::getBufferStatus() {
-    if(m_status != Done) {
+AbstractBufferIO::Status AbstractBufferIO::getBufferStatus()
+{
+    if (m_status != Done)
+    {
         return m_status;
     }
 
-    if(errno == EAGAIN)
+    if (errno == EAGAIN)
         return NotReady;
 
-    switch (errno) {
-    case EBADF:
-        return FileNotFound;
+    switch (errno)
+    {
+        case EBADF:
+            return FileNotFound;
 
-    case EIO:
-        return Error;
+        case EIO:
+            return Error;
 
-    case ETIMEDOUT:
-        return Error;
+        case ETIMEDOUT:
+            return Error;
 
-    default:
-        return Error;
+        default:
+            return Error;
     };
 }

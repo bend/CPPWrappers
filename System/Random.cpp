@@ -15,80 +15,90 @@
 
 
 Random::Random(RandomType algo):
-    m_algo(algo) {
+    m_algo(algo)
+{
 }
 
-int Random::init() {
-    switch (m_algo) {
-    case MultiplyWCarry:
-        return initMultiplyWithCarry();
-        break;
+int Random::init()
+{
+    switch (m_algo)
+    {
+        case MultiplyWCarry:
+            return initMultiplyWithCarry();
+            break;
 
-    case BlumBlumShub:
-        return initBlumBlum();
-        break;
+        case BlumBlumShub:
+            return initBlumBlum();
+            break;
 
-    case Unix:
-        return initDefault();
-        break;
+        case Unix:
+            return initDefault();
+            break;
 
-    default:
-        return -1;
+        default:
+            return -1;
     }
 }
 
-unsigned long Random::random() {
-    switch(m_algo) {
-    case MultiplyWCarry:
-        return multiplyWithCarryRand();
-        break;
+unsigned long Random::random()
+{
+    switch (m_algo)
+    {
+        case MultiplyWCarry:
+            return multiplyWithCarryRand();
+            break;
 
-    case BlumBlumShub:
-        return blumBlumRand();
-        break;
+        case BlumBlumShub:
+            return blumBlumRand();
+            break;
 
-    case Unix:
-        return defaultRand();
-        break;
+        case Unix:
+            return defaultRand();
+            break;
 
-    default:
-        return -1;
+        default:
+            return -1;
     }
 }
 
-unsigned long Random::random(int min, int max) {
+unsigned long Random::random(int min, int max)
+{
     unsigned long rand;
 
-    switch(m_algo) {
-    case MultiplyWCarry:
-        rand = multiplyWithCarryRand();
-        break;
+    switch (m_algo)
+    {
+        case MultiplyWCarry:
+            rand = multiplyWithCarryRand();
+            break;
 
-    case BlumBlumShub:
-        rand = blumBlumRand();
-        break;
+        case BlumBlumShub:
+            rand = blumBlumRand();
+            break;
 
-    case Unix:
-        rand = defaultRand();
-        break;
+        case Unix:
+            rand = defaultRand();
+            break;
 
-    default:
-        return -1;
+        default:
+            return -1;
     }
 
     int val = rand % (max - min + 1) + min;
     return val;
 }
 
-int Random::initDefault() {
+int Random::initDefault()
+{
     srand ( time(NULL) );
 }
 
-unsigned long Random::defaultRand() {
+unsigned long Random::defaultRand()
+{
     return rand();
 }
 
-int Random::initMultiplyWithCarry() {
+int Random::initMultiplyWithCarry()
+{
     int x  = Time::getTimeMilliseconds();
     m_c = 362436;
     int i;
@@ -100,7 +110,8 @@ int Random::initMultiplyWithCarry() {
         m_q[i] = m_q[i - 3] ^ m_q[i - 2] ^ 0x9e3779b9 ^ i;
 }
 
-unsigned long Random::multiplyWithCarryRand() {
+unsigned long Random::multiplyWithCarryRand()
+{
     long t, a = 18782LL;
     static int i = 4095;
     int x, r = 0xfffffffe;
@@ -109,17 +120,20 @@ unsigned long Random::multiplyWithCarryRand() {
     m_c = (t >> 32);
     x = t + m_c;
 
-    if (x < m_c) {
+    if (x < m_c)
+    {
         x++;
         m_c++;
     }
 
-    if((m_q[i] = r - x) < 0)
+    if ((m_q[i] = r - x) < 0)
         return -(m_q[i] = r - x);
+
     else return (m_q[i] = r - x);
 }
 
-int Random::initBlumBlum() {
+int Random::initBlumBlum()
+{
     long p, q;
     Prime pr(Time::getTimeMilliseconds() % 100000000);
     pr.genPrimes();
@@ -131,10 +145,12 @@ int Random::initBlumBlum() {
     m = p * q;
 }
 
-unsigned long Random::blumBlumRand() {
+unsigned long Random::blumBlumRand()
+{
     xn = (xn * xn) % m;
 
-    if(xn < 0) {
+    if (xn < 0)
+    {
         return -xn;
     }
 

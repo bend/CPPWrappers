@@ -15,7 +15,8 @@
 #include <vector>
 using namespace std;
 
-int main() {
+int main()
+{
     Prime p(100, Prime::Atkin);
     p.genPrimes();
     cout << "BiggestPrime : " << p.getBiggestPrime() << endl;
@@ -23,7 +24,8 @@ int main() {
     vector<long> v = p.getPrimes();
     unsigned int i = 0;
 
-    while(i < v.size()) {
+    while (i < v.size())
+    {
         cout << v[i] << endl;
         ++i;
     }

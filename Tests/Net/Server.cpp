@@ -14,17 +14,20 @@
 #include <Net/TcpServer.h>
 #include <Net/TcpSocket.h>
 #include <stdio.h>
-int main() {
+int main()
+{
     TcpServer server;
 
-    if(server.listen(2000) != AbstractSocket::Done) {
+    if (server.listen(2000) != AbstractSocket::Done)
+    {
         perror("Error :");
         return -1;
     }
 
     TcpSocket* s = server.accept();
 
-    if(s == NULL) {
+    if (s == NULL)
+    {
         cout << "Error: cannot accept conection" << endl;
         return -1;
     }

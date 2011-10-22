@@ -14,25 +14,29 @@
 #include <System/TypeCast.h>
 
 
-string TypeCast::toString(int i) {
+string TypeCast::toString(int i)
+{
     stringstream oss;
     oss << i;
     return oss.str();
 }
 
-string TypeCast::toString(long i) {
+string TypeCast::toString(long i)
+{
     stringstream oss;
     oss << i;
     return oss.str();
 }
 
-string TypeCast::toString(float i) {
+string TypeCast::toString(float i)
+{
     stringstream oss;
     oss << i;
     return oss.str();
 }
 
-string TypeCast::toString(char c) {
+string TypeCast::toString(char c)
+{
     stringstream oss;
     oss << c;
     return oss.str();

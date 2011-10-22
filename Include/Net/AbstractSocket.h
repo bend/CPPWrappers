@@ -30,91 +30,93 @@
 #include <iostream>
 using namespace std;
 
-class AbstractSocket {
-public:
-    /**
-     * @brief Status of the socket
-     */
-    enum Status {
-        /** No socket errors **/
-        Done,
-        /** Socket not ready **/
-        NotReady,
-        /** Socket disconnected **/
-        Disconnected,
-        /** Socket error **/
-        Error,
-        /** Could not open Socket descriptor **/
-        EOPEN,
-        /** Could not find host **/
-        EHOST,
-        /** Could not allocate memory **/
-        EMEM
-    };
+class AbstractSocket
+{
+    public:
+        /**
+         * @brief Status of the socket
+         */
+        enum Status
+        {
+            /** No socket errors **/
+            Done,
+            /** Socket not ready **/
+            NotReady,
+            /** Socket disconnected **/
+            Disconnected,
+            /** Socket error **/
+            Error,
+            /** Could not open Socket descriptor **/
+            EOPEN,
+            /** Could not find host **/
+            EHOST,
+            /** Could not allocate memory **/
+            EMEM
+        };
 
-    /**
-     * @brief Empry Constructor. This class must be inherited
-     */
-    AbstractSocket();
+        /**
+         * @brief Empry Constructor. This class must be inherited
+         */
+        AbstractSocket();
 
-    /**
-     * @brief Constructor. This class must be inherited
-     * @param socket the Socket descriptor
-     */
-    AbstractSocket(int socket);
+        /**
+         * @brief Constructor. This class must be inherited
+         * @param socket the Socket descriptor
+         */
+        AbstractSocket(int socket);
 
-    /**
-     * @brief gets the local port
-     * @return the port >0 is found, 0 if the port could not be determined
-     */
-    uint8 getLocalPort() const;
+        /**
+         * @brief gets the local port
+         * @return the port >0 is found, 0 if the port could not be determined
+         */
+        uint8 getLocalPort() const;
 
-    /**
-     * @brief gets the remote port
-     * @return the port >0 is found, 0 if the port could not be determined
-     */
-    uint8 getRemotePort() const;
+        /**
+         * @brief gets the remote port
+         * @return the port >0 is found, 0 if the port could not be determined
+         */
+        uint8 getRemotePort() const;
 
-    /**
-     * @brief get the remote address
-     * @return an IpAddress object is the ip could be determined
-     *     	   IpAddress::None if no ip address determined
-     */
-    IpAddress getRemoteAddress();
+        /**
+         * @brief get the remote address
+         * @return an IpAddress object is the ip could be determined
+         *     	   IpAddress::None if no ip address determined
+         */
+        IpAddress getRemoteAddress();
 
-    /**
-     * @brief sets the blocking state of the socket
-     * @param b a boolean
-     */
-    void setBlocking(bool b);
+        /**
+         * @brief sets the blocking state of the socket
+         * @param b a boolean
+         */
+        void setBlocking(bool b);
 
-    /**
-     * @brief get the blocking socket state
-     * @return true is blocking, false otherwise
-     */
-    bool isBlocking();
+        /**
+         * @brief get the blocking socket state
+         * @return true is blocking, false otherwise
+         */
+        bool isBlocking();
 
-    /**
-     * @brief get the socket status
-     * @return AbstractSocket::Status
-     * @see AbstractSocket::Status
-     */
-    AbstractSocket::Status getSocketStatus();
+        /**
+         * @brief get the socket status
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status getSocketStatus();
 
-    /**
-     * @brief disconnects from the host
-     */
-    void close();
+        /**
+         * @brief disconnects from the host
+         */
+        void close();
 
 
-protected:
-    /**
-     * @brief socket file descriptor
-     */
-    int m_socketfd;
+    protected:
+        /**
+         * @brief socket file descriptor
+         */
+        int m_socketfd;
 
-private:
-    bool m_isBlocking;
+    private:
+        bool m_isBlocking;
 };
 
 #endif

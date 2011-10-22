@@ -16,43 +16,44 @@
 
 #include <Net/TcpSocket.h>
 
-class TcpServer: public AbstractSocket {
-public:
-    /**
-     * @brief constructor
-     * @param maxWaitingCon the number of queued connection that the server can handle, if this number is reached, the server will refuse connections
-     */
-    TcpServer(int maxWaitingCon = 5);
+class TcpServer: public AbstractSocket
+{
+    public:
+        /**
+         * @brief constructor
+         * @param maxWaitingCon the number of queued connection that the server can handle, if this number is reached, the server will refuse connections
+         */
+        TcpServer(int maxWaitingCon = 5);
 
 
-    /**
-     * @brief listen for incomming connection
-     * @param port the port on which the server will listen for inconming connections
-     * @return AbstractSocket::Status
-     * @see AbstractSocket::Status
-     */
-    AbstractSocket::Status listen(int port);
+        /**
+         * @brief listen for incomming connection
+         * @param port the port on which the server will listen for inconming connections
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status listen(int port);
 
-    /**
-     * @brief accepts a connection and returns the socket
-     * of the newly connected client
-     * @return AbstractSocket::Status
-     * @see AbstractSocket::Status
-     */
-    TcpSocket* accept();
+        /**
+         * @brief accepts a connection and returns the socket
+         * of the newly connected client
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        TcpSocket* accept();
 
 
-private:
-    /* methods */
-    AbstractSocket::Status bind(int port);
+    private:
+        /* methods */
+        AbstractSocket::Status bind(int port);
 
-    /* variables */
-    int m_socketfd;
-    int m_portNo;
-    int m_maxWaitCon;
-    struct sockaddr_in m_servAddr;
-    struct sockaddr_in m_cliAddr;
-    struct hostent *m_server;
+        /* variables */
+        int m_socketfd;
+        int m_portNo;
+        int m_maxWaitCon;
+        struct sockaddr_in m_servAddr;
+        struct sockaddr_in m_cliAddr;
+        struct hostent* m_server;
 };
 
 #endif

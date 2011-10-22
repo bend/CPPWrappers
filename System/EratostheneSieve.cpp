@@ -14,16 +14,21 @@
 #include <System/EratostheneSieve.h>
 
 EratostheneSieve::EratostheneSieve(unsigned long n):
-    PrimeSieve(n, true) {
+    PrimeSieve(n, true)
+{
 }
 
-void EratostheneSieve::genPrimes() {
+void EratostheneSieve::genPrimes()
+{
     unsigned long i;
     unsigned long j;
 
-    for (i = 2; i*i <= m_limit; ++i) {
-        if (m_isPrime[i])  {
-            for (j = i + i; j <= m_limit; j += i) {
+    for (i = 2; i* i <= m_limit; ++i)
+    {
+        if (m_isPrime[i])
+        {
+            for (j = i + i; j <= m_limit; j += i)
+            {
                 m_isPrime[j] = false;
             }
         }

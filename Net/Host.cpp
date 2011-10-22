@@ -13,17 +13,20 @@
 
 #include <Net/Host.h>
 
-Host::Host(const string& host, const uint8 &port):
+Host::Host(const string& host, const uint8& port):
     IpAddress(host),
-    m_port(port) {
+    m_port(port)
+{
 }
 
 Host::Host(const char* host, const uint8 port):
     IpAddress(host),
-    m_port(port) {
+    m_port(port)
+{
 }
 
-sockaddr_in Host::getHost() {
+sockaddr_in Host::getHost()
+{
     sockaddr_in addr;
     std::memset(addr.sin_zero, 0, sizeof(addr.sin_zero));
     addr.sin_addr.s_addr = htonl(IpAddress::toInt());
@@ -32,7 +35,8 @@ sockaddr_in Host::getHost() {
     return addr;
 }
 
-Host::operator sockaddr_in() {
+Host::operator sockaddr_in()
+{
     return getHost();
 }
 

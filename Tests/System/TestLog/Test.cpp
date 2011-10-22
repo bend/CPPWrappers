@@ -12,10 +12,12 @@
  */
 #include <System/Logger.h>
 
-int main() {
+int main()
+{
     Logger l("log.txt");
 
-    for(int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         l.log("INFO", 0) << "Hello";
     }
 }

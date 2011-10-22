@@ -13,7 +13,8 @@
 #include <System/Time.h>
 #include <iostream>
 using namespace std;
-int main() {
+int main()
+{
     cout << "Time ms " << Time::getTimeMilliseconds() << endl;
     cout << "Time date : " << Time::getTimeDate();
     cout << "Time date : " << Time::getTimeDate("dd/MM/YYYY - HH:mm::SS") << endl;

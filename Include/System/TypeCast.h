@@ -18,21 +18,22 @@
 using namespace std;
 
 
-class TypeCast {
-public:
-    /**
-     * @brief Converts an int to a string
-     * @return the int converted to string
-     */
-    static string toString(int);
+class TypeCast
+{
+    public:
+        /**
+         * @brief Converts an int to a string
+         * @return the int converted to string
+         */
+        static string toString(int);
 
-    /**
-     * @brief Converts a char to a String
-     * @return the converted to string
-     */
-    static string toString(char);
-    static string toString(long);
-    static string toString(float);
+        /**
+         * @brief Converts a char to a String
+         * @return the converted to string
+         */
+        static string toString(char);
+        static string toString(long);
+        static string toString(float);
 };
 
 #endif

@@ -15,35 +15,36 @@
 #define HOST_H__
 #include <Net/IpAddress.h>
 
-class Host: public IpAddress {
-public:
-    /**
-     * @brief Constructor
-     * @param host the host name
-     * @param port the port number
-     */
-    Host(const string& host, const uint8& port);
+class Host: public IpAddress
+{
+    public:
+        /**
+         * @brief Constructor
+         * @param host the host name
+         * @param port the port number
+         */
+        Host(const string& host, const uint8& port);
 
-    /**
-     * @brief Constructor
-     * @param host the host name
-     * @param port the port number
-     */
-    Host(const char* host, const uint8 port);
+        /**
+         * @brief Constructor
+         * @param host the host name
+         * @param port the port number
+         */
+        Host(const char* host, const uint8 port);
 
-    /**
-     * @brief returns the host struct
-     * @return the sockaddr_in struct containing the host and port
-     */
-    sockaddr_in getHost();
+        /**
+         * @brief returns the host struct
+         * @return the sockaddr_in struct containing the host and port
+         */
+        sockaddr_in getHost();
 
-    /**
-     * @brief cast operator redefinition
-     */
-    operator sockaddr_in();
+        /**
+         * @brief cast operator redefinition
+         */
+        operator sockaddr_in();
 
-private:
-    uint8 m_port;
+    private:
+        uint8 m_port;
 
 
 

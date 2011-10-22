@@ -18,32 +18,34 @@
 
 #include <Fs/File.h>
 #include <Fs/FileTypes.h>
-class AbstractBufferIO {
-public:
-    /**
-     * @brief Status of the buffer io
-     */
-    enum Status {
-        /** Stream not ready **/
-        NotReady,
-        /** Done with no errors **/
-        Done,
-        /** Error while reading/writing **/
-        Error,
-        /** File not found **/
-        FileNotFound,
-        /** File not openned **/
-        NotOpen
-    };
+class AbstractBufferIO
+{
+    public:
+        /**
+         * @brief Status of the buffer io
+         */
+        enum Status
+        {
+            /** Stream not ready **/
+            NotReady,
+            /** Done with no errors **/
+            Done,
+            /** Error while reading/writing **/
+            Error,
+            /** File not found **/
+            FileNotFound,
+            /** File not openned **/
+            NotOpen
+        };
 
-    /**
-     * @brief get the buffer status
-     * @return AbstractBufferIO::Status
-     * @see AbstractBufferIO::Status
-     */
-    AbstractBufferIO::Status getBufferStatus();
-protected:
-    Status m_status;
+        /**
+         * @brief get the buffer status
+         * @return AbstractBufferIO::Status
+         * @see AbstractBufferIO::Status
+         */
+        AbstractBufferIO::Status getBufferStatus();
+    protected:
+        Status m_status;
 
 };
 

@@ -14,10 +14,12 @@
 #include <System/AtkinSieve.h>
 
 AtkinSieve::AtkinSieve(unsigned long n):
-    PrimeSieve(n, false) {
+    PrimeSieve(n, false)
+{
 }
 
-void AtkinSieve::genPrimes() {
+void AtkinSieve::genPrimes()
+{
     unsigned long sqrtLimit = (unsigned long)ceil(sqrt((double)m_limit));
     unsigned long x;
     unsigned long y;
@@ -25,33 +27,41 @@ void AtkinSieve::genPrimes() {
     unsigned long s;
     unsigned long k;
 
-    for (x = 1; x <= sqrtLimit; ++x) {
-        for (y = 1; y <= sqrtLimit; ++y) {
+    for (x = 1; x <= sqrtLimit; ++x)
+    {
+        for (y = 1; y <= sqrtLimit; ++y)
+        {
             n = 4 * x * x + y * y;
 
-            if (n <= m_limit && (n % 12 == 1 || n % 12 == 5)) {
+            if (n <= m_limit && (n % 12 == 1 || n % 12 == 5))
+            {
                 m_isPrime[n] ^= true;
             }
 
             n = 3 * x * x + y * y;
 
-            if (n <= m_limit && n % 12 == 7) {
+            if (n <= m_limit && n % 12 == 7)
+            {
                 m_isPrime[n] ^= true;
             }
 
             n = 3 * x * x - y * y;
 
-            if (x > y && n <= m_limit && n % 12 == 11) {
+            if (x > y && n <= m_limit && n % 12 == 11)
+            {
                 m_isPrime[n] ^= true;
             }
         }
     }
 
-    for (n = 5; n <= sqrtLimit; ++n) {
-        if (m_isPrime[n]) {
+    for (n = 5; n <= sqrtLimit; ++n)
+    {
+        if (m_isPrime[n])
+        {
             s = n * n;
 
-            for (k = s; k <= m_limit; k += s) {
+            for (k = s; k <= m_limit; k += s)
+            {
                 m_isPrime[k] = false;
             }
         }

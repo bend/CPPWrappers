@@ -13,7 +13,8 @@
 
 #include <Net/TcpSocket.h>
 
-int main() {
+int main()
+{
     TcpSocket s;
     Host h("localhost", 2000);
     s.connect(h);

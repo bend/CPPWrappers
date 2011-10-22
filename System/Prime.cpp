@@ -15,63 +15,71 @@
 
 Prime::Prime(unsigned long limit, Prime::SieveType type):
     m_limit(limit),
-    m_type(type) {
+    m_type(type)
+{
 }
 
-int Prime::genPrimes() {
-    switch(m_type) {
-    case Eratosthene:
-        m_sieve = new EratostheneSieve(m_limit);
-        break;
+int Prime::genPrimes()
+{
+    switch (m_type)
+    {
+        case Eratosthene:
+            m_sieve = new EratostheneSieve(m_limit);
+            break;
 
-    case Atkin:
-        m_sieve = new AtkinSieve(m_limit);
-        break;
+        case Atkin:
+            m_sieve = new AtkinSieve(m_limit);
+            break;
 
-    default:
-        return -1;
+        default:
+            return -1;
     }
 
     m_sieve->genPrimes();
     return 0;
 }
 
-long Prime::getBiggestPrime() {
-    if(m_sieve != NULL)
+long Prime::getBiggestPrime()
+{
+    if (m_sieve != NULL)
         return m_sieve->getBiggestPrime();
 
     return -1;
 }
 
-vector<long> Prime::getPrimes() {
-    if(m_sieve != NULL)
+vector<long> Prime::getPrimes()
+{
+    if (m_sieve != NULL)
         return m_sieve->getPrimes();
 
     return vector<long>();
 }
 
-long Prime::getNumberOfPrimes() {
-    if(m_sieve != NULL)
+long Prime::getNumberOfPrimes()
+{
+    if (m_sieve != NULL)
         return m_sieve->getNumberOfPrimes();
 
     return -1;
 }
 
-bool Prime::isPrime(long num) {
-    if(num <= 1)
+bool Prime::isPrime(long num)
+{
+    if (num <= 1)
         return false;
 
-    if(num == 2)
+    if (num == 2)
         return true;
 
-    if(num % 2 == 0)
+    if (num % 2 == 0)
         return false;
 
     long sRoot = sqrt(num * 1.0);
     int i;
 
-    for(i = 3; i <= sRoot; i += 2) {
-        if(num % i == 0)
+    for (i = 3; i <= sRoot; i += 2)
+    {
+        if (num % i == 0)
             return false;
     }
 

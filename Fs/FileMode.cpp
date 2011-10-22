@@ -14,18 +14,22 @@
 #include <Fs/FileMode.h>
 
 FileMode::FileMode(int mode):
-    m_mode(mode) {
+    m_mode(mode)
+{
 }
 
-FileMode::operator int() {
+FileMode::operator int()
+{
     return m_mode;
 }
 
-int FileMode::getMode() {
+int FileMode::getMode()
+{
     return m_mode;
 }
 
-string FileMode::getStringMode() {
+string FileMode::getStringMode()
+{
     char temp[] = {'-', '-', '-', '-', '-', '-', '-', '-', '-', '\0'};
 
     if (m_mode & FileTypes::RU) temp[0] = 'r';

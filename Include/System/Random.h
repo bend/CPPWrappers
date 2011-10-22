@@ -18,71 +18,73 @@
 using namespace std;
 #include <System/Time.h>
 #include <System/Prime.h>
-class Random {
-public:
+class Random
+{
+    public:
 
-    /**
-     * @brief Algorythm types enumeration
-     */
-    enum RandomType {
-        /** Multiply with carry algorithm */
-        MultiplyWCarry,
-        /** Blum Blum Shub algorithm **/
-        BlumBlumShub,
-        /** Unix Algorithm **/
-        Unix
-    };
+        /**
+         * @brief Algorythm types enumeration
+         */
+        enum RandomType
+        {
+            /** Multiply with carry algorithm */
+            MultiplyWCarry,
+            /** Blum Blum Shub algorithm **/
+            BlumBlumShub,
+            /** Unix Algorithm **/
+            Unix
+        };
 
-    /**
-     * @brief Constructor of the class$
-     * @param algo The algorithm to use to generate the random numbers. Default is Multiply with carry algorithm
-     * @see RandomType
-     */
-    Random(RandomType algo = MultiplyWCarry);
+        /**
+         * @brief Constructor of the class$
+         * @param algo The algorithm to use to generate the random numbers. Default is Multiply with carry algorithm
+         * @see RandomType
+         */
+        Random(RandomType algo = MultiplyWCarry);
 
-    /**
-     * @brief Initializes the value of the PRG choosen
-     * @return 0 if success, -1 otherwise
-     */
-    int init();
+        /**
+         * @brief Initializes the value of the PRG choosen
+         * @return 0 if success, -1 otherwise
+         */
+        int init();
 
-    /**
-     * @brief generates the next random number using the choosen algorithm
-     * @return the generated number
-     */
-    unsigned long random();
+        /**
+         * @brief generates the next random number using the choosen algorithm
+         * @return the generated number
+         */
+        unsigned long random();
 
-    /**
-     * @brief Generated the next random number using the choosen algorithm. The genrated number will be in the [min,max] interal.
-     * @param min the lower bound of the interval
-     * @param max the upper bound of the interval
-     * @return the generated number
-     */
-    unsigned long random(int min, int max);
+        /**
+         * @brief Generated the next random number using the choosen algorithm. The genrated number will be in the [min,max] interal.
+         * @param min the lower bound of the interval
+         * @param max the upper bound of the interval
+         * @return the generated number
+         */
+        unsigned long random(int min, int max);
 
-private:
+    private:
 
-    int initDefault();
+        int initDefault();
 
-    unsigned long defaultRand();
+        unsigned long defaultRand();
 
-    int initMultiplyWithCarry();
+        int initMultiplyWithCarry();
 
-    unsigned long multiplyWithCarryRand();
+        unsigned long multiplyWithCarryRand();
 
-    int  initBlumBlum();
+        int  initBlumBlum();
 
-    unsigned long blumBlumRand();
+        unsigned long blumBlumRand();
 
-    RandomType m_algo;
+        RandomType m_algo;
 
-    /* multiply with carry vars to init */
-    int m_q[4096];
-    int m_c;
+        /* multiply with carry vars to init */
+        int m_q[4096];
+        int m_c;
 
-    /* blum blum */
-    long xn;
-    long m;
+        /* blum blum */
+        long xn;
+        long m;
 
 };
 
