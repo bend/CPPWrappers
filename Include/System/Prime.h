@@ -21,21 +21,21 @@ using namespace std;
 
 class Prime {
 public:
-	/**
-	 * @brief Enum of the different Sieve types to generate primes
-	 */
-	enum SieveType {
-		/** Eratosthene sieve **/
-		Eratosthene,
-		/** Atkin Sieve **/
-		Atkin
-	};
+    /**
+     * @brief Enum of the different Sieve types to generate primes
+     */
+    enum SieveType {
+        /** Eratosthene sieve **/
+        Eratosthene,
+        /** Atkin Sieve **/
+        Atkin
+    };
 
     /**
      * @brief Constructor of the prime class
      * @param limit the max length of the prime you need
      * @param type the SieveType to use default Eratosthene
-	 * @see SieveType
+     * @see SieveType
      */
     Prime(unsigned long limit, Prime::SieveType type = Eratosthene);
 

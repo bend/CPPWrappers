@@ -64,7 +64,7 @@ unsigned long Random::random(int min, int max) {
         rand = multiplyWithCarryRand();
         break;
 
-	case BlumBlumShub:
+    case BlumBlumShub:
         rand = blumBlumRand();
         break;
 

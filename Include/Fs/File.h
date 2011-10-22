@@ -39,14 +39,14 @@ public:
 
     /**
      * @brief Opens the file in the defined mode
-	 * @param mode the open mode 
+     * @param mode the open mode
      * @return 0 if success , -1 otherwise
      */
     int open(const string& mode);
 
     /**
      * @brief Tells whether the file exists or not
-	 * @see FileTypes
+     * @see FileTypes
      * @return true if exists false otherwise
      */
     bool exists();

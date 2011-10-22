@@ -20,25 +20,25 @@ using namespace std;
 #include <System/Prime.h>
 class Random {
 public:
-	
-	/**
-	 * @brief Algorythm types enumeration
-	 */
-	enum RandomType{
-		/** Multiply with carry algorithm */
-		MultiplyWCarry,
-		/** Blum Blum Shub algorithm **/
-		BlumBlumShub,
-		/** Unix Algorithm **/
-		Unix
-	};
+
+    /**
+     * @brief Algorythm types enumeration
+     */
+    enum RandomType {
+        /** Multiply with carry algorithm */
+        MultiplyWCarry,
+        /** Blum Blum Shub algorithm **/
+        BlumBlumShub,
+        /** Unix Algorithm **/
+        Unix
+    };
 
     /**
      * @brief Constructor of the class$
      * @param algo The algorithm to use to generate the random numbers. Default is Multiply with carry algorithm
-	 * @see RandomType
+     * @see RandomType
      */
-    Random(RandomType r = MultiplyWCarry);
+    Random(RandomType algo = MultiplyWCarry);
 
     /**
      * @brief Initializes the value of the PRG choosen

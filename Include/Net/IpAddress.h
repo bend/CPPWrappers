@@ -66,7 +66,7 @@ public:
      */
     string toString();
 
-    /** 
+    /**
      * @brief gets the integer representation of the ip
      * @return the integer reprensentation
      */
