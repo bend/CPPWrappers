@@ -20,9 +20,9 @@ AbstractSocket::AbstractSocket(int socket):
 	m_socketfd(socket),
 	m_isBlocking(true){
 
-	}
+}
 
-short AbstractSocket::getLocalPort(){
+uint8 AbstractSocket::getLocalPort() const{
 	if(m_socketfd != -1){
 		sockaddr_in address;
 		socklen_t size = sizeof(address);
@@ -30,8 +30,33 @@ short AbstractSocket::getLocalPort(){
 			return ntohs(address.sin_port);
 		}
 	}		
-	return -1;
+	return 0;
 }
+
+uint8 AbstractSocket::getRemotePort() const{
+    if (m_socketfd != -1){
+        sockaddr_in address;
+        socklen_t size = sizeof(address);
+        if (getpeername(m_socketfd, reinterpret_cast<sockaddr*>(&address), &size) != -1)
+        {
+            return ntohs(address.sin_port);
+        }
+    }
+    return 0;
+}
+
+IpAddress AbstractSocket::getRemoteAddress(){
+	if (m_socketfd != -1){   
+        sockaddr_in address;
+        socklen_t size = sizeof(address);
+        if (getpeername(m_socketfd, reinterpret_cast<sockaddr*>(&address), &size) != -1){
+            return IpAddress(ntohl(address.sin_addr.s_addr));                            
+        }                                                                                
+    }                                                                                    
+    
+    return IpAddress::None;         
+}
+
 
 void AbstractSocket::setBlocking(bool b){
 	int status = fcntl(m_socketfd, F_GETFL);

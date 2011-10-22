@@ -15,6 +15,7 @@
 #define TCP_SOCKET_H__
 
 #include <Net/AbstractSocket.h>
+#include <Net/Host.h>
 
 class TcpSocket:public AbstractSocket {
 public:
@@ -29,41 +30,45 @@ public:
      * @brief connects to the host on port
      * @param host : the host
      * @param the port
-     * @return SOSUCC if succeded
-     * 		   SOCOPEN if socket could not be opened
-     * 		   SONHOST if host not found
-     * 		   SOCONN if could not connect to host
-     *
+	 * @return Status
+	 * @see AbstractSocket::Status
      */
 	AbstractSocket::Status connect(string host, unsigned short port);
 
+	AbstractSocket::Status connect(Host& h);
+
     /**
      * @brief sends a string over the net
-     * @return 0 if successful
+	 * @return Status
+	 * @see AbstractSocket::Status
      */
 	AbstractSocket::Status sendString(const string &str);
 
     /**
      * @brief sends an int over the net
-     * @return 0 if successful
+	 * @return Status
+	 * @see AbstractSocket::Status
      */
 	AbstractSocket::Status sendInt(const int &i);
 
     /**
      * @brief sends a short over the net
-     * @return 0 if successful
+	 * @return Status
+	 * @see AbstractSocket::Status
      */
 	AbstractSocket::Status sendShort(const short &i);
 
     /**
      * @brief sends a char over the net
-     * @return 0 if successful
+	 * @return Status
+	 * @see AbstractSocket::Status
      */
 	AbstractSocket::Status sendChar(const char &c);
 
     /**
      * @brief sends a char array over the net
-     * @return 0 if successful
+	 * @return Status
+	 * @see AbstractSocket::Status
      */
 	AbstractSocket::Status sendCharArray(const char* c);
 

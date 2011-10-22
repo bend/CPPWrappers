@@ -15,10 +15,13 @@
 
 int main() {
     TcpSocket s;
-    s.connect("localhost", 2000);
+	Host h("localhost", 2000);
+    s.connect(h);
     string r = "";
     int res;
 	cout<<s.getLocalPort()<<endl;
+	cout<<s.getRemotePort()<<endl;
+	cout<<s.getRemoteAddress().toString()<<endl;
 	sleep(1);
     s.receiveInt(res);
     cout << "Received " << res << endl;

@@ -45,6 +45,13 @@ AbstractSocket::Status TcpSocket::connect(string host, unsigned short port) {
     return Done;
 }
 
+AbstractSocket::Status TcpSocket::connect(Host& h){
+	sockaddr_in s = h.getHost();
+    if (::connect(m_socketfd, (struct sockaddr *) &s, sizeof(s)) < 0)
+        return getSocketStatus();
+
+    return Done;
+}
 
 AbstractSocket::Status TcpSocket::sendString(const string &str) {
     /* Send the string size */

@@ -14,6 +14,9 @@
 #ifndef ABSTRACT_SOCKET_H__
 #define ABSTRACT_SOCKET_H__
 
+#include <System/Types.h>
+#include <Net/Host.h>
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -44,7 +47,11 @@ class AbstractSocket{
 	
 		AbstractSocket(int socket);
 	
-		short getLocalPort();
+		uint8 getLocalPort() const;
+
+		uint8 getRemotePort() const;
+
+		IpAddress getRemoteAddress();
 
 		void setBlocking(bool b);
 
@@ -63,9 +70,6 @@ class AbstractSocket{
 	
 	private:
 		bool m_isBlocking;
-
-
-
 };
 
 #endif

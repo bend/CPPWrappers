@@ -32,7 +32,10 @@ int main() {
     cout << "Connected client" << endl;
     int i = 4;
     i++;
+	cout<<"Remote host : "<<s->getRemotePort()<<endl;
 	cout<<s->getLocalPort()<<endl;
+	cout<<server.getRemoteAddress().toString()<<endl;
+	cout<<s->getRemoteAddress().toString()<<endl;
     s->sendInt(10);
 	sleep(2);
     s->sendString("hello");

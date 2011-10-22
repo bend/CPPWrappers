@@ -42,7 +42,7 @@ int BufferedOutput::write(int i) {
     if(!m_file.isOpenned())
         return -1;
 
-    string str = Types::toString(i);
+    string str = TypeCast::toString(i);
     const char* s =  str.c_str();
     return this->appendInBuffer(s, str.length());
 }
@@ -60,7 +60,7 @@ int BufferedOutput::write(float f) {
     if(!m_file.isOpenned())
         return -1;
 
-    string str = Types::toString(f);
+    string str = TypeCast::toString(f);
     const char* s =  str.c_str();
     return this->appendInBuffer(s, str.length());
 }
@@ -69,7 +69,7 @@ int BufferedOutput::write(long l) {
     if(!m_file.isOpenned())
         return -1;
 
-    string str = Types::toString(l);
+    string str = TypeCast::toString(l);
     const char* s =  str.c_str();
     return this->appendInBuffer(s, str.length());
 }
@@ -78,7 +78,7 @@ int BufferedOutput::write(short s) {
     if(!m_file.isOpenned())
         return -1;
 
-    string str = Types::toString(s);
+    string str = TypeCast::toString(s);
     const char* ch =  str.c_str();
     return this->appendInBuffer(ch, str.length());
 }

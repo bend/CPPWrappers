@@ -2,10 +2,10 @@
  *
  *       @file  Types.h
  *
- *      @brief  Types class
+ *      @brief  Types def class
  *
  *    @version  1.0
- *       @date  10/13/2011 09:28:55
+ *       @date  10/22/2011 14:14:32
  *
  *     @author  Ben D. (BD), dbapps2@gmail.com
  *
@@ -13,25 +13,18 @@
 
 #ifndef TYPES_H__
 #define TYPES_H__
-#include <iostream>
-#include <sstream>
-using namespace std;
 
-class Types {
-public:
-    /**
-     * @brief Converts an int to a string
-     * @return the int converted to string
-     */
-    static string toString(int);
 
-    /**
-     * @brief Converts a char to a String
-     * @return the converted to string
-     */
-    static string toString(char);
-    static string toString(long);
-    static string toString(float);
-};
+typedef unsigned short uint8;
+
+typedef unsigned int uint32;
+
+typedef unsigned long uint64;
+
+typedef short int8;
+
+typedef int int32;
+
+typedef long int64;
 
 #endif

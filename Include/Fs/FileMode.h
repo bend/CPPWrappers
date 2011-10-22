@@ -13,9 +13,12 @@
 
 #ifndef FILE_MODE_H__
 #define FILE_MODE_H__
+
 #include <iostream>
 using namespace std;
+
 #include <Fs/FileTypes.h>
+
 class FileMode {
 public:
     /**

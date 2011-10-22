@@ -16,8 +16,8 @@
 #include <sys/time.h>
 #include <stdlib.h>
 #include <iostream>
-#include <System/Types.h>
 using namespace std;
+#include <System/TypeCast.h>
 class Time {
 public:
 

@@ -13,6 +13,7 @@
 
 #ifndef FILE_TYPES_H__
 #define FILE_TYPES_H__
+
 #include <iostream>
 using namespace std;
 

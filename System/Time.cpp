@@ -40,7 +40,7 @@ string Time::getTimeDate(string format) {
             if(tm->tm_mday < 10)
                 result.append("0");
 
-            result.append(Types::toString(tm->tm_mday));
+            result.append(TypeCast::toString(tm->tm_mday));
             i += 2;
             break;
 
@@ -48,12 +48,12 @@ string Time::getTimeDate(string format) {
             if(tm->tm_mon < 9)
                 result.append("0");
 
-            result.append(Types::toString(tm->tm_mon + 1));
+            result.append(TypeCast::toString(tm->tm_mon + 1));
             i += 2;
             break;
 
         case 'Y': /* year */
-            result.append(Types::toString((tm->tm_year + 1900)));
+            result.append(TypeCast::toString((tm->tm_year + 1900)));
             i += 4;
             break;
 
@@ -61,7 +61,7 @@ string Time::getTimeDate(string format) {
             if(tm->tm_hour < 10)
                 result.append("0");
 
-            result.append(Types::toString(tm->tm_hour));
+            result.append(TypeCast::toString(tm->tm_hour));
             i += 2;
             break;
 
@@ -69,7 +69,7 @@ string Time::getTimeDate(string format) {
             if(tm->tm_min < 10)
                 result.append("0");
 
-            result.append(Types::toString(tm->tm_min));
+            result.append(TypeCast::toString(tm->tm_min));
             i += 2;
             break;
 
@@ -77,12 +77,12 @@ string Time::getTimeDate(string format) {
             if(tm->tm_sec < 10)
                 result.append("0");
 
-            result.append(Types::toString(tm->tm_sec));
+            result.append(TypeCast::toString(tm->tm_sec));
             i += 2;
             break;
 
         default:
-            result.append(Types::toString(format[i]));
+			result.append(TypeCast::toString(format[i]));
             i += 1;
             break;
         }
