@@ -99,11 +99,11 @@ public:
      * @return true if folder, false otherwise
      */
     bool isDirectory();
-	
-	/**
-	 * @brief returns true is the file is openned false otherwise
-	 * @return true or false
-	 */
+
+    /**
+     * @brief returns true is the file is openned false otherwise
+     * @return true or false
+     */
     bool isOpenned();
 
     /**

@@ -14,17 +14,17 @@
 #include <Net/TcpSocket.h>
 
 TcpSocket::TcpSocket() {
-	m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
+    m_socketfd = socket(AF_INET, SOCK_STREAM, 0);
 }
 
-TcpSocket::TcpSocket(int socketfd):AbstractSocket(socketfd) {
+TcpSocket::TcpSocket(int socketfd): AbstractSocket(socketfd) {
 }
 
 
 AbstractSocket::Status TcpSocket::connect(string host, unsigned short port) {
-	m_portNo = (int)port;
+    m_portNo = (int)port;
 
-	if (m_socketfd < 0)
+    if (m_socketfd < 0)
         return EOPEN;
 
     m_server = gethostbyname(host.c_str());
@@ -45,8 +45,9 @@ AbstractSocket::Status TcpSocket::connect(string host, unsigned short port) {
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::connect(Host& h){
-	sockaddr_in s = h.getHost();
+AbstractSocket::Status TcpSocket::connect(Host& h) {
+    sockaddr_in s = h.getHost();
+
     if (::connect(m_socketfd, (struct sockaddr *) &s, sizeof(s)) < 0)
         return getSocketStatus();
 
@@ -108,7 +109,7 @@ AbstractSocket::Status TcpSocket::sendCharArray(const char* c) {
     if(r < 0)
         return getSocketStatus();
 
-	return Done;
+    return Done;
 }
 
 AbstractSocket::Status TcpSocket::receiveString(string &str) {

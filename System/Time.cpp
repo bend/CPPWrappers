@@ -82,7 +82,7 @@ string Time::getTimeDate(string format) {
             break;
 
         default:
-			result.append(TypeCast::toString(format[i]));
+            result.append(TypeCast::toString(format[i]));
             i += 1;
             break;
         }

@@ -2,7 +2,7 @@
  *
  *       @file  AbstractSocket.h
  *
- *      @brief  
+ *      @brief
  *
  *    @version  1.0
  *       @date  10/21/2011 22:53:37
@@ -30,46 +30,91 @@
 #include <iostream>
 using namespace std;
 
-class AbstractSocket{
-	public:
+class AbstractSocket {
+public:
+    /**
+     * @brief Status of the socket
+     */
+    enum Status {
+        /** No socket errors **/
+        Done,
+        /** Socket not ready **/
+        NotReady,
+        /** Socket disconnected **/
+        Disconnected,
+        /** Socket error **/
+        Error,
+        /** Could not open Socket descriptor **/
+        EOPEN,
+        /** Could not find host **/
+        EHOST,
+        /** Could not allocate memory **/
+        EMEM
+    };
 
-		enum Status {
-			Done,
-			NotReady,
-			Disconnected,
-			Error,
-			EOPEN,
-			EHOST,
-			EMEM
-		};
+    /**
+     * @brief Empry Constructor. This class must be inherited
+     */
+    AbstractSocket();
 
-		AbstractSocket();
-	
-		AbstractSocket(int socket);
-	
-		uint8 getLocalPort() const;
+    /**
+     * @brief Constructor. This class must be inherited
+     * @param socket the Socket descriptor
+     */
+    AbstractSocket(int socket);
 
-		uint8 getRemotePort() const;
+    /**
+     * @brief gets the local port
+     * @return the port >0 is found, 0 if the port could not be determined
+     */
+    uint8 getLocalPort() const;
 
-		IpAddress getRemoteAddress();
+    /**
+     * @brief gets the remote port
+     * @return the port >0 is found, 0 if the port could not be determined
+     */
+    uint8 getRemotePort() const;
 
-		void setBlocking(bool b);
+    /**
+     * @brief get the remote address
+     * @return an IpAddress object is the ip could be determined
+     *     	   IpAddress::None if no ip address determined
+     */
+    IpAddress getRemoteAddress();
 
-		bool isBlocking();
+    /**
+     * @brief sets the blocking state of the socket
+     * @param b a boolean
+     */
+    void setBlocking(bool b);
 
-		AbstractSocket::Status getSocketStatus();
+    /**
+     * @brief get the blocking socket state
+     * @return true is blocking, false otherwise
+     */
+    bool isBlocking();
 
-		/**
-		 * @brief disconnects from the host
-		 */
-		void close();
-	
+    /**
+     * @brief get the socket status
+     * @return AbstractSocket::Status
+     * @see AbstractSocket::Status
+     */
+    AbstractSocket::Status getSocketStatus();
 
-	protected:
-		int m_socketfd;
-	
-	private:
-		bool m_isBlocking;
+    /**
+     * @brief disconnects from the host
+     */
+    void close();
+
+
+protected:
+    /**
+     * @brief socket file descriptor
+     */
+    int m_socketfd;
+
+private:
+    bool m_isBlocking;
 };
 
 #endif

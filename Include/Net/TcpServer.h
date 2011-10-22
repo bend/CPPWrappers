@@ -16,7 +16,7 @@
 
 #include <Net/TcpSocket.h>
 
-class TcpServer:public AbstractSocket {
+class TcpServer: public AbstractSocket {
 public:
     /**
      * @brief constructor
@@ -28,21 +28,23 @@ public:
     /**
      * @brief listen for incomming connection
      * @param port the port on which the server will listen for inconming connections
-     * @return 0 if successful
+     * @return AbstractSocket::Status
+     * @see AbstractSocket::Status
      */
-	AbstractSocket::Status listen(int port);
+    AbstractSocket::Status listen(int port);
 
     /**
      * @brief accepts a connection and returns the socket
      * of the newly connected client
-     * @return 0 if successful
+     * @return AbstractSocket::Status
+     * @see AbstractSocket::Status
      */
     TcpSocket* accept();
 
 
 private:
     /* methods */
-	AbstractSocket::Status bind(int port);
+    AbstractSocket::Status bind(int port);
 
     /* variables */
     int m_socketfd;
