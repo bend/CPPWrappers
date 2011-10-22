@@ -34,9 +34,8 @@ public:
     /**
      * @brief Constructor of the prime class
      * @param limit the max length of the prime you need
-     * @param type  the type of sieve to use (default is Eratosthene Sieve)
-     * @see ERATOSTHENE_SIEVE
-     * @see ATKIN_SIEVE
+     * @param type the SieveType to use default Eratosthene
+	 * @see SieveType
      */
     Prime(unsigned long limit, Prime::SieveType type = Eratosthene);
 
