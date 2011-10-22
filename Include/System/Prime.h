@@ -21,15 +21,15 @@ using namespace std;
 
 class Prime {
 public:
-    /**
-     * @brief Use the Eratosthene sieve
-     */
-    static const int ERATOSTHENE_SIEVE;
-
-    /**
-     * @brief Use the Atkin sieve
-     */
-    static const int ATKIN_SIEVE;
+	/**
+	 * @brief Enum of the different Sieve types to generate primes
+	 */
+	enum SieveType {
+		/** Eratosthene sieve **/
+		Eratosthene,
+		/** Atkin Sieve **/
+		Atkin
+	};
 
     /**
      * @brief Constructor of the prime class
@@ -38,7 +38,7 @@ public:
      * @see ERATOSTHENE_SIEVE
      * @see ATKIN_SIEVE
      */
-    Prime(unsigned long limit, const int& type = 0);
+    Prime(unsigned long limit, Prime::SieveType type = Eratosthene);
 
     /**
      * @brief Generates the primes using the choosen sieve
@@ -74,7 +74,7 @@ public:
 private:
     PrimeSieve *m_sieve;
     unsigned long m_limit;
-    int m_type;
+    SieveType m_type;
 
 };
 

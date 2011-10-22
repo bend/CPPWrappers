@@ -12,21 +12,19 @@
  */
 #include <System/Prime.h>
 
-const int Prime::ERATOSTHENE_SIEVE = 0;
-const int Prime::ATKIN_SIEVE = 1;
 
-Prime::Prime(unsigned long limit, const int& type):
+Prime::Prime(unsigned long limit, Prime::SieveType type):
     m_limit(limit),
     m_type(type) {
 }
 
 int Prime::genPrimes() {
     switch(m_type) {
-    case ERATOSTHENE_SIEVE:
+    case Eratosthene:
         m_sieve = new EratostheneSieve(m_limit);
         break;
 
-    case ATKIN_SIEVE:
+    case Atkin:
         m_sieve = new AtkinSieve(m_limit);
         break;
 
@@ -37,7 +35,6 @@ int Prime::genPrimes() {
     m_sieve->genPrimes();
     return 0;
 }
-
 
 long Prime::getBiggestPrime() {
     if(m_sieve != NULL)

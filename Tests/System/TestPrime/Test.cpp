@@ -16,7 +16,7 @@
 using namespace std;
 
 int main() {
-    Prime p(100);
+    Prime p(100, Prime::Atkin);
     p.genPrimes();
     cout << "BiggestPrime : " << p.getBiggestPrime() << endl;
     cout << "Is prime ?: " << Prime::isPrime(p.getBiggestPrime()) << endl;
