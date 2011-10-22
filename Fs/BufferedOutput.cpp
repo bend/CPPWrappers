@@ -30,116 +30,143 @@ BufferedOutput::~BufferedOutput() {
     m_file.close();
 }
 
-int BufferedOutput::write(const string &str) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const string &str) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     const char* s = str.c_str();
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(const char* str) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const char* str) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 	int size = strlen(str);
     return this->appendInBuffer(str, size);
 }
 
-int BufferedOutput::write(const int &i) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const int &i) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     string str = TypeCast::toString(i);
     const char* s =  str.c_str();
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(const char &c) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const char &c) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     char temp[1];
     temp[0] = c;
     return this->appendInBuffer(temp, 1);
 }
 
-int BufferedOutput::write(const float &f) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const float &f) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     string str = TypeCast::toString(f);
     const char* s =  str.c_str();
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(const long &l) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const long &l) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     string str = TypeCast::toString(l);
     const char* s =  str.c_str();
     return this->appendInBuffer(s, str.length());
 }
 
-int BufferedOutput::write(const short &s) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::write(const short &s) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     string str = TypeCast::toString(s);
     const char* ch =  str.c_str();
     return this->appendInBuffer(ch, str.length());
 }
 
-int BufferedOutput::flush() {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::flush() {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     int i = 0;
 
     while(i < m_buffLen && i < m_lastIndex) {
-        m_file.writec(m_buffer[i]);
+		if( m_file.writec(m_buffer[i])<0)
+			return getBufferStatus();
         i++;
     }
 
     m_lastIndex = 0;
+	m_status = Done;
+	return Done;
 }
 
-int BufferedOutput::close() {
-    flush();
-    return m_file.close();
+AbstractBufferIO::Status BufferedOutput::close() {
+    return flush();
+}   
+
+BufferedOutput& BufferedOutput::operator <<(const char &s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const char &s){
-	return write(s);
+BufferedOutput& BufferedOutput::operator <<(const short &s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const short &s){
-	return write(s);
+BufferedOutput& BufferedOutput::operator <<(const int &s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const int &s){
-	return write(s);
+BufferedOutput& BufferedOutput::operator <<(const long &s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const long &s){
-	return write(s);
+BufferedOutput& BufferedOutput::operator <<(const float &s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const float &s){
-	return write(s);
+BufferedOutput& BufferedOutput::operator <<(const string &s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const string &s){
-	return write(s);
+BufferedOutput& BufferedOutput::operator <<(const char *s){
+	write(s);
+	return *this;
 }
 
-int BufferedOutput::operator <<(const char *s){
-	return write(s);
-}
-
-int BufferedOutput::appendInBuffer(const char* s, int l) {
-    if(!m_file.isOpenned())
-        return -1;
+AbstractBufferIO::Status BufferedOutput::appendInBuffer(const char* s, int l) {
+    if(!m_file.isOpenned()){
+		m_status = NotOpen;
+        return NotOpen;
+	}
 
     int i = 0;
 
@@ -151,8 +178,9 @@ int BufferedOutput::appendInBuffer(const char* s, int l) {
         }
 
         if(m_lastIndex >= m_buffLen)
-            flush();
+            if(flush() != Done)
+				return getBufferStatus();
     }
-
-    return 0;
+	m_status = Done;
+    return Done;
 }

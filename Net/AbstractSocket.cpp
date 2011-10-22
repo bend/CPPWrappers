@@ -103,7 +103,7 @@ AbstractSocket::Status AbstractSocket::getSocketStatus() {
 
     default :
         return AbstractSocket::Error;
-    }
+    };
 }
 
 void AbstractSocket::close() {
