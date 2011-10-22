@@ -1,6 +1,0 @@
-hello world
-how are you ? 
-a123123123123123666this is another string0.123
-0.1230.123
-123
-123.321

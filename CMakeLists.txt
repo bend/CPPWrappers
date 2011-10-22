@@ -22,6 +22,9 @@ ADD_LIBRARY(
 	${SOURCE_SYS}
 )
 
+FIND_PACKAGE (Threads)
+target_link_libraries (${LIB_NAME} ${CMAKE_THREAD_LIBS_INIT})
+
 #Installation of the library
 INSTALL(TARGETS ${LIB_NAME}
 	LIBRARY DESTINATION lib

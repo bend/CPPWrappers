@@ -14,7 +14,7 @@
 #ifndef HOST_H__
 #define HOST_H__
 #include <Net/IpAddress.h>
-
+#include <string.h>
 class Host: public IpAddress
 {
     public:

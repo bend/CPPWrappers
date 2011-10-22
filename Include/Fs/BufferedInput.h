@@ -15,6 +15,8 @@
 #define BUFFERED_INPUT_H__
 #include <Fs/AbstractBufferIO.h>
 
+#include <string.h>
+
 class BufferedInput: public AbstractBufferIO
 {
 

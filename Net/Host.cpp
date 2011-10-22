@@ -28,7 +28,7 @@ Host::Host(const char* host, const uint8 port):
 sockaddr_in Host::getHost()
 {
     sockaddr_in addr;
-    std::memset(addr.sin_zero, 0, sizeof(addr.sin_zero));
+    memset(addr.sin_zero, 0, sizeof(addr.sin_zero));
     addr.sin_addr.s_addr = htonl(IpAddress::toInt());
     addr.sin_family      = AF_INET;
     addr.sin_port        = htons(m_port);
