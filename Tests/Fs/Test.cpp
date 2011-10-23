@@ -18,104 +18,103 @@
 #include <assert.h>
 using namespace std;
 int main()
-{	
-	{
-		/** Files Test **/
-		Path p1("test.txt");
-		Path p2("temp.txt");
+{
+    {
+        /** Files Test **/
+        Path p1("test.txt");
+        Path p2("temp.txt");
+        File f1(p1);
+        File f2(p2);
+        assert(f1.open(FileTypes::READ) == 0);
+        assert(f1.exists() == true);
+        assert(f1.close() == 0);
+        cout << "Mode of f1 " << f1.getMode().getStringMode() << endl;
+        cout << "Path of f1 " << f1.getPath().getAbsolutePath() << endl;
+        cout << "Size of f1 " << f1.getSize() << endl;
+        assert(f2.exists() == false);
+        assert(f1.copyTo(f2) == 0);
+        assert(f2.exists() == true);
+        assert(f1.getSize() == f2.getSize());
+        assert(f2.remove() == 0);
+        assert(f1.renameTo(f2) == 0);
+        assert(f2.renameTo(f1) == 0);
+        assert(f1.renameTo(f1) != 0);
+        FileMode m(0700);
+        FileMode oldM = f1.getMode();
+        assert(f1.setMode(m) == 0);
+        assert(f1.getMode().getStringMode() == "rwx------");
+        assert(f1.setMode(oldM) == 0);
+    }
+    {
+        /** BufferInput Test **/
+        Path p1("test.txt");
+        File f1(p1);
+        BufferedInput b1(f1);
 
-		File f1(p1);
-		File f2(p2);
+        while (!b1.eof())
+        {
+            cout << b1.readLine() << endl;
+        }
 
-		assert(f1.open(FileTypes::READ) == 0);
-		assert(f1.exists() == true);
-		assert(f1.close() == 0);
+        b1.close();
+        BufferedInput b2(f1);
 
-		cout<<"Mode of f1 "<<f1.getMode().getStringMode()<<endl;
-		cout<<"Path of f1 "<<f1.getPath().getAbsolutePath()<<endl;
-		cout<<"Size of f1 "<<f1.getSize()<<endl;
+        while (!b2.eof())
+        {
+            cout << b2.readWord() << endl;
+        }
 
-		assert(f2.exists() == false);
-		assert(f1.copyTo(f2) == 0);
+        b2.close();
+        BufferedInput b3(f1);
 
-		//TODO FIXME why we need close here ??
-		f2.close();
+        while (!b3.eof())
+        {
+            string s;
+            b3 >> s;
+            cout << s << endl;
+        }
 
-		assert(f2.exists() == true);
-		assert(f1.getSize() == f2.getSize());
+        b3.close();
+        BufferedInput b4(f1);
 
-		assert(f2.remove() == 0);
-
-		assert(f1.renameTo(f2) == 0);
-		assert(f2.renameTo(f1) == 0);
-		assert(f1.renameTo(f1) != 0);
-
-		FileMode m(0700);
-		FileMode oldM = f1.getMode();
-		assert(f1.setMode(m) == 0);
-		assert(f1.getMode().getStringMode() == "rwx------");
-		assert(f1.setMode(oldM) == 0);
-	}
-	{
-		/** BufferInput Test **/
-		Path p1("test.txt");
-		File f1(p1);
-		BufferedInput b1(f1);
-		while(!b1.eof()){
-			cout<<b1.readLine()<<endl;
-		}
-		b1.close();
-		
-		BufferedInput b2(f1);
-
-		while(!b2.eof()){
-			cout<<b2.readWord()<<endl;
-		}
-		b2.close();
-
-		BufferedInput b3(f1);
-
-		while(!b3.eof()){
-			string s;
-			b3 >> s;
-			cout<<s<<endl;
-		}
-		b3.close();
-		
-		BufferedInput b4(f1);
-
-		while(!b4.eof()){
-			char c;
-			b4>>c;
-			cout<<c;
-		}
-	}
-
-	{	
-		Path p1("test_temp");
-		File f1(p1);
-		BufferedOutput b1(f1, FileTypes::WRITE);
-		b1<<"hello world"<<" how are you ?"<<'\n';
-		b1<<"This will append number 123 "<<123<<'\n';
-		b1<<"This will append PI "<<3.1416f<<'\n';
-		b1<<"This is the end of file "<<'\n';
-		b1.close();
-		cout<<"End writing"<<endl;
-	
-	}
-	{	
-		Path p1("test_temp");
-		File f1(p1);
+        while (!b4.eof())
+        {
+            char c;
+            b4 >> c;
+            cout << c;
+        }
+    }
+    {	
+		/** Buffered Input and BufferedOutput **/
+        Path p1("test_temp");
+        File f1(p1);
+        BufferedOutput b1(f1, FileTypes::WRITE);
+        b1 << "hello world" << " how are you ?" << '\n';
+        b1 << "This will append number 123 " << 123 << '\n';
+        b1 << "This will append PI " << 3.1416f << '\n';
+        b1 << "This is the end of file " << '\n';
+        b1.close();
+        cout << "End writing" << endl;
+        
 		BufferedInput in(f1);
-		while(!in.eof()){
-			cout<<in.readLine()<<endl;
-		}
-	} 
-	cout<<"All tests succeded"<<endl;
-	
-	
-	
-	
-	return 0;
+
+        while (!in.eof())
+        {
+            cout << in.readLine() << endl;
+        }
+		assert(f1.remove() == 0);
+    }
+	{
+		Path p("testDir");
+		File f(p);
+		assert(!f.exists());
+		assert(f.mkdir() == 0);
+		assert(f.isDirectory());
+		assert(!f.isFile());
+		assert(f.remove() == 0);
+
+	}
+    cout << "All tests succeded" << endl;
+    return 0;
 }
 

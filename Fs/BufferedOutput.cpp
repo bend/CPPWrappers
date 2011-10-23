@@ -139,8 +139,9 @@ AbstractBufferIO::Status BufferedOutput::flush()
 
         i++;
     }
-	m_file.flush();
-    m_lastIndex = 0;	
+
+    m_file.flush();
+    m_lastIndex = 0;
     m_status = Done;
     return Done;
 }

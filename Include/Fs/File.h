@@ -52,7 +52,11 @@ class File
          */
         bool exists();
 
-		int flush();
+        /**
+         * @brief Flushes the buffer
+         * @return 0 if success, -1 otherwise
+         */
+        int flush();
 
         /**
          * @brief removes the file
