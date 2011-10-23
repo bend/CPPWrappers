@@ -31,6 +31,10 @@ int main()
         cout << "Mode of f1 " << f1.getMode().getStringMode() << endl;
         cout << "Path of f1 " << f1.getPath().getAbsolutePath() << endl;
         cout << "Size of f1 " << f1.getSize() << endl;
+		cout << "HR Size of f1 KB"<< f1.getHumanReadableSize(FileTypes::Kbyte)<<endl; 
+		cout << "HR Size of f1 MB"<< f1.getHumanReadableSize(FileTypes::Mbyte)<<endl; 
+		cout << "HR Size of f1 GB"<< f1.getHumanReadableSize(FileTypes::Gbyte)<<endl; 
+		cout << "HR Size of f1 TB"<< f1.getHumanReadableSize(FileTypes::Tbyte)<<endl; 
         assert(f2.exists() == false);
         assert(f1.copyTo(f2) == 0);
         assert(f2.exists() == true);

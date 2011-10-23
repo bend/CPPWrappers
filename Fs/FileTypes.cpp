@@ -57,3 +57,4 @@ const int FileTypes::SUID = 0004000;
 const int FileTypes::SGID = 0002000;
 
 const int FileTypes::SVTX = 0001000;
+

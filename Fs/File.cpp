@@ -84,6 +84,27 @@ long File::getSize()
     return file_status.st_size;
 }
 
+float File::getHumanReadableSize(FileTypes::SizeFormat f)
+{
+	long size = getSize();
+	if(size<0)
+		return -1;
+	switch(f){
+		case FileTypes::Byte:
+			return size;
+		case FileTypes::Kbyte:
+			return size/1e3;
+		case FileTypes::Mbyte:
+			return size/1e6;
+		case FileTypes::Gbyte:
+			return size/1e9;
+		case FileTypes::Tbyte:
+			return size/1e12;
+		default:
+			return -1;
+	}
+}
+
 FileMode File::getMode()
 {
     struct stat file_status;

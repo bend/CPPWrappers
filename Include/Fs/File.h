@@ -88,6 +88,14 @@ class File
          * @return the file size > 0 or -1 if error occured
          */
         long getSize();
+		
+		/**
+		 * @brief get a human readable representation of the size
+		 * @param f FileTypes::SizeFormat 
+		 * @see FileTypes::SizeFormat
+		 * @return the size in the good representation if success, -1 otherwise
+		 */
+		float getHumanReadableSize(FileTypes::SizeFormat f);
 
         /**
          * @brief returns the mode of the file
