@@ -24,13 +24,11 @@ File::File(Path& p):
 int File::open(const string& mode)
 {
     m_f = fopen(m_path, mode.c_str());
-
     if (m_f == NULL)
     {
         m_openned = false;
         return -1;
     }
-
     m_openned = true;
     return 0;
 }
@@ -47,6 +45,10 @@ bool File::exists()
 
     fclose(file);
     return false;
+}
+
+int File::flush(){
+	return fflush(m_f);
 }
 
 int File::remove()
@@ -68,7 +70,8 @@ int File::close()
 long File::getSize()
 {
     struct stat file_status;
-
+	if(!this->exists())
+		return -1;
     if (stat(m_path, &file_status) < 0)
     {
         return -1;
@@ -188,8 +191,8 @@ int File::copyTo(File& to)
     this->open(FileTypes::READ);
     to.close();
     to.open(FileTypes::WRITE);
-
-    while (!this->eof())
+    
+	while (!this->eof())
     {
         ch = this->readc();
 
@@ -204,8 +207,8 @@ int File::copyTo(File& to)
     {
         return -1;
     }
-
-    if (to.close() < 0)
+    
+	if (to.close() < 0)
     {
         return -1;
     }

@@ -15,107 +15,107 @@
 #include <Fs/BufferedOutput.h>
 #include <Fs/BufferedInput.h>
 #include <iostream>
+#include <assert.h>
 using namespace std;
 int main()
-{
-    Path p("../../Tests/Fs/test.txt");
-    File f(p);
-    f.open(FileTypes::READ);
-    cout << "Size          :" << f.getSize() << endl;
-    cout << "Absolute Path :" << p.getAbsolutePath() << endl;
-    cout << "Name          :" << p.getName() << endl;
-    cout << "Parent        :" << p.getParent() << endl;
-    cout << "isDir ?       :" << f.isDirectory() << endl;
-    cout << "isFile?       :" << f.isFile() << endl;
-    cout << "exists ?      :" << f.exists() << endl;
-    Path n("test_renamed.txt");
-    File newOne(n);
-    cout << "exists ?      :" << newOne.exists() << endl;
-    cout << "rename:       :" << f.renameTo(newOne) << endl;
-    cout << "rename:       :" << newOne.renameTo(f) << endl;
-    cout << "copy          :" << f.copyTo(newOne) << endl;
-    cout << "remove        :" << newOne.remove() << endl;
-    Path p3("/");
-    File f3(p3);
-    vector<string> paths = f3.getList();
+{	
+	{
+		/** Files Test **/
+		Path p1("test.txt");
+		Path p2("temp.txt");
 
-    for (unsigned int i = 0; i < paths.size(); ++i)
-        cout << paths[i] << endl;
+		File f1(p1);
+		File f2(p2);
 
-    FileMode m(FileTypes::RWXU | FileTypes::RWXG);
-    f.setMode(m);
-    cout << f.getMode() << endl;
-    cout << f.getMode().getStringMode() << endl;
-    string theS = "hello world\nhow are you ? \n";
-    Path pout("out.test.txt");
-    File out(pout);
-    BufferedOutput b(out, FileTypes::WRITE, 10);
-    b.write(theS);
-    b.write('a');
-    b.write(123);
-    long l = 123123123123L;
-    b.write(l);
-    b << 666;
-    b << "this is another string";
-    float fff = 0.123;
-    b << fff << '\n';
-    b << fff << fff;
-    b.write('\n');
-    short s = 123;
-    b.write(s);
-    b.write('\n');
-    float flo = 123.321f;
-    b.write(flo);
-    b.write('\n');
-    b.flush();
-    b.close();
-    BufferedInput in2(out);
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    cout << "read word : " << in2.readWord() << endl;
-    in2.close();
-    BufferedInput in(out);
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << in.eof() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << in.eof() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    cout << "read : " << in.readLine() << endl;
-    in.close();
-    Path pp("aze");
-    File ff(pp);
-    BufferedInput bb(ff);
-    cout << bb.eof() << endl;
-    cout << "read : " << bb.readLine() << endl;
-    cout << "here " << endl;
-    BufferedInput in3(out);
-    cout << "read : " << in3.read(3) << endl;
-    cout << "read : " << in3.read(3) << endl;
-    cout << "read : " << in3.read(3) << endl;
-    cout << "read : " << in3.read(3) << endl;
-    cout << "read : " << in3.read(3) << endl;
-    cout << "read : " << in3.read(3) << endl;
-    cout << "read : " << in3.read(1000000000) << endl;
-    in3.close();
-    return 0;
+		assert(f1.open(FileTypes::READ) == 0);
+		assert(f1.exists() == true);
+		assert(f1.close() == 0);
+
+		cout<<"Mode of f1 "<<f1.getMode().getStringMode()<<endl;
+		cout<<"Path of f1 "<<f1.getPath().getAbsolutePath()<<endl;
+		cout<<"Size of f1 "<<f1.getSize()<<endl;
+
+		assert(f2.exists() == false);
+		assert(f1.copyTo(f2) == 0);
+
+		//TODO FIXME why we need close here ??
+		f2.close();
+
+		assert(f2.exists() == true);
+		assert(f1.getSize() == f2.getSize());
+
+		assert(f2.remove() == 0);
+
+		assert(f1.renameTo(f2) == 0);
+		assert(f2.renameTo(f1) == 0);
+		assert(f1.renameTo(f1) != 0);
+
+		FileMode m(0700);
+		FileMode oldM = f1.getMode();
+		assert(f1.setMode(m) == 0);
+		assert(f1.getMode().getStringMode() == "rwx------");
+		assert(f1.setMode(oldM) == 0);
+	}
+	{
+		/** BufferInput Test **/
+		Path p1("test.txt");
+		File f1(p1);
+		BufferedInput b1(f1);
+		while(!b1.eof()){
+			cout<<b1.readLine()<<endl;
+		}
+		b1.close();
+		
+		BufferedInput b2(f1);
+
+		while(!b2.eof()){
+			cout<<b2.readWord()<<endl;
+		}
+		b2.close();
+
+		BufferedInput b3(f1);
+
+		while(!b3.eof()){
+			string s;
+			b3 >> s;
+			cout<<s<<endl;
+		}
+		b3.close();
+		
+		BufferedInput b4(f1);
+
+		while(!b4.eof()){
+			char c;
+			b4>>c;
+			cout<<c;
+		}
+	}
+
+	{	
+		Path p1("test_temp");
+		File f1(p1);
+		BufferedOutput b1(f1, FileTypes::WRITE);
+		b1<<"hello world"<<" how are you ?"<<'\n';
+		b1<<"This will append number 123 "<<123<<'\n';
+		b1<<"This will append PI "<<3.1416f<<'\n';
+		b1<<"This is the end of file "<<'\n';
+		b1.close();
+		cout<<"End writing"<<endl;
+	
+	}
+	{	
+		Path p1("test_temp");
+		File f1(p1);
+		BufferedInput in(f1);
+		while(!in.eof()){
+			cout<<in.readLine()<<endl;
+		}
+	} 
+	cout<<"All tests succeded"<<endl;
+	
+	
+	
+	
+	return 0;
 }
 

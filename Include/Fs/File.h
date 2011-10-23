@@ -52,6 +52,8 @@ class File
          */
         bool exists();
 
+		int flush();
+
         /**
          * @brief removes the file
          * @return 0 if success, -1 otherwise

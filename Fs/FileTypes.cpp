@@ -12,7 +12,7 @@
  */
 #include <Fs/FileTypes.h>
 
-const string FileTypes::READ = "r";
+const string FileTypes::READ = "rb";
 
 const string FileTypes::WRITE = "w";
 
