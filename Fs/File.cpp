@@ -39,13 +39,12 @@ bool File::exists()
 {
     FILE* file;
 
-    if (file = fopen(m_path, "r"))
+    file = fopen(m_path, "r");
+	if(file != NULL)
     {
         fclose(file);
         return true;
     }
-
-    fclose(file);
     return false;
 }
 
