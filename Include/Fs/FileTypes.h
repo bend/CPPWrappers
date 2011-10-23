@@ -20,21 +20,22 @@ using namespace std;
 class FileTypes
 {
     public:
-		/**
-		 * @brief Size format enumeration 
-		 */
-		enum SizeFormat{
-			/** Byte representation **/
-			Byte,
-			/** Kilobyte representation **/
-			Kbyte,
-			/** Megabyte representation **/
-			Mbyte,
-			/** Gigabyte representation **/
-			Gbyte,
-			/** Terabyte representation **/
-			Tbyte
-		};
+        /**
+         * @brief Size format enumeration
+         */
+        enum SizeFormat
+        {
+            /** Byte representation **/
+            Byte,
+            /** Kilobyte representation **/
+            Kbyte,
+            /** Megabyte representation **/
+            Mbyte,
+            /** Gigabyte representation **/
+            Gbyte,
+            /** Terabyte representation **/
+            Tbyte
+        };
         /**
          * @brief Open file in read mode
          */

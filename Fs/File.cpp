@@ -38,13 +38,14 @@ int File::open(const string& mode)
 bool File::exists()
 {
     FILE* file;
-
     file = fopen(m_path, "r");
-	if(file != NULL)
+
+    if (file != NULL)
     {
         fclose(file);
         return true;
     }
+
     return false;
 }
 
@@ -86,23 +87,31 @@ long File::getSize()
 
 float File::getHumanReadableSize(FileTypes::SizeFormat f)
 {
-	long size = getSize();
-	if(size<0)
-		return -1;
-	switch(f){
-		case FileTypes::Byte:
-			return size;
-		case FileTypes::Kbyte:
-			return size/1e3;
-		case FileTypes::Mbyte:
-			return size/1e6;
-		case FileTypes::Gbyte:
-			return size/1e9;
-		case FileTypes::Tbyte:
-			return size/1e12;
-		default:
-			return -1;
-	}
+    long size = getSize();
+
+    if (size < 0)
+        return -1;
+
+    switch (f)
+    {
+        case FileTypes::Byte:
+            return size;
+
+        case FileTypes::Kbyte:
+            return size / 1e3;
+
+        case FileTypes::Mbyte:
+            return size / 1e6;
+
+        case FileTypes::Gbyte:
+            return size / 1e9;
+
+        case FileTypes::Tbyte:
+            return size / 1e12;
+
+        default:
+            return -1;
+    }
 }
 
 FileMode File::getMode()
@@ -221,11 +230,12 @@ int File::copyTo(File& to)
     {
         ch = this->readc();
 
-        if (ch == -1){
-			this->close();
-			to.close();
+        if (ch == -1)
+        {
+            this->close();
+            to.close();
             return 0;
-		}
+        }
 
         if (!to.eof())
             to.writec(ch);
@@ -233,10 +243,10 @@ int File::copyTo(File& to)
 
     if (this->close() < 0)
     {
-		to.close();
+        to.close();
         return -1;
     }
-	
+
     if (to.close() < 0)
     {
         return -1;
@@ -253,7 +263,7 @@ int File::readc()
     char c = fgetc(m_f);
 
     if (ferror(m_f))
-    {	
+    {
         return FileTypes::ENDOFFILE;
     }
 

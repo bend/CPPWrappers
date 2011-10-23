@@ -31,10 +31,10 @@ int main()
         cout << "Mode of f1 " << f1.getMode().getStringMode() << endl;
         cout << "Path of f1 " << f1.getPath().getAbsolutePath() << endl;
         cout << "Size of f1 " << f1.getSize() << endl;
-		cout << "HR Size of f1 KB"<< f1.getHumanReadableSize(FileTypes::Kbyte)<<endl; 
-		cout << "HR Size of f1 MB"<< f1.getHumanReadableSize(FileTypes::Mbyte)<<endl; 
-		cout << "HR Size of f1 GB"<< f1.getHumanReadableSize(FileTypes::Gbyte)<<endl; 
-		cout << "HR Size of f1 TB"<< f1.getHumanReadableSize(FileTypes::Tbyte)<<endl; 
+        cout << "HR Size of f1 KB" << f1.getHumanReadableSize(FileTypes::Kbyte) << endl;
+        cout << "HR Size of f1 MB" << f1.getHumanReadableSize(FileTypes::Mbyte) << endl;
+        cout << "HR Size of f1 GB" << f1.getHumanReadableSize(FileTypes::Gbyte) << endl;
+        cout << "HR Size of f1 TB" << f1.getHumanReadableSize(FileTypes::Tbyte) << endl;
         assert(f2.exists() == false);
         assert(f1.copyTo(f2) == 0);
         assert(f2.exists() == true);
@@ -88,8 +88,8 @@ int main()
             cout << c;
         }
     }
-    {	
-		/** Buffered Input and BufferedOutput **/
+    {
+        /** Buffered Input and BufferedOutput **/
         Path p1("test_temp");
         File f1(p1);
         BufferedOutput b1(f1, FileTypes::WRITE);
@@ -99,25 +99,24 @@ int main()
         b1 << "This is the end of file " << '\n';
         b1.close();
         cout << "End writing" << endl;
-        
-		BufferedInput in(f1);
+        BufferedInput in(f1);
 
         while (!in.eof())
         {
             cout << in.readLine() << endl;
         }
-		assert(f1.remove() == 0);
-    }
-	{
-		Path p("testDir");
-		File f(p);
-		assert(!f.exists());
-		assert(f.mkdir() == 0);
-		assert(f.isDirectory());
-		assert(!f.isFile());
-		assert(f.remove() == 0);
 
-	}
+        assert(f1.remove() == 0);
+    }
+    {
+        Path p("testDir");
+        File f(p);
+        assert(!f.exists());
+        assert(f.mkdir() == 0);
+        assert(f.isDirectory());
+        assert(!f.isFile());
+        assert(f.remove() == 0);
+    }
     cout << "All tests succeded" << endl;
     return 0;
 }
