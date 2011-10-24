@@ -54,7 +54,7 @@ AbstractSocket::Status UdpSocket::sendString(const string& str, Host &h){
 	return AbstractSocket::Done;
 }
 
-AbstractSocket::Status UdpSocket::sendCharArray(const char* str, size_t &s, Host &h){
+AbstractSocket::Status UdpSocket::sendCharArray(const char* str, const size_t &s, Host &h){
 	struct sockaddr_in peer;
 	if(m_socketfd == -1)
 		if ((m_socketfd=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP))==-1)

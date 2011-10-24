@@ -24,11 +24,15 @@ int main()
     cout << s.getRemotePort() << endl;
     cout << s.getRemoteAddress().toString() << endl;
     sleep(1);
-    s.receiveInt(res);
+    
+	s.receiveInt(res);
     cout << "Received " << res << endl;
-    string resStr;
-    s.receiveString(resStr);
-    cout << "Received string " << resStr << endl;
+    
+	string resStr;
+    s.receiveString(resStr,5);
+	cout << "Received string " << resStr << endl;
+    s.receiveString(resStr,5);
+	cout << "Received string " << resStr << endl;
     s.close();
 }
 

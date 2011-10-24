@@ -61,11 +61,7 @@ AbstractSocket::Status TcpSocket::connect(Host& h)
 
 AbstractSocket::Status TcpSocket::sendString(const string& str)
 {
-    /* Send the string size */
     int s = (int) strlen(str.c_str());
-
-    if (sendInt(s) < 0)
-        return getSocketStatus();
 
     /* Send the string */
     int r = send(m_socketfd, str.c_str(), s, 0);
@@ -106,14 +102,8 @@ AbstractSocket::Status TcpSocket::sendChar(const char& c)
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendCharArray(const char* c)
+AbstractSocket::Status TcpSocket::sendCharArray(const char* c, const size_t &s)
 {
-    /* Send the string size */
-    int s = (int) strlen(c);
-
-    if (sendInt(s) < 0)
-        return getSocketStatus();
-
     int r = send(m_socketfd, c, s, 0);
 
     if (r < 0)
@@ -122,13 +112,9 @@ AbstractSocket::Status TcpSocket::sendCharArray(const char* c)
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveString(string& str)
+AbstractSocket::Status TcpSocket::receiveString(string& str, const size_t &s)
 {
     char* buffer;
-    int s = 0;
-
-    if (receiveInt(s) < 0)
-        return getSocketStatus();
 
     buffer = new char[s];
 
@@ -176,14 +162,10 @@ AbstractSocket::Status TcpSocket::receiveChar(char& c)
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveCharArray(char** c)
+AbstractSocket::Status TcpSocket::receiveCharArray(char** c, const size_t &s)
 {
-    int s = 0;
 
-    if (receiveInt(s) < 0)
-        return getSocketStatus();
-
-    *c = (char*)malloc(sizeof(char) * s);
+    *c = new char[s];
 
     if ((*c) == NULL)
         return EMEM;
