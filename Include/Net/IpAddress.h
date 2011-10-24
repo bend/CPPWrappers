@@ -32,6 +32,7 @@ class IpAddress
         enum Ip
         {
             /** No ip determined **/
+			Any,
             None
         };
 
@@ -61,6 +62,10 @@ class IpAddress
          * @param addr the ip address
          */
         IpAddress(uint32 addr);
+		
+		IpAddress(Ip addr);
+
+		void setIp(uint32 addr);
 
         /**
          * @brief get the string representation of the ip

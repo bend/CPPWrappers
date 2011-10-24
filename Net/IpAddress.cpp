@@ -52,6 +52,21 @@ IpAddress::IpAddress(uint32 addr)
     m_ipAddr = htonl(addr);
 }
 
+IpAddress::IpAddress(Ip addr){
+	switch(addr){
+		case Any:
+			m_ipAddr = INADDR_ANY;
+			break;
+		case None:
+			m_ipAddr = INADDR_NONE;
+			break;
+	}
+}
+
+void IpAddress::setIp(uint32 addr){
+	m_ipAddr = htonl(addr);
+}
+
 string IpAddress::toString()
 {
     in_addr addr;

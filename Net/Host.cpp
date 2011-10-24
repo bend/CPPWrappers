@@ -12,16 +12,27 @@
  */
 
 #include <Net/Host.h>
+Host::Host():
+	IpAddress(None),
+	m_port(0)
+{
 
+}
 Host::Host(const string& host, const uint8& port):
     IpAddress(host),
     m_port(port)
 {
 }
 
-Host::Host(const char* host, const uint8 port):
+Host::Host(const char* host, const uint8 &port):
     IpAddress(host),
     m_port(port)
+{
+}
+
+Host::Host(IpAddress::Ip host, const uint8 &port):
+	IpAddress(host),
+	m_port(port)
 {
 }
 
@@ -35,10 +46,18 @@ sockaddr_in Host::getHost()
     return addr;
 }
 
-Host::operator sockaddr_in()
+void Host::setHost(sockaddr_in &addr)
 {
-    return getHost();
+	IpAddress::setIp(ntohl(addr.sin_addr.s_addr));
+	m_port = ntohs(addr.sin_port);
 }
 
+Host::operator string(){
+	return this->toString();
+}
+
+string Host::toString(){
+	return IpAddress::toString() + ":"+ TypeCast::toString(m_port);
+}
 
 
