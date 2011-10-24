@@ -11,8 +11,8 @@
  *
  */
 
-#ifndef ABSTRACT_BUFFER_IO
-#define ABSTRACT_BUFFER_IO
+#ifndef ABSTRACT_BUFFER_IO_H__
+#define ABSTRACT_BUFFER_IO_H__
 
 #include <errno.h>
 

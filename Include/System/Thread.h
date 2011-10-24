@@ -9,8 +9,8 @@
  */
 
 
-#ifndef Thread_H
-#define Thread_H
+#ifndef Thread_H__
+#define Thread_H__
 
 #include <pthread.h>
 

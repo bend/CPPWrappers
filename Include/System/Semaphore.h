@@ -1,5 +1,4 @@
 /*
- * =====================================================================================
  *
  *       Filename:  Semaphore.h
  *
@@ -12,9 +11,11 @@
  *
  *         Author:  Ben D. (BD), dbapps2@gmail.com
  *        Company:  dbapps
- *
- * =====================================================================================
  */
+
+#ifndef SEMAPHORE_H__
+#define SEMAPHORE_H__
+
 #include <iostream>
 #include <semaphore.h>
 #include <fcntl.h>
@@ -61,3 +62,5 @@ class Semaphore
 
 
 };
+
+#endif

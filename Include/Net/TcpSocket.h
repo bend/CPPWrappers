@@ -46,7 +46,7 @@ class TcpSocket: public AbstractSocket
 
         /**
          * @brief sends a string over the net
-		 * @param str the string to send
+         * @param str the string to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
@@ -54,7 +54,7 @@ class TcpSocket: public AbstractSocket
 
         /**
          * @brief sends an int over the net
-		 * @param i the int to send
+         * @param i the int to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
@@ -62,7 +62,7 @@ class TcpSocket: public AbstractSocket
 
         /**
          * @brief sends a short over the net
-		 * @param i the short to send
+         * @param i the short to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
@@ -70,7 +70,7 @@ class TcpSocket: public AbstractSocket
 
         /**
          * @brief sends a char over the net
-		 * @param c the char to send
+         * @param c the char to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
@@ -78,21 +78,21 @@ class TcpSocket: public AbstractSocket
 
         /**
          * @brief sends a char array over the net
-		 * @param c the char* tpo send
-		 * @param s the size of the char*
+         * @param c the char* tpo send
+         * @param s the size of the char*
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status sendCharArray(const char* c, const size_t &s);
+        AbstractSocket::Status sendCharArray(const char* c, const size_t& s);
 
         /**
          * @brief reads a string on the socket
          * @param str the string container in which the result will be put
-		 * @param s the size of the string to receive
+         * @param s the size of the string to receive
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status receiveString(string& str, const size_t &s);
+        AbstractSocket::Status receiveString(string& str, const size_t& s);
 
         /**
          * @brief reads an int on the socket
@@ -121,11 +121,11 @@ class TcpSocket: public AbstractSocket
         /**
          * @brief reads a char*  on the socket
          * @param c a char** not initialized in which the result will be put
-		 * @param s the size of the char to receive
+         * @param s the size of the char to receive
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status receiveCharArray(char** c, const size_t &s);
+        AbstractSocket::Status receiveCharArray(char** c, const size_t& s);
 
     private:
         int m_portNo;

@@ -13,10 +13,9 @@
 
 #include <Net/Host.h>
 Host::Host():
-	IpAddress(None),
-	m_port(0)
+    IpAddress(None),
+    m_port(0)
 {
-
 }
 Host::Host(const string& host, const uint8& port):
     IpAddress(host),
@@ -24,15 +23,15 @@ Host::Host(const string& host, const uint8& port):
 {
 }
 
-Host::Host(const char* host, const uint8 &port):
+Host::Host(const char* host, const uint8& port):
     IpAddress(host),
     m_port(port)
 {
 }
 
-Host::Host(IpAddress::Ip host, const uint8 &port):
-	IpAddress(host),
-	m_port(port)
+Host::Host(IpAddress::Ip host, const uint8& port):
+    IpAddress(host),
+    m_port(port)
 {
 }
 
@@ -46,18 +45,20 @@ sockaddr_in Host::getHost()
     return addr;
 }
 
-void Host::setHost(sockaddr_in &addr)
+void Host::setHost(sockaddr_in& addr)
 {
-	IpAddress::setIp(ntohl(addr.sin_addr.s_addr));
-	m_port = ntohs(addr.sin_port);
+    IpAddress::setIp(ntohl(addr.sin_addr.s_addr));
+    m_port = ntohs(addr.sin_port);
 }
 
-Host::operator string(){
-	return this->toString();
+Host::operator string()
+{
+    return this->toString();
 }
 
-string Host::toString(){
-	return IpAddress::toString() + ":"+ TypeCast::toString(m_port);
+string Host::toString()
+{
+    return IpAddress::toString() + ":" + TypeCast::toString(m_port);
 }
 
 

@@ -16,15 +16,20 @@
 int main()
 {
     TcpSocket s;
-    Host h("www.sfml-dev.org", 80);
-    if(s.connect(h) == AbstractSocket::Done){
-		cout<<"Connected "<<endl;
-		s.sendString("GET /ip-provider.php HTTP/1.1");
-		string r;
-		s.receiveString(r, 10);
-		cout<<" Received : "<<r<<endl;
-	}else
-		cout<<"not connected"<<endl;
+    Host h("checkip.dyndns.org", 80);
+
+    if (s.connect(h) == AbstractSocket::Done)
+    {
+        cout << "Connected " << endl;
+        s.sendString("GET / HTTP/1.0\nFrom: user@sfml-dev.org\nUser-Agent: libsfml-network/2.x\n\n");
+        string r;
+        s.receiveString(r, 1024);
+        cout << "something received" << endl;
+        cout << " Received : " << r << endl;
+    }
+
+    else
+        cout << "not connected" << endl;
 
     s.close();
 }
