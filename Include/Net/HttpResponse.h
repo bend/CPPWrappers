@@ -15,10 +15,7 @@
 #define HTTP_RESPONSE_H__
 
 class HttpResponse
-{
-    public:
-
-    private:
+{	
 
 
 };
