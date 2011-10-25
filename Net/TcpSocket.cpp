@@ -23,7 +23,7 @@ TcpSocket::TcpSocket(int socketfd): AbstractSocket(socketfd)
 }
 
 
-AbstractSocket::Status TcpSocket::connect(string host, uint8 port)
+AbstractSocket::Status TcpSocket::connect(const string& host, const uint8& port)
 {
     m_portNo = (int)port;
 

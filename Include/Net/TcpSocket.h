@@ -34,7 +34,7 @@ class TcpSocket: public AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status connect(string host, uint8 port);
+        AbstractSocket::Status connect(const string& host, const uint8& port);
 
         /**
          * @brief connects the host

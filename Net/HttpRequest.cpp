@@ -13,4 +13,19 @@
 
 #include <Net/HttpRequest.h>
 
+HttpRequest::HttpRequest(const string& sub, const RequestType &type){
+	
+}
+
+void HttpRequest::setContentField(const string& field, const string& value) const{
+
+
+}
+
+void HttpRequest::setRequestType(const RequestType& type) const {
+
+}
+
+void HttpRequest::setRequestSub(const string& sub) const{
+}
 
