@@ -21,9 +21,9 @@ File::File(Path& p):
 {
 }
 
-File::File(const string &p):
-	m_path(p),
-	m_openned(false)
+File::File(const string& p):
+    m_path(p),
+    m_openned(false)
 {
 }
 

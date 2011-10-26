@@ -13,6 +13,44 @@
 
 #include <Net/HttpResponse.h>
 
-void HttpResponse::clean(){
+HttpResponse::HttpResponse():
+    m_response(""),
+    m_contentLength(-1),
+    m_responseStatus(-1),
+    m_serverName("")
 
+{
+}
+
+HttpResponse::HttpResponse(string& str):
+    m_response(str),
+    m_contentLength(-1),
+    m_responseStatus(-1),
+    m_serverName("")
+{
+    parse();
+}
+
+void HttpResponse::clean()
+{
+	m_response.clear();
+}	
+
+void HttpResponse::append(const string& str)
+{	
+	m_response.append(str);
+}
+
+string HttpResponse::toString()
+{
+    return m_response;
+}
+
+void HttpResponse::parse()
+{	
+	istringstream iss(m_response, istringstream::in);
+	
+	/* First line is Error code */
+	//string err = iss.getline();
+		
 }

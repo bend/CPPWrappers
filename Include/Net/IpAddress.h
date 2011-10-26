@@ -31,8 +31,9 @@ class IpAddress
          */
         enum Ip
         {
+            /** Any Ip **/
+			Any,
             /** No ip determined **/
-            Any,
             None
         };
 
@@ -62,9 +63,18 @@ class IpAddress
          * @param addr the ip address
          */
         IpAddress(uint32 addr);
-
+		
+		/**
+		 * @brief Constructor
+		 * @param addr the Ip 
+		 * @see IpAddress::Ip
+		 */
         IpAddress(Ip addr);
-
+		
+		/**
+		 * @brief sets the ip address
+		 * @param addr a unit32 representing the ip
+		 */
         void setIp(uint32 addr);
 
         /**

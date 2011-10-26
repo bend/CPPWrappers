@@ -42,3 +42,6 @@ string TypeCast::toString(char c)
     return oss.str();
 }
 
+int TypeCast::toInt(string s)
+{
+}

@@ -20,7 +20,7 @@
 class HttpProtocol : protected TcpSocket
 {
     public:
-		HttpProtocol(Host& h);
+        HttpProtocol(Host& h);
         /**
          * @brief sends the request to the Host specified in the constructor
          * The Response will be retrieved and can be accessed
@@ -28,7 +28,7 @@ class HttpProtocol : protected TcpSocket
          * @param request a HttpRequest object containing the request
          * @return -1
          */
-		AbstractSocket::Status sendRequest(HttpRequest& request);
+        AbstractSocket::Status sendRequest(HttpRequest& request);
 
         /**
          * @brief get the HttpResponse() from the last HttpRequest.
@@ -39,9 +39,7 @@ class HttpProtocol : protected TcpSocket
         HttpResponse& getResponse();
 
     private:
-
-		int checkRequest(HttpRequest &request);
-		Host m_host;
+        Host m_host;
         HttpResponse m_response;
 
 };

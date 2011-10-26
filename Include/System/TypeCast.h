@@ -34,6 +34,8 @@ class TypeCast
         static string toString(char);
         static string toString(long);
         static string toString(float);
+
+        static int toInt(string);
 };
 
 #endif

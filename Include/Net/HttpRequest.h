@@ -17,9 +17,11 @@
 #include <sstream>
 #include <iterator>
 #include <iostream>
+
+#include <Net/HttpTypes.h>
 using namespace std;
 
-class HttpRequest
+class HttpRequest : public HttpTypes
 {
 
     public:
@@ -31,7 +33,13 @@ class HttpRequest
             /** Get Request **/
             Get,
             /** Post Request **/
-            Post
+            Post,
+			/** Head Requet (server does not return message body **/
+			Head,
+			/** Delete method **/
+			Delete,
+			/** Trace method **/
+			Trace
         };
 
         /**
@@ -47,7 +55,7 @@ class HttpRequest
          * @param field the field name
          * @param value the value to set for the field
          */
-        void setContentField(const string& field, const string& value);
+        void setField(const string& field, const string& value);
 
         /**
          * @brief sets the request type
@@ -56,25 +64,52 @@ class HttpRequest
         void setRequestType(const RequestType& type) ;
 
         /**
-         * @brief sets the Sub url to load
-         * @param field the sub url
+         * @brief sets the Http version (default is 1.1)
+		 * The version is a string representing a number
+		 * @param version the version number
          */
-        void setRequestSub(const string& sub ) ;
+        void setHttpVersion(const string& version);
+
+        /**
+         * @brief sets the Sub url to load
+         * @param sub the sub url
+         */
+        void setSub(const string& sub ) ;
 		
 		/**
-		 * @brief clears the HttpRequest contents 
+		 * @brief sets the body of the request
+		 * The body will be appended at the end of the request
+		 * @param body the html body
 		 */
-		void clean();
+		void setBody(const string & body);
 
-		int checkAndFix();
+        /**
+         * @brief clears the HttpRequest contents
+         */
+        void clean();
 
-		string toString();
+        /**
+         * @brief checks if all the required fields are filled.
+		 * If not, they will be automatically filled with a default value
+		 * @return 0 is success, -1 otherwise
+         */
+        int checkAndFix();
+
+        /**
+         * @brief returns the string representation of the HttpRequest.
+         * The string is ready to be sent as an http request
+         * @return the string
+         */
+        string toString();
+
+
 
     private:
         map<string, string> m_contents;
-		string m_requestType;
-
-
+        string m_requestType;
+        string m_httpVersion;
+        string m_requestSub;
+		string m_body;
 
 
 };

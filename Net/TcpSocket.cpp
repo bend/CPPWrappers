@@ -121,7 +121,9 @@ AbstractSocket::Status TcpSocket::receiveString(string& str, const size_t& s)
 
     bzero(buffer, s);
     int n = read(m_socketfd, buffer, s);
-
+	
+	if(n == 0)
+		return Disconnected;
     if (n < 0)
         return getSocketStatus();
 
@@ -134,6 +136,8 @@ AbstractSocket::Status TcpSocket::receiveInt(int32& i)
 {
     int n = read(m_socketfd, &i, sizeof(int));
 
+	if(n == 0)
+		return Disconnected;
     if (n < 0)
         return getSocketStatus();
 
@@ -144,6 +148,8 @@ AbstractSocket::Status TcpSocket::receiveShort(int8& s)
 {
     int n = read(m_socketfd, &s, sizeof(short));
 
+	if(n == 0)
+		return Disconnected;
     if (n < 0)
         return getSocketStatus();
 
@@ -154,6 +160,8 @@ AbstractSocket::Status TcpSocket::receiveChar(char& c)
 {
     int n = read(m_socketfd, &c, sizeof(char));
 
+	if(n == 0)
+		return Disconnected;
     if (n < 0)
         return getSocketStatus();
 
@@ -170,6 +178,8 @@ AbstractSocket::Status TcpSocket::receiveCharArray(char** c, const size_t& s)
     bzero(*c, s);
     int n = read(m_socketfd, *c, s);
 
+	if(n == 0)
+		return Disconnected;
     if (n < 0)
         return getSocketStatus();
 

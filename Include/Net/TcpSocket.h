@@ -24,7 +24,11 @@ class TcpSocket: public AbstractSocket
          * @brief default constructor
          */
         TcpSocket();
-
+		
+		/**
+		 * @brief constructor
+		 * @param socketfd the socket file descriptor
+		 */
         TcpSocket(int socketfd);
 
         /**

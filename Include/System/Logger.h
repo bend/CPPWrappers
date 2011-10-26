@@ -29,23 +29,23 @@ class Logger
          * If the file does not exist, it will be created, otherwise, it will be openned in append mode
          */
         Logger(string name);
-        
-		/**
-		 * @brief Virtual destructor 
-		 */
-		virtual ~Logger();
-        
-		/**
+
+        /**
+         * @brief Virtual destructor
+         */
+        virtual ~Logger();
+
+        /**
          * @brief Log the stream input
          * @param type: the Type of data to log (i.e. DEBUG, ERROR, ...)
          * @param indent the indent level
          */
         ofstream& log(string type, int indent = 0);
-        
+
 
     private:
         string getTimeDate();
-		ofstream m_out;
+        ofstream m_out;
 
 
 };

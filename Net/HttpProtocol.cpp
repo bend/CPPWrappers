@@ -13,32 +13,35 @@
 
 #include <Net/HttpProtocol.h>
 
-HttpProtocol::HttpProtocol(Host &h): 
-	TcpSocket(),
-	m_host(h)
+HttpProtocol::HttpProtocol(Host& h):
+    TcpSocket(),
+    m_host(h)
 {
 }
 
-AbstractSocket::Status HttpProtocol::sendRequest(HttpRequest &request)
-{	
-	m_response.clean();
-	if(request.checkAndFix() < 0)
-		return InvalidRequest;
-		
-	if(connect(m_host) != AbstractSocket::Done)
-		return getSocketStatus();
-	if(sendString(request.toString()) != AbstractSocket::Done)
-		return getSocketStatus();
-	
+AbstractSocket::Status HttpProtocol::sendRequest(HttpRequest& request)
+{
+    m_response.clean();
+
+    if (request.checkAndFix() < 0)
+        return InvalidRequest;
+
+    if (connect(m_host) != Done)
+        return getSocketStatus();
+
+    if (sendString(request.toString()) != Done)
+        return getSocketStatus();
+
+    string str = "";
+	while(receiveString(str, 1) == Done)
+	{
+		m_response.append(str);
+	}
 }
 
 
 HttpResponse& HttpProtocol::getResponse()
 {
-	return m_response;
+    return m_response;
 }
 
-int HttpProtocol::checkRequest(HttpRequest &request)
-{
-	
-}

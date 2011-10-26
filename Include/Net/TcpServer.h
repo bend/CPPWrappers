@@ -25,7 +25,6 @@ class TcpServer: public AbstractSocket
          */
         TcpServer(int maxWaitingCon = 5);
 
-
         /**
          * @brief listen for incomming connection
          * @param port the port on which the server will listen for inconming connections

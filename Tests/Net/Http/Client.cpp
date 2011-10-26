@@ -11,26 +11,40 @@
  *
  */
 
-#include <Net/TcpSocket.h>
+#include <Net/HttpProtocol.h>
 
 int main()
 {
+    /**
     TcpSocket s;
     Host h("checkip.dyndns.org", 80);
 
     if (s.connect(h) == AbstractSocket::Done)
     {
         cout << "Connected " << endl;
-        s.sendString("GET / HTTP/1.0\nFrom: user@sfml-dev.org\nUser-Agent: libsfml-network/2.x\n\n");
+        s.sendString("GET / HTTP/1.0\nFrom: user@sfml-dev.org\nUser-Agent: libsfml-network/4.x\n\n");
         string r;
         s.receiveString(r, 1024);
         cout << "something received" << endl;
         cout << " Received : " << r << endl;
     }
 
-    else
+    else{
         cout << "not connected" << endl;
+    	perror("");
+    }
 
     s.close();
+    **/
+    Host h("checkip.dyndns.org", 80);
+    HttpProtocol proto(h);
+    HttpRequest req("/", HttpRequest::Head);
+	req.setField(HttpTypes::UserAgent, "Mozilla");
+	req.setField(HttpTypes::From, "Ben D");
+	req.setBody("<html> hello world </html>");
+	req.checkAndFix();
+    cout << "Request " <<endl<< req.toString() << endl;
+    proto.sendRequest(req);
+    cout << "Answer " <<endl<< proto.getResponse().toString() << endl;
 }
 
