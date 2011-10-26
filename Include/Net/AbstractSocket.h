@@ -51,7 +51,9 @@ class AbstractSocket
             /** Could not find host **/
             EHOST,
             /** Could not allocate memory **/
-            EMEM
+            EMEM,
+			/** Http Request invalid **/
+			InvalidRequest
         };
 
         /**

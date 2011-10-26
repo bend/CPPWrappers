@@ -16,6 +16,14 @@
 
 class HttpResponse
 {
+	public:
+	
+	/**
+	 * @brief cleans the HttpResponse contents
+	 */
+	void clean();
+
+
 
 
 };

@@ -17,18 +17,18 @@
 #include <Net/HttpResponse.h>
 #include <Net/HttpRequest.h>
 
-class HttpProtocol
+class HttpProtocol : protected TcpSocket
 {
     public:
-        HttpProtocol(const Host& h);
+		HttpProtocol(Host& h);
         /**
          * @brief sends the request to the Host specified in the constructor
          * The Response will be retrieved and can be accessed
          * with the HttpProtocol::getResponse() method
          * @param request a HttpRequest object containing the request
-         * @return TODO
+         * @return -1
          */
-        int sendRequest(const HttpRequest& request);
+		AbstractSocket::Status sendRequest(HttpRequest& request);
 
         /**
          * @brief get the HttpResponse() from the last HttpRequest.
@@ -39,8 +39,10 @@ class HttpProtocol
         HttpResponse& getResponse();
 
     private:
-        TcpSocket* m_socket;
-        HttpResponse response;
+
+		int checkRequest(HttpRequest &request);
+		Host m_host;
+        HttpResponse m_response;
 
 };
 

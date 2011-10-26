@@ -14,6 +14,8 @@
 #ifndef HTTP_REQUEST_H__
 #define HTTP_REQUEST_H__
 #include <map>
+#include <sstream>
+#include <iterator>
 #include <iostream>
 using namespace std;
 
@@ -45,22 +47,32 @@ class HttpRequest
          * @param field the field name
          * @param value the value to set for the field
          */
-        void setContentField(const string& field, const string& value) const;
+        void setContentField(const string& field, const string& value);
 
         /**
          * @brief sets the request type
          * @param type the RequestType
          */
-        void setRequestType(const RequestType& type) const;
+        void setRequestType(const RequestType& type) ;
 
         /**
          * @brief sets the Sub url to load
          * @param field the sub url
          */
-        void setRequestSub(const string& sub ) const;
+        void setRequestSub(const string& sub ) ;
+		
+		/**
+		 * @brief clears the HttpRequest contents 
+		 */
+		void clean();
+
+		int checkAndFix();
+
+		string toString();
 
     private:
         map<string, string> m_contents;
+		string m_requestType;
 
 
 

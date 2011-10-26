@@ -12,3 +12,7 @@
  */
 
 #include <Net/HttpResponse.h>
+
+void HttpResponse::clean(){
+
+}
