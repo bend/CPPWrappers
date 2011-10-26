@@ -33,7 +33,14 @@ class File
 
         /**
          * @brief File class constructor. The file is not openned here, to open it you need to call the open() method
-         * @param p the path to the file
+         * @param p the string path to the file
+         * @see FileTypes
+         */
+		File(const string& p);
+        
+		/**
+         * @brief File class constructor. The file is not openned here, to open it you need to call the open() method
+         * @param p the Path to the file
          * @see FileTypes
          */
         File(Path& p);

@@ -21,6 +21,12 @@ File::File(Path& p):
 {
 }
 
+File::File(const string &p):
+	m_path(p),
+	m_openned(false)
+{
+}
+
 int File::open(const string& mode)
 {
     m_f = fopen(m_path, mode.c_str());
