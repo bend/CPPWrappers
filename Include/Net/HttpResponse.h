@@ -44,33 +44,57 @@ class HttpResponse : public HttpTypes
          */
         void append(const string& str);
 
-		int getContentLength();
+        /**
+         * @brief return the content length
+         * @return the length
+         */
+        int getContentLength();
 
-		string getHttpVersion();
+        /**
+         * @brief return the http version
+         * @return the version
+         */
+        string getHttpVersion();
 
-		int getResponseCode();
+        /**
+         * @brief return the status code
+         * @return the code
+         */
+        int getResponseCode();
 
-		string getBody();
+        /**
+         * @brief return the http body
+         * @return the http body
+         */
+        string getBody();
 
         /**
          * @brief returns a string representation of the Response
          * @return the string
          */
         string toString();
-        
-		void parse();
 
-		string getField(const string& field);
+        /**
+         * @brief parses the received header
+         */
+        void parse();
+
+        /**
+         * @brief returns a field
+         * @param field the field you need
+         * @return the value of the field if existing or an empty string if non existant
+         * @see HtmlTypes to see (some) possible fields
+         */
+        string getField(const string& field);
 
     private:
         string m_response;
         int m_contentLength;
         int m_responseStatus;
-		map<string, string> m_contents;
-		string m_version;
-		int m_code;
-		string m_body;
-
+        map<string, string> m_contents;
+        string m_version;
+        int m_code;
+        string m_body;
 };
 
 #endif
