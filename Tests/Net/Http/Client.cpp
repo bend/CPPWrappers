@@ -45,6 +45,13 @@ int main()
     req.checkAndFix();
     cout << "Request " << endl << req.toString() << endl;
     proto.sendRequest(req);
-    cout << "Answer " << endl << proto.getResponse().toString() << endl;
+	HttpResponse r = proto.getResponse();
+	r.parse();
+	cout<<r.toString()<<endl;
+	cout << "http version ["<<r.getHttpVersion()<<"]"<<endl;
+	cout<< "Content length["<<r.getContentLength()<<"]"<<endl;
+	cout<< "Code ["<<r.getResponseCode()<<"]"<<endl;
+	cout<< "Body ["<<r.getBody()<<"]"<<endl;
+	cout <<"Server ["<<r.getField("Server")<<"]"<<endl;
 }
 

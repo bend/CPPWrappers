@@ -15,6 +15,7 @@
 #define HTTP_RESPONSE_H__
 #include <iostream>
 #include <sstream>
+#include <map>
 #include <Net/HttpTypes.h>
 using namespace std;
 
@@ -43,22 +44,32 @@ class HttpResponse : public HttpTypes
          */
         void append(const string& str);
 
+		int getContentLength();
+
+		string getHttpVersion();
+
+		int getResponseCode();
+
+		string getBody();
+
         /**
          * @brief returns a string representation of the Response
          * @return the string
          */
         string toString();
+        
+		void parse();
+
+		string getField(const string& field);
 
     private:
-        void parse();
-
         string m_response;
         int m_contentLength;
         int m_responseStatus;
-        string m_serverName;
-
-
-
+		map<string, string> m_contents;
+		string m_version;
+		int m_code;
+		string m_body;
 
 };
 

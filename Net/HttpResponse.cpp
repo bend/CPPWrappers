@@ -17,8 +17,7 @@ HttpResponse::HttpResponse():
     m_response(""),
     m_contentLength(-1),
     m_responseStatus(-1),
-    m_serverName("")
-
+	m_contents()
 {
 }
 
@@ -26,9 +25,8 @@ HttpResponse::HttpResponse(string& str):
     m_response(str),
     m_contentLength(-1),
     m_responseStatus(-1),
-    m_serverName("")
+	m_contents()
 {
-    parse();
 }
 
 void HttpResponse::clean()
@@ -46,9 +44,61 @@ string HttpResponse::toString()
     return m_response;
 }
 
+int HttpResponse::getContentLength(){
+	return m_contentLength;
+}
+
+string HttpResponse::getHttpVersion(){
+	return m_version;
+}
+
+int HttpResponse::getResponseCode(){
+	return m_code;
+}
+
+string HttpResponse::getBody(){
+	return m_body;
+}
+
 void HttpResponse::parse()
 {
     istringstream iss(m_response, istringstream::in);
-    /* First line is Error code */
-    //string err = iss.getline();
+	string temp;
+    /* First line is Contains the version and status code */
+	if(iss>>m_version)
+		m_version = m_version.length() > 5 ? m_version.substr(5):"";
+	iss>>m_code;
+	iss>>temp;
+
+	/* Now we parse the fields untill we hit the Content-Length field */
+	string field;
+	string value;
+	
+	while(iss>>field){
+		int len = field.length();
+		/* Remove the ':' at the end */
+		field = field.substr(0, len - 1);
+		/* Check if it's the Content-Length flag */
+		if(field == ContentLength){
+			iss >> value;
+			m_contentLength = atoi(value.c_str());
+			break;
+		}
+		if(iss>>value){
+			m_contents[field] = value;
+		}
+	}
+
+	/* get the body */
+	/* The rest of buffer cannot be bigger then the contents length */
+	if(m_contentLength >0){
+		char *c = new char[m_contentLength];
+		iss.get(c, m_contentLength);
+		m_body = string(c);
+		cout <<"Body "<<m_body<<endl;
+	}
+}
+
+string HttpResponse::getField(const string& field){
+	return m_contents[field];
 }
