@@ -39,42 +39,42 @@ class FileTypes
         /**
          * @brief Open file in read mode
          */
-        static const string READ ;
+        static const string Read ;
 
         /**
          * @brief Open file in write mode
          */
-        static const string WRITE;
+        static const string Write;
 
         /**
          * @brief Open the file in read write mode
          */
-        static const string READWRITE ;
+        static const string ReadWrite ;
 
         /**
          * @brief Open the file in read write append mode
          */
-        static const string APPEND ;
+        static const string Append ;
 
         /**
          * @brief End of file marker
          */
-        static const int ENDOFFILE;
+        static const int Eof;
 
         /**
          * @brief seek from the begining of the file
          */
-        static const int SEEK_FBEGIN;
+        static const int SeekfBegin;
 
         /**
          * @brief seek from the end of the file
          */
-        static const int SEEK_FEND;
+        static const int SeekfEnd;
 
         /**
          * @brief seek from the current position
          */
-        static const int SEEK_CURRENT;
+        static const int SeekCurrent;
 
         /*
          * @brief  RWX mask for owner

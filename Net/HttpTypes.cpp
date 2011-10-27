@@ -47,5 +47,5 @@ const string HttpTypes::Upgrade = 		"Upgrade";
 const string HttpTypes::UserAgent = 	"User-Agent";
 const string HttpTypes::Via = 			"Via";
 const string HttpTypes::Warning = 		"Warning";
-const string HttpTypes::ContentEncoding ="Content-Encoding";
+const string HttpTypes::ContentEncoding = "Content-Encoding";
 const string HttpTypes::Server = 		"Server";

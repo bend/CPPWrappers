@@ -16,7 +16,7 @@
 BufferedInput::BufferedInput(File& f):
     m_file(f)
 {
-    m_file.open(FileTypes::READ);
+    m_file.open(FileTypes::Read);
 }
 
 BufferedInput::~BufferedInput()
@@ -42,7 +42,7 @@ string BufferedInput::readLine()
     {
         c = m_file.readc();
 
-        if (m_file.eof() || c == FileTypes::ENDOFFILE )
+        if (m_file.eof() || c == FileTypes::Eof )
             return result;
 
         if (c != '\n')
@@ -72,7 +72,7 @@ string BufferedInput::readWord()
     {
         c = m_file.readc();
 
-        if (m_file.eof() || c == FileTypes::ENDOFFILE )
+        if (m_file.eof() || c == FileTypes::Eof )
             return result;
 
         if (c != ' ' && c != '\n')
@@ -103,7 +103,7 @@ string BufferedInput::read(int nb)
     {
         c = m_file.readc();
 
-        if (m_file.eof() || c == FileTypes::ENDOFFILE )
+        if (m_file.eof() || c == FileTypes::Eof )
             return result;
 
         result += c;

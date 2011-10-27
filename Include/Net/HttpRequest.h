@@ -34,12 +34,12 @@ class HttpRequest : public HttpTypes
             Get,
             /** Post Request **/
             Post,
-			/** Head Requet (server does not return message body **/
-			Head,
-			/** Delete method **/
-			Delete,
-			/** Trace method **/
-			Trace
+            /** Head Requet (server does not return message body **/
+            Head,
+            /** Delete method **/
+            Delete,
+            /** Trace method **/
+            Trace
         };
 
         /**
@@ -65,8 +65,8 @@ class HttpRequest : public HttpTypes
 
         /**
          * @brief sets the Http version (default is 1.1)
-		 * The version is a string representing a number
-		 * @param version the version number
+         * The version is a string representing a number
+         * @param version the version number
          */
         void setHttpVersion(const string& version);
 
@@ -75,13 +75,13 @@ class HttpRequest : public HttpTypes
          * @param sub the sub url
          */
         void setSub(const string& sub ) ;
-		
-		/**
-		 * @brief sets the body of the request
-		 * The body will be appended at the end of the request
-		 * @param body the html body
-		 */
-		void setBody(const string & body);
+
+        /**
+         * @brief sets the body of the request
+         * The body will be appended at the end of the request
+         * @param body the html body
+         */
+        void setBody(const string& body);
 
         /**
          * @brief clears the HttpRequest contents
@@ -90,8 +90,8 @@ class HttpRequest : public HttpTypes
 
         /**
          * @brief checks if all the required fields are filled.
-		 * If not, they will be automatically filled with a default value
-		 * @return 0 is success, -1 otherwise
+         * If not, they will be automatically filled with a default value
+         * @return 0 is success, -1 otherwise
          */
         int checkAndFix();
 
@@ -109,7 +109,7 @@ class HttpRequest : public HttpTypes
         string m_requestType;
         string m_httpVersion;
         string m_requestSub;
-		string m_body;
+        string m_body;
 
 
 };

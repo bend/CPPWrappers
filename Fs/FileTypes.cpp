@@ -12,21 +12,21 @@
  */
 #include <Fs/FileTypes.h>
 
-const string FileTypes::READ = "rb";
+const string FileTypes::Read = "rb";
 
-const string FileTypes::WRITE = "w";
+const string FileTypes::Write = "w";
 
-const string FileTypes::READWRITE = "rw";
+const string FileTypes::ReadWrite = "rw";
 
-const string FileTypes::APPEND = "a+";
+const string FileTypes::Append = "a+";
 
-const int FileTypes::ENDOFFILE = -2;
+const int FileTypes::Eof = -2;
 
-const int FileTypes::SEEK_FBEGIN = 0;
+const int FileTypes::SeekfBegin = 0;
 
-const int FileTypes::SEEK_FEND = 2;
+const int FileTypes::SeekfEnd = 2;
 
-const int FileTypes::SEEK_CURRENT = 1;
+const int FileTypes::SeekCurrent = 1;
 
 const int FileTypes::RWXU = 0000700;
 

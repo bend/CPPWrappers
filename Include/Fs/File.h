@@ -26,7 +26,7 @@ using namespace std;
 #include <Fs/Path.h>
 #include <Fs/FileTypes.h>
 
-class File
+class File: public FileTypes
 {
 
     public:

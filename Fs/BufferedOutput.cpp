@@ -19,7 +19,7 @@ BufferedOutput::BufferedOutput(File& f, const string& openMode, const int& buffL
     m_buffLen(buffLen),
     m_lastIndex(0)
 {
-    if (openMode == FileTypes::APPEND || openMode == FileTypes::WRITE)
+    if (openMode == FileTypes::Append || openMode == FileTypes::Write)
     {
         m_file.open(openMode);
         m_buffer = new char[buffLen];

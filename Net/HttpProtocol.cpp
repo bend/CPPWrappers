@@ -33,12 +33,12 @@ AbstractSocket::Status HttpProtocol::sendRequest(HttpRequest& request)
         return getSocketStatus();
 
     string str = "";
-	while(receiveString(str, 1) == Done)
-	{
-		m_response.append(str);
-	}
-}
 
+    while (receiveString(str, 1024) == Done)
+    {
+        m_response.append(str);
+    }
+}
 
 HttpResponse& HttpProtocol::getResponse()
 {

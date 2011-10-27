@@ -25,7 +25,7 @@ int main()
         Path p2("temp.txt");
         File f1(p1);
         File f2(p2);
-        assert(f1.open(FileTypes::READ) == 0);
+        assert(f1.open(FileTypes::Read) == 0);
         assert(f1.exists() == true);
         assert(f1.close() == 0);
         cout << "Mode of f1 " << f1.getMode().getStringMode() << endl;
@@ -92,7 +92,7 @@ int main()
         /** Buffered Input and BufferedOutput **/
         Path p1("test_temp");
         File f1(p1);
-        BufferedOutput b1(f1, FileTypes::WRITE);
+        BufferedOutput b1(f1, FileTypes::Write);
         b1 << "hello world" << " how are you ?" << '\n';
         b1 << "This will append number 123 " << 123 << '\n';
         b1 << "This will append PI " << 3.1416f << '\n';

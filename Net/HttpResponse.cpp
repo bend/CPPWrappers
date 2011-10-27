@@ -33,12 +33,12 @@ HttpResponse::HttpResponse(string& str):
 
 void HttpResponse::clean()
 {
-	m_response.clear();
-}	
+    m_response.clear();
+}
 
 void HttpResponse::append(const string& str)
-{	
-	m_response.append(str);
+{
+    m_response.append(str);
 }
 
 string HttpResponse::toString()
@@ -47,10 +47,8 @@ string HttpResponse::toString()
 }
 
 void HttpResponse::parse()
-{	
-	istringstream iss(m_response, istringstream::in);
-	
-	/* First line is Error code */
-	//string err = iss.getline();
-		
+{
+    istringstream iss(m_response, istringstream::in);
+    /* First line is Error code */
+    //string err = iss.getline();
 }

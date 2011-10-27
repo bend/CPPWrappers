@@ -39,12 +39,12 @@ int main()
     Host h("checkip.dyndns.org", 80);
     HttpProtocol proto(h);
     HttpRequest req("/", HttpRequest::Head);
-	req.setField(HttpTypes::UserAgent, "Mozilla");
-	req.setField(HttpTypes::From, "Ben D");
-	req.setBody("<html> hello world </html>");
-	req.checkAndFix();
-    cout << "Request " <<endl<< req.toString() << endl;
+    req.setField(HttpTypes::UserAgent, "Mozilla");
+    req.setField(HttpTypes::From, "Ben D");
+    req.setBody("<html> hello world </html>");
+    req.checkAndFix();
+    cout << "Request " << endl << req.toString() << endl;
     proto.sendRequest(req);
-    cout << "Answer " <<endl<< proto.getResponse().toString() << endl;
+    cout << "Answer " << endl << proto.getResponse().toString() << endl;
 }
 

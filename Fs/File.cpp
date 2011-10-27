@@ -91,7 +91,7 @@ long File::getSize()
     return file_status.st_size;
 }
 
-float File::getHumanReadableSize(FileTypes::SizeFormat f)
+float File::getHumanReadableSize(SizeFormat f)
 {
     long size = getSize();
 
@@ -100,19 +100,19 @@ float File::getHumanReadableSize(FileTypes::SizeFormat f)
 
     switch (f)
     {
-        case FileTypes::Byte:
+        case Byte:
             return size;
 
-        case FileTypes::Kbyte:
+        case Kbyte:
             return size / 1e3;
 
-        case FileTypes::Mbyte:
+        case Mbyte:
             return size / 1e6;
 
-        case FileTypes::Gbyte:
+        case Gbyte:
             return size / 1e9;
 
-        case FileTypes::Tbyte:
+        case Tbyte:
             return size / 1e12;
 
         default:
@@ -228,9 +228,9 @@ int File::copyTo(File& to)
 {
     char ch;
     this->close();
-    this->open(FileTypes::READ);
+    this->open(Read);
     to.close();
-    to.open(FileTypes::WRITE);
+    to.open(Write);
 
     while (!this->eof())
     {
@@ -264,13 +264,13 @@ int File::copyTo(File& to)
 int File::readc()
 {
     if (!isOpenned())
-        return FileTypes::ENDOFFILE;
+        return Eof;
 
     char c = fgetc(m_f);
 
     if (ferror(m_f))
     {
-        return FileTypes::ENDOFFILE;
+        return Eof;
     }
 
     return c;
@@ -285,7 +285,7 @@ int File::writec(char c)
 
     if (ferror(m_f))
     {
-        return FileTypes::ENDOFFILE;
+        return Eof;
     }
 
     return 0;

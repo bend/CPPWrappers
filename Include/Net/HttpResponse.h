@@ -21,32 +21,32 @@ using namespace std;
 class HttpResponse : public HttpTypes
 {
     public:
-		/**
-		 * @brief empty constructor 
-		 */
+        /**
+         * @brief empty constructor
+         */
         HttpResponse();
 
-		/**
-		 * @brief constructor
-		 * This class is used by the HttpProtocol and should therefore not be instanciated
-		 * @param str the response of the server
-		 */
+        /**
+         * @brief constructor
+         * This class is used by the HttpProtocol and should therefore not be instanciated
+         * @param str the response of the server
+         */
         HttpResponse(string& str);
 
         /**
          * @brief cleans the HttpResponse contents
          */
         void clean();
-		
-		/**
-		 * @brief appends the stirng to the contents
-		 */
-		void append(const string &str);
-		
-		/**
-		 * @brief returns a string representation of the Response
-		 * @return the string
-		 */
+
+        /**
+         * @brief appends the stirng to the contents
+         */
+        void append(const string& str);
+
+        /**
+         * @brief returns a string representation of the Response
+         * @return the string
+         */
         string toString();
 
     private:
