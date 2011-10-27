@@ -95,6 +95,7 @@ void HttpResponse::parse()
 		char *c = new char[m_contentLength];
 		iss.get(c, m_contentLength);
 		m_body = string(c);
+		m_body.clear();
 		copy(istreambuf_iterator<char>(iss), istreambuf_iterator<char>(), back_inserter(m_body));
 	}
 }
