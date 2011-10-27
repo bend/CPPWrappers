@@ -95,7 +95,7 @@ void HttpResponse::parse()
 		char *c = new char[m_contentLength];
 		iss.get(c, m_contentLength);
 		m_body = string(c);
-		cout <<"Body "<<m_body<<endl;
+		copy(istreambuf_iterator<char>(iss), istreambuf_iterator<char>(), back_inserter(m_body));
 	}
 }
 
