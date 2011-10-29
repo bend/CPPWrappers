@@ -12,30 +12,10 @@
  */
 
 #include <Net/HttpProtocol.h>
+#include <Net/HtmlParser.h>
 
 int main()
 {
-    /**
-    TcpSocket s;
-    Host h("checkip.dyndns.org", 80);
-
-    if (s.connect(h) == AbstractSocket::Done)
-    {
-        cout << "Connected " << endl;
-        s.sendString("GET / HTTP/1.0\nFrom: user@sfml-dev.org\nUser-Agent: libsfml-network/4.x\n\n");
-        string r;
-        s.receiveString(r, 1024);
-        cout << "something received" << endl;
-        cout << " Received : " << r << endl;
-    }
-
-    else{
-        cout << "not connected" << endl;
-    	perror("");
-    }
-
-    s.close();
-    **/
     Host h("checkip.dyndns.org", 80);
     HttpProtocol proto(h);
     HttpRequest req("/", HttpRequest::Head);
@@ -53,5 +33,17 @@ int main()
     cout << "Code [" << r.getResponseCode() << "]" << endl;
     cout << "Body [" << r.getBody() << "]" << endl;
     cout << "Server [" << r.getField("Server") << "]" << endl;
+	string s = "    <html> this is is html           <body> hello wolrd </body><body2> byte byte </body2> </html>";
+	HtmlParser parser(r.getBody());
+	cout<<"Parser result " <<parser.parse()<<endl;
+	HtmlElement root = parser.getElem();
+
+	cout<<"Data " <<root["html"]["body"].getContents()<<endl;
+	root["html"]["body"] = "this is another ip";
+	cout<<"Data " <<root["html"]["body"].getContents()<<endl;
+	root["html"]["tail"] = "hello 321";
+	cout<<"Data " <<root["html"]["tail"].getContents()<<endl;
+
+
 }
 
