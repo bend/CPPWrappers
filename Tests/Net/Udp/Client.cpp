@@ -12,7 +12,7 @@
  */
 
 #include <Net/UdpSocket.h>
-
+#include <stdio.h>
 int main()
 {
     UdpSocket s;
