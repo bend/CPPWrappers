@@ -234,7 +234,7 @@ string HtmlParser::getCloseTag(string tag)
     return "";
 }
 
-HtmlElement& HtmlParser::getElem()
+HtmlElement& HtmlParser::getRootElement()
 {
     return m_elem;
 }

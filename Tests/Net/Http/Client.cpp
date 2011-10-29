@@ -48,8 +48,8 @@ int main()
     string s1 = "<html>hello wolrd <body><a href=http://www.facebook.com><div> test 123 </div> blabla</a></body></html>";
     HtmlParser p(s1);
     p.parse();
-    cout << p.getElem()["html"]["body"]["a"].getContents() << endl;
-    cout << p.getElem()["html"]["body"]["a"].getFlag() << endl;
+    cout << p.getRootElement()["html"]["body"]["a"].getContents() << endl;
+    cout << p.getRootElement()["html"]["body"]["a"].getFlag() << endl;
     /*
     list<string> l;
     p.preProcess(l);

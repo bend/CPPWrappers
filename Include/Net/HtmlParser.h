@@ -25,17 +25,31 @@ using namespace std;
 class HtmlParser
 {
     public:
+		/**
+		 * @brief Constructor
+		 * @param html the html text
+		 */
         HtmlParser(string html);
-
+		
+		/**
+		 * @brief parses the html text and represents it with HtmlElement objects
+		 * @return 0 is success, -1 otherwise
+		 */
         int parse();
-
-        HtmlElement& getElem();
-
-        int preProcess(list<string> &tokens);
+		
+		/**
+		 * @brief return the root element
+		 * This object contains only a vector of HtmlElement and does not have a tag or a content field
+		 * @return the HtmlElement 
+		 */
+        HtmlElement& getRootElement();
+		
 
     private:
 
-        HtmlElement parseTag(string tag, list<string> &tokens);
+        int preProcess(list<string> &tokens);
+        
+		HtmlElement parseTag(string tag, list<string> &tokens);
 
         HtmlElement parseSpecialTag(string tag, list<string> &tokens);
 
