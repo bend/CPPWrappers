@@ -21,8 +21,9 @@
 #include <stdlib.h>
 
 #include <System/Types.h>
-
+#include <Net/HtmlParser.h>
 using namespace std;
+class HttpProtocol;
 class IpAddress
 {
     public:
@@ -88,6 +89,13 @@ class IpAddress
          * @return the integer reprensentation
          */
         uint32 toInt();
+
+		/**
+		 * @brief Retrives your Public ip address.
+		 * This use the internet and request your ip at checkip.dyndns.org
+		 * @return the IpAddress object if success , IpAddress(None) if failure
+		 */
+		static IpAddress getPublicIpAddress();
 
     private:
         in_addr_t m_ipAddr;
