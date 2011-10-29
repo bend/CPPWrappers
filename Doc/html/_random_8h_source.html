@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -75,6 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -104,49 +105,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 <span class="keyword">using namespace </span>std;
 <a name="l00019"></a>00019 <span class="preprocessor">#include &lt;<a class="code" href="_time_8h.html" title="get the system time">System/Time.h</a>&gt;</span>
 <a name="l00020"></a>00020 <span class="preprocessor">#include &lt;<a class="code" href="_prime_8h.html" title="Prime number generator class.">System/Prime.h</a>&gt;</span>
-<a name="l00021"></a><a class="code" href="class_random.html">00021</a> <span class="keyword">class </span><a class="code" href="class_random.html">Random</a> {
-<a name="l00022"></a>00022 <span class="keyword">public</span>:
-<a name="l00026"></a><a class="code" href="class_random.html#a8676353a2042f23caabc55c8916a8699">00026</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_random.html#a8676353a2042f23caabc55c8916a8699" title="Multiply with carry algorithm variable.">MULT_CARRY</a>;
-<a name="l00027"></a>00027 
-<a name="l00031"></a><a class="code" href="class_random.html#a7c2ef244a7f018b1b1211a8cb5b368c3">00031</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_random.html#a7c2ef244a7f018b1b1211a8cb5b368c3" title="Blum Blum Shub algorithm variable.">BLUM_BLUM</a>;
-<a name="l00032"></a>00032 
-<a name="l00036"></a><a class="code" href="class_random.html#af9402cff4104f72572bddf4cb07d5e46">00036</a>     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_random.html#af9402cff4104f72572bddf4cb07d5e46" title="default unix random gen">UNIX</a>;
-<a name="l00037"></a>00037         
-<a name="l00045"></a>00045     <a class="code" href="class_random.html">Random</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; algo = 0);
-<a name="l00046"></a>00046         
-<a name="l00051"></a>00051     <span class="keywordtype">int</span> init();
-<a name="l00052"></a>00052         
-<a name="l00057"></a>00057     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> random();
-<a name="l00058"></a>00058         
-<a name="l00065"></a>00065     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> random(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);
+<a name="l00021"></a><a class="code" href="class_random.html">00021</a> <span class="keyword">class </span><a class="code" href="class_random.html">Random</a>
+<a name="l00022"></a>00022 {
+<a name="l00023"></a>00023     <span class="keyword">public</span>:
+<a name="l00024"></a>00024 
+<a name="l00028"></a><a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565e">00028</a>         <span class="keyword">enum</span> <a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565e" title="Algorythm types enumeration.">RandomType</a>
+<a name="l00029"></a>00029         {
+<a name="l00031"></a><a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565ea4fc17c165f31cf27b1afac6954eba680">00031</a>             <a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565ea4fc17c165f31cf27b1afac6954eba680" title="Multiply with carry algorithm.">MultiplyWCarry</a>,
+<a name="l00033"></a><a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565ea94c8625e52b7344a980ed2417e09a3e0">00033</a>             <a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565ea94c8625e52b7344a980ed2417e09a3e0" title="Blum Blum Shub algorithm.">BlumBlumShub</a>,
+<a name="l00035"></a><a class="code" href="class_random.html#a239aa2be57ade40c442700485e39565eae2a9a8a6055bf2a3515c455f0daa3991">00035</a>             Unix
+<a name="l00036"></a>00036         };
+<a name="l00037"></a>00037 
+<a name="l00043"></a>00043         <a class="code" href="class_random.html">Random</a>(RandomType algo = MultiplyWCarry);
+<a name="l00044"></a>00044 
+<a name="l00049"></a>00049         <span class="keywordtype">int</span> init();
+<a name="l00050"></a>00050 
+<a name="l00055"></a>00055         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> random();
+<a name="l00056"></a>00056 
+<a name="l00063"></a>00063         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> random(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keyword">private</span>:
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="keyword">private</span>:
+<a name="l00067"></a>00067         <span class="keywordtype">int</span> initDefault();
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069     <span class="keywordtype">int</span> initDefault();
+<a name="l00069"></a>00069         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> defaultRand();
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> defaultRand();
+<a name="l00071"></a>00071         <span class="keywordtype">int</span> initMultiplyWithCarry();
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073     <span class="keywordtype">int</span> initMultiplyWithCarry();
+<a name="l00073"></a>00073         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> multiplyWithCarryRand();
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> multiplyWithCarryRand();
+<a name="l00075"></a>00075         <span class="keywordtype">int</span>  initBlumBlum();
 <a name="l00076"></a>00076 
-<a name="l00077"></a>00077     <span class="keywordtype">int</span>  initBlumBlum();
+<a name="l00077"></a>00077         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> blumBlumRand();
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> blumBlumRand();
+<a name="l00079"></a>00079         RandomType m_algo;
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keywordtype">int</span> m_algo;
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083     <span class="comment">/* multiply with carry vars to init */</span>
-<a name="l00084"></a>00084     <span class="keywordtype">int</span> m_q[4096];
-<a name="l00085"></a>00085     <span class="keywordtype">int</span> m_c;
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="comment">/* blum blum */</span>
-<a name="l00088"></a>00088     <span class="keywordtype">long</span> xn;
-<a name="l00089"></a>00089     <span class="keywordtype">long</span> m;
+<a name="l00081"></a>00081         <span class="comment">/* multiply with carry vars to init */</span>
+<a name="l00082"></a>00082         <span class="keywordtype">int</span> m_q[4096];
+<a name="l00083"></a>00083         <span class="keywordtype">int</span> m_c;
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="comment">/* blum blum */</span>
+<a name="l00086"></a>00086         <span class="keywordtype">long</span> xn;
+<a name="l00087"></a>00087         <span class="keywordtype">long</span> m;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 };
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091 };
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="preprocessor">#endif</span>
+<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
@@ -157,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -167,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

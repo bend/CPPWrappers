@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -96,24 +96,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">File Class Reference</div>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="File" -->
+<!-- doxytag: class="File" --><!-- doxytag: inherits="FileTypes" -->
 <p><code>#include &lt;<a class="el" href="_file_8h_source.html">File.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for File:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_file__inherit__graph.png" border="0" usemap="#_file_inherit__map" alt="Inheritance graph"/></div>
+<map name="_file_inherit__map" id="_file_inherit__map">
+<area shape="rect" id="node2" href="class_file_types.html" title="FileTypes" alt="" coords="5,6,88,34"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for File:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_file__coll__graph.png" border="0" usemap="#_file_coll__map" alt="Collaboration graph"/></div>
+<map name="_file_coll__map" id="_file_coll__map">
+<area shape="rect" id="node2" href="class_file_types.html" title="FileTypes" alt="" coords="49,259,132,287"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_file-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c">SizeFormat</a> { <br/>
+&#160;&#160;<a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7ca81e8ab03c7eaeeb132868091bfb46ee9">Byte</a>, 
+<a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7ca43dcbe0c1a3242e63f2f0e0822b29d9a">Kbyte</a>, 
+<a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7ca8ef87a9ba4b01e6b011b199549846c81">Mbyte</a>, 
+<a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7cad6adc7f21e9c23a447645321eeebc593">Gbyte</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7ca1ec3f9bb28ee2357ab218e1f5be24aa6">Tbyte</a>
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Size format enumeration.  <a href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a9aa8af4e78e3c1149b760b60ef861652">File</a> (const string &amp;p)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_file.html">File</a> class constructor.  <a href="#a9aa8af4e78e3c1149b760b60ef861652"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a0335a8a469e2459f8ed2f217a7a5fe63">File</a> (<a class="el" href="class_path.html">Path</a> &amp;p)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_file.html">File</a> class constructor.  <a href="#a0335a8a469e2459f8ed2f217a7a5fe63"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#aba084b1ee746557bcd07d84774a23ea0">open</a> (const string &amp;mode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the file in the defined mode.  <a href="#aba084b1ee746557bcd07d84774a23ea0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a4260fca380a387a8347b83bb4bee91b5">exists</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether the file exists or not.  <a href="#a4260fca380a387a8347b83bb4bee91b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a525f2e629d2f3f3146ade4cd2cf2a00a">flush</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes the buffer.  <a href="#a525f2e629d2f3f3146ade4cd2cf2a00a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#aa69d3414bcb3ed6acbfac9bb13b4586b">remove</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">removes the file  <a href="#aa69d3414bcb3ed6acbfac9bb13b4586b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a86b8958fb892404c4b0d4545a93aee24">close</a> ()</td></tr>
@@ -124,12 +156,16 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">return the <a class="el" href="class_path.html">Path</a> object  <a href="#a19164c626430fb93e0aac40c93cd3e85"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a5389e32e9a21f34fda3cb35371844ef3">getSize</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get the file size  <a href="#a5389e32e9a21f34fda3cb35371844ef3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#aabb2993c146bfa13dcd0a91940718622">getHumanReadableSize</a> (<a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c">FileTypes::SizeFormat</a> f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get a human readable representation of the size  <a href="#aabb2993c146bfa13dcd0a91940718622"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file_mode.html">FileMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a6baa52e16afa20681ba711b5a1b2bc84">getMode</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the mode of the file  <a href="#a6baa52e16afa20681ba711b5a1b2bc84"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#ac913897e4c676539a536d198629813f8">isFile</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">tells if the <a class="el" href="class_file.html">File</a> is a file  <a href="#ac913897e4c676539a536d198629813f8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a6ba5bdb943363cda56649238ccb18c27">isDirectory</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">tells if the <a class="el" href="class_file.html">File</a> is a Folder  <a href="#a6ba5bdb943363cda56649238ccb18c27"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#aecfcf551aad49bca29c54b64b6aa5ca5">isOpenned</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true is the file is openned false otherwise  <a href="#aecfcf551aad49bca29c54b64b6aa5ca5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#ae2a2c32df52f618f00329bbc4460e5b5">mkdir</a> (<a class="el" href="class_file_mode.html">FileMode</a> m=0)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a directory with the current path with 0755 default mode  <a href="#ae2a2c32df52f618f00329bbc4460e5b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a08f166cb12494edbe12021a9a5517c9c">setMode</a> (<a class="el" href="class_file_mode.html">FileMode</a> &amp;mode)</td></tr>
@@ -146,8 +182,117 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">writes a char to the file  <a href="#a6c8a1ae84072bab072f0585906e4b89d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file.html#a7ad839a71e58eadc67ea20fa7595aa76">eof</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">checks is the EOF is reached  <a href="#a7ad839a71e58eadc67ea20fa7595aa76"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a7a01cf0fae9f7fab0b6bfc6e89ebddad">Read</a> = &quot;rb&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Open file in read mode.  <a href="#a7a01cf0fae9f7fab0b6bfc6e89ebddad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a7731c1921d1c3c78dc2e888495f8d56d">Write</a> = &quot;w&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Open file in write mode.  <a href="#a7731c1921d1c3c78dc2e888495f8d56d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#ae037ed02e619bce47ec92cc34ff5cd1b">ReadWrite</a> = &quot;rw&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the file in read write mode.  <a href="#ae037ed02e619bce47ec92cc34ff5cd1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#aa1ed4bd7c21786a3f401be811684feb4">Append</a> = &quot;a+&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the file in read write append mode.  <a href="#aa1ed4bd7c21786a3f401be811684feb4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a9d0146aa5612e9b994b1acec9646157a">Eof</a> = -2</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">End of file marker.  <a href="#a9d0146aa5612e9b994b1acec9646157a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#af4c610a3af84ac2a9fe0be6f28d9b24e">SeekfBegin</a> = 0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">seek from the begining of the file  <a href="#af4c610a3af84ac2a9fe0be6f28d9b24e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a59affe41410a508216c1aa24d148b720">SeekfEnd</a> = 2</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">seek from the end of the file  <a href="#a59affe41410a508216c1aa24d148b720"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#afe179d6df84f58e8e445569343f81766">SeekCurrent</a> = 1</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">seek from the current position  <a href="#afe179d6df84f58e8e445569343f81766"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#ad2b6d5bd7ea9f829237772c9ef62d4b7">RWXU</a> = 0000700</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a73833056a65031e9acf4c723a1d64d93">RU</a> = 0000400</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">R for owner.  <a href="#a73833056a65031e9acf4c723a1d64d93"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#acc7b3003e6f1a37889d43cc12a09ea2a">WU</a> = 0000200</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">W for owner.  <a href="#acc7b3003e6f1a37889d43cc12a09ea2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a6523e36a84b0ef68eecf74f9b15c2f66">XU</a> = 0000100</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">X for owner.  <a href="#a6523e36a84b0ef68eecf74f9b15c2f66"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a232d5427eaa5b9d26f19fa31579febff">RWXG</a> = 0000070</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">RWX mask for group.  <a href="#a232d5427eaa5b9d26f19fa31579febff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#ad4aa6d17cad7058d838ba60bbc3de16f">RG</a> = 0000040</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">R for group.  <a href="#ad4aa6d17cad7058d838ba60bbc3de16f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a2778c81fa737ebf99938d56c87278254">WG</a> = 0000020</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">W for group.  <a href="#a2778c81fa737ebf99938d56c87278254"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#adfe4415ea569d68150cbfa76f59c9a79">XG</a> = 0000010</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">X for group.  <a href="#adfe4415ea569d68150cbfa76f59c9a79"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#af3eac0d2c3156d2e356473a6f7fcd4da">RWXO</a> = 0000007</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">RWX mask for other.  <a href="#af3eac0d2c3156d2e356473a6f7fcd4da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a31d733f433bc521a7a5c737f1badd7b9">RO</a> = 0000004</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">R for other.  <a href="#a31d733f433bc521a7a5c737f1badd7b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#aa9089fe72af00823b245f9339bdaf7dd">WO</a> = 0000002</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">W for other.  <a href="#aa9089fe72af00823b245f9339bdaf7dd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a707cde066dd7aade0f24d5dd46061c9e">XO</a> = 0000001</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">X for other.  <a href="#a707cde066dd7aade0f24d5dd46061c9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a5b538f74af5cbfb9d99396fc6adbc639">SUID</a> = 0004000</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set user id on execution  <a href="#a5b538f74af5cbfb9d99396fc6adbc639"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#aa1a00409e390d4f6ce48b61301c42b35">SGID</a> = 0002000</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set group id on execution  <a href="#aa1a00409e390d4f6ce48b61301c42b35"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_types.html#a49141bdac46656b76c3af9fc32c39e4c">SVTX</a> = 0001000</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save swapped text even after use  <a href="#a49141bdac46656b76c3af9fc32c39e4c"></a><br/></td></tr>
 </table>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a3cf8a74baffb13c75f8b5bc47a5c4b7c"></a><!-- doxytag: member="File::SizeFormat" ref="a3cf8a74baffb13c75f8b5bc47a5c4b7c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c">FileTypes::SizeFormat</a><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Size format enumeration. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a3cf8a74baffb13c75f8b5bc47a5c4b7ca81e8ab03c7eaeeb132868091bfb46ee9"></a><!-- doxytag: member="Byte" ref="a3cf8a74baffb13c75f8b5bc47a5c4b7ca81e8ab03c7eaeeb132868091bfb46ee9" args="" -->Byte</em>&nbsp;</td><td>
+<p>Byte representation. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cf8a74baffb13c75f8b5bc47a5c4b7ca43dcbe0c1a3242e63f2f0e0822b29d9a"></a><!-- doxytag: member="Kbyte" ref="a3cf8a74baffb13c75f8b5bc47a5c4b7ca43dcbe0c1a3242e63f2f0e0822b29d9a" args="" -->Kbyte</em>&nbsp;</td><td>
+<p>Kilobyte representation. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cf8a74baffb13c75f8b5bc47a5c4b7ca8ef87a9ba4b01e6b011b199549846c81"></a><!-- doxytag: member="Mbyte" ref="a3cf8a74baffb13c75f8b5bc47a5c4b7ca8ef87a9ba4b01e6b011b199549846c81" args="" -->Mbyte</em>&nbsp;</td><td>
+<p>Megabyte representation. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cf8a74baffb13c75f8b5bc47a5c4b7cad6adc7f21e9c23a447645321eeebc593"></a><!-- doxytag: member="Gbyte" ref="a3cf8a74baffb13c75f8b5bc47a5c4b7cad6adc7f21e9c23a447645321eeebc593" args="" -->Gbyte</em>&nbsp;</td><td>
+<p>Gigabyte representation. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cf8a74baffb13c75f8b5bc47a5c4b7ca1ec3f9bb28ee2357ab218e1f5be24aa6"></a><!-- doxytag: member="Tbyte" ref="a3cf8a74baffb13c75f8b5bc47a5c4b7ca1ec3f9bb28ee2357ab218e1f5be24aa6" args="" -->Tbyte</em>&nbsp;</td><td>
+<p>Terabyte representation. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9aa8af4e78e3c1149b760b60ef861652"></a><!-- doxytag: member="File::File" ref="a9aa8af4e78e3c1149b760b60ef861652" args="(const string &amp;p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">File::File </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="class_file.html">File</a> class constructor. </p>
+<p>The file is not openned here, to open it you need to call the <a class="el" href="class_file.html#aba084b1ee746557bcd07d84774a23ea0" title="Opens the file in the defined mode.">open()</a> method </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the string path to the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_file_types.html">FileTypes</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a0335a8a469e2459f8ed2f217a7a5fe63"></a><!-- doxytag: member="File::File" ref="a0335a8a469e2459f8ed2f217a7a5fe63" args="(Path &amp;p)" -->
 <div class="memitem">
 <div class="memproto">
@@ -167,8 +312,7 @@ Public Member Functions</h2></td></tr>
 <p>The file is not openned here, to open it you need to call the <a class="el" href="class_file.html#aba084b1ee746557bcd07d84774a23ea0" title="Opens the file in the defined mode.">open()</a> method </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>the path to the file </td></tr>
-    <tr><td class="paramname">mode</td><td>the mode </td></tr>
+    <tr><td class="paramname">p</td><td>the <a class="el" href="class_path.html">Path</a> to the file </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,7 +401,54 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Tells whether the file exists or not. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_file_types.html">FileTypes</a> </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if exists false otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a525f2e629d2f3f3146ade4cd2cf2a00a"></a><!-- doxytag: member="File::flush" ref="a525f2e629d2f3f3146ade4cd2cf2a00a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int File::flush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Flushes the buffer. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 if success, -1 otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aabb2993c146bfa13dcd0a91940718622"></a><!-- doxytag: member="File::getHumanReadableSize" ref="aabb2993c146bfa13dcd0a91940718622" args="(FileTypes::SizeFormat f)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float File::getHumanReadableSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c">FileTypes::SizeFormat</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>get a human readable representation of the size </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td><a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c" title="Size format enumeration.">FileTypes::SizeFormat</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_file_types.html#a3cf8a74baffb13c75f8b5bc47a5c4b7c" title="Size format enumeration.">FileTypes::SizeFormat</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the size in the good representation if success, -1 otherwise </dd></dl>
 
 </div>
 </div>
@@ -375,6 +566,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aecfcf551aad49bca29c54b64b6aa5ca5"></a><!-- doxytag: member="File::isOpenned" ref="aecfcf551aad49bca29c54b64b6aa5ca5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool File::isOpenned </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns true is the file is openned false otherwise </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true or false </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ae2a2c32df52f618f00329bbc4460e5b5"></a><!-- doxytag: member="File::mkdir" ref="ae2a2c32df52f618f00329bbc4460e5b5" args="(FileMode m=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -411,6 +621,12 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Opens the file in the defined mode. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>the open mode </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 if success , -1 otherwise </dd></dl>
 
 </div>
@@ -430,8 +646,8 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>reads the next char from the file </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the next char converted to int or <a class="el" href="class_file_types.html#a8021cb2544c402c403b1ada68c7efcbe" title="End of file marker.">FileTypes::ENDOFFILE</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_file_types.html#a8021cb2544c402c403b1ada68c7efcbe" title="End of file marker.">FileTypes::ENDOFFILE</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the next char converted to int or FileTypes::ENDOFFILE </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>FileTypes::ENDOFFILE </dd></dl>
 
 </div>
 </div>
@@ -557,6 +773,350 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aa1ed4bd7c21786a3f401be811684feb4"></a><!-- doxytag: member="File::Append" ref="aa1ed4bd7c21786a3f401be811684feb4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string <a class="el" href="class_file_types.html#aa1ed4bd7c21786a3f401be811684feb4">FileTypes::Append</a> = &quot;a+&quot;<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open the file in read write append mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9d0146aa5612e9b994b1acec9646157a"></a><!-- doxytag: member="File::Eof" ref="a9d0146aa5612e9b994b1acec9646157a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a9d0146aa5612e9b994b1acec9646157a">FileTypes::Eof</a> = -2<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>End of file marker. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7a01cf0fae9f7fab0b6bfc6e89ebddad"></a><!-- doxytag: member="File::Read" ref="a7a01cf0fae9f7fab0b6bfc6e89ebddad" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string <a class="el" href="class_file_types.html#a7a01cf0fae9f7fab0b6bfc6e89ebddad">FileTypes::Read</a> = &quot;rb&quot;<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open file in read mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae037ed02e619bce47ec92cc34ff5cd1b"></a><!-- doxytag: member="File::ReadWrite" ref="ae037ed02e619bce47ec92cc34ff5cd1b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string <a class="el" href="class_file_types.html#ae037ed02e619bce47ec92cc34ff5cd1b">FileTypes::ReadWrite</a> = &quot;rw&quot;<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open the file in read write mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad4aa6d17cad7058d838ba60bbc3de16f"></a><!-- doxytag: member="File::RG" ref="ad4aa6d17cad7058d838ba60bbc3de16f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#ad4aa6d17cad7058d838ba60bbc3de16f">FileTypes::RG</a> = 0000040<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>R for group. </p>
+
+</div>
+</div>
+<a class="anchor" id="a31d733f433bc521a7a5c737f1badd7b9"></a><!-- doxytag: member="File::RO" ref="a31d733f433bc521a7a5c737f1badd7b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a31d733f433bc521a7a5c737f1badd7b9">FileTypes::RO</a> = 0000004<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>R for other. </p>
+
+</div>
+</div>
+<a class="anchor" id="a73833056a65031e9acf4c723a1d64d93"></a><!-- doxytag: member="File::RU" ref="a73833056a65031e9acf4c723a1d64d93" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a73833056a65031e9acf4c723a1d64d93">FileTypes::RU</a> = 0000400<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>R for owner. </p>
+
+</div>
+</div>
+<a class="anchor" id="a232d5427eaa5b9d26f19fa31579febff"></a><!-- doxytag: member="File::RWXG" ref="a232d5427eaa5b9d26f19fa31579febff" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a232d5427eaa5b9d26f19fa31579febff">FileTypes::RWXG</a> = 0000070<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>RWX mask for group. </p>
+
+</div>
+</div>
+<a class="anchor" id="af3eac0d2c3156d2e356473a6f7fcd4da"></a><!-- doxytag: member="File::RWXO" ref="af3eac0d2c3156d2e356473a6f7fcd4da" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#af3eac0d2c3156d2e356473a6f7fcd4da">FileTypes::RWXO</a> = 0000007<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>RWX mask for other. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad2b6d5bd7ea9f829237772c9ef62d4b7"></a><!-- doxytag: member="File::RWXU" ref="ad2b6d5bd7ea9f829237772c9ef62d4b7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#ad2b6d5bd7ea9f829237772c9ef62d4b7">FileTypes::RWXU</a> = 0000700<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afe179d6df84f58e8e445569343f81766"></a><!-- doxytag: member="File::SeekCurrent" ref="afe179d6df84f58e8e445569343f81766" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#afe179d6df84f58e8e445569343f81766">FileTypes::SeekCurrent</a> = 1<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>seek from the current position </p>
+
+</div>
+</div>
+<a class="anchor" id="af4c610a3af84ac2a9fe0be6f28d9b24e"></a><!-- doxytag: member="File::SeekfBegin" ref="af4c610a3af84ac2a9fe0be6f28d9b24e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#af4c610a3af84ac2a9fe0be6f28d9b24e">FileTypes::SeekfBegin</a> = 0<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>seek from the begining of the file </p>
+
+</div>
+</div>
+<a class="anchor" id="a59affe41410a508216c1aa24d148b720"></a><!-- doxytag: member="File::SeekfEnd" ref="a59affe41410a508216c1aa24d148b720" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a59affe41410a508216c1aa24d148b720">FileTypes::SeekfEnd</a> = 2<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>seek from the end of the file </p>
+
+</div>
+</div>
+<a class="anchor" id="aa1a00409e390d4f6ce48b61301c42b35"></a><!-- doxytag: member="File::SGID" ref="aa1a00409e390d4f6ce48b61301c42b35" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#aa1a00409e390d4f6ce48b61301c42b35">FileTypes::SGID</a> = 0002000<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>set group id on execution </p>
+
+</div>
+</div>
+<a class="anchor" id="a5b538f74af5cbfb9d99396fc6adbc639"></a><!-- doxytag: member="File::SUID" ref="a5b538f74af5cbfb9d99396fc6adbc639" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a5b538f74af5cbfb9d99396fc6adbc639">FileTypes::SUID</a> = 0004000<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>set user id on execution </p>
+
+</div>
+</div>
+<a class="anchor" id="a49141bdac46656b76c3af9fc32c39e4c"></a><!-- doxytag: member="File::SVTX" ref="a49141bdac46656b76c3af9fc32c39e4c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a49141bdac46656b76c3af9fc32c39e4c">FileTypes::SVTX</a> = 0001000<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>save swapped text even after use </p>
+
+</div>
+</div>
+<a class="anchor" id="a2778c81fa737ebf99938d56c87278254"></a><!-- doxytag: member="File::WG" ref="a2778c81fa737ebf99938d56c87278254" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a2778c81fa737ebf99938d56c87278254">FileTypes::WG</a> = 0000020<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>W for group. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa9089fe72af00823b245f9339bdaf7dd"></a><!-- doxytag: member="File::WO" ref="aa9089fe72af00823b245f9339bdaf7dd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#aa9089fe72af00823b245f9339bdaf7dd">FileTypes::WO</a> = 0000002<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>W for other. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7731c1921d1c3c78dc2e888495f8d56d"></a><!-- doxytag: member="File::Write" ref="a7731c1921d1c3c78dc2e888495f8d56d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string <a class="el" href="class_file_types.html#a7731c1921d1c3c78dc2e888495f8d56d">FileTypes::Write</a> = &quot;w&quot;<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Open file in write mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="acc7b3003e6f1a37889d43cc12a09ea2a"></a><!-- doxytag: member="File::WU" ref="acc7b3003e6f1a37889d43cc12a09ea2a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#acc7b3003e6f1a37889d43cc12a09ea2a">FileTypes::WU</a> = 0000200<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>W for owner. </p>
+
+</div>
+</div>
+<a class="anchor" id="adfe4415ea569d68150cbfa76f59c9a79"></a><!-- doxytag: member="File::XG" ref="adfe4415ea569d68150cbfa76f59c9a79" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#adfe4415ea569d68150cbfa76f59c9a79">FileTypes::XG</a> = 0000010<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>X for group. </p>
+
+</div>
+</div>
+<a class="anchor" id="a707cde066dd7aade0f24d5dd46061c9e"></a><!-- doxytag: member="File::XO" ref="a707cde066dd7aade0f24d5dd46061c9e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a707cde066dd7aade0f24d5dd46061c9e">FileTypes::XO</a> = 0000001<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>X for other. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6523e36a84b0ef68eecf74f9b15c2f66"></a><!-- doxytag: member="File::XU" ref="a6523e36a84b0ef68eecf74f9b15c2f66" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="class_file_types.html#a6523e36a84b0ef68eecf74f9b15c2f66">FileTypes::XU</a> = 0000100<code> [static, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>X for owner. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Include/Fs/<a class="el" href="_file_8h_source.html">File.h</a></li>
 <li>Fs/<a class="el" href="_file_8cpp.html">File.cpp</a></li>
@@ -571,7 +1131,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -581,7 +1141,7 @@ Public Member Functions</h2></td></tr>
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

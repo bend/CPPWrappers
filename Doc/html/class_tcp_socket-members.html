@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -100,18 +100,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 This is the complete list of members for <a class="el" href="class_tcp_socket.html">TcpSocket</a>, including all inherited members.<table>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#add6cc3a1ebaab1d66b63867765fc30dc">close</a>()</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a5800497a4550bf231c82dce401764e89">connect</a>(string host, unsigned short port)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#ada65f0193e099c180716f6a1600d928d">receiveChar</a>(char &amp;c)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a02fd7d5277ed2479154acba86df0b4a9">receiveCharArray</a>(char **c)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a80cedcd95ff145435ca866f77809451a">receiveInt</a>(int &amp;i)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#aa736617b9858cf79f12e8acfb6e44a2c">receiveShort</a>(short &amp;s)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a217845d67a0f8893df89e0985cee84c8">receiveString</a>(string &amp;str)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#ab05cf4824cbb683d9232ccc65c29e0af">sendChar</a>(const char &amp;c)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a50388da66f21876e87818b0e04023cb8">sendCharArray</a>(const char *c)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a48a136b315210e63947481b46cf5309e">sendInt</a>(const int &amp;i)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#aab4a5fae43ae9fd2ad6b3980f1233b04">sendShort</a>(const short &amp;i)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a987977e736ea8f151edab45e717629b9">sendString</a>(const string &amp;str)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a94ae146fe8047af98d2dcfd14d20e261">AbstractSocket</a>()</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#ac6c1bce02c2959a29d5ea44ea38b8754">AbstractSocket</a>(int socket)</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a77c0a9ea7c5061c406673bbe8b18d60d">close</a>()</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#aa8edfe7c57f2aee5de88bddcf9de9bfd">connect</a>(const string &amp;host, const uint8 &amp;port)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a6de3fe7e6f9038e61105c78e061a7be4">connect</a>(Host &amp;h)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726faf87fab465d6377cedc1d773be9e6a7de">Disconnected</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726fa267db2938c1bf86a056cbfe685ff739b">Done</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726fa8e10fb2dd336e5d987fd2ea7037fe23f">EHOST</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726faebaae8cb5bd5f10efd7c850b9e55bb3e">EMEM</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726fa90383c74e3cb614c0f9605d6dc5a230f">EOPEN</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726fa02d727d339c2555b2b210de08365ca14">Error</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a1a9843eea1a9902ff18043e081c57671">getLocalPort</a>() const </td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#aa007bfbadcf0e2f949432a0f0968ce49">getRemoteAddress</a>()</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a184e6f0dd9936486e7a8374dcbfe6c9b">getRemotePort</a>() const </td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a8a6ba02b27a6850102ef4ff2243f2ffd">getSocketStatus</a>()</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726fa15abf6c8d03d0f8e2582fd4a3dde5403">InvalidRequest</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#af8b0413cbd0be81fea3121d55e1e422b">isBlocking</a>()</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#ad51237a73b681d6d57fb1b08e706f89f">m_socketfd</a></td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726fae121a26aebcec501af2372e5684baf34">NotReady</a> enum value</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a7bf171b01e1e08974df196a35e3d01eb">receiveChar</a>(char &amp;c)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#af977ff42e917439788028da9e366ab7b">receiveCharArray</a>(char **c, const size_t &amp;s)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a69433ea8f4e1fd07f085a94babd65dd6">receiveInt</a>(int32 &amp;i)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#adaf96c7b69bda8bd8c4b4ef5f72ffaa5">receiveShort</a>(int8 &amp;s)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#ae0066a08c3509074107106c152881020">receiveString</a>(string &amp;str, const size_t &amp;s)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#ab094b959d9f7c46dccb1615c2c3b1f89">sendChar</a>(const char &amp;c)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a99dd7cc6e054d2a479003249a06e42a8">sendCharArray</a>(const char *c, const size_t &amp;s)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a567aebce9c6329cf54ef229e104327e5">sendInt</a>(const int32 &amp;i)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a0d1a06e099c1632dbd98c68c5644bd45">sendShort</a>(const int8 &amp;i)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a363333b2309959f2abe12bbe39e7be7c">sendString</a>(const string &amp;str)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a63a8a03fb82087e736be19d02b3dddc8">setBlocking</a>(bool b)</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f">Status</a> enum name</td><td><a class="el" href="class_abstract_socket.html">AbstractSocket</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#a132aa72af141d611f8bad96ba585a79f">TcpSocket</a>()</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_tcp_socket.html#ae303978c6f57069679951e0dc5180e34">TcpSocket</a>(int socketfd)</td><td><a class="el" href="class_tcp_socket.html">TcpSocket</a></td><td></td></tr>
 </table></div>
@@ -123,7 +142,7 @@ This is the complete list of members for <a class="el" href="class_tcp_socket.ht
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -133,7 +152,7 @@ This is the complete list of members for <a class="el" href="class_tcp_socket.ht
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:01 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

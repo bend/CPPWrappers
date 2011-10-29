@@ -1,5 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_tcp_server_8h.html" title="Tcp server." alt="" coords="614,83,737,111"/>
-<area shape="rect" id="node5" href="$_tcp_socket_8h.html" title="C++ wrapper for the socket library." alt="" coords="482,161,608,189"/>
-<area shape="rect" id="node23" href="$_socket_errors_8h.html" title="Net/SocketErrors.h" alt="" coords="849,238,991,266"/>
+<area shape="rect" id="node3" href="$_tcp_server_8h.html" title="Tcp server." alt="" coords="459,83,583,111"/>
+<area shape="rect" id="node5" href="$_tcp_socket_8h.html" title="C++ wrapper for the socket library." alt="" coords="458,161,584,189"/>
+<area shape="rect" id="node7" href="$_abstract_socket_8h.html" title="Net/AbstractSocket.h" alt="" coords="558,238,713,266"/>
+<area shape="rect" id="node11" href="$_host_8h.html" title="Host class represents a host (ip + port)" alt="" coords="250,315,339,343"/>
+<area shape="rect" id="node9" href="$_types_8h.html" title="Types def class." alt="" coords="980,470,1103,498"/>
+<area shape="rect" id="node13" href="$_ip_address_8h.html" title="Ip address class." alt="" coords="214,393,337,421"/>
+<area shape="rect" id="node26" href="$_type_cast_8h.html" title="Types class." alt="" coords="45,393,189,421"/>
 </map>

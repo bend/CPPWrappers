@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -75,6 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -100,24 +101,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 <span class="preprocessor">#ifndef MUTEX_H__</span>
 <a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor">#define MUTEX_H__</span>
 <a name="l00016"></a>00016 <span class="preprocessor"></span><span class="preprocessor">#include &lt;pthread.h&gt;</span>
-<a name="l00017"></a><a class="code" href="class_mutex.html">00017</a> <span class="keyword">class </span><a class="code" href="class_mutex.html">Mutex</a> {
-<a name="l00018"></a>00018 <span class="keyword">public</span>:
-<a name="l00022"></a>00022     <a class="code" href="class_mutex.html#a593423d868daf926c7b0d63a833ae29a" title="Constructor.">Mutex</a>();
-<a name="l00023"></a>00023 
-<a name="l00028"></a>00028     <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#ab779f47fd979c9645703b2110ad48a6b" title="locks the mutex.">lock</a>();
-<a name="l00029"></a>00029 
-<a name="l00034"></a>00034     <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#ae259095f6fdebcc45fc85c6f4d52da5a" title="The trylock() method locks mutex.">tryLock</a>();
-<a name="l00035"></a>00035 
-<a name="l00041"></a>00041     <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee" title="If the current thread holds the lock on mutex, then the unlock() function unlocks mutex...">unlock</a>();
-<a name="l00042"></a>00042 
-<a name="l00047"></a>00047     <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#a28466fe885b8458cdf152a81214d2398" title="The destroy() method frees the resources allocated for mutex.">destroy</a>();
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">private</span>:
-<a name="l00050"></a>00050     pthread_mutex_t *m_mutex;
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 };
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
+<a name="l00017"></a><a class="code" href="class_mutex.html">00017</a> <span class="keyword">class </span><a class="code" href="class_mutex.html">Mutex</a>
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019     <span class="keyword">public</span>:
+<a name="l00023"></a>00023         <a class="code" href="class_mutex.html#a593423d868daf926c7b0d63a833ae29a" title="Constructor.">Mutex</a>();
+<a name="l00024"></a>00024 
+<a name="l00029"></a>00029         <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#ab779f47fd979c9645703b2110ad48a6b" title="locks the mutex.">lock</a>();
+<a name="l00030"></a>00030 
+<a name="l00035"></a>00035         <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#ae259095f6fdebcc45fc85c6f4d52da5a" title="The trylock() method locks mutex.">tryLock</a>();
+<a name="l00036"></a>00036 
+<a name="l00042"></a>00042         <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#a73ffa1b2f7fef95563bdb83fed8e57ee" title="If the current thread holds the lock on mutex, then the unlock() function unlocks mutex...">unlock</a>();
+<a name="l00043"></a>00043 
+<a name="l00048"></a>00048         <span class="keywordtype">int</span> <a class="code" href="class_mutex.html#a28466fe885b8458cdf152a81214d2398" title="The destroy() method frees the resources allocated for mutex.">destroy</a>();
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050     <span class="keyword">private</span>:
+<a name="l00051"></a>00051         pthread_mutex_t* m_mutex;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 };
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
@@ -128,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -138,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

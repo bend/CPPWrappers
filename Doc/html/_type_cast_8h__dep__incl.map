@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_buffered_output_8h.html" title="Buffered output class." alt="" coords="337,83,537,111"/>
+<area shape="rect" id="node7" href="$_host_8h.html" title="Host class represents a host (ip + port)" alt="" coords="596,83,735,111"/>
+<area shape="rect" id="node32" href="$_time_8h.html" title="get the system time" alt="" coords="845,83,1011,111"/>
+<area shape="rect" id="node44" href="$_type_cast_8cpp.html" title="TypeCast class." alt="" coords="1036,83,1196,111"/>
+<area shape="rect" id="node5" href="$_buffered_output_8cpp.html" title="Buffered output class." alt="" coords="235,161,401,189"/>
+<area shape="rect" id="node9" href="$_abstract_socket_8h.html" title="Include/Net/AbstractSocket.h" alt="" coords="478,161,684,189"/>
+<area shape="rect" id="node11" href="$_tcp_socket_8h.html" title="C++ wrapper for the socket library." alt="" coords="292,238,468,266"/>
+<area shape="rect" id="node30" href="$_host_8cpp.html" title="Net/Host.cpp" alt="" coords="709,161,813,189"/>
+<area shape="rect" id="node23" href="$_udp_socket_8h.html" title="Include/Net/UdpSocket.h" alt="" coords="492,238,671,266"/>
+<area shape="rect" id="node27" href="$_abstract_socket_8cpp.html" title="Net/AbstractSocket.cpp" alt="" coords="695,238,867,266"/>
+<area shape="rect" id="node13" href="$_http_protocol_8h.html" title="Include/Net/HttpProtocol.h" alt="" coords="5,315,195,343"/>
+<area shape="rect" id="node17" href="$_tcp_server_8h.html" title="Tcp server." alt="" coords="219,315,393,343"/>
+<area shape="rect" id="node21" href="$_tcp_socket_8cpp.html" title="C++ wrapper for the socket library." alt="" coords="419,315,560,343"/>
+<area shape="rect" id="node15" href="$_http_protocol_8cpp.html" title="Net/HttpProtocol.cpp" alt="" coords="23,393,177,421"/>
+<area shape="rect" id="node19" href="$_tcp_server_8cpp.html" title="Tcp server." alt="" coords="237,393,376,421"/>
+<area shape="rect" id="node25" href="$_udp_socket_8cpp.html" title="Net/UdpSocket.cpp" alt="" coords="584,315,728,343"/>
+<area shape="rect" id="node34" href="$_logger_8h.html" title="Include/System/Logger.h" alt="" coords="838,161,1017,189"/>
+<area shape="rect" id="node38" href="$_random_8h.html" title="Random number generator class." alt="" coords="1042,161,1229,189"/>
+<area shape="rect" id="node42" href="$_time_8cpp.html" title="Get the system time." alt="" coords="1254,161,1385,189"/>
+<area shape="rect" id="node36" href="$_logger_8cpp.html" title="System/Logger.cpp" alt="" coords="891,238,1036,266"/>
+<area shape="rect" id="node40" href="$_random_8cpp.html" title="Random number generator class." alt="" coords="1061,238,1213,266"/>
+</map>

@@ -1,9 +1,16 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_time_8h.html" title="get the system time" alt="" coords="219,83,385,111"/>
-<area shape="rect" id="node15" href="$_types_8cpp.html" title="Types class." alt="" coords="411,83,549,111"/>
-<area shape="rect" id="node5" href="$_logger_8h.html" title="Include/System/Logger.h" alt="" coords="5,161,184,189"/>
-<area shape="rect" id="node9" href="$_random_8h.html" title="Random number generator class." alt="" coords="209,161,396,189"/>
-<area shape="rect" id="node13" href="$_time_8cpp.html" title="Get the system time." alt="" coords="421,161,552,189"/>
-<area shape="rect" id="node7" href="$_logger_8cpp.html" title="System/Logger.cpp" alt="" coords="22,238,167,266"/>
-<area shape="rect" id="node11" href="$_random_8cpp.html" title="Random number generator class." alt="" coords="226,238,379,266"/>
+<area shape="rect" id="node3" href="$_abstract_socket_8h.html" title="Include/Net/AbstractSocket.h" alt="" coords="173,238,379,266"/>
+<area shape="rect" id="node23" href="$_ip_address_8h.html" title="Ip address class." alt="" coords="270,83,444,111"/>
+<area shape="rect" id="node5" href="$_tcp_socket_8h.html" title="C++ wrapper for the socket library." alt="" coords="440,315,616,343"/>
+<area shape="rect" id="node17" href="$_udp_socket_8h.html" title="Include/Net/UdpSocket.h" alt="" coords="5,315,184,343"/>
+<area shape="rect" id="node21" href="$_abstract_socket_8cpp.html" title="Net/AbstractSocket.cpp" alt="" coords="209,315,380,343"/>
+<area shape="rect" id="node7" href="$_http_protocol_8h.html" title="Include/Net/HttpProtocol.h" alt="" coords="623,393,812,421"/>
+<area shape="rect" id="node11" href="$_tcp_server_8h.html" title="Tcp server." alt="" coords="258,393,432,421"/>
+<area shape="rect" id="node15" href="$_tcp_socket_8cpp.html" title="C++ wrapper for the socket library." alt="" coords="457,393,599,421"/>
+<area shape="rect" id="node9" href="$_http_protocol_8cpp.html" title="Net/HttpProtocol.cpp" alt="" coords="640,470,795,498"/>
+<area shape="rect" id="node13" href="$_tcp_server_8cpp.html" title="Tcp server." alt="" coords="276,470,415,498"/>
+<area shape="rect" id="node19" href="$_udp_socket_8cpp.html" title="Net/UdpSocket.cpp" alt="" coords="23,393,167,421"/>
+<area shape="rect" id="node25" href="$_host_8h.html" title="Host class represents a host (ip + port)" alt="" coords="432,161,571,189"/>
+<area shape="rect" id="node31" href="$_ip_address_8cpp.html" title="Ip address class." alt="" coords="269,161,408,189"/>
+<area shape="rect" id="node29" href="$_host_8cpp.html" title="Net/Host.cpp" alt="" coords="404,238,508,266"/>
 </map>

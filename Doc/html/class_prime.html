@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -96,29 +96,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Prime Class Reference</div>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Prime" -->
 <p><code>#include &lt;<a class="el" href="_prime_8h_source.html">Prime.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for Prime:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_prime__coll__graph.png" border="0" usemap="#_prime_coll__map" alt="Collaboration graph"/></div>
-<map name="_prime_coll__map" id="_prime_coll__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_prime-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03">SieveType</a> { <a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03af8001641d6622aa2c2206cd3c7d8955b">Eratosthene</a>, 
+<a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03afa5b2ef1601a89536316ff612d080d53">Atkin</a>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum of the different Sieve types to generate primes.  <a href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#af341759f6203d1cbf064b18545e31b99">Prime</a> (unsigned long limit, const int &amp;type=0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the prime class.  <a href="#af341759f6203d1cbf064b18545e31b99"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#a61fff719720c691e8adf060959dba3b2">Prime</a> (unsigned long limit, <a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03">Prime::SieveType</a> type=Eratosthene)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the prime class.  <a href="#a61fff719720c691e8adf060959dba3b2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#a1c7690eae6a24add8bc21b7e21067c9f">genPrimes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the primes using the choosen sieve.  <a href="#a1c7690eae6a24add8bc21b7e21067c9f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#a59cceca20dc14016fde49be10259b6eb">getBiggestPrime</a> ()</td></tr>
@@ -131,15 +130,35 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#a87738f3f85564db65a1e65e17336419e">isPrime</a> (long num)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the number is a prime or not  <a href="#a87738f3f85564db65a1e65e17336419e"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#adee2a89aa06210df3d1c201238c0f0ce">ERATOSTHENE_SIEVE</a> = 0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the Eratosthene sieve.  <a href="#adee2a89aa06210df3d1c201238c0f0ce"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prime.html#a162f2be168d227a4ffd3f358186e91d7">ATKIN_SIEVE</a> = 1</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the Atkin sieve.  <a href="#a162f2be168d227a4ffd3f358186e91d7"></a><br/></td></tr>
 </table>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="af33b2452b66cba4e136fc5c04f79fe03"></a><!-- doxytag: member="Prime::SieveType" ref="af33b2452b66cba4e136fc5c04f79fe03" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03">Prime::SieveType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enum of the different Sieve types to generate primes. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="af33b2452b66cba4e136fc5c04f79fe03af8001641d6622aa2c2206cd3c7d8955b"></a><!-- doxytag: member="Eratosthene" ref="af33b2452b66cba4e136fc5c04f79fe03af8001641d6622aa2c2206cd3c7d8955b" args="" -->Eratosthene</em>&nbsp;</td><td>
+<p>Eratosthene sieve. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af33b2452b66cba4e136fc5c04f79fe03afa5b2ef1601a89536316ff612d080d53"></a><!-- doxytag: member="Atkin" ref="af33b2452b66cba4e136fc5c04f79fe03afa5b2ef1601a89536316ff612d080d53" args="" -->Atkin</em>&nbsp;</td><td>
+<p>Atkin Sieve. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af341759f6203d1cbf064b18545e31b99"></a><!-- doxytag: member="Prime::Prime" ref="af341759f6203d1cbf064b18545e31b99" args="(unsigned long limit, const int &amp;type=0)" -->
+<a class="anchor" id="a61fff719720c691e8adf060959dba3b2"></a><!-- doxytag: member="Prime::Prime" ref="a61fff719720c691e8adf060959dba3b2" args="(unsigned long limit, Prime::SieveType type=Eratosthene)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -152,8 +171,8 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>type</em> = <code>0</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03">Prime::SieveType</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code>Eratosthene</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,13 +187,11 @@ Static Public Attributes</h2></td></tr>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">limit</td><td>the max length of the prime you need </td></tr>
-    <tr><td class="paramname">type</td><td>the type of sieve to use (default is Eratosthene Sieve) </td></tr>
+    <tr><td class="paramname">type</td><td>the SieveType to use default Eratosthene </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_prime.html#adee2a89aa06210df3d1c201238c0f0ce" title="Use the Eratosthene sieve.">ERATOSTHENE_SIEVE</a> </dd>
-<dd>
-<a class="el" href="class_prime.html#a162f2be168d227a4ffd3f358186e91d7" title="Use the Atkin sieve.">ATKIN_SIEVE</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_prime.html#af33b2452b66cba4e136fc5c04f79fe03" title="Enum of the different Sieve types to generate primes.">SieveType</a> </dd></dl>
 
 </div>
 </div>
@@ -281,37 +298,6 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a162f2be168d227a4ffd3f358186e91d7"></a><!-- doxytag: member="Prime::ATKIN_SIEVE" ref="a162f2be168d227a4ffd3f358186e91d7" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="class_prime.html#a162f2be168d227a4ffd3f358186e91d7">Prime::ATKIN_SIEVE</a> = 1<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Use the Atkin sieve. </p>
-
-</div>
-</div>
-<a class="anchor" id="adee2a89aa06210df3d1c201238c0f0ce"></a><!-- doxytag: member="Prime::ERATOSTHENE_SIEVE" ref="adee2a89aa06210df3d1c201238c0f0ce" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="class_prime.html#adee2a89aa06210df3d1c201238c0f0ce">Prime::ERATOSTHENE_SIEVE</a> = 0<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Use the Eratosthene sieve. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Include/System/<a class="el" href="_prime_8h_source.html">Prime.h</a></li>
 <li>System/<a class="el" href="_prime_8cpp.html">Prime.cpp</a></li>
@@ -326,7 +312,7 @@ Static Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -336,7 +322,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:01 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

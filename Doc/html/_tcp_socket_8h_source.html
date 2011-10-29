@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -75,6 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -100,58 +101,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 <span class="preprocessor">#ifndef TCP_SOCKET_H__</span>
 <a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor">#define TCP_SOCKET_H__</span>
 <a name="l00016"></a>00016 <span class="preprocessor"></span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;sys/types.h&gt;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;sys/socket.h&gt;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;netinet/in.h&gt;</span>
-<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;netdb.h&gt;</span>
-<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;unistd.h&gt;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;string.h&gt;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00026"></a>00026 <span class="keyword">using namespace </span>std;
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;<a class="code" href="_abstract_socket_8h.html">Net/AbstractSocket.h</a>&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;<a class="code" href="_host_8h.html" title="Host class represents a host (ip + port)">Net/Host.h</a>&gt;</span>
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="class_tcp_socket.html">00020</a> <span class="keyword">class </span><a class="code" href="class_tcp_socket.html">TcpSocket</a>: <span class="keyword">public</span> <a class="code" href="class_abstract_socket.html">AbstractSocket</a>
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022     <span class="keyword">public</span>:
+<a name="l00026"></a>00026         <a class="code" href="class_tcp_socket.html#a132aa72af141d611f8bad96ba585a79f" title="default constructor">TcpSocket</a>();
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="_socket_errors_8h.html">Net/SocketErrors.h</a>&gt;</span>
-<a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="class_tcp_socket.html">00030</a> <span class="keyword">class </span><a class="code" href="class_tcp_socket.html">TcpSocket</a> {
-<a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00035"></a>00035     <a class="code" href="class_tcp_socket.html">TcpSocket</a>();
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <a class="code" href="class_tcp_socket.html">TcpSocket</a>(<span class="keywordtype">int</span> socketfd);
-<a name="l00038"></a>00038 
-<a name="l00049"></a>00049     <span class="keywordtype">int</span> connect(<span class="keywordtype">string</span> host, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port);
+<a name="l00032"></a>00032         <a class="code" href="class_tcp_socket.html#a132aa72af141d611f8bad96ba585a79f" title="default constructor">TcpSocket</a>(<span class="keywordtype">int</span> socketfd);
+<a name="l00033"></a>00033 
+<a name="l00041"></a>00041         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#aa8edfe7c57f2aee5de88bddcf9de9bfd" title="connects to the host on port">connect</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; host, <span class="keyword">const</span> <a class="code" href="_types_8h.html#ab56ff9d62494b8ca15801f304243a9d6">uint8</a>&amp; port);
+<a name="l00042"></a>00042 
+<a name="l00049"></a>00049         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#aa8edfe7c57f2aee5de88bddcf9de9bfd" title="connects to the host on port">connect</a>(<a class="code" href="class_host.html">Host</a>&amp; h);
 <a name="l00050"></a>00050 
-<a name="l00055"></a>00055     <span class="keywordtype">int</span> sendString(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str);
-<a name="l00056"></a>00056 
-<a name="l00061"></a>00061     <span class="keywordtype">int</span> sendInt(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;i);
-<a name="l00062"></a>00062 
-<a name="l00067"></a>00067     <span class="keywordtype">int</span> sendShort(<span class="keyword">const</span> <span class="keywordtype">short</span> &amp;i);
-<a name="l00068"></a>00068 
-<a name="l00073"></a>00073     <span class="keywordtype">int</span> sendChar(<span class="keyword">const</span> <span class="keywordtype">char</span> &amp;c);
+<a name="l00057"></a>00057         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#a363333b2309959f2abe12bbe39e7be7c" title="sends a string over the net">sendString</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str);
+<a name="l00058"></a>00058 
+<a name="l00065"></a>00065         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#a567aebce9c6329cf54ef229e104327e5" title="sends an int over the net">sendInt</a>(<span class="keyword">const</span> <a class="code" href="_types_8h.html#a56f1a81c92849566ae864511088eb7e8">int32</a>&amp; i);
+<a name="l00066"></a>00066 
+<a name="l00073"></a>00073         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#a0d1a06e099c1632dbd98c68c5644bd45" title="sends a short over the net">sendShort</a>(<span class="keyword">const</span> <a class="code" href="_types_8h.html#ade0d8bf48038913098a4cae3d68663f4">int8</a>&amp; i);
 <a name="l00074"></a>00074 
-<a name="l00079"></a>00079     <span class="keywordtype">int</span> sendCharArray(<span class="keyword">const</span> <span class="keywordtype">char</span>* c);
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keywordtype">int</span> receiveString(<span class="keywordtype">string</span> &amp;str);
+<a name="l00081"></a>00081         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#ab094b959d9f7c46dccb1615c2c3b1f89" title="sends a char over the net">sendChar</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c);
 <a name="l00082"></a>00082 
-<a name="l00083"></a>00083     <span class="keywordtype">int</span> receiveInt(<span class="keywordtype">int</span> &amp;i);
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085     <span class="keywordtype">int</span> receiveShort(<span class="keywordtype">short</span>&amp; s);
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="keywordtype">int</span> receiveChar(<span class="keywordtype">char</span> &amp;c);
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089     <span class="keywordtype">int</span> receiveCharArray(<span class="keywordtype">char</span> **c);
-<a name="l00090"></a>00090 
-<a name="l00095"></a>00095     <span class="keywordtype">int</span> close();
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="keyword">private</span>:
-<a name="l00098"></a>00098     <span class="keywordtype">int</span> m_socketfd;
-<a name="l00099"></a>00099     <span class="keywordtype">int</span> m_portNo;
-<a name="l00100"></a>00100     <span class="keyword">struct </span>sockaddr_in m_servAddr;
-<a name="l00101"></a>00101     <span class="keyword">struct </span>hostent *m_server;
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103 };
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 <span class="preprocessor">#endif</span>
+<a name="l00090"></a>00090         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#a99dd7cc6e054d2a479003249a06e42a8" title="sends a char array over the net">sendCharArray</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* c, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; s);
+<a name="l00091"></a>00091 
+<a name="l00099"></a>00099         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#ae0066a08c3509074107106c152881020" title="reads a string on the socket">receiveString</a>(<span class="keywordtype">string</span>&amp; str, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; s);
+<a name="l00100"></a>00100 
+<a name="l00107"></a>00107         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#a69433ea8f4e1fd07f085a94babd65dd6" title="reads an int on the socket">receiveInt</a>(<a class="code" href="_types_8h.html#a56f1a81c92849566ae864511088eb7e8">int32</a>&amp; i);
+<a name="l00108"></a>00108 
+<a name="l00115"></a>00115         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#adaf96c7b69bda8bd8c4b4ef5f72ffaa5" title="reads a short on the socket">receiveShort</a>(<a class="code" href="_types_8h.html#ade0d8bf48038913098a4cae3d68663f4">int8</a>&amp; s);
+<a name="l00116"></a>00116 
+<a name="l00123"></a>00123         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#a7bf171b01e1e08974df196a35e3d01eb" title="reads a char on the socket">receiveChar</a>(<span class="keywordtype">char</span>&amp; c);
+<a name="l00124"></a>00124 
+<a name="l00132"></a>00132         <a class="code" href="class_abstract_socket.html#a0c061cc4297aae3c29e9ed34dcc0726f" title="Status of the socket.">AbstractSocket::Status</a> <a class="code" href="class_tcp_socket.html#af977ff42e917439788028da9e366ab7b" title="reads a char* on the socket">receiveCharArray</a>(<span class="keywordtype">char</span>** c, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; s);
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134     <span class="keyword">private</span>:
+<a name="l00135"></a>00135         <span class="keywordtype">int</span> m_portNo;
+<a name="l00136"></a>00136         <span class="keyword">struct </span>sockaddr_in m_servAddr;
+<a name="l00137"></a>00137         <span class="keyword">struct </span>hostent* m_server;
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139 };
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
@@ -162,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -172,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

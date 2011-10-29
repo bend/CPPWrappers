@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_file.html" title="File" alt="" coords="5,5,51,33"/>
+<area shape="rect" id="node1" href="$class_abstract_buffer_i_o.html" title="AbstractBufferIO" alt="" coords="6,31,135,59"/>
+<area shape="rect" id="node3" href="$class_buffered_input.html" title="BufferedInput" alt="" coords="189,5,299,33"/>
+<area shape="rect" id="node5" href="$class_buffered_output.html" title="BufferedOutput" alt="" coords="184,57,304,85"/>
 </map>

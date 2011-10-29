@@ -1,7 +1,13 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_file_types_8cpp.html" title="FileTypes." alt="" coords="5,83,133,111"/>
-<area shape="rect" id="node5" href="$_file_8h.html" title="File class." alt="" coords="109,161,235,189"/>
-<area shape="rect" id="node9" href="$_file_mode_8h.html" title="File mode class, represents the file mode." alt="" coords="210,83,371,111"/>
-<area shape="rect" id="node7" href="$_file_8cpp.html" title="File class." alt="" coords="126,238,217,266"/>
-<area shape="rect" id="node11" href="$_file_mode_8cpp.html" title="File mode class, represents the file mode." alt="" coords="259,161,385,189"/>
+<area shape="rect" id="node3" href="$_file_types_8cpp.html" title="FileTypes." alt="" coords="134,83,263,111"/>
+<area shape="rect" id="node5" href="$_abstract_buffer_i_o_8h.html" title="Include/Fs/AbstractBufferIO.h" alt="" coords="196,238,407,266"/>
+<area shape="rect" id="node17" href="$_file_8h.html" title="File class." alt="" coords="339,161,465,189"/>
+<area shape="rect" id="node22" href="$_file_mode_8h.html" title="File mode class, represents the file mode." alt="" coords="390,83,551,111"/>
+<area shape="rect" id="node7" href="$_abstract_buffer_i_o_8cpp.html" title="Fs/AbstractBufferIO.cpp" alt="" coords="5,315,181,343"/>
+<area shape="rect" id="node9" href="$_buffered_input_8h.html" title="Buffered input reader." alt="" coords="206,315,396,343"/>
+<area shape="rect" id="node13" href="$_buffered_output_8h.html" title="Buffered output class." alt="" coords="421,315,621,343"/>
+<area shape="rect" id="node11" href="$_buffered_input_8cpp.html" title="Buffered input reader." alt="" coords="224,393,379,421"/>
+<area shape="rect" id="node15" href="$_buffered_output_8cpp.html" title="Buffered output class." alt="" coords="438,393,604,421"/>
+<area shape="rect" id="node19" href="$_file_8cpp.html" title="File class." alt="" coords="431,238,523,266"/>
+<area shape="rect" id="node24" href="$_file_mode_8cpp.html" title="File mode class, represents the file mode." alt="" coords="490,161,616,189"/>
 </map>

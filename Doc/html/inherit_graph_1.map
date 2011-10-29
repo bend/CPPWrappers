@@ -1,3 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_file_mode.html" title="FileMode" alt="" coords="5,5,85,33"/>
+<area shape="rect" id="node1" href="$class_abstract_socket.html" title="AbstractSocket" alt="" coords="5,57,125,85"/>
+<area shape="rect" id="node3" href="$class_tcp_server.html" title="TcpServer" alt="" coords="175,5,262,33"/>
+<area shape="rect" id="node5" href="$class_tcp_socket.html" title="TcpSocket" alt="" coords="174,57,263,85"/>
+<area shape="rect" id="node9" href="$class_udp_socket.html" title="UdpSocket" alt="" coords="173,109,264,137"/>
+<area shape="rect" id="node7" href="$class_http_protocol.html" title="HttpProtocol" alt="" coords="313,57,415,85"/>
 </map>

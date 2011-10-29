@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -75,6 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -99,18 +100,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="_types_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00014"></a>00014 <span class="preprocessor">#ifndef TYPES_H__</span>
 <a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor">#define TYPES_H__</span>
-<a name="l00016"></a>00016 <span class="preprocessor"></span><span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;sstream&gt;</span>
-<a name="l00018"></a>00018 <span class="keyword">using namespace </span>std;
+<a name="l00016"></a>00016 <span class="preprocessor"></span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="_types_8h.html#ab56ff9d62494b8ca15801f304243a9d6">00018</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="_types_8h.html#ab56ff9d62494b8ca15801f304243a9d6">uint8</a>;
 <a name="l00019"></a>00019 
-<a name="l00020"></a><a class="code" href="class_types.html">00020</a> <span class="keyword">class </span><a class="code" href="class_types.html">Types</a> {
-<a name="l00021"></a>00021 <span class="keyword">public</span>:
-<a name="l00026"></a>00026     <span class="keyword">static</span> <span class="keywordtype">string</span> toString(<span class="keywordtype">int</span>);
+<a name="l00020"></a><a class="code" href="_types_8h.html#a1134b580f8da4de94ca6b1de4d37975e">00020</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_types_8h.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a>;
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="_types_8h.html#a5975ce0896ee5ec5db2f1a411620a51a">00022</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="_types_8h.html#a5975ce0896ee5ec5db2f1a411620a51a">uint64</a>;
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="_types_8h.html#ade0d8bf48038913098a4cae3d68663f4">00024</a> <span class="keyword">typedef</span> <span class="keywordtype">short</span> <a class="code" href="_types_8h.html#ade0d8bf48038913098a4cae3d68663f4">int8</a>;
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="_types_8h.html#a56f1a81c92849566ae864511088eb7e8">00026</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_types_8h.html#a56f1a81c92849566ae864511088eb7e8">int32</a>;
 <a name="l00027"></a>00027 
-<a name="l00032"></a>00032     <span class="keyword">static</span> <span class="keywordtype">string</span> toString(<span class="keywordtype">char</span>);
-<a name="l00033"></a>00033 };
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
+<a name="l00028"></a><a class="code" href="_types_8h.html#a565242d561045a1020e03cb560dcf774">00028</a> <span class="keyword">typedef</span> <span class="keywordtype">long</span> <a class="code" href="_types_8h.html#a565242d561045a1020e03cb560dcf774">int64</a>;
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
@@ -121,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -131,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

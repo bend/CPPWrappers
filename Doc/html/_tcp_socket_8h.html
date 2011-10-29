@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -75,6 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -101,28 +102,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>C++ wrapper for the socket library.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;sys/types.h&gt;</code><br/>
-<code>#include &lt;sys/socket.h&gt;</code><br/>
-<code>#include &lt;netinet/in.h&gt;</code><br/>
-<code>#include &lt;netdb.h&gt;</code><br/>
-<code>#include &lt;unistd.h&gt;</code><br/>
-<code>#include &lt;string.h&gt;</code><br/>
-<code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;<a class="el" href="_socket_errors_8h_source.html">Net/SocketErrors.h</a>&gt;</code><br/>
+<div class="textblock"><code>#include &lt;<a class="el" href="_abstract_socket_8h_source.html">Net/AbstractSocket.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_host_8h_source.html">Net/Host.h</a>&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TcpSocket.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_tcp_socket_8h__incl.png" border="0" usemap="#_include_2_net_2_tcp_socket_8h" alt=""/></div>
 <map name="_include_2_net_2_tcp_socket_8h" id="_include_2_net_2_tcp_socket_8h">
-<area shape="rect" id="node19" href="_socket_errors_8h.html" title="Net/SocketErrors.h" alt="" coords="849,83,991,111"/></map>
+<area shape="rect" id="node3" href="_abstract_socket_8h.html" title="Net/AbstractSocket.h" alt="" coords="558,83,713,111"/><area shape="rect" id="node7" href="_host_8h.html" title="Host class represents a host (ip + port)" alt="" coords="250,161,339,189"/><area shape="rect" id="node5" href="_types_8h.html" title="Types def class." alt="" coords="980,315,1103,343"/><area shape="rect" id="node9" href="_ip_address_8h.html" title="Ip address class." alt="" coords="214,238,337,266"/><area shape="rect" id="node22" href="_type_cast_8h.html" title="Types class." alt="" coords="45,238,189,266"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_tcp_socket_8h__dep__incl.png" border="0" usemap="#_include_2_net_2_tcp_socket_8hdep" alt=""/></div>
 <map name="_include_2_net_2_tcp_socket_8hdep" id="_include_2_net_2_tcp_socket_8hdep">
-<area shape="rect" id="node3" href="_tcp_server_8h.html" title="Tcp server." alt="" coords="5,83,179,111"/><area shape="rect" id="node7" href="_tcp_socket_8cpp.html" title="C++ wrapper for the socket library." alt="" coords="204,83,345,111"/><area shape="rect" id="node5" href="_tcp_server_8cpp.html" title="Tcp server." alt="" coords="23,161,161,189"/></map>
+<area shape="rect" id="node3" href="_http_protocol_8h.html" title="Include/Net/HttpProtocol.h" alt="" coords="5,83,195,111"/><area shape="rect" id="node7" href="_tcp_server_8h.html" title="Tcp server." alt="" coords="219,83,393,111"/><area shape="rect" id="node11" href="_tcp_socket_8cpp.html" title="C++ wrapper for the socket library." alt="" coords="419,83,560,111"/><area shape="rect" id="node5" href="_http_protocol_8cpp.html" title="Net/HttpProtocol.cpp" alt="" coords="23,161,177,189"/><area shape="rect" id="node9" href="_tcp_server_8cpp.html" title="Tcp server." alt="" coords="237,161,376,189"/></map>
 </div>
 </div>
 <p><a href="_tcp_socket_8h_source.html">Go to the source code of this file.</a></p>
@@ -146,7 +140,7 @@ Classes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -156,7 +150,7 @@ Classes</h2></td></tr>
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

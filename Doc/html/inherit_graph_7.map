@@ -1,5 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_prime_sieve.html" title="PrimeSieve" alt="" coords="6,31,101,59"/>
-<area shape="rect" id="node3" href="$class_atkin_sieve.html" title="AtkinSieve" alt="" coords="171,5,261,33"/>
-<area shape="rect" id="node5" href="$class_eratosthene_sieve.html" title="EratostheneSieve" alt="" coords="149,57,283,85"/>
+<area shape="rect" id="node1" href="$class_ip_address.html" title="IpAddress" alt="" coords="6,5,93,33"/>
+<area shape="rect" id="node3" href="$class_host.html" title="Host" alt="" coords="142,5,194,33"/>
 </map>

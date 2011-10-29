@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_prime.html" title="Prime" alt="" coords="5,5,64,33"/>
+<area shape="rect" id="node1" href="$class_http_types.html" title="HttpTypes" alt="" coords="6,31,93,59"/>
+<area shape="rect" id="node3" href="$class_http_request.html" title="HttpRequest" alt="" coords="147,5,248,33"/>
+<area shape="rect" id="node5" href="$class_http_response.html" title="HttpResponse" alt="" coords="141,57,253,85"/>
 </map>

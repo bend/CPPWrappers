@@ -1,3 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_logger.html" title="Logger" alt="" coords="5,5,72,33"/>
+<area shape="rect" id="node1" href="$class_file_types.html" title="FileTypes" alt="" coords="5,5,88,33"/>
+<area shape="rect" id="node3" href="$class_file.html" title="File" alt="" coords="136,5,181,33"/>
 </map>

@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_http_protocol_8h.html" title="Net/HttpProtocol.h" alt="" coords="1019,83,1159,111"/>
+<area shape="rect" id="node5" href="$_tcp_socket_8h.html" title="C++ wrapper for the socket library." alt="" coords="762,161,888,189"/>
+<area shape="rect" id="node49" href="$_http_response_8h.html" title="Net/HttpResponse.h" alt="" coords="1015,315,1164,343"/>
+<area shape="rect" id="node58" href="$_http_request_8h.html" title="Http Requests class." alt="" coords="1203,315,1341,343"/>
+<area shape="rect" id="node7" href="$_abstract_socket_8h.html" title="Net/AbstractSocket.h" alt="" coords="369,238,524,266"/>
+<area shape="rect" id="node11" href="$_host_8h.html" title="Host class represents a host (ip + port)" alt="" coords="781,315,869,343"/>
+<area shape="rect" id="node9" href="$_types_8h.html" title="Types def class." alt="" coords="447,470,569,498"/>
+<area shape="rect" id="node13" href="$_ip_address_8h.html" title="Ip address class." alt="" coords="579,393,703,421"/>
+<area shape="rect" id="node26" href="$_type_cast_8h.html" title="Types class." alt="" coords="727,393,872,421"/>
+<area shape="rect" id="node55" href="$_http_types_8h.html" title="Net/HttpTypes.h" alt="" coords="999,393,1123,421"/>
+</map>

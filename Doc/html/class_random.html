@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -96,53 +96,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Random Class Reference</div>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="Random" -->
 <p><code>#include &lt;<a class="el" href="_random_8h_source.html">Random.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for Random:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_random__coll__graph.png" border="0" usemap="#_random_coll__map" alt="Collaboration graph"/></div>
-<map name="_random_coll__map" id="_random_coll__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_random-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565e">RandomType</a> { <a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565ea4fc17c165f31cf27b1afac6954eba680">MultiplyWCarry</a>, 
+<a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565ea94c8625e52b7344a980ed2417e09a3e0">BlumBlumShub</a>, 
+<a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565eae2a9a8a6055bf2a3515c455f0daa3991">Unix</a>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Algorythm types enumeration.  <a href="class_random.html#a239aa2be57ade40c442700485e39565e">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a85ee52bd64f34e0c96e2166f315f93ae">Random</a> (const int &amp;algo=0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class$.  <a href="#a85ee52bd64f34e0c96e2166f315f93ae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a350d07f11f70732ac46e0474477d4017">Random</a> (<a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565e">RandomType</a> algo=MultiplyWCarry)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class$.  <a href="#a350d07f11f70732ac46e0474477d4017"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a1735aaf697ba704ab82d8111867f04bc">init</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the value of the PRG choosen.  <a href="#a1735aaf697ba704ab82d8111867f04bc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a57e803d12c799fe9a363e8276158c459">random</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">generates the next random number using the choosen algorithm  <a href="#a57e803d12c799fe9a363e8276158c459"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a9cc2fedd82eacab37daf8a03651a3f6f">random</a> (int min, int max)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated the next random number using the choosen algorithm.  <a href="#a9cc2fedd82eacab37daf8a03651a3f6f"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a8676353a2042f23caabc55c8916a8699">MULT_CARRY</a> = 0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply with carry algorithm variable.  <a href="#a8676353a2042f23caabc55c8916a8699"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#a7c2ef244a7f018b1b1211a8cb5b368c3">BLUM_BLUM</a> = 1</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Blum Blum Shub algorithm variable.  <a href="#a7c2ef244a7f018b1b1211a8cb5b368c3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random.html#af9402cff4104f72572bddf4cb07d5e46">UNIX</a> = 2</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">default unix random gen  <a href="#af9402cff4104f72572bddf4cb07d5e46"></a><br/></td></tr>
 </table>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a239aa2be57ade40c442700485e39565e"></a><!-- doxytag: member="Random::RandomType" ref="a239aa2be57ade40c442700485e39565e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565e">Random::RandomType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Algorythm types enumeration. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a239aa2be57ade40c442700485e39565ea4fc17c165f31cf27b1afac6954eba680"></a><!-- doxytag: member="MultiplyWCarry" ref="a239aa2be57ade40c442700485e39565ea4fc17c165f31cf27b1afac6954eba680" args="" -->MultiplyWCarry</em>&nbsp;</td><td>
+<p>Multiply with carry algorithm. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a239aa2be57ade40c442700485e39565ea94c8625e52b7344a980ed2417e09a3e0"></a><!-- doxytag: member="BlumBlumShub" ref="a239aa2be57ade40c442700485e39565ea94c8625e52b7344a980ed2417e09a3e0" args="" -->BlumBlumShub</em>&nbsp;</td><td>
+<p>Blum Blum Shub algorithm. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a239aa2be57ade40c442700485e39565eae2a9a8a6055bf2a3515c455f0daa3991"></a><!-- doxytag: member="Unix" ref="a239aa2be57ade40c442700485e39565eae2a9a8a6055bf2a3515c455f0daa3991" args="" -->Unix</em>&nbsp;</td><td>
+<p>Unix Algorithm. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a85ee52bd64f34e0c96e2166f315f93ae"></a><!-- doxytag: member="Random::Random" ref="a85ee52bd64f34e0c96e2166f315f93ae" args="(const int &amp;algo=0)" -->
+<a class="anchor" id="a350d07f11f70732ac46e0474477d4017"></a><!-- doxytag: member="Random::Random" ref="a350d07f11f70732ac46e0474477d4017" args="(RandomType algo=MultiplyWCarry)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Random::Random </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>algo</em> = <code>0</code></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565e">RandomType</a>&#160;</td>
+          <td class="paramname"><em>algo</em> = <code>MultiplyWCarry</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -156,11 +177,7 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_random.html#a8676353a2042f23caabc55c8916a8699" title="Multiply with carry algorithm variable.">MULT_CARRY</a> </dd>
-<dd>
-<a class="el" href="class_random.html#a7c2ef244a7f018b1b1211a8cb5b368c3" title="Blum Blum Shub algorithm variable.">BLUM_BLUM</a> </dd>
-<dd>
-<a class="el" href="class_random.html#af9402cff4104f72572bddf4cb07d5e46" title="default unix random gen">UNIX</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_random.html#a239aa2be57ade40c442700485e39565e" title="Algorythm types enumeration.">RandomType</a> </dd></dl>
 
 </div>
 </div>
@@ -241,52 +258,6 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a7c2ef244a7f018b1b1211a8cb5b368c3"></a><!-- doxytag: member="Random::BLUM_BLUM" ref="a7c2ef244a7f018b1b1211a8cb5b368c3" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="class_random.html#a7c2ef244a7f018b1b1211a8cb5b368c3">Random::BLUM_BLUM</a> = 1<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Blum Blum Shub algorithm variable. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8676353a2042f23caabc55c8916a8699"></a><!-- doxytag: member="Random::MULT_CARRY" ref="a8676353a2042f23caabc55c8916a8699" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="class_random.html#a8676353a2042f23caabc55c8916a8699">Random::MULT_CARRY</a> = 0<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Multiply with carry algorithm variable. </p>
-
-</div>
-</div>
-<a class="anchor" id="af9402cff4104f72572bddf4cb07d5e46"></a><!-- doxytag: member="Random::UNIX" ref="af9402cff4104f72572bddf4cb07d5e46" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="class_random.html#af9402cff4104f72572bddf4cb07d5e46">Random::UNIX</a> = 2<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>default unix random gen </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Include/System/<a class="el" href="_random_8h_source.html">Random.h</a></li>
 <li>System/<a class="el" href="_random_8cpp.html">Random.cpp</a></li>
@@ -301,7 +272,7 @@ Static Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -311,7 +282,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:01 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

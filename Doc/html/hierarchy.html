@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -102,9 +102,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock">
 <p><a href="inherits.html">Go to the graphical class hierarchy</a></p>
 This inheritance list is sorted roughly, but not completely, alphabetically:</div><ul>
-<li><a class="el" href="class_file.html">File</a></li>
+<li><a class="el" href="class_abstract_buffer_i_o.html">AbstractBufferIO</a><ul>
+<li><a class="el" href="class_buffered_input.html">BufferedInput</a></li>
+<li><a class="el" href="class_buffered_output.html">BufferedOutput</a></li>
+</ul>
+</li>
+<li><a class="el" href="class_abstract_socket.html">AbstractSocket</a><ul>
+<li><a class="el" href="class_tcp_server.html">TcpServer</a></li>
+<li><a class="el" href="class_tcp_socket.html">TcpSocket</a><ul>
+<li><a class="el" href="class_http_protocol.html">HttpProtocol</a></li>
+</ul>
+</li>
+<li><a class="el" href="class_udp_socket.html">UdpSocket</a></li>
+</ul>
+</li>
 <li><a class="el" href="class_file_mode.html">FileMode</a></li>
-<li><a class="el" href="class_file_types.html">FileTypes</a></li>
+<li><a class="el" href="class_file_types.html">FileTypes</a><ul>
+<li><a class="el" href="class_file.html">File</a></li>
+</ul>
+</li>
+<li><a class="el" href="class_html_element.html">HtmlElement</a></li>
+<li><a class="el" href="class_html_parser.html">HtmlParser</a></li>
+<li><a class="el" href="class_http_types.html">HttpTypes</a><ul>
+<li><a class="el" href="class_http_request.html">HttpRequest</a></li>
+<li><a class="el" href="class_http_response.html">HttpResponse</a></li>
+</ul>
+</li>
+<li><a class="el" href="class_ip_address.html">IpAddress</a><ul>
+<li><a class="el" href="class_host.html">Host</a></li>
+</ul>
+</li>
 <li><a class="el" href="class_logger.html">Logger</a></li>
 <li><a class="el" href="class_mutex.html">Mutex</a></li>
 <li><a class="el" href="class_path.html">Path</a></li>
@@ -116,12 +143,9 @@ This inheritance list is sorted roughly, but not completely, alphabetically:</di
 </li>
 <li><a class="el" href="class_random.html">Random</a></li>
 <li><a class="el" href="class_semaphore.html">Semaphore</a></li>
-<li><a class="el" href="class_socket_errors.html">SocketErrors</a></li>
-<li><a class="el" href="class_tcp_server.html">TcpServer</a></li>
-<li><a class="el" href="class_tcp_socket.html">TcpSocket</a></li>
 <li><a class="el" href="class_thread.html">Thread</a></li>
 <li><a class="el" href="class_time.html">Time</a></li>
-<li><a class="el" href="class_types.html">Types</a></li>
+<li><a class="el" href="class_type_cast.html">TypeCast</a></li>
 </ul>
 </div>
 </div>
@@ -132,7 +156,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:</di
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -142,7 +166,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:</di
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>

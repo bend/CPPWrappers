@@ -1,5 +1,11 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_path_8cpp.html" title="Fs/Path.cpp" alt="" coords="5,83,101,111"/>
-<area shape="rect" id="node5" href="$_file_8h.html" title="File class." alt="" coords="126,83,252,111"/>
-<area shape="rect" id="node7" href="$_file_8cpp.html" title="File class." alt="" coords="143,161,235,189"/>
+<area shape="rect" id="node3" href="$_path_8cpp.html" title="Fs/Path.cpp" alt="" coords="29,83,125,111"/>
+<area shape="rect" id="node5" href="$_file_8h.html" title="File class." alt="" coords="150,83,276,111"/>
+<area shape="rect" id="node7" href="$_file_8cpp.html" title="File class." alt="" coords="79,161,171,189"/>
+<area shape="rect" id="node9" href="$_abstract_buffer_i_o_8h.html" title="Include/Fs/AbstractBufferIO.h" alt="" coords="196,161,407,189"/>
+<area shape="rect" id="node11" href="$_abstract_buffer_i_o_8cpp.html" title="Fs/AbstractBufferIO.cpp" alt="" coords="5,238,181,266"/>
+<area shape="rect" id="node13" href="$_buffered_input_8h.html" title="Buffered input reader." alt="" coords="206,238,396,266"/>
+<area shape="rect" id="node17" href="$_buffered_output_8h.html" title="Buffered output class." alt="" coords="421,238,621,266"/>
+<area shape="rect" id="node15" href="$_buffered_input_8cpp.html" title="Buffered input reader." alt="" coords="224,315,379,343"/>
+<area shape="rect" id="node19" href="$_buffered_output_8cpp.html" title="Buffered output class." alt="" coords="438,315,604,343"/>
 </map>

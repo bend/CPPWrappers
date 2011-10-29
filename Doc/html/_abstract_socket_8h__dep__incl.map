@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_tcp_socket_8h.html" title="C++ wrapper for the socket library." alt="" coords="256,83,432,111"/>
+<area shape="rect" id="node15" href="$_udp_socket_8h.html" title="Include/Net/UdpSocket.h" alt="" coords="529,83,708,111"/>
+<area shape="rect" id="node19" href="$_abstract_socket_8cpp.html" title="Net/AbstractSocket.cpp" alt="" coords="733,83,904,111"/>
+<area shape="rect" id="node5" href="$_http_protocol_8h.html" title="Include/Net/HttpProtocol.h" alt="" coords="5,161,195,189"/>
+<area shape="rect" id="node9" href="$_tcp_server_8h.html" title="Tcp server." alt="" coords="219,161,393,189"/>
+<area shape="rect" id="node13" href="$_tcp_socket_8cpp.html" title="C++ wrapper for the socket library." alt="" coords="419,161,560,189"/>
+<area shape="rect" id="node7" href="$_http_protocol_8cpp.html" title="Net/HttpProtocol.cpp" alt="" coords="23,238,177,266"/>
+<area shape="rect" id="node11" href="$_tcp_server_8cpp.html" title="Tcp server." alt="" coords="237,238,376,266"/>
+<area shape="rect" id="node17" href="$_udp_socket_8cpp.html" title="Net/UdpSocket.cpp" alt="" coords="584,161,728,189"/>
+</map>

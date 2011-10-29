@@ -32,7 +32,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">CPPWrappers
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6</span>
    </div>
    <div id="projectbrief">CPP Wrappers of Sockets, Thread, Mutex, Semaphore and other libraries</div>
   </td>
@@ -75,6 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -106,20 +107,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;<a class="code" href="_time_8h.html" title="get the system time">System/Time.h</a>&gt;</span>
 <a name="l00022"></a>00022 <span class="keyword">using namespace </span>std;
-<a name="l00023"></a><a class="code" href="class_logger.html">00023</a> <span class="keyword">class </span><a class="code" href="class_logger.html">Logger</a> {
-<a name="l00024"></a>00024 <span class="keyword">public</span>:
-<a name="l00030"></a>00030     <a class="code" href="class_logger.html">Logger</a>(<span class="keywordtype">string</span> name);
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> ~<a class="code" href="class_logger.html">Logger</a>();
-<a name="l00037"></a>00037     ofstream&amp; log(<span class="keywordtype">string</span> type, <span class="keywordtype">int</span> indent = 0);
-<a name="l00038"></a><a class="code" href="class_logger.html#adde425c745d6c12f798c3cf77ff23e16">00038</a>     ofstream <a class="code" href="class_logger.html#adde425c745d6c12f798c3cf77ff23e16">m_out</a>;
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="keyword">private</span>:
-<a name="l00041"></a>00041     <span class="keywordtype">string</span> getTimeDate();
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 };
+<a name="l00023"></a><a class="code" href="class_logger.html">00023</a> <span class="keyword">class </span><a class="code" href="class_logger.html">Logger</a>
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025     <span class="keyword">public</span>:
+<a name="l00031"></a>00031         <a class="code" href="class_logger.html">Logger</a>(<span class="keywordtype">string</span> name);
+<a name="l00032"></a>00032 
+<a name="l00036"></a>00036         <span class="keyword">virtual</span> ~<a class="code" href="class_logger.html">Logger</a>();
+<a name="l00037"></a>00037 
+<a name="l00043"></a>00043         ofstream&amp; log(<span class="keywordtype">string</span> type, <span class="keywordtype">int</span> indent = 0);
+<a name="l00044"></a>00044 
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="preprocessor">#endif</span>
+<a name="l00046"></a>00046     <span class="keyword">private</span>:
+<a name="l00047"></a>00047         <span class="keywordtype">string</span> getTimeDate();
+<a name="l00048"></a>00048         ofstream m_out;
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 };
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
@@ -130,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -140,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 
-    <li class="footer">Generated on Thu Oct 20 2011 14:14:00 for CPPWrappers by
+    <li class="footer">Generated on Sat Oct 29 2011 20:21:03 for CPPWrappers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
    </ul>
