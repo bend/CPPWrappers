@@ -16,7 +16,6 @@
 
 int main()
 {
-    /*
     Host h("checkip.dyndns.org", 80);
     HttpProtocol proto(h);
     HttpRequest req("/", HttpRequest::Head);
@@ -36,28 +35,10 @@ int main()
     cout << "Server [" << r.getField("Server") << "]" << endl;
     string s = "    <html> this is is html           <body> hello wolrd </body><body2> byte byte </body2> </html>";
     HtmlParser parser(r.getBody());
-    cout<<"Parser result " <<parser.parse()<<endl;
-    HtmlElement root = parser.getElem();
+  
+	parser.parse();
+    HtmlElement root = parser.getRootElement();
 
-    cout<<"Data " <<root["html"]["body"].getContents()<<endl;
-    root["html"]["body"] = "this is another ip";
-    cout<<"Data " <<root["html"]["body"].getContents()<<endl;
-    root["html"]["tail"] = "hello 321";
-    cout<<"Data " <<root["html"]["tail"].getContents()<<endl;
-    */
-    string s1 = "<html>hello wolrd <body><a href=http://www.facebook.com><div> test 123 </div> blabla</a></body></html>";
-    HtmlParser p(s1);
-    p.parse();
-    cout << p.getRootElement()["html"]["body"]["a"].getContents() << endl;
-    cout << p.getRootElement()["html"]["body"]["a"].getFlag() << endl;
-    /*
-    list<string> l;
-    p.preProcess(l);
-
-    while(!l.empty()){
-    	cout<<l.front()<<endl;
-    	l.pop_front();
-    }
-    */
+    cout<<root["html"]["body"].getContents()<<endl;
 }
 

@@ -10,9 +10,9 @@ There are 3 Libraries:
 
 contains the Thread class, Semaphore class and Mutex class, Time class, PRNG class and Prime number generator class
 
-####Socket
+####Net
 
-contains the TcpSocket and TcpServer class
+contains the TcpSocket, TcpServer, UdpSocket, HtmlRequest classes. There is also a HtmlParser 
 
 ####Fs
 
@@ -42,4 +42,4 @@ To install the library go to the project directory and type de following:
 Small examples are located in the Tests folder. Basicaly the libraries are easy to use, notice that for the Thread class you need to subclass it and override the run() method
 
 ### TODO
-Add  Udp sockets, http requests ..., Signals, ...
+Add  Signals, ...
