@@ -14,58 +14,81 @@
 #include <Net/HtmlElement.h>
 
 HtmlElement::HtmlElement():
-	m_tag(""),
-	m_contents(""),
-	m_elems()
+    m_tag(""),
+    m_contents(""),
+    m_elems()
 {
-
 }
 
 HtmlElement::HtmlElement(string tag, vector<HtmlElement> elems, string contents):
-	m_tag(tag),
-	m_contents(contents),
-	m_elems(elems){
-
+    m_tag(tag),
+    m_contents(contents),
+    m_elems(elems)
+{
 }
 
-string& HtmlElement::getTag(){
-	return m_tag;
+HtmlElement::HtmlElement(string tag, vector<HtmlElement> elems, string contents, string flag):
+    m_tag(tag),
+    m_contents(contents),
+    m_flag(flag),
+    m_elems(elems)
+{
 }
 
-string& HtmlElement::getContents(){
-	return m_contents;
+string& HtmlElement::getTag()
+{
+    return m_tag;
 }
 
-vector<HtmlElement>& HtmlElement::getHtmlElements(){
-	return m_elems;
+string& HtmlElement::getContents()
+{
+    return m_contents;
 }
 
-void HtmlElement::addHtmlElement(HtmlElement elem){
-	m_elems.push_back(elem);
+string& HtmlElement::getFlag()
+{
+    return m_flag;
 }
 
-void HtmlElement::setTag(const string& str){
-	m_tag = str;
+vector<HtmlElement>& HtmlElement::getHtmlElements()
+{
+    return m_elems;
 }
 
-void HtmlElement::setContents(const string& str){
-	m_contents = str;
+void HtmlElement::addHtmlElement(HtmlElement elem)
+{
+    m_elems.push_back(elem);
 }
 
-HtmlElement& HtmlElement::operator[](const string& str){
-	unsigned int i;
-	for(i = 0; i<m_elems.size(); i++)
-		if(m_elems[i].getTag() == str){
-			return m_elems[i];
-		}
-	/* Create it if non existant */
-	HtmlElement elem(str, vector<HtmlElement>(), "");
-	m_elems.push_back(elem);
-	return m_elems[m_elems.size()-1];
+void HtmlElement::setTag(const string& str)
+{
+    m_tag = str;
 }
 
-HtmlElement& HtmlElement::operator = (const string& str){
-	m_contents = str;
-	return *this;
+void HtmlElement::setContents(const string& str)
+{
+    m_contents = str;
+}
+
+HtmlElement& HtmlElement::operator[](const string& str)
+{
+    unsigned int i;
+
+    for (i = 0; i < m_elems.size(); i++)
+        if (m_elems[i].getTag() == str)
+        {
+            return m_elems[i];
+        }
+
+    /* Create it if non existant */
+    HtmlElement elem(str, vector<HtmlElement>(), "");
+    m_elems.push_back(elem);
+    return m_elems[m_elems.size() - 1];
+}
+
+HtmlElement& HtmlElement::operator = (const string& str)
+{
+    m_contents = str;
+    return *this;
 }
 

@@ -2,7 +2,7 @@
  *
  *       @file  HtmlElement.h
  *
- *      @brief  
+ *      @brief
  *
  *    @version  1.0
  *       @date  10/29/2011 11:36:25
@@ -16,35 +16,41 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class HtmlElement{
-	public:
-	HtmlElement();
-	
-	HtmlElement(string tag, vector<HtmlElement> elems, string contents);
+class HtmlElement
+{
+    public:
+        HtmlElement();
 
-	string& getTag();
-	
-	string& getContents();
-	
-	void addHtmlElement(HtmlElement elem);
-	
-	vector<HtmlElement>& getHtmlElements();
+        HtmlElement(string tag, vector<HtmlElement> elems, string contents);
 
-	void setTag(const string& str);
+        HtmlElement(string tag, vector<HtmlElement> elems, string contents, string flag);
 
-	void setContents(const string& str);
+        string& getTag();
 
-	HtmlElement& operator[] (const string& str);
+        string& getContents();
 
-	HtmlElement& operator = (const string& str);
-	
-	string toString();
-	
+        string& getFlag();
 
-	private:
-		string m_tag;
-		string m_contents;
-		vector<HtmlElement> m_elems;
+        void addHtmlElement(HtmlElement elem);
+
+        vector<HtmlElement>& getHtmlElements();
+
+        void setTag(const string& str);
+
+        void setContents(const string& str);
+
+        HtmlElement& operator[] (const string& str);
+
+        HtmlElement& operator = (const string& str);
+
+        string toString();
+
+
+    private:
+        string m_tag;
+        string m_contents;
+        string m_flag;
+        vector<HtmlElement> m_elems;
 
 
 };

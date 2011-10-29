@@ -16,6 +16,7 @@
 
 int main()
 {
+    /*
     Host h("checkip.dyndns.org", 80);
     HttpProtocol proto(h);
     HttpRequest req("/", HttpRequest::Head);
@@ -33,17 +34,30 @@ int main()
     cout << "Code [" << r.getResponseCode() << "]" << endl;
     cout << "Body [" << r.getBody() << "]" << endl;
     cout << "Server [" << r.getField("Server") << "]" << endl;
-	string s = "    <html> this is is html           <body> hello wolrd </body><body2> byte byte </body2> </html>";
-	HtmlParser parser(r.getBody());
-	cout<<"Parser result " <<parser.parse()<<endl;
-	HtmlElement root = parser.getElem();
+    string s = "    <html> this is is html           <body> hello wolrd </body><body2> byte byte </body2> </html>";
+    HtmlParser parser(r.getBody());
+    cout<<"Parser result " <<parser.parse()<<endl;
+    HtmlElement root = parser.getElem();
 
-	cout<<"Data " <<root["html"]["body"].getContents()<<endl;
-	root["html"]["body"] = "this is another ip";
-	cout<<"Data " <<root["html"]["body"].getContents()<<endl;
-	root["html"]["tail"] = "hello 321";
-	cout<<"Data " <<root["html"]["tail"].getContents()<<endl;
+    cout<<"Data " <<root["html"]["body"].getContents()<<endl;
+    root["html"]["body"] = "this is another ip";
+    cout<<"Data " <<root["html"]["body"].getContents()<<endl;
+    root["html"]["tail"] = "hello 321";
+    cout<<"Data " <<root["html"]["tail"].getContents()<<endl;
+    */
+    string s1 = "<html>hello wolrd <body><a href=http://www.facebook.com><div> test 123 </div> blabla</a></body></html>";
+    HtmlParser p(s1);
+    p.parse();
+    cout << p.getElem()["html"]["body"]["a"].getContents() << endl;
+    cout << p.getElem()["html"]["body"]["a"].getFlag() << endl;
+    /*
+    list<string> l;
+    p.preProcess(l);
 
-
+    while(!l.empty()){
+    	cout<<l.front()<<endl;
+    	l.pop_front();
+    }
+    */
 }
 

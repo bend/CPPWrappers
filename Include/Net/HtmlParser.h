@@ -15,37 +15,45 @@
 #define HTML_PARSER_H__
 #include <iostream>
 #include <sstream>
-#include <map>	
+#include <map>
 #include <vector>
 #include <list>
 using namespace std;
 
 #include <Net/HtmlElement.h>
 
-class HtmlParser{
-	public:
-		HtmlParser(string html);
+class HtmlParser
+{
+    public:
+        HtmlParser(string html);
 
-		int parse();
+        int parse();
 
-		HtmlElement& getElem();
-		int preProcess(list<string> &tokens);
-	private:
+        HtmlElement& getElem();
 
+        int preProcess(list<string> &tokens);
 
-		HtmlElement parseTag(string tag, list<string> &tokens);
+    private:
 
-		bool isNewTagOpen(string &tag, string &str);
+        HtmlElement parseTag(string tag, list<string> &tokens);
 
-		bool isCloseTag(string &tag, string &str);
+        HtmlElement parseSpecialTag(string tag, list<string> &tokens);
 
-		string getOpenTag(string str);
+        bool isSpecialTag(string& tag, string& str);
 
-		string getCloseTag(string str);
+        bool isSpecialOpenTag(string& tag, string& str);
 
-		HtmlElement m_elem;
-		string m_html;
+        bool isNewTagOpen(string& tag, string& str);
+
+        bool isCloseTag(string& tag, string& str);
+
+        string getOpenTag(string str);
+
+        string getCloseTag(string str);
+
+        HtmlElement m_elem;
+        string m_html;
 
 };
-	
+
 #endif
