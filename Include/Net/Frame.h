@@ -23,6 +23,7 @@
 #include <System/Types.h>
 
 #include <string.h>
+#include <arpa/inet.h>
 
 #include <iostream>
 using namespace std;
