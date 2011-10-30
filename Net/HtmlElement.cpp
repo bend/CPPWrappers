@@ -97,3 +97,20 @@ HtmlElement& HtmlElement::operator = (const string& str)
     return *this;
 }
 
+string HtmlElement::toString(){
+	string s = "";
+	if(m_tag != "")
+		s.append("<"+m_tag);
+   	if(m_flag !="")
+		s.append(" "+m_flag);
+	if(m_tag != "")
+		s.append(">");
+	s.append(m_contents);
+	int i;
+	for(i=0; i< m_elems.size(); ++i){
+		s.append(m_elems[i].toString());
+	}
+	if(m_tag != "")	
+		s.append("</"+m_tag+">");
+	return s;
+}
