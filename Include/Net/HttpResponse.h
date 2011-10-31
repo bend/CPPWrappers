@@ -22,6 +22,7 @@
 #include <sstream>
 #include <map>
 #include <Net/HttpTypes.h>
+#include <stdlib.h>
 using namespace std;
 
 class HttpResponse : public HttpTypes
