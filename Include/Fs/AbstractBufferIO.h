@@ -48,7 +48,7 @@ class AbstractBufferIO
          * @return AbstractBufferIO::Status
          * @see AbstractBufferIO::Status
          */
-        AbstractBufferIO::Status getBufferStatus();
+        AbstractBufferIO::Status getStatus();
     protected:
         Status m_status;
 

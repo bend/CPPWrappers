@@ -35,21 +35,21 @@ class Host: public IpAddress
          * @param host the host name
          * @param port the port number
          */
-        Host(const string& host, const uint8& port);
+        Host(const string& host, const uint16& port);
 
         /**
          * @brief Constructor
          * @param host the host name
          * @param port the port number
          */
-        Host(const char* host, const uint8& port);
+        Host(const char* host, const uint16& port);
 
         /**
          * @brief Constructor
          * @param host the IpAddress::Ip
          * @param port the port number
          */
-        Host(IpAddress::Ip host, const uint8& port);
+        Host(IpAddress::Ip host, const uint16& port);
 
         /**
          * @brief returns the host struct
@@ -77,7 +77,7 @@ class Host: public IpAddress
         string toString();
 
     private:
-        uint8 m_port;
+        uint16 m_port;
 
 
 

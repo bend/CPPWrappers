@@ -37,18 +37,18 @@ AbstractSocket::Status TcpServer::bind(int port)
     m_servAddr.sin_port = htons(m_portNo);
 
     if (::bind(m_socketfd, (struct sockaddr*) &m_servAddr, sizeof(m_servAddr)) < 0)
-        return getSocketStatus();
-
+        return getStatus();
+	m_status = Done;
     return Done;
 }
 
 AbstractSocket::Status TcpServer::listen(int port)
 {
     if (bind(port) != Done)
-        return getSocketStatus();
+        return getStatus();
 
     if (::listen(m_socketfd, m_maxWaitCon) < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }

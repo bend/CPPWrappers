@@ -43,7 +43,7 @@ class UdpSocket: public AbstractSocket
          * @return AbstractSocket::Done is success
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status bind(const uint8& port);
+        AbstractSocket::Status bind(const uint16& port);
 
         /**
          * @brief unbind the socket
@@ -57,7 +57,34 @@ class UdpSocket: public AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status sendChar(const char& c, Host& h);
+        AbstractSocket::Status sendInt8(const int8& c, Host& h);
+        
+		/**
+         * @brief send an short on the socket to the host
+         * @param i the int to send
+         * @param h the Host
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status sendInt16(const int16& i, Host& h);
+
+        /**
+         * @brief send a int32 on the socket to the host
+         * @param i the int32 to send
+         * @param h the Host
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status sendInt32(const int32& i, Host& h);
+
+        /**
+         * @brief send a long on the socket to the host
+         * @param i the int to send
+         * @param h the Host
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status sendInt64(const int64& i, Host& h);
 
         /**
          * @brief send a string on the socket to the host
@@ -79,43 +106,6 @@ class UdpSocket: public AbstractSocket
         AbstractSocket::Status sendCharArray(const char* str, const size_t& s,  Host& h);
 
         /**
-         * @brief send an short on the socket to the host
-         * @param i the int to send
-         * @param h the Host
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status sendShort(const int8& i, Host& h);
-
-        /**
-         * @brief send a int32 on the socket to the host
-         * @param i the int32 to send
-         * @param h the Host
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status sendInt(const int32& i, Host& h);
-
-        /**
-         * @brief send a long on the socket to the host
-         * @param i the int to send
-         * @param h the Host
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status sendLong(const int64& i, Host& h);
-
-        /**
-         * @brief receive a char
-         * 	You need to bind the socket to be able to receive data
-         * @param c the char in which the read value will be put
-         * @param peer the Host object in which the peer information will be put
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status receiveChar(char& c, Host& peer);
-
-        /**
          * @brief receive a string
          * 	You need to bind the socket to be able to receive data
          * @param str the string in which the read value will be put
@@ -135,6 +125,16 @@ class UdpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status receiveCharArray(char** c, Host& peer);
+        
+		/**
+         * @brief receive a char
+         * 	You need to bind the socket to be able to receive data
+         * @param c the char in which the read value will be put
+         * @param peer the Host object in which the peer information will be put
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status receiveInt8(int8& c, Host& peer);
 
         /**
          * @brief receive a short
@@ -144,7 +144,7 @@ class UdpSocket: public AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status receiveShort(int8& i, Host& peer);
+        AbstractSocket::Status receiveInt16(int16& i, Host& peer);
 
         /**
          * @brief receive a int
@@ -154,7 +154,7 @@ class UdpSocket: public AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status receiveInt(int32& i, Host& peer);
+        AbstractSocket::Status receiveInt32(int32& i, Host& peer);
 
         /**
          * @brief receive a long
@@ -164,7 +164,7 @@ class UdpSocket: public AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status receiveLong(int64& i, Host& peer);
+        AbstractSocket::Status receiveInt64(int64& i, Host& peer);
 
 };
 

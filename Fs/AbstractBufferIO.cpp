@@ -18,9 +18,9 @@
 
 #include <Fs/AbstractBufferIO.h>
 
-AbstractBufferIO::Status AbstractBufferIO::getBufferStatus()
+AbstractBufferIO::Status AbstractBufferIO::getStatus()
 {
-    if (m_status != Done)
+    if (m_status == Done)
     {
         return m_status;
     }

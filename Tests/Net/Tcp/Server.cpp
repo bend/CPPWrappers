@@ -39,7 +39,7 @@ int main()
     cout << s->getLocalPort() << endl;
     cout << server.getRemoteAddress().toString() << endl;
     cout << s->getRemoteAddress().toString() << endl;
-    s->sendInt(10);
+    s->sendInt32(10);
     sleep(2);
     s->sendString("hello");
     s->sendCharArray("world", 5);

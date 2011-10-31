@@ -32,10 +32,10 @@ AbstractSocket::Status HttpProtocol::sendRequest(HttpRequest& request)
         return InvalidRequest;
 
     if (connect(m_host) != Done)
-        return getSocketStatus();
+        return getStatus();
 
     if (sendString(request.toString()) != Done)
-        return getSocketStatus();
+        return getStatus();
 
     string str = "";
 

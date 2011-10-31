@@ -140,7 +140,7 @@ AbstractBufferIO::Status BufferedOutput::flush()
     while (i < m_buffLen && i < m_lastIndex)
     {
         if ( m_file.writec(m_buffer[i]) < 0)
-            return getBufferStatus();
+            return getStatus();
 
         i++;
     }
@@ -219,7 +219,7 @@ AbstractBufferIO::Status BufferedOutput::appendInBuffer(const char* s, int l)
 
         if (m_lastIndex >= m_buffLen)
             if (flush() != Done)
-                return getBufferStatus();
+                return getStatus();
     }
 
     m_status = Done;

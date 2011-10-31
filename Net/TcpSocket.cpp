@@ -28,7 +28,7 @@ TcpSocket::TcpSocket(int socketfd): AbstractSocket(socketfd)
 }
 
 
-AbstractSocket::Status TcpSocket::connect(const string& host, const uint8& port)
+AbstractSocket::Status TcpSocket::connect(const string& host, const uint16& port)
 {
     m_portNo = (int)port;
 
@@ -49,7 +49,7 @@ AbstractSocket::Status TcpSocket::connect(const string& host, const uint8& port)
 
     /* Connect to the host */
     if (::connect(m_socketfd, (struct sockaddr*) &m_servAddr, sizeof(m_servAddr)) < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
@@ -59,7 +59,7 @@ AbstractSocket::Status TcpSocket::connect(Host& h)
     sockaddr_in s = h.getHost();
 
     if (::connect(m_socketfd, (struct sockaddr*) &s, sizeof(s)) < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
@@ -71,37 +71,47 @@ AbstractSocket::Status TcpSocket::sendString(const string& str)
     int r = send(m_socketfd, str.c_str(), s, 0);
 
     if (r < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendInt(const int32& i)
+AbstractSocket::Status TcpSocket::sendInt64(const int64& i)
 {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if (r < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendShort(const int8& i)
+AbstractSocket::Status TcpSocket::sendInt32(const int32& i)
 {
     int r = send(m_socketfd, &i, sizeof(i), 0);
 
     if (r < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendChar(const char& c)
+AbstractSocket::Status TcpSocket::sendInt16(const int16& i)
+{
+    int r = send(m_socketfd, &i, sizeof(i), 0);
+
+    if (r < 0)
+        return getStatus();
+
+    return Done;
+}
+
+AbstractSocket::Status TcpSocket::sendInt8(const int8& c)
 {
     int r = send(m_socketfd, &c, sizeof(c), 0);
 
     if (r < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
@@ -111,7 +121,7 @@ AbstractSocket::Status TcpSocket::sendCharArray(const char* c, const size_t& s)
     int r = send(m_socketfd, c, s, 0);
 
     if (r < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
@@ -131,48 +141,61 @@ AbstractSocket::Status TcpSocket::receiveString(string& str, const size_t& s)
         return Disconnected;
 
     if (n < 0)
-        return getSocketStatus();
+        return getStatus();
 
     str.assign(buffer, s);
     delete[] buffer;
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveInt(int32& i)
+AbstractSocket::Status TcpSocket::receiveInt64(int64& i)
 {
-    int n = read(m_socketfd, &i, sizeof(int));
+    int n = read(m_socketfd, &i, sizeof(int64));
 
     if (n == 0)
         return Disconnected;
 
     if (n < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveShort(int8& s)
+AbstractSocket::Status TcpSocket::receiveInt32(int32& i)
 {
-    int n = read(m_socketfd, &s, sizeof(short));
+    int n = read(m_socketfd, &i, sizeof(int32));
 
     if (n == 0)
         return Disconnected;
 
     if (n < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveChar(char& c)
+AbstractSocket::Status TcpSocket::receiveInt16(int16& s)
 {
-    int n = read(m_socketfd, &c, sizeof(char));
+    int n = read(m_socketfd, &s, sizeof(int16));
 
     if (n == 0)
         return Disconnected;
 
     if (n < 0)
-        return getSocketStatus();
+        return getStatus();
+
+    return Done;
+}
+
+AbstractSocket::Status TcpSocket::receiveInt8(int8& c)
+{
+    int n = read(m_socketfd, &c, sizeof(int8));
+
+    if (n == 0)
+        return Disconnected;
+
+    if (n < 0)
+        return getStatus();
 
     return Done;
 }
@@ -191,7 +214,7 @@ AbstractSocket::Status TcpSocket::receiveCharArray(char** c, const size_t& s)
         return Disconnected;
 
     if (n < 0)
-        return getSocketStatus();
+        return getStatus();
 
     return Done;
 }

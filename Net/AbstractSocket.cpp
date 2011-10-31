@@ -30,7 +30,7 @@ AbstractSocket::AbstractSocket(int socket):
 {
 }
 
-uint8 AbstractSocket::getLocalPort() const
+uint16 AbstractSocket::getLocalPort() const
 {
     if (m_socketfd != -1)
     {
@@ -46,7 +46,7 @@ uint8 AbstractSocket::getLocalPort() const
     return 0;
 }
 
-uint8 AbstractSocket::getRemotePort() const
+uint16 AbstractSocket::getRemotePort() const
 {
     if (m_socketfd != -1)
     {
@@ -78,7 +78,6 @@ IpAddress AbstractSocket::getRemoteAddress()
     return IpAddress::None;
 }
 
-
 void AbstractSocket::setBlocking(bool b)
 {
     int status = fcntl(m_socketfd, F_GETFL);
@@ -97,7 +96,7 @@ bool AbstractSocket::isBlocking()
     return m_isBlocking;
 }
 
-AbstractSocket::Status AbstractSocket::getSocketStatus()
+AbstractSocket::Status AbstractSocket::getStatus()
 {
     if ((errno == EAGAIN) || (errno == EINPROGRESS))
         return AbstractSocket::NotReady;

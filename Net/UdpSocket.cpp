@@ -22,18 +22,18 @@ UdpSocket::UdpSocket()
 {
 }
 
-AbstractSocket::Status UdpSocket::bind(const uint8& port)
+AbstractSocket::Status UdpSocket::bind(const uint16& port)
 {
     struct sockaddr_in addr;
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     addr = Host(IpAddress::Any, port).getHost();
 
     if (::bind(m_socketfd, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
@@ -43,18 +43,18 @@ void UdpSocket::unbind()
     close();
 }
 
-AbstractSocket::Status UdpSocket::sendChar(const char& c, Host& h)
+AbstractSocket::Status UdpSocket::sendInt8(const int8& c, Host& h)
 {
     struct sockaddr_in peer;
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     peer = h.getHost();
 
     if (sendto(m_socketfd, &c, sizeof(char), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
@@ -66,12 +66,12 @@ AbstractSocket::Status UdpSocket::sendString(const string& str, Host& h)
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     peer = h.getHost();
 
     if (sendto(m_socketfd, data, str.length(), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
@@ -82,65 +82,65 @@ AbstractSocket::Status UdpSocket::sendCharArray(const char* str, const size_t& s
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     peer = h.getHost();
 
     if (sendto(m_socketfd, str, s, 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
 
-AbstractSocket::Status UdpSocket::sendShort(const int8& i, Host& h)
+AbstractSocket::Status UdpSocket::sendInt16(const int16& i, Host& h)
 {
     struct sockaddr_in peer;
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     peer = h.getHost();
 
     if (sendto(m_socketfd, &i, sizeof(i), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
 
-AbstractSocket::Status UdpSocket::sendInt(const int32& i, Host& h)
+AbstractSocket::Status UdpSocket::sendInt32(const int32& i, Host& h)
 {
     struct sockaddr_in peer;
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     peer = h.getHost();
 
     if (sendto(m_socketfd, &i, sizeof(i), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
 
-AbstractSocket::Status UdpSocket::sendLong(const int64& i, Host& h)
+AbstractSocket::Status UdpSocket::sendInt64(const int64& i, Host& h)
 {
     struct sockaddr_in peer;
 
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getSocketStatus();
+            return getStatus();
 
     peer = h.getHost();
 
     if (sendto(m_socketfd, &i, sizeof(i), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     return AbstractSocket::Done;
 }
 
-AbstractSocket::Status UdpSocket::receiveChar(char& c, Host& peer)
+AbstractSocket::Status UdpSocket::receiveInt8(int8& c, Host& peer)
 {
     char* buffer = new char;
     struct sockaddr_in from;
@@ -148,7 +148,7 @@ AbstractSocket::Status UdpSocket::receiveChar(char& c, Host& peer)
     int len = sizeof(from);
 
     if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(c), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     peer.setHost(from);
     c = *buffer;
@@ -163,7 +163,7 @@ AbstractSocket::Status UdpSocket::receiveCharArray(char** str, Host& peer)
     int len = sizeof(from);
 
     if ((dataRead = recvfrom(m_socketfd, *str, MaxDatagramSize, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     peer.setHost(from);
     return Done;
@@ -177,7 +177,7 @@ AbstractSocket::Status UdpSocket::receiveString(string& str, Host& peer)
     int len = sizeof(from);
 
     if ((dataRead = recvfrom(m_socketfd, buffer, MaxDatagramSize, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     peer.setHost(from);
     str.assign(buffer, dataRead);
@@ -185,7 +185,7 @@ AbstractSocket::Status UdpSocket::receiveString(string& str, Host& peer)
 }
 
 
-AbstractSocket::Status UdpSocket::receiveShort(int8& i, Host& peer)
+AbstractSocket::Status UdpSocket::receiveInt16(int16& i, Host& peer)
 {
     short* buffer = new short;
     struct sockaddr_in from;
@@ -193,14 +193,14 @@ AbstractSocket::Status UdpSocket::receiveShort(int8& i, Host& peer)
     int len = sizeof(from);
 
     if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(int), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     peer.setHost(from);
     i = *buffer;
     return Done;
 }
 
-AbstractSocket::Status UdpSocket::receiveInt(int32& i, Host& peer)
+AbstractSocket::Status UdpSocket::receiveInt32(int32& i, Host& peer)
 {
     int* buffer = new int;
     struct sockaddr_in from;
@@ -208,14 +208,14 @@ AbstractSocket::Status UdpSocket::receiveInt(int32& i, Host& peer)
     int len = sizeof(from);
 
     if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(int), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     peer.setHost(from);
     i = *buffer;
     return Done;
 }
 
-AbstractSocket::Status UdpSocket::receiveLong(int64& i, Host& peer)
+AbstractSocket::Status UdpSocket::receiveInt64(int64& i, Host& peer)
 {
     long* buffer = new long;
     struct sockaddr_in from;
@@ -223,7 +223,7 @@ AbstractSocket::Status UdpSocket::receiveLong(int64& i, Host& peer)
     int len = sizeof(from);
 
     if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(int), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getSocketStatus();
+        return getStatus();
 
     peer.setHost(from);
     i = *buffer;

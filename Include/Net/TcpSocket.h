@@ -43,7 +43,7 @@ class TcpSocket: public AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status connect(const string& host, const uint8& port);
+        AbstractSocket::Status connect(const string& host, const uint16& port);
 
         /**
          * @brief connects the host
@@ -62,28 +62,36 @@ class TcpSocket: public AbstractSocket
         AbstractSocket::Status sendString(const string& str);
 
         /**
-         * @brief sends an int over the net
-         * @param i the int to send
+         * @brief sends a char over the net
+         * @param c the char to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status sendInt(const int32& i);
-
+        AbstractSocket::Status sendInt8(const int8& c);
+        
         /**
          * @brief sends a short over the net
          * @param i the short to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status sendShort(const int8& i);
+        AbstractSocket::Status sendInt16(const int16& i);
 
-        /**
-         * @brief sends a char over the net
-         * @param c the char to send
+		/**
+         * @brief sends an int32 over the net
+         * @param i the int to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status sendChar(const char& c);
+        AbstractSocket::Status sendInt32(const int32& i);
+        
+		/**
+         * @brief sends an int64 over the net
+         * @param i the int to send
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status sendInt64(const int64& i);
 
         /**
          * @brief sends a char array over the net
@@ -104,28 +112,36 @@ class TcpSocket: public AbstractSocket
         AbstractSocket::Status receiveString(string& str, const size_t& s);
 
         /**
-         * @brief reads an int on the socket
-         * @param i the int container in which the result will be put
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status receiveInt(int32& i);
-
-        /**
-         * @brief reads a short on the socket
-         * @param s the short container in which the result will be put
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status receiveShort(int8& s);
-
-        /**
          * @brief reads a char on the socket
          * @param c the char container in which the result will be put
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status receiveChar(char& c);
+        AbstractSocket::Status receiveInt8(int8& c);
+		
+		/**
+         * @brief reads a short on the socket
+         * @param s the short container in which the result will be put
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status receiveInt16(int16& s);
+
+        /**
+         * @brief reads an int on the socket
+         * @param i the int container in which the result will be put
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status receiveInt32(int32& i);
+
+        /**
+         * @brief reads an int64 on the socket
+         * @param i the int container in which the result will be put
+         * @return AbstractSocket::Status
+         * @see AbstractSocket::Status
+         */
+        AbstractSocket::Status receiveInt64(int64& i);
 
         /**
          * @brief reads a char*  on the socket

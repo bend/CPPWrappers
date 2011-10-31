@@ -22,19 +22,20 @@ Host::Host():
     m_port(0)
 {
 }
-Host::Host(const string& host, const uint8& port):
+
+Host::Host(const string& host, const uint16& port):
     IpAddress(host),
     m_port(port)
 {
 }
 
-Host::Host(const char* host, const uint8& port):
+Host::Host(const char* host, const uint16& port):
     IpAddress(host),
     m_port(port)
 {
 }
 
-Host::Host(IpAddress::Ip host, const uint8& port):
+Host::Host(IpAddress::Ip host, const uint16& port):
     IpAddress(host),
     m_port(port)
 {

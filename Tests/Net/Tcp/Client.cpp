@@ -19,12 +19,12 @@ int main()
     Host h("localhost", 2000);
     s.connect(h);
     string r = "";
-    int res;
+    int32 res;
     cout << s.getLocalPort() << endl;
     cout << s.getRemotePort() << endl;
     cout << s.getRemoteAddress().toString() << endl;
     sleep(1);
-    s.receiveInt(res);
+    s.receiveInt32(res);
     cout << "Received " << res << endl;
     string resStr;
     s.receiveString(resStr, 5);

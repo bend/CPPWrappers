@@ -76,13 +76,13 @@ class AbstractSocket
          * @brief gets the local port
          * @return the port >0 is found, 0 if the port could not be determined
          */
-        uint8 getLocalPort() const;
+        uint16 getLocalPort() const;
 
         /**
          * @brief gets the remote port
          * @return the port >0 is found, 0 if the port could not be determined
          */
-        uint8 getRemotePort() const;
+        uint16 getRemotePort() const;
 
         /**
          * @brief get the remote address
@@ -108,7 +108,7 @@ class AbstractSocket
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
-        AbstractSocket::Status getSocketStatus();
+        AbstractSocket::Status getStatus();
 
         /**
          * @brief disconnects from the host
@@ -121,6 +121,8 @@ class AbstractSocket
          * @brief socket file descriptor
          */
         int m_socketfd;
+
+		Status m_status;
 
     private:
         bool m_isBlocking;
