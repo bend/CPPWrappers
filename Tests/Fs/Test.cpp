@@ -104,7 +104,7 @@ int main()
         while (!in.eof())
         {
             cout << in.readLine() << endl;
-			assert(in.getStatus() == AbstractBufferIO::Done);
+            assert(in.getStatus() == AbstractBufferIO::Done);
         }
 
         assert(f1.remove() == 0);

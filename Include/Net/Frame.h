@@ -26,42 +26,53 @@ using namespace std;
 
 class Frame
 {
-	public:
-	/**
-	 * @brief Constructor 
-	 * @param size initial memory allocation (default is 1024 bytes)
-	 */
-	Frame(uint32 size = 1024);
-	~Frame();
-	
-	Frame& operator << (const bool &b);
-	Frame& operator << (const int8 &i);
-	Frame& operator << (const int16 &i);
-	Frame& operator << (const int32 &i);
-	Frame& operator << (const char* c);
-	Frame& operator << (const float &f);
-	Frame& operator << (const double &d);
-	Frame& operator << (const string& s);
+    public:
+        /**
+         * @brief Constructor
+         * @param size initial memory allocation (default is 1024 bytes)
+         */
+        Frame(uint32 size = 1024);
+        ~Frame();
 
-	Frame& operator >> (bool &b);
-	Frame& operator >> (int8 &i);
-	Frame& operator >> (int16 &i);
-	Frame& operator >> (int32 &i);
-	Frame& operator >> (char* c);
-	Frame& operator >> (float &f);
-	Frame& operator >> (double &d);
-	Frame& operator >> (string& s);
-	
-	void append(const void* data, size_t size);
-	int read(void *data, size_t size);
+        Frame& operator << (const bool& b);
+        Frame& operator << (const int8& i);
+        Frame& operator << (const int16& i);
+        Frame& operator << (const int32& i);
+        Frame& operator << (const uint8& i);
+        Frame& operator << (const uint16& i);
+        Frame& operator << (const uint32& i);
+        Frame& operator << (const char* c);
+        Frame& operator << (const float& f);
+        Frame& operator << (const double& d);
+        Frame& operator << (const string& s);
 
-	private:
-		void reallocateDouble();
-		
-		char* m_contents;
-		uint32 m_realSize;
-		uint32 m_allocSize;
-		int m_currentSeek;
+        Frame& operator >> (bool& b);
+        Frame& operator >> (int8& i);
+        Frame& operator >> (int16& i);
+        Frame& operator >> (int32& i);
+        Frame& operator >> (uint8& i);
+        Frame& operator >> (uint16& i);
+        Frame& operator >> (uint32& i);
+        Frame& operator >> (char* c);
+        Frame& operator >> (float& f);
+        Frame& operator >> (double& d);
+        Frame& operator >> (string& s);
+
+        void append(const void* data, size_t size);
+
+        int read(void* data, size_t size);
+
+        void setPosition(const uint32& pos);
+
+        char* getData();
+
+    private:
+        void reallocateDouble();
+
+        char* m_contents;
+        uint32 m_realSize;
+        uint32 m_allocSize;
+        int m_currentSeek;
 
 
 

@@ -26,11 +26,11 @@ IpAddress::IpAddress(const string& rhost)
 }
 
 IpAddress::IpAddress(const char* rhost)
-{	
+{
     m_ipAddr = inet_addr(rhost);
-
     in_addr addr;
     addr.s_addr = m_ipAddr;
+
     /* Test weather the ip was valid or not */
     if (m_ipAddr == INADDR_NONE)
     {
@@ -91,20 +91,27 @@ uint32 IpAddress::toInt()
     return ntohl(m_ipAddr);
 }
 
-IpAddress IpAddress::getPublicIpAddress(){
-	 Host h("checkip.dyndns.org", 80);
-	 HttpProtocol proto(h);
-	 HttpRequest req("/", HttpRequest::Head);
-	 if(proto.sendRequest(req) < 0)
-		 return IpAddress(None);
-	 HttpResponse r = proto.getResponse();
-	 r.parse();
-	if(r.getResponseCode() < 200)
-		return IpAddress(None);
-	HtmlParser parser(r.getBody());
-	if(parser.parse() < 0)
-		return IpAddress(None);
-	string address = parser.getRootElement()["html"]["body"].getContents();
-	address = address.substr(address.find(':')+2);
-	return IpAddress(address.c_str());
+IpAddress IpAddress::getPublicIpAddress()
+{
+    Host h("checkip.dyndns.org", 80);
+    HttpProtocol proto(h);
+    HttpRequest req("/", HttpRequest::Head);
+
+    if (proto.sendRequest(req) < 0)
+        return IpAddress(None);
+
+    HttpResponse r = proto.getResponse();
+    r.parse();
+
+    if (r.getResponseCode() < 200)
+        return IpAddress(None);
+
+    HtmlParser parser(r.getBody());
+
+    if (parser.parse() < 0)
+        return IpAddress(None);
+
+    string address = parser.getRootElement()["html"]["body"].getContents();
+    address = address.substr(address.find(':') + 2);
+    return IpAddress(address.c_str());
 }

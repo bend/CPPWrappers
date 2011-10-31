@@ -135,7 +135,7 @@ class File: public FileTypes
 
         /**
          * @brief creates a directory with the current path with 0755 default mode
-		 * @param m the file mode 
+         * @param m the file mode
          * @return 0 is success, -1 otherwise
          */
         int mkdir(FileMode m  = 0);

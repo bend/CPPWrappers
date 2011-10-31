@@ -35,12 +35,10 @@ int main()
     cout << "Server [" << r.getField("Server") << "]" << endl;
     string s = "    <html> this is is html           <body> hello wolrd </body><body2> byte byte </body2> </html>";
     HtmlParser parser(r.getBody());
-  
-	parser.parse();
+    parser.parse();
     HtmlElement root = parser.getRootElement();
-
-    cout<<root["html"]["body"].getContents()<<endl;
-	cout <<root<<endl;
-	cout<<IpAddress::getPublicIpAddress().toString()<<endl;
+    cout << root["html"]["body"].getContents() << endl;
+    cout << root << endl;
+    cout << IpAddress::getPublicIpAddress().toString() << endl;
 }
 

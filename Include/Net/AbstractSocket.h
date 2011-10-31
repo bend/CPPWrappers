@@ -122,7 +122,7 @@ class AbstractSocket
          */
         int m_socketfd;
 
-		Status m_status;
+        Status m_status;
 
     private:
         bool m_isBlocking;

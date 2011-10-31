@@ -58,8 +58,8 @@ class UdpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendInt8(const int8& c, Host& h);
-        
-		/**
+
+        /**
          * @brief send an short on the socket to the host
          * @param i the int to send
          * @param h the Host
@@ -125,8 +125,8 @@ class UdpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status receiveCharArray(char** c, Host& peer);
-        
-		/**
+
+        /**
          * @brief receive a char
          * 	You need to bind the socket to be able to receive data
          * @param c the char in which the read value will be put

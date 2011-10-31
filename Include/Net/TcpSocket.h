@@ -68,7 +68,7 @@ class TcpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendInt8(const int8& c);
-        
+
         /**
          * @brief sends a short over the net
          * @param i the short to send
@@ -77,15 +77,15 @@ class TcpSocket: public AbstractSocket
          */
         AbstractSocket::Status sendInt16(const int16& i);
 
-		/**
+        /**
          * @brief sends an int32 over the net
          * @param i the int to send
          * @return AbstractSocket::Status
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendInt32(const int32& i);
-        
-		/**
+
+        /**
          * @brief sends an int64 over the net
          * @param i the int to send
          * @return AbstractSocket::Status
@@ -118,8 +118,8 @@ class TcpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status receiveInt8(int8& c);
-		
-		/**
+
+        /**
          * @brief reads a short on the socket
          * @param s the short container in which the result will be put
          * @return AbstractSocket::Status

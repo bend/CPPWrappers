@@ -38,7 +38,8 @@ AbstractSocket::Status TcpServer::bind(int port)
 
     if (::bind(m_socketfd, (struct sockaddr*) &m_servAddr, sizeof(m_servAddr)) < 0)
         return getStatus();
-	m_status = Done;
+
+    m_status = Done;
     return Done;
 }
 

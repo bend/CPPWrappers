@@ -95,12 +95,12 @@ class IpAddress
          */
         uint32 toInt();
 
-		/**
-		 * @brief Retrives your Public ip address.
-		 * This use the internet and request your ip at checkip.dyndns.org
-		 * @return the IpAddress object if success , IpAddress(None) if failure
-		 */
-		static IpAddress getPublicIpAddress();
+        /**
+         * @brief Retrives your Public ip address.
+         * This use the internet and request your ip at checkip.dyndns.org
+         * @return the IpAddress object if success , IpAddress(None) if failure
+         */
+        static IpAddress getPublicIpAddress();
 
     private:
         in_addr_t m_ipAddr;
