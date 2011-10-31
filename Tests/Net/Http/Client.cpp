@@ -40,7 +40,7 @@ int main()
     HtmlElement root = parser.getRootElement();
 
     cout<<root["html"]["body"].getContents()<<endl;
-	cout <<root.toString()<<endl;
+	cout <<root<<endl;
 	cout<<IpAddress::getPublicIpAddress().toString()<<endl;
 }
 

@@ -114,3 +114,9 @@ string HtmlElement::toString(){
 		s.append("</"+m_tag+">");
 	return s;
 }
+
+
+ostream& operator << (ostream & s, HtmlElement& e){
+	s<<e.toString();
+	return s;
+}

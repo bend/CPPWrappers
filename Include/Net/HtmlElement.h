@@ -109,6 +109,11 @@ class HtmlElement
 		 * This is a recursice method and will therefore return a representation of the current object and all the childs
 		 */
         string toString();
+		
+		/**
+		 * @brief redefinition for cout
+		 */
+		friend ostream & operator << (ostream &, HtmlElement& e) ;
 
     private:
         string m_tag;
