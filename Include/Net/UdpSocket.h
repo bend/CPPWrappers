@@ -18,8 +18,12 @@
 
 #ifndef UDP_SOCKET_H__
 #define UDP_SOCKET_H__
+
 #include <Net/AbstractSocket.h>
 
+/**
+ * @brief Udp Socket for sending and receiving UDP datagrams over the network
+ */
 class UdpSocket: public AbstractSocket
 {
     public:

@@ -18,10 +18,14 @@
 
 #ifndef HTTP_PROTOCOL_H__
 #define HTTP_PROTOCOL_H__
+
 #include <Net/TcpSocket.h>
 #include <Net/HttpResponse.h>
 #include <Net/HttpRequest.h>
 
+/**
+ * @brief HttpProtocol implementation. Allows Http requests
+ */
 class HttpProtocol : protected TcpSocket
 {
     public:

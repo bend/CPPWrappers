@@ -19,6 +19,10 @@
 #ifndef FILE_H__
 #define FILE_H__
 
+#include <Fs/FileMode.h>
+#include <Fs/Path.h>
+#include <Fs/FileTypes.h>
+
 #include  <stdio.h>
 #include <sys/stat.h>
 #include <dirent.h>
@@ -27,10 +31,9 @@
 #include <vector>
 using namespace std;
 
-#include <Fs/FileMode.h>
-#include <Fs/Path.h>
-#include <Fs/FileTypes.h>
-
+/**
+ * @brief Allows operation on file
+ */
 class File: public FileTypes
 {
 

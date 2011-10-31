@@ -18,9 +18,14 @@
 
 #ifndef HTML_ELEMENT_H__
 #define HTML_ELEMENT_H__
+
 #include <iostream>
 #include <vector>
 using namespace std;
+
+/**
+ * @brief Represents an Html element
+ */
 class HtmlElement
 {
     public:

@@ -35,6 +35,9 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Abstract class defines common operations on sockets
+ */
 class AbstractSocket
 {
     public:

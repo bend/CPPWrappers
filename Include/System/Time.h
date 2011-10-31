@@ -19,11 +19,17 @@
 
 #ifndef TIME_H__
 #define TIME_H__
+
+#include <System/TypeCast.h>
+
 #include <sys/time.h>
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
-#include <System/TypeCast.h>
+
+/**
+ * @brief System Time class
+ */
 class Time
 {
     public:

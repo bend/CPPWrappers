@@ -19,11 +19,14 @@
 #ifndef FILE_MODE_H__
 #define FILE_MODE_H__
 
+#include <Fs/FileTypes.h>
+
 #include <iostream>
 using namespace std;
 
-#include <Fs/FileTypes.h>
-
+/**
+ * @brief Represents the file permissions
+ */
 class FileMode
 {
     public:

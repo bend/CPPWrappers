@@ -18,13 +18,18 @@
 
 #ifndef HTTP_RESPONSE_H__
 #define HTTP_RESPONSE_H__
+
+#include <Net/HttpTypes.h>
+
 #include <iostream>
 #include <sstream>
 #include <map>
-#include <Net/HttpTypes.h>
 #include <stdlib.h>
 using namespace std;
 
+/**
+ * @brief Represents an HttpResponce received after an HttpRequest
+ */
 class HttpResponse : public HttpTypes
 {
     public:

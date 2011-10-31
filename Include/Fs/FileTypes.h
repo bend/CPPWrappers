@@ -22,6 +22,9 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Defines some constants used in File class
+ */
 class FileTypes
 {
     public:

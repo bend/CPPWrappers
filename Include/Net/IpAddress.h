@@ -19,16 +19,20 @@
 #ifndef IP_ADDRESS_H__
 #define IP_ADDRESS_H__
 
+#include <System/Types.h>
+#include <Net/HtmlParser.h>
+
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <iostream>
 #include <stdlib.h>
-
-#include <System/Types.h>
-#include <Net/HtmlParser.h>
 using namespace std;
 class HttpProtocol;
+
+/**
+ * @brief Represents an ip address
+ */
 class IpAddress
 {
     public:

@@ -23,7 +23,9 @@
 #include <sstream>
 using namespace std;
 
-
+/**
+ * @brief Allows types cast
+ */
 class TypeCast
 {
     public:

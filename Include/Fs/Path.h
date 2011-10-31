@@ -18,8 +18,13 @@
 
 #ifndef PATH_H__
 #define PATH_H__
+
 #include <iostream>
 using namespace std;
+
+/**
+ * @brief Represents a Path
+ */
 class Path
 {
     public:

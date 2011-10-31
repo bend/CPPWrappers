@@ -21,7 +21,12 @@
 
 #include <Net/IpAddress.h>
 #include <System/TypeCast.h>
+
 #include <string.h>
+
+/**
+ * @brief Represents a Network host. Contains the IpAddress and the port
+ */
 class Host: public IpAddress
 {
     public:

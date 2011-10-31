@@ -19,11 +19,18 @@
 
 #ifndef RANDOM_H__
 #define RANDOM_H__
+
+#include <System/Time.h>
+#include <System/Prime.h>
+
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
-#include <System/Time.h>
-#include <System/Prime.h>
+
+/**
+ * @brief Random number generator. There are 3 algorithm implemented.
+ * @see Random::RandomType
+ */
 class Random
 {
     public:

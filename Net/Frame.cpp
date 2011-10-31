@@ -220,9 +220,25 @@ Frame& Frame::operator >> (string& s)
     return *this;
 }
 
-void Frame::setPosition(const uint32& pos)
+void Frame::setPosition(const int32& pos)
 {
-    m_currentSeek = pos > m_realSize ? m_realSize : pos;
+    if (pos > 0)
+    {
+        if (m_currentSeek + pos > m_realSize)
+            m_currentSeek = m_realSize;
+
+        else
+            m_currentSeek += pos;
+    }
+
+    else
+    {
+        if (m_currentSeek + pos < 0)
+            m_currentSeek = 0;
+
+        else
+            m_currentSeek += pos;
+    }
 }
 
 char* Frame::getData()

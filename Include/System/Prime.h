@@ -19,12 +19,18 @@
 
 #ifndef PRIME_H__
 #define PRIME_H__
-#include <cmath>
-#include <vector>
-using namespace std;
+
 #include <System/AtkinSieve.h>
 #include <System/EratostheneSieve.h>
 
+#include <cmath>
+#include <vector>
+using namespace std;
+
+/**
+ * @brief Prime class for generating prime numbers. There are differents algorithm implemented.
+ * @see Prime::SieveType
+ */
 class Prime
 {
     public:

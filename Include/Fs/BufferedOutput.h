@@ -18,10 +18,15 @@
 
 #ifndef BUFFERED_OUTPUT_H__
 #define BUFFERED_OUTPUT_H__
+
 #include <Fs/AbstractBufferIO.h>
 #include <System/TypeCast.h>
+
 #include <string.h>
 
+/**
+ * @brief Allows write to file
+ */
 class BufferedOutput: public AbstractBufferIO
 {
 

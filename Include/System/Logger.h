@@ -20,12 +20,16 @@
 #ifndef LOGGER_H__
 #define LOGGER_H__
 
+#include <System/Time.h>
+
 #include <iostream>
 #include <sstream>
 #include <fstream>
-
-#include <System/Time.h>
 using namespace std;
+
+/**
+ * @brief Logger for logging different events (errors, ...)
+ */
 class Logger
 {
     public:

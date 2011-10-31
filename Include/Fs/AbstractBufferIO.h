@@ -19,10 +19,14 @@
 #ifndef ABSTRACT_BUFFER_IO_H__
 #define ABSTRACT_BUFFER_IO_H__
 
-#include <errno.h>
-
 #include <Fs/File.h>
 #include <Fs/FileTypes.h>
+
+#include <errno.h>
+
+/**
+ * @brief Abstract class, for status code
+ */
 class AbstractBufferIO
 {
     public:
@@ -50,6 +54,9 @@ class AbstractBufferIO
          */
         AbstractBufferIO::Status getStatus();
     protected:
+        /**
+         * @brief here is stored the status of the last operation
+         */
         Status m_status;
 
 };

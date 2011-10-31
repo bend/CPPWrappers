@@ -21,6 +21,9 @@
 
 #include <Net/TcpSocket.h>
 
+/**
+ * @brief TcpServer. Waits for incomming TCP connection on a specified port
+ */
 class TcpServer: public AbstractSocket
 {
     public:

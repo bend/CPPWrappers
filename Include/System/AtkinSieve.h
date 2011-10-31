@@ -18,9 +18,14 @@
 
 #ifndef ATKIN_SIEVE_H__
 #define ATKIN_SIEVE_H__
+
 #include <System/PrimeSieve.h>
+
 #include <cmath>
 
+/**
+ * @brief Atkin Sieve implementation
+ */
 class AtkinSieve: public PrimeSieve
 {
     public :

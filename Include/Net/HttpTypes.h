@@ -20,6 +20,10 @@
 #define HTTP_TYPES_H__
 #include <iostream>
 using namespace std;
+
+/**
+ * @brief Defines some constants for the HttpProtocol
+ */
 class HttpTypes
 {
     protected:

@@ -21,6 +21,10 @@
 #define PRIME_SIEVE_H__
 #include <vector>
 using namespace std;
+
+/**
+ * @brief Abstract class. Used to generate Prime numbers
+ */
 class PrimeSieve
 {
 

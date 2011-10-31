@@ -20,6 +20,10 @@
 #ifndef MUTEX_H__
 #define MUTEX_H__
 #include <pthread.h>
+
+/**
+ * @brief Mutex implementation
+ */
 class Mutex
 {
     public:

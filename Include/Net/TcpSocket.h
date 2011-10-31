@@ -22,6 +22,9 @@
 #include <Net/AbstractSocket.h>
 #include <Net/Host.h>
 
+/**
+ * @brief TcpSocket class for establishing a Tcp connection with a TcpServer
+ */
 class TcpSocket: public AbstractSocket
 {
     public:

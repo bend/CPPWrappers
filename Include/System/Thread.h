@@ -21,6 +21,9 @@
 
 #include <pthread.h>
 
+/**
+ * @brief Thread implementation. This class must be inherited and the Thread::run method should be overridden
+ */
 class Thread
 {
     public:

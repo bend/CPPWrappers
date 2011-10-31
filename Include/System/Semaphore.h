@@ -20,10 +20,12 @@
 #ifndef SEMAPHORE_H__
 #define SEMAPHORE_H__
 
-#include <iostream>
 #include <semaphore.h>
 #include <fcntl.h>
 
+/**
+ * @brief Semaphores implementation
+ */
 class Semaphore
 {
 

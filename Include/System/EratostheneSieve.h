@@ -21,6 +21,9 @@
 #define ERATOSTHENE_H__
 #include <System/PrimeSieve.h>
 
+/**
+ * @brief Eratosthene sieve implementation
+ */
 class EratostheneSieve: public PrimeSieve
 {
     public :

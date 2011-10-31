@@ -18,6 +18,9 @@
 
 #ifndef HTML_PARSER_H__
 #define HTML_PARSER_H__
+
+#include <Net/HtmlElement.h>
+
 #include <iostream>
 #include <sstream>
 #include <map>
@@ -25,8 +28,9 @@
 #include <list>
 using namespace std;
 
-#include <Net/HtmlElement.h>
-
+/**
+ * @brief Parses an html content into HtmlElement
+ */
 class HtmlParser
 {
     public:

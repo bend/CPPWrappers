@@ -18,14 +18,18 @@
 
 #ifndef HTTP_REQUEST_H__
 #define HTTP_REQUEST_H__
+
+#include <Net/HttpTypes.h>
+
 #include <map>
 #include <sstream>
 #include <iterator>
 #include <iostream>
-
-#include <Net/HttpTypes.h>
 using namespace std;
 
+/**
+ * @brief Represents an HttpRequest.
+ */
 class HttpRequest : public HttpTypes
 {
 

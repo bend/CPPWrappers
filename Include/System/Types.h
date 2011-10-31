@@ -20,20 +20,48 @@
 #ifndef TYPES_H__
 #define TYPES_H__
 
+/**
+ * @brief Definition of types
+ */
+
+/**
+ * @brief 8 bits unsigned Integer
+ */
 typedef unsigned char uint8;
 
+/**
+ * @brief 16 bits unsigned Integer
+ */
 typedef unsigned short uint16;
 
+/**
+ * @brief 32 bits unsigned Integer
+ */
 typedef unsigned int uint32;
 
+/**
+ * @brief 64 bits unsinged Integer
+ */
 typedef unsigned long long uint64;
 
+/**
+ * @brief 8 bit Integer
+ */
 typedef char int8;
 
+/**
+ * @brief 16 bit Integer
+ */
 typedef short int16;
 
+/**
+ * @brief 32 bit Integer
+ */
 typedef int int32;
 
+/**
+ * @brief 64 bit Integer
+ */
 typedef long long int64;
 
 #endif

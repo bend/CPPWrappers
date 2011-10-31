@@ -18,10 +18,14 @@
 
 #ifndef BUFFERED_INPUT_H__
 #define BUFFERED_INPUT_H__
+
 #include <Fs/AbstractBufferIO.h>
 
 #include <string.h>
 
+/**
+ * @brief Allows read from file
+ */
 class BufferedInput: public AbstractBufferIO
 {
 

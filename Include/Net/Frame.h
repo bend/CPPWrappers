@@ -19,19 +19,30 @@
 
 #ifndef FRAME_H__
 #define FRAME_H__
+
 #include <System/Types.h>
+
 #include <string.h>
+
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Frame class. Allows High level data transmission over network
+ */
 class Frame
 {
     public:
+
         /**
          * @brief Constructor
          * @param size initial memory allocation (default is 1024 bytes)
          */
         Frame(uint32 size = 1024);
+
+        /**
+         * @brief Destructor
+         */
         ~Frame();
 
         Frame& operator << (const bool& b);
@@ -58,12 +69,33 @@ class Frame
         Frame& operator >> (double& d);
         Frame& operator >> (string& s);
 
+        /**
+         * @brief append data to the buffer
+         * @param data the data to add
+         * @param size the size of the data to add
+         */
         void append(const void* data, size_t size);
 
+        /**
+         * @brief read data from the buffer. This method reads from the buffer.
+         * @param data the data container
+         * @param size the number of bytes to read
+         * @return 0 is size bytes were successfully read.
+         * 		   -1 otherwise
+         */
         int read(void* data, size_t size);
 
-        void setPosition(const uint32& pos);
+        /**
+         * @brief Sets the current buffer position indicator. A positive integer will move the indicator forward.
+         * A negative integer will move it backward
+         * @param pos the offset
+         */
+        void setPosition(const int32& pos);
 
+        /**
+         * @brief get the data buffer
+         * @return the data buffer
+         */
         char* getData();
 
     private:
