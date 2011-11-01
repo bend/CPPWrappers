@@ -18,8 +18,13 @@
 
 #include <Fs/FileMode.h>
 
-FileMode::FileMode(int mode):
+FileMode::FileMode(FileTypes::FilePermission mode):
     m_mode(mode)
+{
+}
+
+FileMode::FileMode(int mode):
+	m_mode(mode)
 {
 }
 

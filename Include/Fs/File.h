@@ -141,7 +141,7 @@ class File: public FileTypes
          * @param m the file mode
          * @return 0 is success, -1 otherwise
          */
-        int mkdir(FileMode m  = 0);
+        int mkdir(FileMode m  = FileTypes::RWXU);
 
         /**
          * @brief sets the file mode
@@ -161,7 +161,7 @@ class File: public FileTypes
          * @brief seeks the file from origin of offset size
          * @return 0 is success, -1 otherwise
          */
-        int seek(int offset, int origin);
+        int seek(int offset, SeekMode origin);
 
         /**
          * @brief Copies the file contents to another file. The target file will be overwritten if non empty

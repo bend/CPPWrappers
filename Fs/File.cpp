@@ -131,7 +131,7 @@ FileMode File::getMode()
 
     if (stat(m_path, &file_status) < 0)
     {
-        return FileMode(-1);
+        return FileMode(FileTypes::None);
     }
 
     return FileMode(file_status.st_mode);
@@ -224,7 +224,7 @@ int File::renameTo(File& f)
     return rename( m_path , f.getPath());
 }
 
-int File::seek(int offset, int origin)
+int File::seek(int offset, SeekMode origin)
 {
     return fseek(m_f, offset, origin);
 }

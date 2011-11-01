@@ -9,7 +9,7 @@
 *
 *   This program is distributed in the hope that it will be useful,
 *   but WITHOUT ANY WARRANTY; without even the implied warranty of
-*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*m   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 *   GNU General Public License for more details.
 *
 *   You should have received a copy of the GNU General Public License
@@ -44,6 +44,67 @@ class FileTypes
             /** Terabyte representation **/
             Tbyte
         };
+
+		enum SeekMode
+		{
+			/** Seek from the beginning of the file **/
+			SeekBegin = 0, 
+			/** Seek from the current position **/
+			SeekCurrent = 1,
+			/** Seek from the end of the file **/
+			SeekEnd  = 2
+		};
+
+		enum FilePermission
+		{	
+			/** No file mode found **/
+			None = -1,
+			/** RWX mask for owner **/
+			RWXU = 0000700,
+			
+			/** R mask for owner **/
+			RU = 0000400,
+			
+			/** W mask for owner **/
+			WU = 0000200,
+			
+			/** X mask for owner **/
+			XU = 0000100,
+			
+			/** RWX mask for group **/
+			RWXG = 0000070,
+			
+			/** R mask for group **/
+			RG = 0000040,	
+			
+			/** W mask for group **/
+			WG = 0000020,	
+			
+			/** X mask for group **/
+			XG = 0000010,
+			
+			/** RWX mask for others **/
+			RWXO = 0000007,
+			
+			/** R mask for others **/
+			RO = 0000004,
+			
+			/** W mask for others **/
+			WO = 0000002,
+		
+			/** X masks for others **/
+			XO = 0000001,
+			
+			/**  Set user id on execution **/
+			SUID = 0004000,
+			
+			/** Set group id on execution **/
+			SGID = 0002000,
+			
+			/** Save swapped text even after use **/
+			SVTX = 0001000
+};
+
         /**
          * @brief Open file in read mode
          */
@@ -68,96 +129,6 @@ class FileTypes
          * @brief End of file marker
          */
         static const int Eof;
-
-        /**
-         * @brief seek from the begining of the file
-         */
-        static const int SeekfBegin;
-
-        /**
-         * @brief seek from the end of the file
-         */
-        static const int SeekfEnd;
-
-        /**
-         * @brief seek from the current position
-         */
-        static const int SeekCurrent;
-
-        /*
-         * @brief  RWX mask for owner
-         */
-        static const int RWXU;
-
-        /**
-         * @brief R for owner
-         */
-        static const int RU;
-
-        /**
-         * @brief  W for owner
-         */
-        static const int WU;
-
-        /**
-         * @brief X for owner
-         */
-        static const int XU;
-
-        /**
-         * @brief  RWX mask for group
-         */
-        static const int RWXG;
-
-        /**
-         * @brief  R for group
-         */
-        static const int RG;
-
-        /**
-         * @brief W for group
-         */
-        static const int WG;
-
-        /**
-         * @brief X for group
-         */
-        static const int XG;
-
-        /**
-         * @brief  RWX mask for other
-         */
-        static const int RWXO;
-
-        /**
-         * @brief  R for other
-         */
-        static const int RO;
-
-        /**
-         * @brief  W for other
-         */
-        static const int WO;
-
-        /**
-         * @brief  X for other
-         */
-        static const int XO;
-
-        /**
-         * @brief  set user id on execution
-         */
-        static const int SUID;
-
-        /**
-         * @brief  set group id on execution
-         */
-        static const int SGID;
-
-        /**
-         * @brief  save swapped text even after use
-         */
-        static const int SVTX;
 
 };
 
