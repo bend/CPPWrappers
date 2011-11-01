@@ -27,14 +27,14 @@ using namespace std;
 /**
  * @brief Represents the file permissions
  */
-class FileMode
+class FileMode:public FileTypes
 {
     public:
      /**
 	  * @brief Constructor
 	  * @param mode the FilePermission
 	  */   
-		FileMode(FileTypes::FilePermission mode);
+		FileMode(FilePermission mode);
 
         /**
          * @brief Constructor

@@ -18,7 +18,7 @@
 
 #include <Fs/FileMode.h>
 
-FileMode::FileMode(FileTypes::FilePermission mode):
+FileMode::FileMode(FilePermission mode):
     m_mode(mode)
 {
 }

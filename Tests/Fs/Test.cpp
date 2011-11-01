@@ -110,8 +110,7 @@ int main()
         assert(f1.remove() == 0);
     }
     {
-        Path p("testDir");
-        File f(p);
+        File f("testDir");
         assert(!f.exists());
         assert(f.mkdir() == 0);
         assert(f.isDirectory());
