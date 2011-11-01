@@ -43,13 +43,16 @@ int main()
     server.receiveCharArray(&arr, h);
     cout << "Received " << arr << endl;
 	Frame f;
-	server.receiveFrame(f, h);
-	string ss;
-	int32 ii;
-	char cc;
-	f>>ss>>ii>>cc;
-
-	cout<<ss<<" "<<ii<<cc;
-    server.unbind();
-    return 1;
+	if(server.receiveFrame(f, h) != AbstractSocket::Done)
+		perror("error");
+	else cout<<"received frame"<<endl;
+	cout<<f.getSize()<<endl;
+	 string str;             
+	 f>>str;                 
+	 int32 t;                
+	 f>>t;                   
+	 f>>c;                   
+	 cout<<str<<" "<<t<<c;   
+	 server.unbind();
+	 return 1;
 }

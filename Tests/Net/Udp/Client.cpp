@@ -46,11 +46,11 @@ int main()
         perror("Error");
 
 	Frame f;
-	f<<"Hello" << 666 <<'\n';
+	f<<"This is a frame "<<666<<'\n';
 	if(s.sendFrame(f, h) != AbstractSocket::Done)
 		perror("error");
 	else 
-		perror("");
+		cout<<"done"<<endl;
 
     s.close();
 }

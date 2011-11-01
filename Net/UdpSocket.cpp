@@ -131,17 +131,11 @@ AbstractSocket::Status UdpSocket::sendFrame(Frame& f, Host& h)
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
             return getStatus();
-
     peer = h.getHost();
 	uint32 size = f.getSize();
-	size = htonl(size);
-	if(size + sizeof(size) > MaxDatagramSize)
+	if(size  > MaxDatagramSize)
 		return UdpDatagramTooBig;
-	int r = sendto(m_socketfd, &size, sizeof(uint32), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
-	if(r<0)
-		return getStatus();
-	cout<<"size sent "<<size<<endl;
-	r =  sendto(m_socketfd, f.getData(), sizeof(uint32), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
+	int r =  sendto(m_socketfd, f.getData(), size, 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
 	if(r<0)
 		return getStatus();
 	return Done;
@@ -225,20 +219,17 @@ AbstractSocket::Status UdpSocket::receiveFrame(Frame &f, Host& peer)
 {	
     uint32 size;
     struct sockaddr_in from;
-    int dataRead;
+    uint32 dataRead;
     int len = sizeof(from);
 	char *buffer;
 
-    if ((dataRead = recvfrom(m_socketfd, &size, sizeof(uint32), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getStatus();
-	size = ntohl(size);
+    buffer = new char[MaxDatagramSize];
 
-    buffer = new char[size];
-
-	if ((dataRead = recvfrom(m_socketfd, buffer, size, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+	if ((dataRead = recvfrom(m_socketfd, buffer, MaxDatagramSize, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
         return getStatus();
 	
-	f.setData(buffer, size);
+	f.setData(buffer, dataRead);
+
     peer.setHost(from);
 	return Done;
 }
