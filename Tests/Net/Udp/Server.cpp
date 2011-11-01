@@ -12,6 +12,7 @@
  */
 
 #include <Net/UdpSocket.h>
+#include <Net/Frame.h>
 #include <stdio.h>
 int main()
 {
@@ -32,15 +33,23 @@ int main()
     cout << "From: " << (string)h << endl;
     int i;
     Host h2;
-    server.receiveInt(i, h2);
+    server.receiveInt32(i, h2);
     cout << "Received " << i << endl;
     cout << "From: " << (string)h2 << endl;
     char c;
-    server.receiveChar(c, h);
+    server.receiveInt8(c, h);
     cout << "Received " << c << endl;
     char* arr;
     server.receiveCharArray(&arr, h);
     cout << "Received " << arr << endl;
+	Frame f;
+	server.receiveFrame(f, h);
+	string ss;
+	int32 ii;
+	char cc;
+	f>>ss>>ii>>cc;
+
+	cout<<ss<<" "<<ii<<cc;
     server.unbind();
     return 1;
 }

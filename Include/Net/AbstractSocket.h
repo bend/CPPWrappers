@@ -61,7 +61,9 @@ class AbstractSocket
             /** Could not allocate memory **/
             EMEM,
             /** Http Request invalid **/
-            InvalidRequest
+            InvalidRequest,
+			/** UDP datagram too big */
+			UdpDatagramTooBig
         };
 
         /**

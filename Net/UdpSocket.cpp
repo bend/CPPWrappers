@@ -59,6 +59,38 @@ AbstractSocket::Status UdpSocket::sendInt8(const int8& c, Host& h)
     return AbstractSocket::Done;
 }
 
+AbstractSocket::Status UdpSocket::sendInt16(const int16& i, Host& h)
+{
+    struct sockaddr_in peer;
+	int16 toSend = htons(i);
+    if (m_socketfd == -1)
+        if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
+            return getStatus();
+
+    peer = h.getHost();
+
+    if (sendto(m_socketfd, &toSend, sizeof(int16), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
+        return getStatus();
+
+    return AbstractSocket::Done;
+}
+
+AbstractSocket::Status UdpSocket::sendInt32(const int32& i, Host& h)
+{
+    struct sockaddr_in peer;
+	int32 toSend = htonl(i);
+    if (m_socketfd == -1)
+        if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
+            return getStatus();
+
+    peer = h.getHost();
+
+    if (sendto(m_socketfd, &toSend, sizeof(int32), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
+        return getStatus();
+
+    return AbstractSocket::Done;
+}
+
 AbstractSocket::Status UdpSocket::sendString(const string& str, Host& h)
 {
     struct sockaddr_in peer;
@@ -92,7 +124,7 @@ AbstractSocket::Status UdpSocket::sendCharArray(const char* str, const size_t& s
     return AbstractSocket::Done;
 }
 
-AbstractSocket::Status UdpSocket::sendInt16(const int16& i, Host& h)
+AbstractSocket::Status UdpSocket::sendFrame(Frame& f, Host& h)
 {
     struct sockaddr_in peer;
 
@@ -101,57 +133,62 @@ AbstractSocket::Status UdpSocket::sendInt16(const int16& i, Host& h)
             return getStatus();
 
     peer = h.getHost();
-
-    if (sendto(m_socketfd, &i, sizeof(i), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getStatus();
-
-    return AbstractSocket::Done;
-}
-
-AbstractSocket::Status UdpSocket::sendInt32(const int32& i, Host& h)
-{
-    struct sockaddr_in peer;
-
-    if (m_socketfd == -1)
-        if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getStatus();
-
-    peer = h.getHost();
-
-    if (sendto(m_socketfd, &i, sizeof(i), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getStatus();
-
-    return AbstractSocket::Done;
-}
-
-AbstractSocket::Status UdpSocket::sendInt64(const int64& i, Host& h)
-{
-    struct sockaddr_in peer;
-
-    if (m_socketfd == -1)
-        if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
-            return getStatus();
-
-    peer = h.getHost();
-
-    if (sendto(m_socketfd, &i, sizeof(i), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer)) == -1)
-        return getStatus();
-
-    return AbstractSocket::Done;
+	uint32 size = f.getSize();
+	size = htonl(size);
+	if(size + sizeof(size) > MaxDatagramSize)
+		return UdpDatagramTooBig;
+	int r = sendto(m_socketfd, &size, sizeof(uint32), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
+	if(r<0)
+		return getStatus();
+	cout<<"size sent "<<size<<endl;
+	r =  sendto(m_socketfd, f.getData(), sizeof(uint32), 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
+	if(r<0)
+		return getStatus();
+	return Done;
 }
 
 AbstractSocket::Status UdpSocket::receiveInt8(int8& c, Host& peer)
 {
-    char* buffer = new char;
+    char buffer;
     struct sockaddr_in from;
     int dataRead;
     int len = sizeof(from);
 
-    if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(c), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+    if ((dataRead = recvfrom(m_socketfd, &buffer, sizeof(c), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
         return getStatus();
 
     peer.setHost(from);
-    c = *buffer;
+    c = buffer;
+    return Done;
+}
+
+AbstractSocket::Status UdpSocket::receiveInt16(int16& i, Host& peer)
+{
+    int16 buffer;
+    struct sockaddr_in from;
+    int dataRead;
+    int len = sizeof(from);
+
+    if ((dataRead = recvfrom(m_socketfd, &buffer, sizeof(int16), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+        return getStatus();
+
+    peer.setHost(from);
+    i = ntohs(buffer);
+    return Done;
+}
+
+AbstractSocket::Status UdpSocket::receiveInt32(int32& i, Host& peer)
+{
+    int32 buffer;
+    struct sockaddr_in from;
+    int dataRead;
+    int len = sizeof(from);
+
+    if ((dataRead = recvfrom(m_socketfd, &buffer, sizeof(int32), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+        return getStatus();
+
+    peer.setHost(from);
+    i = ntohl(buffer);
     return Done;
 }
 
@@ -184,50 +221,24 @@ AbstractSocket::Status UdpSocket::receiveString(string& str, Host& peer)
     return Done;
 }
 
-
-AbstractSocket::Status UdpSocket::receiveInt16(int16& i, Host& peer)
-{
-    short* buffer = new short;
+AbstractSocket::Status UdpSocket::receiveFrame(Frame &f, Host& peer)
+{	
+    uint32 size;
     struct sockaddr_in from;
     int dataRead;
     int len = sizeof(from);
+	char *buffer;
 
-    if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(int), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+    if ((dataRead = recvfrom(m_socketfd, &size, sizeof(uint32), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
         return getStatus();
+	size = ntohl(size);
 
-    peer.setHost(from);
-    i = *buffer;
-    return Done;
-}
+    buffer = new char[size];
 
-AbstractSocket::Status UdpSocket::receiveInt32(int32& i, Host& peer)
-{
-    int* buffer = new int;
-    struct sockaddr_in from;
-    int dataRead;
-    int len = sizeof(from);
-
-    if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(int), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+	if ((dataRead = recvfrom(m_socketfd, buffer, size, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
         return getStatus();
-
+	
+	f.setData(buffer, size);
     peer.setHost(from);
-    i = *buffer;
-    return Done;
+	return Done;
 }
-
-AbstractSocket::Status UdpSocket::receiveInt64(int64& i, Host& peer)
-{
-    long* buffer = new long;
-    struct sockaddr_in from;
-    int dataRead;
-    int len = sizeof(from);
-
-    if ((dataRead = recvfrom(m_socketfd, buffer, sizeof(int), 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
-        return getStatus();
-
-    peer.setHost(from);
-    i = *buffer;
-    return Done;
-}
-
-

@@ -20,6 +20,7 @@
 #define UDP_SOCKET_H__
 
 #include <Net/AbstractSocket.h>
+#include <Net/Frame.h>
 
 /**
  * @brief Udp Socket for sending and receiving UDP datagrams over the network
@@ -82,15 +83,6 @@ class UdpSocket: public AbstractSocket
         AbstractSocket::Status sendInt32(const int32& i, Host& h);
 
         /**
-         * @brief send a long on the socket to the host
-         * @param i the int to send
-         * @param h the Host
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status sendInt64(const int64& i, Host& h);
-
-        /**
          * @brief send a string on the socket to the host
          * @param str the string to send
          * @param h the Host
@@ -108,6 +100,13 @@ class UdpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendCharArray(const char* str, const size_t& s,  Host& h);
+		
+		/**
+		 * @brief send a Frame over the network
+		 * @param f the frame
+		 * @return AbstractSocket::Status
+		 */
+		AbstractSocket::Status sendFrame(Frame& f, Host& peer);
 
         /**
          * @brief receive a string
@@ -160,15 +159,13 @@ class UdpSocket: public AbstractSocket
          */
         AbstractSocket::Status receiveInt32(int32& i, Host& peer);
 
-        /**
-         * @brief receive a long
-         * 	You need to bind the socket to be able to receive data
-         * @param i the char in which the read value will be put
-         * @param peer the Host object in which the peer information will be put
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status receiveInt64(int64& i, Host& peer);
+		/**
+		 * @brief receives an Frame from the network
+		 * @param F the Frame container
+		 * @return AbstractSocket::Status
+		 */
+		AbstractSocket::Status receiveFrame(Frame &f, Host& peer);
+
 
 };
 

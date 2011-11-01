@@ -97,6 +97,19 @@ class Frame
          * @return the data buffer
          */
         char* getData();
+		
+		/**
+		 * @brief sets the data contents and the size
+		 * @param data the data to set
+		 * @size the size of the data
+		 */
+		void setData(char*c, uint32 &size);
+		
+		/**
+		 * @brief get the size of the buffer
+		 * @return the size
+		 */
+		uint32 getSize();
 
     private:
         void reallocateDouble();
@@ -105,9 +118,6 @@ class Frame
         uint32 m_realSize;
         uint32 m_allocSize;
         int m_currentSeek;
-
-
-
 };
 
 #endif

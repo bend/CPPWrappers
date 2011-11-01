@@ -12,6 +12,7 @@
  */
 
 #include <Net/UdpSocket.h>
+#include <Net/Frame.h>
 #include <stdio.h>
 int main()
 {
@@ -24,13 +25,13 @@ int main()
     else
         perror("Error");
 
-    if (s.sendInt(666, h) == AbstractSocket::Done)
+    if (s.sendInt32(666, h) == AbstractSocket::Done)
         cout << "Done" << endl;
 
     else
         perror("Error");
 
-    if (s.sendChar('&', h) == AbstractSocket::Done)
+    if (s.sendInt8('&', h) == AbstractSocket::Done)
         cout << "Done" << endl;
 
     else
@@ -43,6 +44,13 @@ int main()
 
     else
         perror("Error");
+
+	Frame f;
+	f<<"Hello" << 666 <<'\n';
+	if(s.sendFrame(f, h) != AbstractSocket::Done)
+		perror("error");
+	else 
+		perror("");
 
     s.close();
 }
