@@ -245,3 +245,13 @@ char* Frame::getData()
 {
     return m_contents;
 }
+
+void Frame::setData(char* c, uint32 &size){
+	m_contents = c;
+	m_realSize = size;
+}
+
+uint32 Frame::getSize()
+{
+	return m_realSize;
+}

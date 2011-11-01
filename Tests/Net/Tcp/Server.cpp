@@ -13,6 +13,7 @@
 
 #include <Net/TcpServer.h>
 #include <Net/TcpSocket.h>
+#include <Net/Frame.h>
 #include <stdio.h>
 int main()
 {
@@ -43,8 +44,12 @@ int main()
     sleep(2);
     s->sendString("hello");
     s->sendCharArray("world", 5);
-    s->close();
+	Frame f;
+	f<<"This is a frame "<<666<<'\n';
+	if(s->sendFrame(f) != AbstractSocket::Done)
+		perror("error on send frame");
     delete s;
     server.close();
+    s->close();
     return 1;
 }

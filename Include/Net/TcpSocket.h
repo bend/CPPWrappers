@@ -21,6 +21,7 @@
 
 #include <Net/AbstractSocket.h>
 #include <Net/Host.h>
+#include <Net/Frame.h>
 
 /**
  * @brief TcpSocket class for establishing a Tcp connection with a TcpServer
@@ -89,14 +90,6 @@ class TcpSocket: public AbstractSocket
         AbstractSocket::Status sendInt32(const int32& i);
 
         /**
-         * @brief sends an int64 over the net
-         * @param i the int to send
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status sendInt64(const int64& i);
-
-        /**
          * @brief sends a char array over the net
          * @param c the char* tpo send
          * @param s the size of the char*
@@ -104,6 +97,13 @@ class TcpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendCharArray(const char* c, const size_t& s);
+		
+		/**
+		 * @brief sends a Frame over the network
+		 * @param f the frame to send
+		 * @return AbstractSocket::Status
+		 */
+		AbstractSocket::Status sendFrame(Frame &f);
 
         /**
          * @brief reads a string on the socket
@@ -139,14 +139,6 @@ class TcpSocket: public AbstractSocket
         AbstractSocket::Status receiveInt32(int32& i);
 
         /**
-         * @brief reads an int64 on the socket
-         * @param i the int container in which the result will be put
-         * @return AbstractSocket::Status
-         * @see AbstractSocket::Status
-         */
-        AbstractSocket::Status receiveInt64(int64& i);
-
-        /**
          * @brief reads a char*  on the socket
          * @param c a char** not initialized in which the result will be put
          * @param s the size of the char to receive
@@ -154,6 +146,13 @@ class TcpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status receiveCharArray(char** c, const size_t& s);
+	
+		/**
+		 * @brief reads a frame from the network
+		 * @param f the frame where the data will be stored
+		 * @return AbstractSocket::Status
+		 */
+		AbstractSocket::Status receiveFrame(Frame &f);
 
     private:
         int m_portNo;
