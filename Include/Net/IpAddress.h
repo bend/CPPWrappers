@@ -20,7 +20,7 @@
 #define IP_ADDRESS_H__
 
 #include <System/Types.h>
-#include <Net/HtmlParser.h>
+#include <Parser/HtmlParser.h>
 
 #include <netinet/in.h>
 #include <arpa/inet.h>

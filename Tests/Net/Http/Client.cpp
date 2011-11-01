@@ -12,7 +12,7 @@
  */
 
 #include <Net/HttpProtocol.h>
-#include <Net/HtmlParser.h>
+#include <Parser/HtmlParser.h>
 
 int main()
 {
