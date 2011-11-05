@@ -75,6 +75,10 @@ void HtmlElement::setContents(const string& str)
     m_contents = str;
 }
 
+void HtmlElement::addFlag(string flag){
+	m_flag.append(flag);
+}
+
 HtmlElement& HtmlElement::operator[](const string& str)
 {
     unsigned int i;
