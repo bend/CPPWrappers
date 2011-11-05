@@ -18,25 +18,25 @@
 
 #include <Net/Host.h>
 Host::Host():
-    IpAddress(None),
+    Ipv4Address(None),
     m_port(0)
 {
 }
 
 Host::Host(const string& host, const uint16& port):
-    IpAddress(host),
+    Ipv4Address(host),
     m_port(port)
 {
 }
 
 Host::Host(const char* host, const uint16& port):
-    IpAddress(host),
+    Ipv4Address(host),
     m_port(port)
 {
 }
 
-Host::Host(IpAddress::Ip host, const uint16& port):
-    IpAddress(host),
+Host::Host(Ipv4Address::Ip host, const uint16& port):
+    Ipv4Address(host),
     m_port(port)
 {
 }
@@ -45,7 +45,7 @@ sockaddr_in Host::getHost()
 {
     sockaddr_in addr;
     memset(addr.sin_zero, 0, sizeof(addr.sin_zero));
-    addr.sin_addr.s_addr = htonl(IpAddress::toInt());
+    addr.sin_addr.s_addr = htonl(Ipv4Address::toInt());
     addr.sin_family      = AF_INET;
     addr.sin_port        = htons(m_port);
     return addr;
@@ -53,7 +53,7 @@ sockaddr_in Host::getHost()
 
 void Host::setHost(sockaddr_in& addr)
 {
-    IpAddress::setIp(ntohl(addr.sin_addr.s_addr));
+    Ipv4Address::setIp(ntohl(addr.sin_addr.s_addr));
     m_port = ntohs(addr.sin_port);
 }
 
@@ -64,7 +64,7 @@ Host::operator string()
 
 string Host::toString()
 {
-    return IpAddress::toString() + ":" + TypeCast::toString(m_port);
+    return Ipv4Address::toString() + ":" + TypeCast::toString(m_port);
 }
 
 

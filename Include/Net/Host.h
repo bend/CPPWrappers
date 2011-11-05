@@ -19,20 +19,20 @@
 #ifndef HOST_H__
 #define HOST_H__
 
-#include <Net/IpAddress.h>
+#include <Net/Ipv4Address.h>
 #include <System/TypeCast.h>
 
 #include <string.h>
 
 /**
- * @brief Represents a Network host. Contains the IpAddress and the port
+ * @brief Represents a Network host. Contains the Ipv4Address and the port
  */
-class Host: public IpAddress
+class Host: public Ipv4Address
 {
     public:
         /**
          * @brief empty Constructor.
-         * Sets the port to O and the Ip the IpAddress::None
+         * Sets the port to O and the Ip the Ipv4Address::None
          */
         Host();
         /**
@@ -51,10 +51,10 @@ class Host: public IpAddress
 
         /**
          * @brief Constructor
-         * @param host the IpAddress::Ip
+         * @param host the Ipv4Address::Ip
          * @param port the port number
          */
-        Host(IpAddress::Ip host, const uint16& port);
+        Host(Ipv4Address::Ip host, const uint16& port);
 
         /**
          * @brief returns the host struct

@@ -94,7 +94,7 @@ class AbstractSocket
          * @return an IpAddress object is the ip could be determined
          *     	   IpAddress::None if no ip address determined
          */
-        IpAddress getRemoteAddress();
+        Ipv4Address getRemoteAddress();
 
         /**
          * @brief sets the blocking state of the socket

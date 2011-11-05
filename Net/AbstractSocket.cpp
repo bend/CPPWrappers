@@ -62,7 +62,7 @@ uint16 AbstractSocket::getRemotePort() const
     return 0;
 }
 
-IpAddress AbstractSocket::getRemoteAddress()
+Ipv4Address AbstractSocket::getRemoteAddress()
 {
     if (m_socketfd != -1)
     {
@@ -71,11 +71,11 @@ IpAddress AbstractSocket::getRemoteAddress()
 
         if (getpeername(m_socketfd, reinterpret_cast<sockaddr*>(&address), &size) != -1)
         {
-            return IpAddress(ntohl(address.sin_addr.s_addr));
+            return Ipv4Address(ntohl(address.sin_addr.s_addr));
         }
     }
 
-    return IpAddress::None;
+    return Ipv4Address::None;
 }
 
 void AbstractSocket::setBlocking(bool b)

@@ -30,7 +30,7 @@ AbstractSocket::Status UdpSocket::bind(const uint16& port)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
             return getStatus();
 
-    addr = Host(IpAddress::Any, port).getHost();
+    addr = Host(Ipv4Address::Any, port).getHost();
 
     if (::bind(m_socketfd, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) == -1)
         return getStatus();

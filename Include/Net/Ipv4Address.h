@@ -16,8 +16,8 @@
 *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef IP_ADDRESS_H__
-#define IP_ADDRESS_H__
+#ifndef IPV4_ADDRESS_H__
+#define IPV4_ADDRESS_H__
 
 #include <System/Types.h>
 #include <Parser/HtmlParser.h>
@@ -33,7 +33,7 @@ class HttpProtocol;
 /**
  * @brief Represents an ip address
  */
-class IpAddress
+class Ipv4Address
 {
     public:
         /**
@@ -51,13 +51,13 @@ class IpAddress
          * @brief Constructor
          * @param host the host name or ip
          */
-        IpAddress(const string& host);
+        Ipv4Address(const string& host);
 
         /**
          * @brief Constructor
          * @param host the host name or ip
          */
-        IpAddress(const char* host);
+        Ipv4Address(const char* host);
 
         /**
          * @brief Constructor
@@ -66,20 +66,20 @@ class IpAddress
          * @param byte3 the third byte
          * @param byte4 the fourth byte
          */
-        IpAddress(const  uint8& byte1, const uint8& byte2, const uint8& byte3, const uint8& byte4);
+        Ipv4Address(const  uint8& byte1, const uint8& byte2, const uint8& byte3, const uint8& byte4);
 
         /**
          * @brief Constructor
          * @param addr the ip address
          */
-        IpAddress(uint32 addr);
+        Ipv4Address(uint32 addr);
 
         /**
          * @brief Constructor
          * @param addr the Ip
-         * @see IpAddress::Ip
+         * @see Ipv4Address::Ip
          */
-        IpAddress(Ip addr);
+        Ipv4Address(Ip addr);
 
         /**
          * @brief sets the ip address
@@ -102,9 +102,9 @@ class IpAddress
         /**
          * @brief Retrives your Public ip address.
          * This use the internet and request your ip at checkip.dyndns.org
-         * @return the IpAddress object if success , IpAddress(None) if failure
+         * @return the Ipv4Address object if success , Ipv4Address(None) if failure
          */
-        static IpAddress getPublicIpAddress();
+        static Ipv4Address getPublicIpAddress();
 
     private:
         in_addr_t m_ipAddr;

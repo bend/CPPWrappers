@@ -17,15 +17,15 @@
 */
 
 
-#include <Net/IpAddress.h>
+#include <Net/Ipv4Address.h>
 #include <Net/HttpProtocol.h>
 
-IpAddress::IpAddress(const string& rhost)
+Ipv4Address::Ipv4Address(const string& rhost)
 {
-    IpAddress(rhost.c_str());
+    Ipv4Address(rhost.c_str());
 }
 
-IpAddress::IpAddress(const char* rhost)
+Ipv4Address::Ipv4Address(const char* rhost)
 {
     m_ipAddr = inet_addr(rhost);
     in_addr addr;
@@ -50,17 +50,17 @@ IpAddress::IpAddress(const char* rhost)
     }
 }
 
-IpAddress::IpAddress(const uint8& byte1, const uint8& byte2, const uint8& byte3, const uint8& byte4)
+Ipv4Address::Ipv4Address(const uint8& byte1, const uint8& byte2, const uint8& byte3, const uint8& byte4)
 {
     m_ipAddr = htonl((byte1 << 24) | (byte2 << 16) | (byte3 << 8) | byte4);
 }
 
-IpAddress::IpAddress(uint32 addr)
+Ipv4Address::Ipv4Address(uint32 addr)
 {
     m_ipAddr = htonl(addr);
 }
 
-IpAddress::IpAddress(Ip addr)
+Ipv4Address::Ipv4Address(Ip addr)
 {
     switch (addr)
     {
@@ -74,44 +74,44 @@ IpAddress::IpAddress(Ip addr)
     }
 }
 
-void IpAddress::setIp(uint32 addr)
+void Ipv4Address::setIp(uint32 addr)
 {
     m_ipAddr = htonl(addr);
 }
 
-string IpAddress::toString()
+string Ipv4Address::toString()
 {
     in_addr addr;
     addr.s_addr = m_ipAddr;
     return inet_ntoa(addr);
 }
 
-uint32 IpAddress::toInt()
+uint32 Ipv4Address::toInt()
 {
     return ntohl(m_ipAddr);
 }
 
-IpAddress IpAddress::getPublicIpAddress()
+Ipv4Address Ipv4Address::getPublicIpAddress()
 {
     Host h("checkip.dyndns.org", 80);
     HttpProtocol proto(h);
     HttpRequest req("/", HttpRequest::Head);
 
     if (proto.sendRequest(req) < 0)
-        return IpAddress(None);
+        return Ipv4Address(None);
 
     HttpResponse r = proto.getResponse();
     r.parse();
 
     if (r.getResponseCode() < 200)
-        return IpAddress(None);
+        return Ipv4Address(None);
 
     HtmlParser parser(r.getBody());
 
     if (parser.parse() < 0)
-        return IpAddress(None);
+        return Ipv4Address(None);
 
     string address = parser.getRootElement()["html"]["body"].getContents();
     address = address.substr(address.find(':') + 2);
-    return IpAddress(address.c_str());
+    return Ipv4Address(address.c_str());
 }

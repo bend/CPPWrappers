@@ -39,6 +39,6 @@ int main()
     HtmlElement root = parser.getRootElement();
     cout << root["html"]["body"].getContents() << endl;
     cout << root << endl;
-    cout << IpAddress::getPublicIpAddress().toString() << endl;
+    cout << Ipv4Address::getPublicIpAddress().toString() << endl;
 }
 
