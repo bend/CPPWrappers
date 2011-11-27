@@ -104,6 +104,7 @@ class UdpSocket: public AbstractSocket
 		/**
 		 * @brief send a Frame over the network
 		 * @param f the frame
+		 * @param peer the frame
 		 * @return AbstractSocket::Status
 		 */
 		AbstractSocket::Status sendFrame(Frame& f, Host& peer);
@@ -161,7 +162,8 @@ class UdpSocket: public AbstractSocket
 
 		/**
 		 * @brief receives an Frame from the network
-		 * @param F the Frame container
+		 * @param f the Frame container
+		 * @param peer the Host
 		 * @return AbstractSocket::Status
 		 */
 		AbstractSocket::Status receiveFrame(Frame &f, Host& peer);

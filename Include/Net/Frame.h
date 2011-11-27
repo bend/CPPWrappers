@@ -101,8 +101,8 @@ class Frame
 		
 		/**
 		 * @brief sets the data contents and the size
-		 * @param data the data to set
-		 * @size the size of the data
+		 * @param c the data to set
+		 * @param size the size of the data
 		 */
 		void setData(char*c, uint32 &size);
 		
