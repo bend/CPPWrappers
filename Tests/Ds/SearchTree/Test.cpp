@@ -67,6 +67,8 @@ int main()
     assert(tree.get(7) == 7);
 
     vector<int> s = tree.getAll(4);
+    assert(s.size() == 4);
+    assert(tree.getAll(1).size() == 1);
 
     cout << "All tests succeded" << endl;
     return 0;

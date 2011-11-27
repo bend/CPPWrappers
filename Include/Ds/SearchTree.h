@@ -42,7 +42,7 @@ class SearchTree : public BTree<Pair<K, V> >
 
         V& get(const K& key);
 
-        vector<V&> getAll(const K& key);
+        vector<V> getAll(const K& key);
 
         vector<Pair<K,V> > inorder(); 
 
@@ -158,28 +158,27 @@ V& SearchTree<K,V>::get(const K& key)
 }
 
 template <class K, class V>
-vector<V&> SearchTree<K, V>::getAll(const K& key)
+vector<V> SearchTree<K, V>::getAll(const K& key)
 {
-    vector<V&> res;
+    vector<V> res;
     int count = 0;
     Pair<K, V> p = this->getElem();
     if( p == key)
-        res.push_back(p.getValue());
+       res.push_back(p.getValue());
     
     if (p <= key){
         if(this->getRight() != 0){
-            vector<V&> v = ((SearchTree<K, V>*)this->getRight())->getAll();
-            res.insert(res.end(), v.begin(), v.end());
+          vector<V> v = ((SearchTree<K, V>*)this->getRight())->getAll(key);
+           res.insert(res.end(), v.begin(), v.end());
         }
     }
     else{
         if(this->getLeft() != 0){
-            vector<V&> v = ((SearchTree<K, V>*)this->getLeft())->getAll();
-            res.insert(res.end(), v.begin(), v.end());
+           vector<V> v = ((SearchTree<K, V>*)this->getLeft())->getAll(key);
+         res.insert(res.end(), v.begin(), v.end());
         }
     }
     return res;
-    
 }
 
 #endif
