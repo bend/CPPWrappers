@@ -18,14 +18,15 @@
  */
 
 #ifndef PAIR_H__
-#define PAIR_H__ 
+#define PAIR_H__
 
 template <class K, class V>
-class Pair{
+class Pair
+{
     public:
         Pair();
 
-        Pair(const K &key, const V &value);
+        Pair(const K& key, const V& value);
 
         void setKey(const K& key);
 
@@ -36,27 +37,27 @@ class Pair{
         V& getValue();
 
         bool operator ==( Pair<K, V>& p);
-        
+
         bool operator !=( Pair<K, V>& p);
 
         bool operator <( Pair<K, V>& p);
 
         bool operator >( Pair<K, V>& p);
- 
+
         bool operator <=( Pair<K, V>& p);
-        
+
         bool operator >=( Pair<K, V>& p);
 
         bool operator ==(const K& key);
-        
+
         bool operator !=(const K& key);
 
         bool operator <( const K& key);
 
         bool operator >( const K& key);
- 
+
         bool operator <=(const K& key);
-        
+
         bool operator >=(const K& key);
     private:
         K m_key;
@@ -71,7 +72,7 @@ Pair<K, V>::Pair()
 }
 
 template <class K, class V>
-Pair<K, V>::Pair(const K &key, const V &value):
+Pair<K, V>::Pair(const K& key, const V& value):
     m_key(key),
     m_value(value)
 {
@@ -107,7 +108,7 @@ bool Pair<K, V>::operator == (Pair& p)
     return m_key == p.getKey();
 }
 
-    template <class K, class V>
+template <class K, class V>
 bool Pair<K, V>::operator != (Pair& p)
 {
     return m_key != p.getKey();
@@ -144,7 +145,7 @@ bool Pair<K, V>::operator == (const K& k)
     return m_key == k;
 }
 
-    template <class K, class V>
+template <class K, class V>
 bool Pair<K, V>::operator != (const K& k)
 {
     return m_key != k;

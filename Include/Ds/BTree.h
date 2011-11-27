@@ -59,13 +59,13 @@ class BTree
 };
 
 template <class T>
-BTree<T>::BTree(const T& elem):m_right(0), m_left(0), m_parent(0),m_elem(elem)
+BTree<T>::BTree(const T& elem): m_right(0), m_left(0), m_parent(0), m_elem(elem)
 {
     m_size = 1;
 }
 
 template <class T>
-BTree<T>::BTree():m_right(0), m_left(0), m_parent(0)
+BTree<T>::BTree(): m_right(0), m_left(0), m_parent(0)
 {
     m_size = 0;
 }
@@ -133,12 +133,16 @@ T& BTree<T>::getElem()
 }
 
 template <class T>
-int BTree<T>::getSize(){
+int BTree<T>::getSize()
+{
     int size = m_size;
-    if(m_left != 0)
+
+    if (m_left != 0)
         size += m_left->getSize();
-    if(m_right != 0)
+
+    if (m_right != 0)
         size += m_right->getSize();
+
     return size;
 }
 #endif

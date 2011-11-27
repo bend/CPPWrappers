@@ -28,27 +28,23 @@ int main()
     tree.insert(4, 4);
     tree.insert(4, 4);
     tree.insert(2, 2);
-
     assert(tree.contains(1) == true);
     assert(tree.contains(2) == true);
     assert(tree.contains(3) == true);
     assert(tree.contains(4) == true);
     assert(tree.contains(5) == false);
     assert(tree.contains(6) == true);
-
     vector<Pair<int, int> > v = tree.inorder();
     vector<Pair<int, int> > c;
- 
-    c.push_back(Pair<int,int>(1,1));
-    c.push_back(Pair<int,int>(2,2));
-    c.push_back(Pair<int,int>(3,3));
-    c.push_back(Pair<int,int>(4,4));
-    c.push_back(Pair<int,int>(4,4));
-    c.push_back(Pair<int,int>(4,4));
-    c.push_back(Pair<int,int>(4,4));
-    c.push_back(Pair<int,int>(6,6));
-    c.push_back(Pair<int,int>(7,7));
-
+    c.push_back(Pair<int, int>(1, 1));
+    c.push_back(Pair<int, int>(2, 2));
+    c.push_back(Pair<int, int>(3, 3));
+    c.push_back(Pair<int, int>(4, 4));
+    c.push_back(Pair<int, int>(4, 4));
+    c.push_back(Pair<int, int>(4, 4));
+    c.push_back(Pair<int, int>(4, 4));
+    c.push_back(Pair<int, int>(6, 6));
+    c.push_back(Pair<int, int>(7, 7));
     assert(tree.count(4) == 4);
     assert(tree.count(1) == 1);
     assert(tree.count(2) == 1);
@@ -56,7 +52,7 @@ int main()
     assert(tree.count(6) == 1);
     assert(tree.count(7) == 1);
 
-    for(unsigned int i=0; i<v.size(); i++)
+    for (unsigned int i = 0; i < v.size(); i++)
         assert(c[i].getKey() == v[i].getKey());
 
     assert(tree.get(1) == 1);
@@ -65,11 +61,9 @@ int main()
     assert(tree.get(4) == 4);
     assert(tree.get(6) == 6);
     assert(tree.get(7) == 7);
-
     vector<int> s = tree.getAll(4);
     assert(s.size() == 4);
     assert(tree.getAll(1).size() == 1);
-
     cout << "All tests succeded" << endl;
     return 0;
 }

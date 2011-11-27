@@ -41,9 +41,9 @@ class DlLinkedList
         E& getHead();
 
         E& getTail();
- 
+
         E removeFirst();
-        
+
         E removeLast();
 
         E* toArray();
@@ -70,9 +70,11 @@ template <class E>
 void DlLinkedList<E>::insertTop(const E& elem)
 {
     DlNode<E> *n = new DlNode<E>(elem);
-    if(m_head != 0)
+
+    if (m_head != 0)
         n->setNext(m_head);
- //   m_head->setPrevious(n);
+
+    //   m_head->setPrevious(n);
     m_head = n;
     ++m_size;
 
@@ -88,7 +90,7 @@ void DlLinkedList<E>::insertLast(E elem)
     if (m_tail != 0)
     {
         m_tail->setNext(n);
-   //     n->setPrevious(m_tail);
+        //     n->setPrevious(m_tail);
         m_tail = (DlNode<E>*)m_tail->getNext();
     }
 
@@ -123,12 +125,14 @@ E& DlLinkedList<E>::getTail()
 }
 
 template <class E>
-DlNode<E>* DlLinkedList<E>::getFirst(){
+DlNode<E>* DlLinkedList<E>::getFirst()
+{
     return m_head;
 }
 
 template <class E>
-DlNode<E>* DlLinkedList<E>::getLast(){
+DlNode<E>* DlLinkedList<E>::getLast()
+{
     return m_tail;
 }
 
@@ -138,11 +142,16 @@ E DlLinkedList<E>::removeFirst()
     if (m_size == 0) throw string("Empty List");
 
     E e = m_head->getElem();
-    if(m_head->getNext() != 0){
+
+    if (m_head->getNext() != 0)
+    {
         DlNode<E> *next = (DlNode<E>*)m_head->getNext();
         delete m_head;
         m_head = next;
-    }else delete m_head;
+    }
+
+    else delete m_head;
+
     --m_size;
     return e;
 }

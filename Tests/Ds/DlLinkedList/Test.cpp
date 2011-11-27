@@ -32,6 +32,7 @@ int main()
 
     for (int i = 0; i < ll.getSize(); ++i)
         assert(arr[i] == chk[i]);
+
     ll.removeFirst();
     ll.removeLast();
     arr = ll.toArray();
@@ -39,6 +40,7 @@ int main()
 
     for (int i = 0; i < ll.getSize(); ++i)
         assert(arr[i] == chk2[i]);
+
     cout << "All tests succeded" << endl;
     return 0;
 }

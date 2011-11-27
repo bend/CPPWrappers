@@ -41,9 +41,9 @@ class LinkedList
         E& getHead();
 
         E& getTail();
- 
+
         E removeFirst();
-        
+
         E removeLast();
 
         E* toArray();

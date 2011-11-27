@@ -27,8 +27,6 @@ int main()
     assert(p2 >= p1);
     assert(p1 >= p1);
     assert(p1 <= p1);
-
-
     cout << "All tests succeded" << endl;
     return 0;
 }
