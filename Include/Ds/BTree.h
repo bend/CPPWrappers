@@ -27,26 +27,79 @@ class BTree
 {
     public:
 
+        /**
+         * @brief Constructor
+         * @param elem the element to store at the root
+         */
         BTree(const T& elem);
-
+        
+        /**
+         * @brief Constructor
+         * @param elem the element to store at the root
+         * @param left the left child
+         * @param right the right child
+         */
         BTree(const T& elem, BTree<T> *left, BTree<T> *right);
-
+        
+        /**
+         * @brief set the left child
+         * @param l the child to set
+         */
         void setLeft(BTree<T> * l);
+
+        /**
+         * @brief set the right child
+         * @param r the right child to set
+         */
         void setRight(BTree<T> *r);
+
+        /**
+         * @brief sets the parent
+         * @param r the parent
+         */
         void setParent(BTree<T> *r);
-
+        
+        /**
+         * @brief sets the element in the node
+         * @param elem the elem to store
+         */
         void setElem(const T& elem);
-
+        
+        /**
+         * @brief get the left child
+         * @return a pointer to the left child tree
+         */
         BTree<T>* getLeft();
-
+        
+        /**
+         * @brief get the right child
+         * @return a pointer to the right child
+         */
         BTree<T>* getRight();
-
+        
+        /**
+         * @brief get the parent of the node
+         * @return a pointer to the parent tree
+         */
         BTree<T>* getParent();
-
+        
+        /**
+         * @brief calculates the tree size
+         * @return the size of the tree
+         */
         int getSize();
-
+        
+        /**
+         * @brief get the element stored in the current node
+         * @return a reference to this element
+         */
         T& getElem();
+
     protected:
+        
+        /**
+         * Empty constructor
+         */
         BTree();
 
     private:

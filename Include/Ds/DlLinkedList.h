@@ -24,7 +24,9 @@ using namespace std;
 
 #include <Ds/DlNode.h>
 
-
+/**
+ * Double linked list 
+ */
 template <class E>
 class DlLinkedList
 {
@@ -51,7 +53,6 @@ class DlLinkedList
         DlNode<E>* getFirst();
 
         DlNode<E>* getLast();
-
 
     private:
         DlNode<E> *m_head;
