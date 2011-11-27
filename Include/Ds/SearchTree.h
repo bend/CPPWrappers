@@ -44,7 +44,7 @@ class SearchTree : public BTree<Pair<K, V> >
 
         vector<V&> getAll(const K& key);
 
-        vector<K> inorder(); 
+        vector<Pair<K,V> > inorder(); 
 
 };
 
@@ -123,19 +123,63 @@ int SearchTree<K, V>::count(const K& key)
 }
 
 template <class K, class V>
-vector<K> SearchTree<K, V>::inorder()
+vector<Pair<K,V> > SearchTree<K, V>::inorder()
 {
-    vector<K> res;
+    vector<Pair<K,V> > res;
     if(this->getLeft() != 0){
-        vector<K> v = ((SearchTree<K, V>*)this->getLeft())->inorder();
+        vector<Pair<K,V> > v = ((SearchTree<K, V>*)this->getLeft())->inorder();
         res.insert(res.end(), v.begin(), v.end());
     }
-    res.push_back(this->getElem().getKey());
+    res.push_back(this->getElem());
     if(this->getRight() != 0){
-        vector<K> v = ((SearchTree<K, V>*)this->getRight())->inorder();
+        vector<Pair<K,V> > v = ((SearchTree<K, V>*)this->getRight())->inorder();
         res.insert(res.end(), v.begin(), v.end());
     }
     return res;
+}
+
+template <class K, class V>
+V& SearchTree<K,V>::get(const K& key)
+{
+    Pair<K, V> p = this->getElem();
+    if( p == key)
+        return p.getValue();
+    else if (p < key){
+        if(this->getRight() == 0)
+            throw string("Element not found");
+        return ((SearchTree<K, V>*)this->getRight())->get(key);
+    }
+    else{
+        if(this->getLeft() == 0)
+            throw string("Element not found");
+        return ((SearchTree<K, V>*)this->getLeft())->get(key);
+    }
+    throw string("Element not found");
+}
+
+template <class K, class V>
+vector<V&> SearchTree<K, V>::getAll(const K& key)
+{
+    vector<V&> res;
+    int count = 0;
+    Pair<K, V> p = this->getElem();
+    if( p == key)
+        res.push_back(p.getValue());
+    
+    if (p <= key){
+        if(this->getRight() != 0){
+            vector<V&> v = ((SearchTree<K, V>*)this->getRight())->getAll();
+            res.insert(res.end(), v.begin(), v.end());
+        }
+    }
+    else{
+        if(this->getLeft() != 0){
+            vector<V&> v = ((SearchTree<K, V>*)this->getLeft())->getAll();
+            res.insert(res.end(), v.begin(), v.end());
+        }
+    }
+    return res;
+    
 }
 
 #endif
