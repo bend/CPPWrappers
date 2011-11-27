@@ -100,14 +100,14 @@ class UdpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendCharArray(const char* str, const size_t& s,  Host& h);
-		
-		/**
-		 * @brief send a Frame over the network
-		 * @param f the frame
-		 * @param peer the frame
-		 * @return AbstractSocket::Status
-		 */
-		AbstractSocket::Status sendFrame(Frame& f, Host& peer);
+
+        /**
+         * @brief send a Frame over the network
+         * @param f the frame
+         * @param peer the frame
+         * @return AbstractSocket::Status
+         */
+        AbstractSocket::Status sendFrame(Frame& f, Host& peer);
 
         /**
          * @brief receive a string
@@ -160,13 +160,13 @@ class UdpSocket: public AbstractSocket
          */
         AbstractSocket::Status receiveInt32(int32& i, Host& peer);
 
-		/**
-		 * @brief receives an Frame from the network
-		 * @param f the Frame container
-		 * @param peer the Host
-		 * @return AbstractSocket::Status
-		 */
-		AbstractSocket::Status receiveFrame(Frame &f, Host& peer);
+        /**
+         * @brief receives an Frame from the network
+         * @param f the Frame container
+         * @param peer the Host
+         * @return AbstractSocket::Status
+         */
+        AbstractSocket::Status receiveFrame(Frame& f, Host& peer);
 
 
 };

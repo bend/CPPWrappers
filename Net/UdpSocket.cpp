@@ -62,7 +62,8 @@ AbstractSocket::Status UdpSocket::sendInt8(const int8& c, Host& h)
 AbstractSocket::Status UdpSocket::sendInt16(const int16& i, Host& h)
 {
     struct sockaddr_in peer;
-	int16 toSend = htons(i);
+    int16 toSend = htons(i);
+
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
             return getStatus();
@@ -78,7 +79,8 @@ AbstractSocket::Status UdpSocket::sendInt16(const int16& i, Host& h)
 AbstractSocket::Status UdpSocket::sendInt32(const int32& i, Host& h)
 {
     struct sockaddr_in peer;
-	int32 toSend = htonl(i);
+    int32 toSend = htonl(i);
+
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
             return getStatus();
@@ -131,14 +133,19 @@ AbstractSocket::Status UdpSocket::sendFrame(Frame& f, Host& h)
     if (m_socketfd == -1)
         if ((m_socketfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
             return getStatus();
+
     peer = h.getHost();
-	uint32 size = f.getSize();
-	if(size  > MaxDatagramSize)
-		return UdpDatagramTooBig;
-	int r =  sendto(m_socketfd, f.getData(), size, 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
-	if(r<0)
-		return getStatus();
-	return Done;
+    uint32 size = f.getSize();
+
+    if (size  > MaxDatagramSize)
+        return UdpDatagramTooBig;
+
+    int r =  sendto(m_socketfd, f.getData(), size, 0, reinterpret_cast<sockaddr*>(&peer), sizeof(peer));
+
+    if (r < 0)
+        return getStatus();
+
+    return Done;
 }
 
 AbstractSocket::Status UdpSocket::receiveInt8(int8& c, Host& peer)
@@ -215,21 +222,19 @@ AbstractSocket::Status UdpSocket::receiveString(string& str, Host& peer)
     return Done;
 }
 
-AbstractSocket::Status UdpSocket::receiveFrame(Frame &f, Host& peer)
-{	
+AbstractSocket::Status UdpSocket::receiveFrame(Frame& f, Host& peer)
+{
     uint32 size;
     struct sockaddr_in from;
     uint32 dataRead;
     int len = sizeof(from);
-	char *buffer;
-
+    char* buffer;
     buffer = new char[MaxDatagramSize];
 
-	if ((dataRead = recvfrom(m_socketfd, buffer, MaxDatagramSize, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
+    if ((dataRead = recvfrom(m_socketfd, buffer, MaxDatagramSize, 0, reinterpret_cast<sockaddr*>(&from), reinterpret_cast<socklen_t*>(&len))) == -1)
         return getStatus();
-	
-	f.setData(buffer, dataRead);
 
+    f.setData(buffer, dataRead);
     peer.setHost(from);
-	return Done;
+    return Done;
 }

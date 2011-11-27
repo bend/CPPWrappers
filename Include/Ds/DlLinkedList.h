@@ -16,21 +16,21 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LINKEDLIST_H__
-#define LINKEDLIST_H__
+#ifndef DL_LINKEDLIST_H__
+#define DL_LINKEDLIST_H__
 
 #include <iostream>
 using namespace std;
 
-#include <Ds/Node.h>
+#include <Ds/DlNode.h>
 
 
 template <class E>
-class LinkedList
+class DlLinkedList
 {
     public:
 
-        LinkedList();
+        DlLinkedList();
 
         void insertTop(const E& elem);
 
@@ -48,39 +48,48 @@ class LinkedList
 
         E* toArray();
 
+        DlNode<E>* getFirst();
+
+        DlNode<E>* getLast();
+
 
     private:
-        Node<E> *m_head;
-        Node<E> *m_tail;
+        DlNode<E> *m_head;
+        DlNode<E> *m_tail;
         int m_size;
 
 };
 
 
 template <class E>
-LinkedList<E>::LinkedList(): m_head(0), m_tail(0), m_size(0)
+DlLinkedList<E>::DlLinkedList(): m_head(0), m_tail(0), m_size(0)
 {
 }
 
 template <class E>
-void LinkedList<E>::insertTop(const E& elem)
+void DlLinkedList<E>::insertTop(const E& elem)
 {
-    Node<E> *n = new Node<E>(elem, m_head);
+    DlNode<E> *n = new DlNode<E>(elem);
+    if(m_head != 0)
+        n->setNext(m_head);
+ //   m_head->setPrevious(n);
     m_head = n;
     ++m_size;
 
     if (m_size == 1)
         m_tail = n;
 }
+
 template<class E>
-void LinkedList<E>::insertLast(E elem)
+void DlLinkedList<E>::insertLast(E elem)
 {
-    Node<E> *n = new Node<E>(elem, 0);
+    DlNode<E> *n = new DlNode<E>(elem);
 
     if (m_tail != 0)
     {
         m_tail->setNext(n);
-        m_tail = m_tail->getNext();
+   //     n->setPrevious(m_tail);
+        m_tail = (DlNode<E>*)m_tail->getNext();
     }
 
     else
@@ -92,13 +101,13 @@ void LinkedList<E>::insertLast(E elem)
     ++m_size;
 }
 template<class E>
-int LinkedList<E>::getSize()
+int DlLinkedList<E>::getSize()
 {
     return m_size;
 }
 
 template <class E>
-E& LinkedList<E>::getHead()
+E& DlLinkedList<E>::getHead()
 {
     if (m_size == 0) throw string("Empty List");
 
@@ -106,55 +115,62 @@ E& LinkedList<E>::getHead()
 }
 
 template <class E>
-E& LinkedList<E>::getTail()
+E& DlLinkedList<E>::getTail()
 {
     if (m_size == 0) throw string("Empty List");
 
     return m_tail->getElem();
 }
 
+template <class E>
+DlNode<E>* DlLinkedList<E>::getFirst(){
+    return m_head;
+}
+
+template <class E>
+DlNode<E>* DlLinkedList<E>::getLast(){
+    return m_tail;
+}
+
 template<class E>
-E LinkedList<E>::removeFirst()
+E DlLinkedList<E>::removeFirst()
 {
     if (m_size == 0) throw string("Empty List");
 
     E e = m_head->getElem();
-    Node<E> *next = m_head->getNext();
-    delete m_head;
-    m_head = next;
+    if(m_head->getNext() != 0){
+        DlNode<E> *next = (DlNode<E>*)m_head->getNext();
+        delete m_head;
+        m_head = next;
+    }else delete m_head;
     --m_size;
     return e;
 }
 
 template<class E>
-E LinkedList<E>::removeLast()
+E DlLinkedList<E>::removeLast()
 {
     if (m_size == 0) throw string("Empty List");
 
     E e = m_tail->getElem();
-    m_tail->setElem(0);
-    Node<E> *t = m_head;
-
-    while (t->getNext()->getElem() != 0)
-        t = t->getNext();
-
-    m_tail = t;
-    t->setNext(0);
+    DlNode<E> *prev = m_tail->getPrevious();
+    delete m_tail;
+    m_tail = prev;
     --m_size;
     return e;
 }
 
 template <class E>
-E* LinkedList<E>::toArray()
+E* DlLinkedList<E>::toArray()
 {
     E* tab = new E[m_size + 1];
-    Node<E> *temp = m_head;
+    DlNode<E> *temp = m_head;
     int i = 0;
 
     while (temp != NULL)
     {
         tab[i++] = temp->getElem();
-        temp = temp->getNext();
+        temp = (DlNode<E>*)temp->getNext();
     }
 
     return tab;

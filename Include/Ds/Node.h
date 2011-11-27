@@ -23,80 +23,108 @@
  * Single linked node class
  */
 template <class T>
-class Node {
+class Node
+{
 
-public:
-    /**
-     * @brief Constructor
-     * @param e the element to store in the node
-     */
-    inline Node(const T &e): m_elem(e), m_next(0) {
-    }
-    
-    /**
-     * @brief Constructor
-     * @param elem the element to store in the node
-     * @param next the next element
-     */
-    inline Node(const T& elem, Node<T> *next):
-        m_elem(elem),
-        m_next(next)
-    {
-    }
-    
-    /**
-     * @brief Sets the next node
-     * @param next the next node to set
-     */
-    inline void setNext(Node<T> *next) {
-        this->m_next = next;
-    }
-    
-    /**
-     * @brief sets the element in the node
-     * @param elem the element to store in the node
-     */
-    inline void setElem(const T& elem) {
-        this->m_elem = elem;
-    }
-    
-    /**
-     * @brief returns the element stored in the node
-     * The element cannot be null
-     * @return a reference to the element
-     */
-    inline T& getElem() {
-        return m_elem;
-    }
-    
-    /**
-     * @brief get the next node
-     * @return a pointer to the node or 0 (NULL) if there is no next node
-     */
-    inline Node<T>* getNext() {
-        if(m_next == 0)
-            return 0;
-        return m_next;
-    }
-    
-    /**
-     * @brief redefinition of the == operation
-     * the comparison is only done on the element stored in the node
-     */
-    inline bool operator ==(Node<T>* n){
-        return this.m_elem = n->getElem();
-    }
+    public:
+        /**
+         * @brief Constructor
+         * @param e the element to store in the node
+         */
+        Node(const T& e);
 
-protected:
-    /**
-     * The next node
-     */
-    Node<T> *m_next;
+        /**
+         * @brief Constructor
+         * @param elem the element to store in the node
+         * @param next the next element
+         */
+        Node(const T& elem, Node<T> *next);
 
-    /**
-     * The element stored in the node
-     */
-    T m_elem;
+        /**
+         * @brief Sets the next node
+         * @param next the next node to set
+         */
+        void setNext(Node<T> *next);
+
+        /**
+         * @brief sets the element in the node
+         * @param elem the element to store in the node
+         */
+        void setElem(const T& elem);
+
+        /**
+         * @brief returns the element stored in the node
+         * The element cannot be null
+         * @return a reference to the element
+         */
+        T& getElem();
+
+        /**
+         * @brief get the next node
+         * @return a pointer to the node or 0 (NULL) if there is no next node
+         */
+        Node<T>* getNext();
+
+        /**
+         * @brief redefinition of the == operation
+         * the comparison is only done on the element stored in the node
+         */
+        bool operator ==(Node<T>* n);
+
+    protected:
+        /**
+         * The next node
+         */
+        Node<T> *m_next;
+
+        /**
+         * The element stored in the node
+         */
+        T m_elem;
 };
 
+template <class T>
+Node<T>::Node(const T& e): m_elem(e), m_next(0)
+{
+}
+
+template <class T>
+Node<T>::Node(const T& elem, Node<T> *next):
+    m_elem(elem),
+    m_next(next)
+{
+}
+
+template <class T>
+void Node<T>::setNext(Node<T> *next)
+{
+    this->m_next = next;
+}
+
+template <class T>
+void Node<T>::setElem(const T& elem)
+{
+    this->m_elem = elem;
+}
+
+template <class T>
+T& Node<T>::getElem()
+{
+    return m_elem;
+}
+
+template <class T>
+Node<T>* Node<T>::getNext()
+{
+    if (m_next == 0)
+        return 0;
+
+    return m_next;
+}
+
+template <class T>
+bool Node<T>::operator ==(Node<T>* n)
+{
+    return this.m_elem = n->getElem();
+}
 #endif

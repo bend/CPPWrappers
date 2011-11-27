@@ -87,7 +87,7 @@ AbstractSocket::Status TcpSocket::sendInt8(const int8& c)
 
 AbstractSocket::Status TcpSocket::sendInt16(const int16& i)
 {
-	int toSend = htons(i);
+    int toSend = htons(i);
     int r = send(m_socketfd, &toSend, sizeof(i), 0);
 
     if (r < 0)
@@ -98,7 +98,7 @@ AbstractSocket::Status TcpSocket::sendInt16(const int16& i)
 
 AbstractSocket::Status TcpSocket::sendInt32(const int32& i)
 {
-	int toSend = htonl(i);
+    int toSend = htonl(i);
     int r = send(m_socketfd, &toSend, sizeof(i), 0);
 
     if (r < 0)
@@ -117,18 +117,22 @@ AbstractSocket::Status TcpSocket::sendCharArray(const char* c, const size_t& s)
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::sendFrame(Frame &f){
-	uint32 size = f.getSize();
-	int toSend = htonl(size);
-	int r = send(m_socketfd, &toSend, sizeof(toSend), 0);
-	if(r<0)
-		return getStatus();
-	char* data = f.getData();
-	r = send(m_socketfd, data, toSend, 0);
-	if(r<0)
-		return getStatus();
-	return Done;
+AbstractSocket::Status TcpSocket::sendFrame(Frame& f)
+{
+    uint32 size = f.getSize();
+    int toSend = htonl(size);
+    int r = send(m_socketfd, &toSend, sizeof(toSend), 0);
 
+    if (r < 0)
+        return getStatus();
+
+    char* data = f.getData();
+    r = send(m_socketfd, data, toSend, 0);
+
+    if (r < 0)
+        return getStatus();
+
+    return Done;
 }
 
 AbstractSocket::Status TcpSocket::receiveString(string& str, const size_t& s)
@@ -156,6 +160,7 @@ AbstractSocket::Status TcpSocket::receiveString(string& str, const size_t& s)
 AbstractSocket::Status TcpSocket::receiveInt8(int8& c)
 {
     int n = read(m_socketfd, &c, sizeof(int8));
+
     if (n == 0)
         return Disconnected;
 
@@ -174,7 +179,8 @@ AbstractSocket::Status TcpSocket::receiveInt16(int16& s)
 
     if (n < 0)
         return getStatus();
-	s = ntohs(s);
+
+    s = ntohs(s);
     return Done;
 }
 
@@ -188,7 +194,7 @@ AbstractSocket::Status TcpSocket::receiveInt32(int32& i)
     if (n < 0)
         return getStatus();
 
-	i = ntohl(i);
+    i = ntohl(i);
     return Done;
 }
 
@@ -211,16 +217,21 @@ AbstractSocket::Status TcpSocket::receiveCharArray(char** c, const size_t& s)
     return Done;
 }
 
-AbstractSocket::Status TcpSocket::receiveFrame(Frame& f){
-	uint32 size;
-	int r = read(m_socketfd, &size, sizeof(uint32));
-	if(r<0)
-		return getStatus();
-	size = ntohl(size);
-	char* data = new char[size];
-	r = read(m_socketfd, data, size);
-	if(r<0)
-		return getStatus();
-	f.setData(data, size);
-	return Done;
+AbstractSocket::Status TcpSocket::receiveFrame(Frame& f)
+{
+    uint32 size;
+    int r = read(m_socketfd, &size, sizeof(uint32));
+
+    if (r < 0)
+        return getStatus();
+
+    size = ntohl(size);
+    char* data = new char[size];
+    r = read(m_socketfd, data, size);
+
+    if (r < 0)
+        return getStatus();
+
+    f.setData(data, size);
+    return Done;
 }

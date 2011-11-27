@@ -44,10 +44,12 @@ int main()
     sleep(2);
     s->sendString("hello");
     s->sendCharArray("world", 5);
-	Frame f;
-	f<<"This is a frame "<<666<<'\n';
-	if(s->sendFrame(f) != AbstractSocket::Done)
-		perror("error on send frame");
+    Frame f;
+    f << "This is a frame " << 666 << '\n';
+
+    if (s->sendFrame(f) != AbstractSocket::Done)
+        perror("error on send frame");
+
     delete s;
     server.close();
     s->close();

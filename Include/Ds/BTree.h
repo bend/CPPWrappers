@@ -23,60 +23,122 @@
  * Represents a binary tree structure
  */
 template <class T>
-class BTree{
+class BTree
+{
     public:
-        inline BTree(const T& elem): m_elem(elem){
-        }
-        
-        inline BTree(const T& elem, BTree<T> *left, BTree<T> *right):
-            m_elem(elem), 
-            m_left(left),
-            m_right(right)
-        {
-            m_left->setParent(this);
-            m_right->setParent(this);
-        }
 
-        inline void setLeft(BTree<T> * l){
-            m_left = l;
-            m_left->setParent(this);
-        }
+        BTree(const T& elem);
 
-        inline void setRight(BTree<T> *r){
-            m_right = r;
-            m_right->setParent(this);
-        }
+        BTree(const T& elem, BTree<T> *left, BTree<T> *right);
 
-        inline void setParent(BTree<T> *r){
-            m_parent = r;
-        }
+        void setLeft(BTree<T> * l);
+        void setRight(BTree<T> *r);
+        void setParent(BTree<T> *r);
 
-        inline void setElem(const T& elem){
-            m_elem = elem;
-        }
+        void setElem(const T& elem);
 
-        inline BTree<T>* getLeft(){
-            return m_left;
-        }
+        BTree<T>* getLeft();
 
-        inline BTree<T>* getRight(){
-            return m_right;
-        }
+        BTree<T>* getRight();
 
-        inline BTree<T>* getParent(){
-            return m_parent;
-        }
-        
-        inline T& getElem(){
-            return m_elem;
-        }
+        BTree<T>* getParent();
+
+        int getSize();
+
+        T& getElem();
+    protected:
+        BTree();
 
     private:
         BTree<T> *m_left;
         BTree<T> *m_right;
         BTree<T> *m_parent;
-        T& m_elem;
+        T m_elem;
+        int m_size;
 
 };
 
+template <class T>
+BTree<T>::BTree(const T& elem):m_right(0), m_left(0), m_parent(0),m_elem(elem)
+{
+    m_size = 1;
+}
+
+template <class T>
+BTree<T>::BTree():m_right(0), m_left(0), m_parent(0)
+{
+    m_size = 0;
+}
+
+template <class T>
+BTree<T>::BTree(const T& elem, BTree<T> *left, BTree<T> *right):
+    m_elem(elem),
+    m_left(left),
+    m_right(right),
+    m_size(1)
+{
+    m_left->setParent(this);
+    m_right->setParent(this);
+}
+
+template <class T>
+void BTree<T>::setLeft(BTree<T> * l)
+{
+    m_left = l;
+    m_left->setParent(this);
+}
+
+template <class T>
+void BTree<T>::setRight(BTree<T> *r)
+{
+    m_right = r;
+    m_right->setParent(this);
+}
+
+template <class T>
+void BTree<T>::setParent(BTree<T> *r)
+{
+    m_parent = r;
+}
+
+template <class T>
+void BTree<T>::setElem(const T& elem)
+{
+    m_size = 1;
+    m_elem = elem;
+}
+
+template <class T>
+BTree<T>* BTree<T>::getLeft()
+{
+    return m_left;
+}
+
+template <class T>
+BTree<T>* BTree<T>::getRight()
+{
+    return m_right;
+}
+
+template <class T>
+BTree<T>* BTree<T>::getParent()
+{
+    return m_parent;
+}
+
+template <class T>
+T& BTree<T>::getElem()
+{
+    return m_elem;
+}
+
+template <class T>
+int BTree<T>::getSize(){
+    int size = m_size;
+    if(m_left != 0)
+        size += m_left->getSize();
+    if(m_right != 0)
+        size += m_right->getSize();
+    return size;
+}
 #endif

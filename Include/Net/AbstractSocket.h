@@ -62,8 +62,8 @@ class AbstractSocket
             EMEM,
             /** Http Request invalid **/
             InvalidRequest,
-			/** UDP datagram too big */
-			UdpDatagramTooBig
+            /** UDP datagram too big */
+            UdpDatagramTooBig
         };
 
         /**

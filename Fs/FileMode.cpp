@@ -24,7 +24,7 @@ FileMode::FileMode(FilePermission mode):
 }
 
 FileMode::FileMode(int mode):
-	m_mode(mode)
+    m_mode(mode)
 {
 }
 

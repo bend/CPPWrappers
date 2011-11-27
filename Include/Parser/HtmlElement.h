@@ -93,11 +93,11 @@ class HtmlElement
          */
         void setContents(const string& str);
 
-		/**
-		 * @brief append flag for this element
-		 * @param flag the flag to add
-		 */
-		void addFlag(string flag);
+        /**
+         * @brief append flag for this element
+         * @param flag the flag to add
+         */
+        void addFlag(string flag);
 
         /**
          * @brief operator[] to access to child tag

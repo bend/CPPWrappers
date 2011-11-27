@@ -27,22 +27,22 @@ using namespace std;
 /**
  * @brief Represents the file permissions
  */
-class FileMode:public FileTypes
+class FileMode: public FileTypes
 {
     public:
-     /**
-	  * @brief Constructor
-	  * @param mode the FilePermission
-	  */   
-		FileMode(FilePermission mode);
+        /**
+         * @brief Constructor
+         * @param mode the FilePermission
+         */
+        FileMode(FilePermission mode);
 
         /**
          * @brief Constructor
          * @param mode the mode in int format (ex: 0744)
          */
-		FileMode(int mode);
+        FileMode(int mode);
 
-        /**	
+        /**
          * @brief get the mode of the file in int format
          * @return the mode
          * @see FileTypes for modes declaration
@@ -61,7 +61,7 @@ class FileMode:public FileTypes
         string getStringMode();
 
     private:
-		int m_mode;
+        int m_mode;
         string m_path;
 
 };

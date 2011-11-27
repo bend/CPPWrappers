@@ -97,13 +97,13 @@ class TcpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status sendCharArray(const char* c, const size_t& s);
-		
-		/**
-		 * @brief sends a Frame over the network
-		 * @param f the frame to send
-		 * @return AbstractSocket::Status
-		 */
-		AbstractSocket::Status sendFrame(Frame &f);
+
+        /**
+         * @brief sends a Frame over the network
+         * @param f the frame to send
+         * @return AbstractSocket::Status
+         */
+        AbstractSocket::Status sendFrame(Frame& f);
 
         /**
          * @brief reads a string on the socket
@@ -146,13 +146,13 @@ class TcpSocket: public AbstractSocket
          * @see AbstractSocket::Status
          */
         AbstractSocket::Status receiveCharArray(char** c, const size_t& s);
-	
-		/**
-		 * @brief reads a frame from the network
-		 * @param f the frame where the data will be stored
-		 * @return AbstractSocket::Status
-		 */
-		AbstractSocket::Status receiveFrame(Frame &f);
+
+        /**
+         * @brief reads a frame from the network
+         * @param f the frame where the data will be stored
+         * @return AbstractSocket::Status
+         */
+        AbstractSocket::Status receiveFrame(Frame& f);
 
     private:
         int m_portNo;

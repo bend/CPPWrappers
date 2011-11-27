@@ -33,15 +33,15 @@ int main()
     cout << "Received string " << resStr << endl;
     s.receiveString(resStr, 5);
     cout << "Received string " << resStr << endl;
-	Frame f;
-	s.receiveFrame(f);
-	string str;
-	f>>str;
-	int32 t;
-	f>>t;
-	char c;
-	f>>c;
-	cout<<str<<" "<<t<<c;
+    Frame f;
+    s.receiveFrame(f);
+    string str;
+    f >> str;
+    int32 t;
+    f >> t;
+    char c;
+    f >> c;
+    cout << str << " " << t << c;
     s.close();
 }
 

@@ -45,12 +45,14 @@ int main()
     else
         perror("Error");
 
-	Frame f;
-	f<<"This is a frame "<<666<<'\n';
-	if(s.sendFrame(f, h) != AbstractSocket::Done)
-		perror("error");
-	else 
-		cout<<"done"<<endl;
+    Frame f;
+    f << "This is a frame " << 666 << '\n';
+
+    if (s.sendFrame(f, h) != AbstractSocket::Done)
+        perror("error");
+
+    else
+        cout << "done" << endl;
 
     s.close();
 }

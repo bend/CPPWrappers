@@ -45,65 +45,65 @@ class FileTypes
             Tbyte
         };
 
-		enum SeekMode
-		{
-			/** Seek from the beginning of the file **/
-			SeekBegin = 0, 
-			/** Seek from the current position **/
-			SeekCurrent = 1,
-			/** Seek from the end of the file **/
-			SeekEnd  = 2
-		};
+        enum SeekMode
+        {
+            /** Seek from the beginning of the file **/
+            SeekBegin = 0,
+            /** Seek from the current position **/
+            SeekCurrent = 1,
+            /** Seek from the end of the file **/
+            SeekEnd  = 2
+        };
 
-		enum FilePermission
-		{	
-			/** No file mode found **/
-			None = -1,
-			/** RWX mask for owner **/
-			RWXU = 0000700,
-			
-			/** R mask for owner **/
-			RU = 0000400,
-			
-			/** W mask for owner **/
-			WU = 0000200,
-			
-			/** X mask for owner **/
-			XU = 0000100,
-			
-			/** RWX mask for group **/
-			RWXG = 0000070,
-			
-			/** R mask for group **/
-			RG = 0000040,	
-			
-			/** W mask for group **/
-			WG = 0000020,	
-			
-			/** X mask for group **/
-			XG = 0000010,
-			
-			/** RWX mask for others **/
-			RWXO = 0000007,
-			
-			/** R mask for others **/
-			RO = 0000004,
-			
-			/** W mask for others **/
-			WO = 0000002,
-		
-			/** X masks for others **/
-			XO = 0000001,
-			
-			/**  Set user id on execution **/
-			SUID = 0004000,
-			
-			/** Set group id on execution **/
-			SGID = 0002000,
-			
-			/** Save swapped text even after use **/
-			SVTX = 0001000
-};
+        enum FilePermission
+        {
+            /** No file mode found **/
+            None = -1,
+            /** RWX mask for owner **/
+            RWXU = 0000700,
+
+            /** R mask for owner **/
+            RU = 0000400,
+
+            /** W mask for owner **/
+            WU = 0000200,
+
+            /** X mask for owner **/
+            XU = 0000100,
+
+            /** RWX mask for group **/
+            RWXG = 0000070,
+
+            /** R mask for group **/
+            RG = 0000040,
+
+            /** W mask for group **/
+            WG = 0000020,
+
+            /** X mask for group **/
+            XG = 0000010,
+
+            /** RWX mask for others **/
+            RWXO = 0000007,
+
+            /** R mask for others **/
+            RO = 0000004,
+
+            /** W mask for others **/
+            WO = 0000002,
+
+            /** X masks for others **/
+            XO = 0000001,
+
+            /**  Set user id on execution **/
+            SUID = 0004000,
+
+            /** Set group id on execution **/
+            SGID = 0002000,
+
+            /** Save swapped text even after use **/
+            SVTX = 0001000
+        };
 
         /**
          * @brief Open file in read mode

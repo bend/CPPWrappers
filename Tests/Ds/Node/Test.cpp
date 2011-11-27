@@ -46,7 +46,6 @@ int main()
         assert(n2.getNext() == &n3);
         DlNode<int> *temp = n1.getPrevious();
         assert(temp == 0);
-
         DlNode<int> n4(4);
         DlNode<int> n6(6);
         DlNode<int> n5(5, &n4, &n6);
@@ -54,8 +53,6 @@ int main()
         assert(n5.getPrevious() == &n4);
         assert(n6.getPrevious() == &n5);
     }
-
-
     cout << "All tests succeded" << endl;
     return 0;
 }

@@ -13,11 +13,11 @@
 
 #include <iostream>
 #include <assert.h>
-#include <Ds/LinkedList.h>
+#include <Ds/DlLinkedList.h>
 using namespace std;
 int main()
 {
-    LinkedList<int> ll;
+    DlLinkedList<int> ll;
     ll.insertTop(1);
     ll.insertTop(2);
     ll.insertTop(3);
@@ -26,12 +26,12 @@ int main()
     assert(ll.getSize() == 5);
     assert(ll.getHead() == 4);
     assert(ll.getTail() == 0);
+    assert((ll.getFirst()->getNext())->getPrevious()->getElem() == 4);
     int* arr = ll.toArray();
     int chk[5] = {4, 3, 2, 1 , 0};
 
     for (int i = 0; i < ll.getSize(); ++i)
         assert(arr[i] == chk[i]);
-
     ll.removeFirst();
     ll.removeLast();
     arr = ll.toArray();
@@ -39,7 +39,6 @@ int main()
 
     for (int i = 0; i < ll.getSize(); ++i)
         assert(arr[i] == chk2[i]);
-
     cout << "All tests succeded" << endl;
     return 0;
 }
