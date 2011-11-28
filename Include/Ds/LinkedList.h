@@ -23,6 +23,7 @@
 using namespace std;
 
 #include <Ds/Node.h>
+#include <Ds/Exception.h>
 
 
 template <class E>
@@ -100,7 +101,7 @@ int LinkedList<E>::getSize()
 template <class E>
 E& LinkedList<E>::getHead()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     return m_head->getElem();
 }
@@ -108,7 +109,7 @@ E& LinkedList<E>::getHead()
 template <class E>
 E& LinkedList<E>::getTail()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     return m_tail->getElem();
 }
@@ -116,7 +117,7 @@ E& LinkedList<E>::getTail()
 template<class E>
 E LinkedList<E>::removeFirst()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     E e = m_head->getElem();
     Node<E> *next = m_head->getNext();
@@ -129,8 +130,13 @@ E LinkedList<E>::removeFirst()
 template<class E>
 E LinkedList<E>::removeLast()
 {
-    if (m_size == 0) throw string("Empty List");
-
+    if (m_size == 0) throw EmptyListException();
+    if (m_size == 1 ){
+        E e = m_tail->getElem();
+        delete m_tail;
+        --m_size;
+        return e;
+    }
     E e = m_tail->getElem();
     m_tail->setElem(0);
     Node<E> *t = m_head;

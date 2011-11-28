@@ -24,7 +24,7 @@
 using namespace std;
 
 template <class K, class V>
-class SearchTree : public BTree<Pair<K, V> >
+class SearchTree : private BTree<Pair<K, V> >
 {
     public:
         SearchTree();
@@ -170,7 +170,7 @@ V& SearchTree<K, V>::get(const K& key)
     else if (p < key)
     {
         if (this->getRight() == 0)
-            throw string("Element not found");
+            throw EmptyNodeException();
 
         return ((SearchTree<K, V>*)this->getRight())->get(key);
     }
@@ -178,12 +178,12 @@ V& SearchTree<K, V>::get(const K& key)
     else
     {
         if (this->getLeft() == 0)
-            throw string("Element not found");
+            throw EmptyNodeException();
 
         return ((SearchTree<K, V>*)this->getLeft())->get(key);
     }
 
-    throw string("Element not found");
+    throw ElementNotFoundException();
 }
 
 template <class K, class V>

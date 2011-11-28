@@ -23,6 +23,7 @@
 using namespace std;
 
 #include <Ds/DlNode.h>
+#include <Ds/Exception.h>
 
 /**
  * Double linked list 
@@ -75,7 +76,6 @@ void DlLinkedList<E>::insertTop(const E& elem)
     if (m_head != 0)
         n->setNext(m_head);
 
-    //   m_head->setPrevious(n);
     m_head = n;
     ++m_size;
 
@@ -91,7 +91,6 @@ void DlLinkedList<E>::insertLast(E elem)
     if (m_tail != 0)
     {
         m_tail->setNext(n);
-        //     n->setPrevious(m_tail);
         m_tail = (DlNode<E>*)m_tail->getNext();
     }
 
@@ -112,7 +111,7 @@ int DlLinkedList<E>::getSize()
 template <class E>
 E& DlLinkedList<E>::getHead()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     return m_head->getElem();
 }
@@ -120,7 +119,7 @@ E& DlLinkedList<E>::getHead()
 template <class E>
 E& DlLinkedList<E>::getTail()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     return m_tail->getElem();
 }
@@ -140,7 +139,7 @@ DlNode<E>* DlLinkedList<E>::getLast()
 template<class E>
 E DlLinkedList<E>::removeFirst()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     E e = m_head->getElem();
 
@@ -160,7 +159,7 @@ E DlLinkedList<E>::removeFirst()
 template<class E>
 E DlLinkedList<E>::removeLast()
 {
-    if (m_size == 0) throw string("Empty List");
+    if (m_size == 0) throw EmptyListException();
 
     E e = m_tail->getElem();
     DlNode<E> *prev = m_tail->getPrevious();

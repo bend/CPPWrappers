@@ -19,6 +19,7 @@
 
 #ifndef BTREE_H__
 #define BTREE_H__
+#include <Ds/Exception.h>
 /**
  * Represents a binary tree structure
  */
@@ -164,18 +165,24 @@ void BTree<T>::setElem(const T& elem)
 template <class T>
 BTree<T>* BTree<T>::getLeft()
 {
+    if( m_left == 0)
+        return 0;
     return m_left;
 }
 
 template <class T>
 BTree<T>* BTree<T>::getRight()
 {
+    if( m_right == 0)
+        return 0;
     return m_right;
 }
 
 template <class T>
 BTree<T>* BTree<T>::getParent()
 {
+    if( m_parent == 0)
+        return 0;
     return m_parent;
 }
 
@@ -198,4 +205,5 @@ int BTree<T>::getSize()
 
     return size;
 }
+
 #endif
