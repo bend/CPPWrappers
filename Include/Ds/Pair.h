@@ -19,23 +19,50 @@
 
 #ifndef PAIR_H__
 #define PAIR_H__
-
+/**
+ * Represents a pair of elements (key, value)
+ */
 template <class K, class V>
 class Pair
 {
     public:
+
+        /**
+         * @brief Constructor
+         */
         Pair();
-
+        
+        /**
+         * @brief Constructor
+         * @param key the Key
+         * @param value the value
+         */
         Pair(const K& key, const V& value);
-
+        
+        /**
+         * @brief sets the key
+         * @param key the key
+         */
         void setKey(const K& key);
-
+        
+        /**
+         * @brief sets the value
+         * @param val the value
+         */
         void setValue(const V& val);
-
+        
+        /**
+         * @brief get the key of the pair
+         * @return a reference to the key
+         */
         K& getKey();
-
+        
+        /**
+         * @brief get the value of the pair
+         * @return a reference to the value
+         */
         V& getValue();
-
+        
         bool operator ==( Pair<K, V>& p);
 
         bool operator !=( Pair<K, V>& p);
@@ -59,6 +86,7 @@ class Pair
         bool operator <=(const K& key);
 
         bool operator >=(const K& key);
+
     private:
         K m_key;
         V m_value;

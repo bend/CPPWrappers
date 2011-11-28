@@ -22,6 +22,9 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * Exceptions thrown by the classes in DS
+ */
 class Exception{
     public:
         inline Exception(){};
@@ -38,6 +41,9 @@ class Exception{
         string m_message;
 };
 
+/**
+ * Exceptions thrown if the list is emtpy
+ */
 class EmptyListException: public Exception{
     public:
         inline EmptyListException():Exception(){
@@ -47,6 +53,9 @@ class EmptyListException: public Exception{
         }
 };
 
+/**
+ * Exception thrown if the node is null
+ */
 class EmptyNodeException: public Exception{
     public:
         inline EmptyNodeException():Exception(){
@@ -56,6 +65,9 @@ class EmptyNodeException: public Exception{
         }
 };
 
+/**
+ * Exception thrown is the Element is no found
+ */
 class ElementNotFoundException: public Exception{
     public:
         inline ElementNotFoundException():Exception(){
