@@ -1,4 +1,3 @@
-
 /*
  *   Copyright © Ben D.
  *   dbapps2@gmail.com
@@ -33,7 +32,7 @@ class BTree
          * @param elem the element to store at the root
          */
         BTree(const T& elem);
-        
+
         /**
          * @brief Constructor
          * @param elem the element to store at the root
@@ -41,7 +40,7 @@ class BTree
          * @param right the right child
          */
         BTree(const T& elem, BTree<T> *left, BTree<T> *right);
-        
+
         /**
          * @brief set the left child
          * @param l the child to set
@@ -59,37 +58,37 @@ class BTree
          * @param r the parent
          */
         void setParent(BTree<T> *r);
-        
+
         /**
          * @brief sets the element in the node
          * @param elem the elem to store
          */
         void setElem(const T& elem);
-        
+
         /**
          * @brief get the left child
          * @return a pointer to the left child tree
          */
         BTree<T>* getLeft();
-        
+
         /**
          * @brief get the right child
          * @return a pointer to the right child
          */
         BTree<T>* getRight();
-        
+
         /**
          * @brief get the parent of the node
          * @return a pointer to the parent tree
          */
         BTree<T>* getParent();
-        
+
         /**
          * @brief calculates the tree size
          * @return the size of the tree
          */
         int getSize();
-        
+
         /**
          * @brief get the element stored in the current node
          * @return a reference to this element
@@ -97,7 +96,7 @@ class BTree
         T& getElem();
 
     protected:
-        
+
         /**
          * Empty constructor
          */
@@ -165,24 +164,27 @@ void BTree<T>::setElem(const T& elem)
 template <class T>
 BTree<T>* BTree<T>::getLeft()
 {
-    if( m_left == 0)
+    if ( m_left == 0)
         return 0;
+
     return m_left;
 }
 
 template <class T>
 BTree<T>* BTree<T>::getRight()
 {
-    if( m_right == 0)
+    if ( m_right == 0)
         return 0;
+
     return m_right;
 }
 
 template <class T>
 BTree<T>* BTree<T>::getParent()
 {
-    if( m_parent == 0)
+    if ( m_parent == 0)
         return 0;
+
     return m_parent;
 }
 

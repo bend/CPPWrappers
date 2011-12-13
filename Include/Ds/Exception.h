@@ -18,22 +18,25 @@
  */
 
 #ifndef EXCEPTION_H__
-#define EXCEPTION_H__ 
+#define EXCEPTION_H__
 #include <iostream>
 using namespace std;
 
 /**
  * Exceptions thrown by the classes in DS
  */
-class Exception{
+class Exception
+{
     public:
-        inline Exception(){};
+        inline Exception() {};
 
-        inline Exception(string message){
+        inline Exception(string message)
+        {
             m_message = message;
         }
 
-        inline string getMessage(){
+        inline string getMessage()
+        {
             return m_message;
         }
 
@@ -44,36 +47,74 @@ class Exception{
 /**
  * Exceptions thrown if the list is emtpy
  */
-class EmptyListException: public Exception{
+class EmptyListException: public Exception
+{
     public:
-        inline EmptyListException():Exception(){
+        inline EmptyListException(): Exception()
+        {
         }
 
-        inline EmptyListException(string message):Exception(message){
+        inline EmptyListException(string message): Exception(message)
+        {
         }
 };
 
 /**
- * Exception thrown if the node is null
+ * Exceptions thrown if the Queue is emtpy
  */
-class EmptyNodeException: public Exception{
+class EmptyQueueException: public Exception
+{
     public:
-        inline EmptyNodeException():Exception(){
+        inline EmptyQueueException(): Exception()
+        {
         }
 
-        inline EmptyNodeException(string message):Exception(message){
+        inline EmptyQueueException(string message): Exception(message)
+        {
+        }
+};
+
+/**
+ * Exceptions thrown if the Stack is emtpy
+ */
+class EmptyStackException: public Exception
+{
+    public:
+        inline EmptyStackException(): Exception()
+        {
+        }
+
+        inline EmptyStackException(string message): Exception(message)
+        {
+        }
+};
+/**
+ * Exception thrown if the node is null
+ */
+class EmptyNodeException: public Exception
+{
+    public:
+        inline EmptyNodeException(): Exception()
+        {
+        }
+
+        inline EmptyNodeException(string message): Exception(message)
+        {
         }
 };
 
 /**
  * Exception thrown is the Element is no found
  */
-class ElementNotFoundException: public Exception{
+class ElementNotFoundException: public Exception
+{
     public:
-        inline ElementNotFoundException():Exception(){
+        inline ElementNotFoundException(): Exception()
+        {
         }
 
-        inline ElementNotFoundException(string message):Exception(message){
+        inline ElementNotFoundException(string message): Exception(message)
+        {
         }
 };
 #endif

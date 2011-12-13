@@ -26,70 +26,70 @@ using namespace std;
 #include <Ds/Exception.h>
 
 /**
- * Double linked list 
+ * Double linked list
  */
 template <class E>
 class DlLinkedList
 {
     public:
-        
+
         /**
          * @brief Constructor
          */
         DlLinkedList();
-        
+
         /**
          * @brief inserts at the beginning of the list
          * @param elem the element to insert
          */
         void insertTop(const E& elem);
-        
+
         /**
          * @brief inserts at the end of the list
          * @param elem the element to insert
          */
         void insertLast(E elem);
-        
+
         /**
          * @brief returns the size of the list
          * @return the size
          */
         int getSize();
-        
+
         /**
          * @brief return the element stored at the beginning of the list
          * @return a reference to the element
          * @throw EmptyListException if the list is empty
          */
         E& getHead();
-        
+
         /**
          * @brief return the element stored at the end of the list
          * @return a reference to the element
          * @throw EmptyListException if the list is empty
          */
         E& getTail();
-        
+
         /**
          * @brief removes the first element
          * @return the removed element
          * @throw EmptyListException if the list is empty
          */
         E removeFirst();
-        
+
         /**
          * @brief removes the last element
          * @return the removed element
          * @throw EmptyListException if the list is empty
          */
         E removeLast();
-        
+
         /**
          * @brief transforms the list to an array
-         * @return an array of the size of the list 
+         * @return an array of the size of the list
          */
         E* toArray();
-        
+
         /**
          * @brief get the first node of the list. This method returns the node and not only the element
          * @return a pointer to the first node

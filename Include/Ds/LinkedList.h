@@ -33,7 +33,7 @@ class LinkedList
 {
     public:
 
-        
+
         /**
          * @brief Constructor
          */
@@ -87,7 +87,7 @@ class LinkedList
 
         /**
          * @brief transforms the list to an array
-         * @return an array of the size of the list 
+         * @return an array of the size of the list
          */
         E* toArray();
 
@@ -173,12 +173,15 @@ template<class E>
 E LinkedList<E>::removeLast()
 {
     if (m_size == 0) throw EmptyListException();
-    if (m_size == 1 ){
+
+    if (m_size == 1 )
+    {
         E e = m_tail->getElem();
         delete m_tail;
         --m_size;
         return e;
     }
+
     E e = m_tail->getElem();
     m_tail->setElem(0);
     Node<E> *t = m_head;

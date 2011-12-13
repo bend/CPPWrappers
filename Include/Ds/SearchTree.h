@@ -41,7 +41,7 @@ class SearchTree : private BTree<Pair<K, V> >
          * @param v the value
          */
         SearchTree(const K& k, const V& v);
-        
+
         /**
          * @brief inserts the pair key, value in the tree
          * A Pair object is with key key and value val and inserted in the tree at the correct position
@@ -49,49 +49,49 @@ class SearchTree : private BTree<Pair<K, V> >
          * @param val the value
          */
         void insert(const K& key, const V& val);
-        
+
         /**
          * @brief searches for the key in the tree
          * @param key the key to search
          * @return true if the element is found, false otherwise
          */
         bool contains(const K& key);
-        
+
         /**
          * @brief removes the first element with the key key
          * @param key the key of the element to remove
          * @return true if removed, false otherwise
          */
         bool remove(const K& key);
-        
+
         /**
          * @brief removes all the occurences of the element with key key
          * @param key the key of the elements to remove
          * @return the number of nodes removed
          */
         int removeAll(const K& key);
-        
+
         /**
          * @brief counts the number ot occurences of elements with key key
          * @param key the key
          * @return the number of elements with key key found
          */
         int count(const K& key);
-        
+
         /**
          * @brief returns the first occurence of element with key key
          * @param key the key of the element searched
          * @return a reference to the value with key key
          */
         V& get(const K& key);
-        
+
         /**
          * @brief returns all occurences of the elements with key key
          * @param key the key of the elements searched
          * @return a vector<V> containing all the value with key key
          */
         vector<V> getAll(const K& key);
-        
+
         /**
          * @brief returns the elements in increasing order
          * @return a vector<Pair<K, V> > containing all the pairs(key, value) contained in the tree in increasing order

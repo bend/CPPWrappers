@@ -31,38 +31,38 @@ class Pair
          * @brief Constructor
          */
         Pair();
-        
+
         /**
          * @brief Constructor
          * @param key the Key
          * @param value the value
          */
         Pair(const K& key, const V& value);
-        
+
         /**
          * @brief sets the key
          * @param key the key
          */
         void setKey(const K& key);
-        
+
         /**
          * @brief sets the value
          * @param val the value
          */
         void setValue(const V& val);
-        
+
         /**
          * @brief get the key of the pair
          * @return a reference to the key
          */
         K& getKey();
-        
+
         /**
          * @brief get the value of the pair
          * @return a reference to the value
          */
         V& getValue();
-        
+
         bool operator ==( Pair<K, V>& p);
 
         bool operator !=( Pair<K, V>& p);

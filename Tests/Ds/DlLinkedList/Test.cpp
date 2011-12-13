@@ -40,15 +40,12 @@ int main()
 
     for (int i = 0; i < ll.getSize(); ++i)
         assert(arr[i] == chk2[i]);
-    
-    assert(ll.getSize() == 3);
 
+    assert(ll.getSize() == 3);
     ll.removeFirst();
     ll.removeFirst();
     ll.removeLast();
-
     assert(ll.getSize() == 0);
-
     ll.insertTop(1);
     assert(ll.getSize() == 1);
     ll.removeFirst();
@@ -57,8 +54,6 @@ int main()
     assert(ll.getSize() == 1);
     ll.removeLast();
     assert(ll.getSize() == 0);
-
-
     cout << "All tests succeded" << endl;
     return 0;
 }
