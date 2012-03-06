@@ -3,8 +3,7 @@
 ### Overview 
 
 This library is a C++ wrapper for BSD sockets, pthread and semaphore.
-I've test it on MacOS, but it should be working on Linux
-There are 3 Libraries:
+It has been tested on MacOS, but it should work on Linux
 
 #### System
 
@@ -12,11 +11,15 @@ contains the Thread class, Semaphore class and Mutex class, Time class, PRNG cla
 
 ####Net
 
-contains the TcpSocket, TcpServer, UdpSocket, HtmlRequest classes. There is also a HtmlParser 
+contains the TcpSocket, TcpServer, UdpSocket, HtmlRequest classes.
 
 ####Fs
 
 contains methods for using the file system: File, BufferedInput BufferedOutput, ...
+
+####Parser 
+
+contains an HtmlParser (not fully implemete but should but should be sufficient for accessing values between tags)
 
 ### Documentation 
 
@@ -41,5 +44,3 @@ To install the library go to the project directory and type de following:
 
 Small examples are located in the Tests folder. Basicaly the libraries are easy to use, notice that for the Thread class you need to subclass it and override the run() method
 
-### TODO
-Add  Signals, ...

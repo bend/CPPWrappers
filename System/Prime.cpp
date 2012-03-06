@@ -46,7 +46,7 @@ int Prime::genPrimes()
 
 long Prime::getBiggestPrime()
 {
-    if (m_sieve != NULL)
+    if (m_sieve != 0)
         return m_sieve->getBiggestPrime();
 
     return -1;
@@ -54,7 +54,7 @@ long Prime::getBiggestPrime()
 
 vector<long> Prime::getPrimes()
 {
-    if (m_sieve != NULL)
+    if (m_sieve != 0)
         return m_sieve->getPrimes();
 
     return vector<long>();
@@ -62,7 +62,7 @@ vector<long> Prime::getPrimes()
 
 long Prime::getNumberOfPrimes()
 {
-    if (m_sieve != NULL)
+    if (m_sieve != 0)
         return m_sieve->getNumberOfPrimes();
 
     return -1;
